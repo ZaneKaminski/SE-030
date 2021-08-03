@@ -36,17 +36,6 @@ F 3 "" H 2400 2950 60  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GW_Logic:74573 U?
-U 1 1 609454C2
-P 2400 4050
-F 0 "U?" H 2400 4650 50  0000 C CNN
-F 1 "74AHCT573" V 2400 4050 50  0000 C CNN
-F 2 "" H 2400 3400 50  0001 C TNN
-F 3 "" H 2400 4150 60  0001 C CNN
-	1    2400 4050
-	-1   0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR?
 U 1 1 6095226D
 P 2800 2100
@@ -66,17 +55,6 @@ F 1 "GND" H 2805 3127 50  0000 C CNN
 F 2 "" H 2800 3300 50  0001 C CNN
 F 3 "" H 2800 3300 50  0001 C CNN
 	1    2800 3300
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 60952C35
-P 2800 4500
-F 0 "#PWR?" H 2800 4250 50  0001 C CNN
-F 1 "GND" H 2805 4327 50  0000 C CNN
-F 2 "" H 2800 4500 50  0001 C CNN
-F 3 "" H 2800 4500 50  0001 C CNN
-	1    2800 4500
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -101,69 +79,12 @@ F 3 "" H 2000 2400 50  0001 C CNN
 	1    2000 2400
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:+3V3 #PWR?
-U 1 1 60953C96
-P 2000 3600
-F 0 "#PWR?" H 2000 3450 50  0001 C CNN
-F 1 "+3V3" H 2000 3750 50  0000 C CNN
-F 2 "" H 2000 3600 50  0001 C CNN
-F 3 "" H 2000 3600 50  0001 C CNN
-	1    2000 3600
-	1    0    0    -1  
-$EndComp
 Text HLabel 2800 1200 2    50   Input ~ 0
 MacA~OE~
 Text HLabel 2800 2400 2    50   Input ~ 0
 MacA~OE~
-Text HLabel 2800 3600 2    50   Input ~ 0
-MacA~OE~
-Text HLabel 2000 4500 0    50   Input ~ 0
-MacA~LE~
 Text HLabel 2000 3300 0    50   Input ~ 0
 MacA~LE~
-Text Label 2800 3800 0    50   ~ 0
-AccA18
-Wire Wire Line
-	2800 4300 3100 4300
-Wire Wire Line
-	2800 4200 3100 4200
-Wire Wire Line
-	2800 4100 3100 4100
-Wire Wire Line
-	2800 4000 3100 4000
-Wire Wire Line
-	2800 3900 3100 3900
-Wire Wire Line
-	2800 3800 3100 3800
-Wire Wire Line
-	2800 3700 3100 3700
-Entry Wire Line
-	3100 4300 3200 4400
-Entry Wire Line
-	3100 4200 3200 4300
-Entry Wire Line
-	3100 4100 3200 4200
-Entry Wire Line
-	3100 4000 3200 4100
-Entry Wire Line
-	3100 3900 3200 4000
-Entry Wire Line
-	3100 3800 3200 3900
-Entry Wire Line
-	3100 3700 3200 3800
-Text Label 2800 3700 0    50   ~ 0
-AccA17
-Text Label 2800 3900 0    50   ~ 0
-AccA19
-Text Label 2800 4000 0    50   ~ 0
-AccA20
-Text Label 2800 4100 0    50   ~ 0
-AccA21
-Text Label 2800 4200 0    50   ~ 0
-AccA22
-Text Label 2800 4300 0    50   ~ 0
-AccA23
 Text Label 2800 3200 0    50   ~ 0
 AccA16
 Text Label 2800 3100 0    50   ~ 0
@@ -343,20 +264,6 @@ Wire Wire Line
 Wire Wire Line
 	2000 2500 1700 2500
 Entry Wire Line
-	1700 4300 1600 4400
-Entry Wire Line
-	1700 4200 1600 4300
-Entry Wire Line
-	1700 4100 1600 4200
-Entry Wire Line
-	1700 4000 1600 4100
-Entry Wire Line
-	1700 3900 1600 4000
-Entry Wire Line
-	1700 3800 1600 3900
-Entry Wire Line
-	1700 3700 1600 3800
-Entry Wire Line
 	1700 2500 1600 2600
 Entry Wire Line
 	1700 2600 1600 2700
@@ -374,34 +281,6 @@ Entry Wire Line
 	1700 3200 1600 3300
 Text HLabel 2000 2100 0    50   Input ~ 0
 MacA~LE~
-Text Label 2000 3800 2    50   ~ 0
-MacA18
-Wire Wire Line
-	2000 4300 1700 4300
-Wire Wire Line
-	2000 4200 1700 4200
-Wire Wire Line
-	2000 4100 1700 4100
-Wire Wire Line
-	2000 4000 1700 4000
-Wire Wire Line
-	2000 3900 1700 3900
-Wire Wire Line
-	2000 3800 1700 3800
-Wire Wire Line
-	2000 3700 1700 3700
-Text Label 2000 3700 2    50   ~ 0
-MacA17
-Text Label 2000 3900 2    50   ~ 0
-MacA19
-Text Label 2000 4000 2    50   ~ 0
-MacA20
-Text Label 2000 4100 2    50   ~ 0
-MacA21
-Text Label 2000 4200 2    50   ~ 0
-MacA22
-Text Label 2000 4300 2    50   ~ 0
-MacA23
 Text HLabel 1600 1400 0    50   BiDi ~ 0
 MacA[23..1]
 $Comp
@@ -444,7 +323,7 @@ L GW_Logic:74573 U?
 U 1 1 60976B58
 P 5150 3450
 F 0 "U?" H 5150 4050 50  0000 C CNN
-F 1 "74AHC573" V 5150 3450 50  0000 C CNN
+F 1 "74AHCT573" V 5150 3450 50  0000 C CNN
 F 2 "" H 5150 2800 50  0001 C TNN
 F 3 "" H 5150 3550 60  0001 C CNN
 	1    5150 3450
@@ -582,7 +461,7 @@ L GW_Logic:74573 U?
 U 1 1 609916A8
 P 5150 6050
 F 0 "U?" H 5150 6650 50  0000 C CNN
-F 1 "74AHC573" V 5150 6050 50  0000 C CNN
+F 1 "74AHCT573" V 5150 6050 50  0000 C CNN
 F 2 "" H 5150 5400 50  0001 C TNN
 F 3 "" H 5150 6150 60  0001 C CNN
 	1    5150 6050
@@ -945,15 +824,11 @@ MacD[15..0]
 Wire Bus Line
 	4300 1900 4350 1900
 Wire Bus Line
-	3200 1400 3200 4400
+	3200 1400 3200 3300
 Wire Bus Line
-	1600 1400 1600 4400
+	1600 1400 1600 3300
 Wire Bus Line
 	4350 1900 4350 6500
 Wire Bus Line
 	5950 1900 5950 6500
-Text HLabel 2800 4400 2    50   Input ~ 0
-AccR~W~
-Text HLabel 2000 4400 0    50   Input ~ 0
-MacR~W~
 $EndSCHEMATC

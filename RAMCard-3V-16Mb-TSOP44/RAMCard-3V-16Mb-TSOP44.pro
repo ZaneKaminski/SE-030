@@ -1,4 +1,4 @@
-update=Wednesday, July 29, 2020 at 04:27:54 AM
+update=Friday, July 09, 2021 at 02:00:48 AM
 version=1
 last_client=kicad
 [general]
@@ -25,7 +25,7 @@ ERC_TestSimilarLabels=1
 [pcbnew]
 version=1
 PageLayoutDescrFile=
-LastNetListRead=DC030.net
+LastNetListRead=RAMCard-5V-8Mb-TSOP44.net
 CopperLayerCount=4
 BoardThickness=1.6
 AllowMicroVias=0
@@ -84,7 +84,7 @@ OthersTextSizeH=1
 OthersTextSizeThickness=0.15
 OthersTextItalic=0
 OthersTextUpright=1
-SolderMaskClearance=0.05
+SolderMaskClearance=0.07619999999999999
 SolderMaskMinWidth=0.09999999999999999
 SolderPasteClearance=-0.03809999999999999
 SolderPasteRatio=0

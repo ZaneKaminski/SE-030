@@ -7,5 +7,4 @@
   (lib (name GW_Connector)(type Legacy)(uri ${KIPRJMOD}/../GW_Parts/GW_Connector.lib)(options "")(descr ""))
   (lib (name GW_Digital)(type Legacy)(uri ${KIPRJMOD}/../GW_Parts/GW_Digital.lib)(options "")(descr ""))
   (lib (name GW_RAM)(type Legacy)(uri ${KIPRJMOD}/../GW_Parts/GW_RAM.lib)(options "")(descr ""))
-  (lib (name SE-030-rescue)(type Legacy)(uri ${KIPRJMOD}/SE-030-rescue.lib)(options "")(descr ""))
 )

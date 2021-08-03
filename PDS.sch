@@ -14,7 +14,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L SE-030-rescue:MacSEPDS-GW_Connector J?
+L GW_Connector:MacSEPDS J?
 U 1 1 5F6DD05A
 P 1350 3950
 AR Path="/5F6DD05A" Ref="J?"  Part="1" 
@@ -27,7 +27,7 @@ F 3 "" H 1350 5750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L SE-030-rescue:MacSEPDS-GW_Connector J?
+L GW_Connector:MacSEPDS J?
 U 3 1 5F6E0CCF
 P 3900 3950
 AR Path="/5F6E0CCF" Ref="J?"  Part="3" 
@@ -166,8 +166,6 @@ Text HLabel 2750 4250 2    50   BiDi ~ 0
 ~IPL~2
 Text HLabel 2750 4350 2    50   Output ~ 0
 ~BERR~
-Text HLabel 2750 5050 2    50   Input ~ 0
-~EXT.DTK~
 Text HLabel 1500 4900 2    50   Output ~ 0
 E
 Text HLabel 1500 5000 2    50   Output ~ 0
@@ -414,44 +412,8 @@ Text Label 1500 4700 0    50   ~ 0
 A22
 Text Label 1500 4800 0    50   ~ 0
 A23
-Connection ~ 2750 3550
-Connection ~ 2750 3150
-Connection ~ 2750 3050
-Wire Wire Line
-	2750 3050 2750 3150
-Wire Wire Line
-	2750 2950 2750 3050
-Connection ~ 2750 2950
-Connection ~ 2750 2850
-Wire Wire Line
-	2750 2850 2750 2950
-Wire Wire Line
-	2750 2750 2750 2850
-Connection ~ 2750 2750
-Connection ~ 2750 2650
-Wire Wire Line
-	2750 2650 2750 2750
-Wire Wire Line
-	2750 2550 2750 2650
-Connection ~ 2750 2550
-Connection ~ 2750 2450
-Wire Wire Line
-	2750 2450 2750 2550
-Wire Wire Line
-	2750 2350 2750 2450
-Connection ~ 2750 3850
-Wire Wire Line
-	2750 3850 2750 3950
-Wire Wire Line
-	2750 3750 2750 3850
-Connection ~ 2750 3750
-Connection ~ 2750 3650
-Wire Wire Line
-	2750 3650 2750 3750
-Wire Wire Line
-	2750 3650 2750 3550
 $Comp
-L SE-030-rescue:MacSEPDS-GW_Connector J?
+L GW_Connector:MacSEPDS J?
 U 2 1 5F6DF4C8
 P 2600 4000
 AR Path="/5F6DF4C8" Ref="J?"  Part="2" 
@@ -463,6 +425,11 @@ F 3 "" H 2600 5800 50  0001 C CNN
 	2    2600 4000
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	2750 3550 2750 3950
+Wire Wire Line
+	2750 2350 2750 3150
+NoConn ~ 2750 5050
 Wire Bus Line
 	4350 3700 4350 5200
 Wire Bus Line

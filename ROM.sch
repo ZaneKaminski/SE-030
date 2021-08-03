@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 6 7
+Sheet 4 7
 Title ""
 Date ""
 Rev ""
@@ -168,9 +168,9 @@ F 3 "" H 3450 3700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text HLabel 3450 3400 2    50   Input ~ 0
-~R~W
+~OE~
 Text HLabel 3450 3200 2    50   Input ~ 0
-FL~CS~
+~CS~
 Entry Wire Line
 	2350 4300 2450 4200
 Entry Wire Line
@@ -264,19 +264,6 @@ RA3
 Text Label 2650 4200 2    50   ~ 0
 RA2
 $Comp
-L GW_RAM:Flash-512Kx8-PLCC-32 U?
-U 1 1 60E1A13A
-P 3050 5000
-AR Path="/5F723900/60E1A13A" Ref="U?"  Part="1" 
-AR Path="/60D70CB4/60E1A13A" Ref="U?"  Part="1" 
-F 0 "U?" H 3050 6050 50  0000 C CNN
-F 1 "39SF040" V 3050 5000 50  0000 C CNN
-F 2 "stdpads:DIP-32_W15.24mm_Socket_LongPads" H 3050 3950 50  0001 C CNN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20005022C.pdf" H 3050 5000 50  0001 C CNN
-	1    3050 5000
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR?
 U 1 1 60E1A140
 P 3450 5900
@@ -289,106 +276,54 @@ F 3 "" H 3450 5900 50  0001 C CNN
 	1    3450 5900
 	1    0    0    -1  
 $EndComp
-Text HLabel 3450 5600 2    50   Input ~ 0
-~R~W
-Text HLabel 3450 5400 2    50   Input ~ 0
-FU~CS~
-Text Label 3450 2500 0    50   ~ 0
-RD0
-Text Label 3450 2400 0    50   ~ 0
-RD1
-Text Label 3450 2600 0    50   ~ 0
-RD2
-Text Label 3450 2300 0    50   ~ 0
-RD3
-Text Label 3450 2700 0    50   ~ 0
-RD4
-Text Label 3450 2200 0    50   ~ 0
-RD5
-Text Label 3450 2800 0    50   ~ 0
-RD6
 Text Label 3450 2100 0    50   ~ 0
+RD0
+Text Label 3450 2200 0    50   ~ 0
+RD1
+Text Label 3450 2300 0    50   ~ 0
+RD2
+Text Label 3450 2400 0    50   ~ 0
+RD3
+Text Label 3450 2500 0    50   ~ 0
+RD4
+Text Label 3450 2600 0    50   ~ 0
+RD5
+Text Label 3450 2700 0    50   ~ 0
+RD6
+Text Label 3450 2800 0    50   ~ 0
 RD7
-Text Label 3450 4300 0    50   ~ 0
-RD15
-Text Label 3450 5000 0    50   ~ 0
-RD14
-Text Label 3450 4400 0    50   ~ 0
-RD13
-Text Label 3450 4900 0    50   ~ 0
-RD12
-Text Label 3450 4500 0    50   ~ 0
-RD11
-Text Label 3450 4800 0    50   ~ 0
-RD10
-Text Label 3450 4600 0    50   ~ 0
-RD9
-Text Label 3450 4700 0    50   ~ 0
-RD8
-Wire Wire Line
-	3450 5000 3650 5000
-Wire Wire Line
-	3450 4900 3650 4900
 Entry Wire Line
 	3750 2100 3650 2200
 Entry Wire Line
 	3750 2000 3650 2100
-Wire Wire Line
-	3450 4800 3650 4800
-Wire Wire Line
-	3450 4700 3650 4700
 Entry Wire Line
 	3750 2300 3650 2400
 Entry Wire Line
 	3750 2200 3650 2300
-Wire Wire Line
-	3450 4600 3650 4600
-Wire Wire Line
-	3450 4500 3650 4500
 Entry Wire Line
 	3750 2500 3650 2600
 Entry Wire Line
 	3750 2400 3650 2500
-Wire Wire Line
-	3450 4400 3650 4400
-Wire Wire Line
-	3450 4300 3650 4300
 Entry Wire Line
 	3750 2700 3650 2800
 Entry Wire Line
 	3750 2600 3650 2700
 Wire Wire Line
-	3450 2800 3650 2800
-Wire Wire Line
 	3450 2700 3650 2700
-Entry Wire Line
-	3750 4300 3650 4400
-Entry Wire Line
-	3750 4200 3650 4300
-Wire Wire Line
-	3450 2600 3650 2600
 Wire Wire Line
 	3450 2500 3650 2500
-Entry Wire Line
-	3750 4500 3650 4600
-Entry Wire Line
-	3750 4400 3650 4500
-Wire Wire Line
-	3450 2400 3650 2400
 Wire Wire Line
 	3450 2300 3650 2300
-Entry Wire Line
-	3750 4700 3650 4800
-Entry Wire Line
-	3750 4600 3650 4700
+Wire Wire Line
+	3450 2100 3650 2100
 Wire Wire Line
 	3450 2200 3650 2200
 Wire Wire Line
-	3450 2100 3650 2100
-Entry Wire Line
-	3750 4900 3650 5000
-Entry Wire Line
-	3750 4800 3650 4900
+	3450 2400 3650 2400
+Wire Wire Line
+	3450 2600 3650 2600
+Wire Wire Line
+	3450 2800 3650 2800
 Wire Wire Line
 	2650 5900 2450 5900
 Wire Wire Line
@@ -425,10 +360,8 @@ Text Label 2650 3600 2    50   ~ 0
 RA18
 Text Label 2650 3700 2    50   ~ 0
 RA19
-Text HLabel 3450 5500 2    50   Input ~ 0
-R~W~
 Text HLabel 3450 3300 2    50   Input ~ 0
-R~W~
+L~WE~
 Wire Bus Line
 	2300 1600 3750 1600
 Wire Bus Line
@@ -437,6 +370,73 @@ Text HLabel 2300 1600 0    50   BiDi ~ 0
 D[15..0]
 Text HLabel 2300 2000 0    50   Input ~ 0
 A[23..1]
+Text Label 3450 5000 0    50   ~ 0
+RD15
+Text Label 3450 4900 0    50   ~ 0
+RD14
+Text Label 3450 4800 0    50   ~ 0
+RD13
+Text Label 3450 4700 0    50   ~ 0
+RD12
+Text Label 3450 4600 0    50   ~ 0
+RD11
+Text Label 3450 4500 0    50   ~ 0
+RD10
+Text Label 3450 4400 0    50   ~ 0
+RD9
+Text Label 3450 4300 0    50   ~ 0
+RD8
+Wire Wire Line
+	3450 4900 3650 4900
+Wire Wire Line
+	3450 4700 3650 4700
+Wire Wire Line
+	3450 4500 3650 4500
+Wire Wire Line
+	3450 4300 3650 4300
+Wire Wire Line
+	3450 4400 3650 4400
+Wire Wire Line
+	3450 4600 3650 4600
+Wire Wire Line
+	3450 4800 3650 4800
+Wire Wire Line
+	3450 5000 3650 5000
+Entry Wire Line
+	3750 4300 3650 4400
+Entry Wire Line
+	3750 4200 3650 4300
+Entry Wire Line
+	3750 4500 3650 4600
+Entry Wire Line
+	3750 4400 3650 4500
+Entry Wire Line
+	3750 4700 3650 4800
+Entry Wire Line
+	3750 4600 3650 4700
+Entry Wire Line
+	3750 4900 3650 5000
+Entry Wire Line
+	3750 4800 3650 4900
+Text HLabel 3450 5500 2    50   Input ~ 0
+U~WE~
+Text HLabel 3450 5400 2    50   Input ~ 0
+~CS~
+Text HLabel 3450 5600 2    50   Input ~ 0
+~OE~
+$Comp
+L GW_RAM:Flash-512Kx8-PLCC-32 U?
+U 1 1 60E1A13A
+P 3050 5000
+AR Path="/5F723900/60E1A13A" Ref="U?"  Part="1" 
+AR Path="/60D70CB4/60E1A13A" Ref="U?"  Part="1" 
+F 0 "U?" H 3050 6050 50  0000 C CNN
+F 1 "39SF040" V 3050 5000 50  0000 C CNN
+F 2 "stdpads:DIP-32_W15.24mm_Socket_LongPads" H 3050 3950 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20005022C.pdf" H 3050 5000 50  0001 C CNN
+	1    3050 5000
+	1    0    0    -1  
+$EndComp
 Wire Bus Line
 	3750 1600 3750 4900
 Wire Bus Line
