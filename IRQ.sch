@@ -1,0 +1,187 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 8 9
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text HLabel 9950 4450 2    50   Input ~ 0
+~IRQ~
+Text HLabel 8400 4400 2    50   3State ~ 0
+~IPL~1
+Text HLabel 8400 4700 2    50   3State ~ 0
+~IPL~0
+$Comp
+L GW_Logic:74125 U12
+U 1 1 61DC6702
+P 8000 4400
+F 0 "U12" H 8000 4850 50  0000 C CNN
+F 1 "74AHCT125" H 8000 3950 50  0000 C CNN
+F 2 "stdpads:TSSOP-14_4.4x5mm_P0.65mm" H 8000 3900 50  0001 C TNN
+F 3 "" H 8000 4350 60  0001 C CNN
+	1    8000 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9900 4400 9900 4450
+$Comp
+L Device:R_Small R?
+U 1 1 61DC96D9
+P 9200 4200
+AR Path="/61DC96D9" Ref="R?"  Part="1" 
+AR Path="/61BD72BF/61DC96D9" Ref="R?"  Part="1" 
+AR Path="/61350D21/61DC96D9" Ref="R?"  Part="1" 
+AR Path="/61BE63BD/61DC96D9" Ref="R?"  Part="1" 
+AR Path="/61BE8523/61DC96D9" Ref="R?"  Part="1" 
+AR Path="/61BF99BB/61DC96D9" Ref="R14"  Part="1" 
+F 0 "R14" H 9259 4246 50  0000 L CNN
+F 1 "10k" H 9259 4155 50  0000 L CNN
+F 2 "" H 9200 4200 50  0001 C CNN
+F 3 "~" H 9200 4200 50  0001 C CNN
+	1    9200 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 61DC96DF
+P 8900 4200
+AR Path="/61DC96DF" Ref="R?"  Part="1" 
+AR Path="/61BD72BF/61DC96DF" Ref="R?"  Part="1" 
+AR Path="/61350D21/61DC96DF" Ref="R?"  Part="1" 
+AR Path="/61BE63BD/61DC96DF" Ref="R?"  Part="1" 
+AR Path="/61BE8523/61DC96DF" Ref="R?"  Part="1" 
+AR Path="/61BF99BB/61DC96DF" Ref="R13"  Part="1" 
+F 0 "R13" H 8959 4246 50  0000 L CNN
+F 1 "10k" H 8959 4155 50  0000 L CNN
+F 2 "" H 8900 4200 50  0001 C CNN
+F 3 "~" H 8900 4200 50  0001 C CNN
+	1    8900 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8400 4300 8700 4300
+Wire Wire Line
+	8700 4300 8700 4600
+Wire Wire Line
+	8700 4600 8400 4600
+Wire Wire Line
+	8700 4600 8700 4700
+Connection ~ 8700 4600
+$Comp
+L power:GND #PWR?
+U 1 1 61DCB14A
+P 8700 4700
+AR Path="/5F72F108/61DCB14A" Ref="#PWR?"  Part="1" 
+AR Path="/61BF99BB/61DCB14A" Ref="#PWR0162"  Part="1" 
+F 0 "#PWR0162" H 8700 4450 50  0001 C CNN
+F 1 "GND" H 8700 4550 50  0000 C CNN
+F 2 "" H 8700 4700 50  0001 C CNN
+F 3 "" H 8700 4700 50  0001 C CNN
+	1    8700 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9200 4100 8900 4100
+Connection ~ 9200 4100
+$Comp
+L power:+3V3 #PWR0163
+U 1 1 61DCB655
+P 9200 4100
+F 0 "#PWR0163" H 9200 3950 50  0001 C CNN
+F 1 "+3V3" H 9215 4273 50  0000 C CNN
+F 2 "" H 9200 4100 50  0001 C CNN
+F 3 "" H 9200 4100 50  0001 C CNN
+	1    9200 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 61DCCFF2
+P 7500 4700
+AR Path="/5F72F108/61DCCFF2" Ref="#PWR?"  Part="1" 
+AR Path="/61BF99BB/61DCCFF2" Ref="#PWR0164"  Part="1" 
+F 0 "#PWR0164" H 7500 4450 50  0001 C CNN
+F 1 "GND" H 7500 4550 50  0000 C CNN
+F 2 "" H 7500 4700 50  0001 C CNN
+F 3 "" H 7500 4700 50  0001 C CNN
+	1    7500 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0165
+U 1 1 61DCD608
+P 8400 4100
+F 0 "#PWR0165" H 8400 3950 50  0001 C CNN
+F 1 "+5V" H 8400 4250 50  0000 C CNN
+F 2 "" H 8400 4100 50  0001 C CNN
+F 3 "" H 8400 4100 50  0001 C CNN
+	1    8400 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7600 4100 7500 4100
+Wire Wire Line
+	7500 4100 7500 4200
+Wire Wire Line
+	7500 4400 7600 4400
+Wire Wire Line
+	7500 4700 7500 4500
+Connection ~ 7500 4400
+Wire Wire Line
+	7600 4500 7500 4500
+Connection ~ 7500 4500
+Wire Wire Line
+	7500 4500 7500 4400
+Wire Wire Line
+	7600 4200 7500 4200
+Connection ~ 7500 4200
+Wire Wire Line
+	7500 4200 7500 4400
+Wire Wire Line
+	9200 4400 8800 4400
+Wire Wire Line
+	8800 4400 8800 4200
+Wire Wire Line
+	8800 4200 8400 4200
+Wire Wire Line
+	8400 4500 8900 4500
+Wire Wire Line
+	9200 4400 9200 4300
+Wire Wire Line
+	8900 4300 8900 4500
+Connection ~ 8900 4500
+Wire Wire Line
+	9200 4400 9300 4400
+Connection ~ 9200 4400
+Wire Wire Line
+	8900 4500 9300 4500
+Wire Wire Line
+	7600 4700 7500 4700
+Connection ~ 7500 4700
+NoConn ~ 7600 4300
+NoConn ~ 7600 4600
+Wire Wire Line
+	9950 4450 9900 4450
+Connection ~ 9900 4450
+Wire Wire Line
+	9900 4450 9900 4500
+$Comp
+L Switch:SW_DIP_x02 SW2
+U 1 1 61DC7832
+P 9600 4500
+F 0 "SW2" H 9600 4750 50  0000 C CNN
+F 1 "IRQSEL" H 9600 4350 50  0000 C CNN
+F 2 "stdpads:SW_DIP_SPSTx02_Slide_DSHP02TS_P1.27mm" H 9600 4500 50  0001 C CNN
+F 3 "~" H 9600 4500 50  0001 C CNN
+	1    9600 4500
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
