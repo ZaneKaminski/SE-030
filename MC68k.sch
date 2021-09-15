@@ -286,8 +286,6 @@ Text Label 3300 3600 0    50   ~ 0
 A23
 Text HLabel 3650 1500 2    50   Output ~ 0
 A[23..1]
-Text HLabel 1300 4800 0    50   BiDi ~ 0
-~HALT~
 NoConn ~ 1300 2600
 NoConn ~ 1300 2700
 NoConn ~ 1300 2800
@@ -451,6 +449,8 @@ Wire Wire Line
 	2100 7200 1700 7200
 Connection ~ 2100 7200
 Connection ~ 1700 7200
+Wire Wire Line
+	1300 4800 1300 5000
 Wire Bus Line
 	3600 3900 3600 5400
 Wire Bus Line
