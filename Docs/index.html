@@ -1,0 +1,503 @@
+<html>
+<head>
+	<title>Garrett's Workshop - Maccelerator-SE Timing</title>
+	<style type="text/css">
+		ul {
+			margin-top: 0;
+		}
+		h3 {
+			margin-bottom: 0;
+		}
+		h2, h4 {
+			margin-bottom: 3px;
+		}
+		h3 + h4 {
+			margin-top:6px;
+		}
+		p {
+			margin-top:0;
+		}
+		ul li {
+			padding-top: 3px;
+		}
+		ul li sup {
+			line-height: 0;
+		}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wavedrom/2.6.8/skins/default.js" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wavedrom/2.6.8/wavedrom.min.js" type="text/javascript"></script>
+</head>
+
+<body onload="WaveDrom.ProcessAll()">
+<h1>Garrett's Workshop Maccelerator-SE 20 MHz 68HC000 Accelerator Timing</h1>
+<p>
+	Below I am presenting some timing diagrams showing the relevant signals for various interesting cases.
+</p>
+<h2>1. Back-to-Back ROM Access</h3>
+<script type="WaveDrom">{signal: [
+{name: 'BS',      wave: '2222222222',                     phase:-0.30, period: 2, data:[0,0,1,2,3,0,1,2,3,0]},
+{name: 'MCLK',    wave: 'p.........',                     phase: 0.00, period: 2},
+{name: 'A',       wave: 'x2..x2..x.',                     phase: 0.25, period: 2, data:['400000-4FFFFF','400000-4FFFFF']},
+{name: 'ROMCS',   wave: '1.x.0.........x.....0.........x.1.....',            phase:-0.75, period: 0.5},
+{name: 'RW',      wave: 'x2..x2..x.',                     phase: 0.25, period: 2, data:['read or write','read or write']},
+{name: 'AS',      wave: '1..x0........x1....x0........x1.......',            phase:-0.75, period: 0.5},
+{name: 'DS (RD)', wave: '1..x0........x1....x0........x1.......',            phase:-0.75, period: 0.5},
+{name: 'OE (RD)', wave: '1...x.0.......x.1...x.0.......x.1.....',            phase:-0.75, period: 0.5},
+{name: 'DTACK',   wave: '1.0..10..1',                     phase:-0.30, period: 2},
+{name: 'D (RD)',  wave: 'z..x..2.z..x..2.z...',           phase:-0.30},
+{name: 'D (WR)',  wave: 'z..x2...z..x2...z...',           phase: 0.00},
+]}
+</script>
+<hr/>
+<h2>2. Back-to-Back RAM Access</h3>
+<script type="WaveDrom">{signal: [
+{name: 'BS',      wave: '2222222222',                     phase:-0.30, period: 2, data:[0,0,1,2,3,0,1,2,3,0]},
+{name: 'MCLK',    wave: 'p.........',                     phase: 0.00, period: 2},
+{name: 'A',       wave: 'x2..x2..x.',                     phase: 0.25, period: 2, data:['000000-3FFFFF','000000-3FFFFF']},
+{name: 'RW',      wave: 'x2..x2..x.',                     phase: 0.25, period: 2, data:['read or write','read or write']},
+{name: 'AS',      wave: '1..x0........x1....x0........x1.......',            phase:-0.75, period: 0.5},
+{name: 'DS (RD)', wave: '1..x0........x1....x0........x1.......',            phase:-0.75, period: 0.5},
+{name: 'OE (RD)', wave: '1...x.0.......x.1...x.0.......x.1.....',            phase:-0.75, period: 0.5},
+{name: 'DS (WR)', wave: '1......x0....x1........x0....x1.......',            phase:-0.75, period: 0.5},
+{name: 'WE (WR)', wave: '1.......x.0...x.1.......x.0...x.1......',            phase:-0.75, period: 0.5},
+{name: 'DTACK',   wave: '1.0..10..1',                     phase:-0.30, period: 2},
+{name: 'D (RD)',  wave: 'z....x2.z....x2.z...',           phase:-0.30},
+{name: 'D (WR)',  wave: 'z..x2...z..x2...z...',           phase: 0.00},
+{name: 'RS',      wave: '2222222222',                     phase:-0.30, period: 2, data:[0,0,5,6,7,0,5,6,7,0]},
+{name: 'RAS',     wave: '1..0....1..0....1...',           phase:-0.30},
+{name: 'RASEL',   wave: '1.0.1.0.1.',                     phase:-0.30, period: 2},
+{name: 'RA',      wave: 'x.2.2...x.2.2...x...',           phase:-0.70, data:['row','col','row','col']},
+{name: 'CAS',     wave: '1..0.1.0.1',                     phase: 0.70, period: 2},
+]}
+</script>
+<hr/>
+<h2>3. Refresh During Idle</h3>
+<script type="WaveDrom">
+{signal: [
+{name: 'BS',      wave: '22222222222',                 phase:-0.30, period: 2, data:[0,0,0,0,0,0,0,0,0,0,0]},
+{name: 'MCLK',    wave: 'p..........',                 phase: 0.00, period: 2},
+{name: 'AS',      wave: '1....................',  phase:-0.75},
+{name: 'RS',      wave: '22222222222',                 phase:-0.30, period: 2, data:[0,0,8,12,13,14,15,0,0,0]},
+{name: 'RREQ',    wave: '01.0.......',                 phase:-0.30, period: 2},
+{name: 'RASEN',   wave: '1.0.....1..',                 phase:-0.30, period: 2},
+{name: 'RRAS',    wave: '1.....0.....1.........',  phase:-0.30},
+{name: 'RAS',     wave: '1.....0.....1.........',  phase:-0.30},
+{name: 'CAS',     wave: '1..0..1....',                 phase: 0.70, period: 2},
+]}
+</script>
+<hr/>
+<h2>4. Refresh Following Bus Transaction</h3>
+<script type="WaveDrom">
+{signal: [
+{name: 'BS',      wave: '222222',                 phase:-0.30, period: 2, data:[3,0,0,0,0,0]},
+{name: 'MCLK',    wave: 'p.....',                 phase: 0.00, period: 2},
+{name: 'AS',      wave: '1..x....................',  phase:-0.75, period:0.5},
+{name: 'RS',      wave: '222222',                 phase:-0.30, period: 2, data:['X',8,11,12,13,14,15]},
+{name: 'RREQ',    wave: '1.0...',                 phase:-0.30, period: 2},
+{name: 'RASEN',   wave: '10....',                 phase:-0.30, period: 2},
+{name: 'RRAS',    wave: '1...0...1...',  phase:-0.30},
+{name: 'RAS',     wave: '1...0...1...',  phase:-0.30},
+{name: 'CAS',     wave: '210.1.',                 phase: 0.70, period: 2},
+]}
+</script>
+<hr/>
+<h2>5. ROM Read During Refresh</h3>
+<script type="WaveDrom">
+{signal: [
+{name: 'BS',      wave: '2222222222',                     phase:-0.30, period: 2, data:[0,0,1,2,3,0,1,2,3,0]},
+{name: 'MCLK',    wave: 'p.........',                     phase: 0.00, period: 2},
+{name: 'A',       wave: 'x2..x2..x.',                     phase: 0.25, period: 2, data:['400000-4FFFFF','400000-4FFFFF']},
+{name: 'RW',      wave: 'x1..x1..x.',                     phase: 0.25, period: 2},
+{name: 'AS',      wave: '1..x0........x1....x0........x1.......',            phase:-0.75, period: 0.5},
+{name: 'DTACK',   wave: '1.0..10..1',                     phase:-0.30, period: 2},
+{name: 'ROMCS',   wave: '1.0.....1.0.....1...',           phase:-0.30},
+{name: 'OE',      wave: '1..0....1..0....1...',           phase:-0.30},
+{name: 'RS',      wave: '2222222222',                 phase:-0.30, period: 2, data:[0,11,12,13,14,15,0,0,0,0]},
+{name: 'RREQ',    wave: '1.0.......',                 phase:-0.30, period: 2},
+{name: 'RASEN',   wave: '10....1...',                 phase:-0.30, period: 2},
+{name: 'RRAS',    wave: '1...0...1...........',  phase:-0.30},
+{name: 'RAS',     wave: '1...0...1...........',  phase:-0.30},
+{name: 'CAS',     wave: '1.0.1.....',                 phase: 0.70, period: 2},
+]}
+</script>
+<hr/>
+<h2>6. RAM Access During Refresh</h3>
+<script type="WaveDrom">
+{signal: [
+{name: 'BS',      wave: '22222222222',                     phase:-0.30, period: 2, data:[0,0,0,0,0,0,0,1,2,3,0]},
+{name: 'MCLK',    wave: 'p..........',                     phase: 0.00, period: 2},
+{name: 'A',       wave: 'x2.......x.',                     phase: 0.25, period: 2, data:['000000-3FFFFF']},
+{name: 'RW',      wave: 'x2.......x.',                     phase: 0.25, period: 2},
+{name: 'AS',      wave: '1..x0............................x1........',            phase:-0.75, period: 0.5},
+{name: 'DTACK',   wave: '1......0..1',                     phase:-0.30, period: 2},
+{name: 'OE',      wave: '1..2..............1...',           phase:-0.30},
+{name: 'RS',      wave: '22222222222',                 phase:-0.30, period: 2, data:[0,11,12,13,14,15,0,5,6,7,0]},
+{name: 'RREQ',    wave: '1.0........',                 phase:-0.30, period: 2},
+{name: 'RASEN',   wave: '10....1....',                 phase:-0.30, period: 2},
+{name: 'RRAS',    wave: '1...0...1.............',  phase:-0.30},
+{name: 'RAS',     wave: '1...0...1...0.....1...',  phase:-0.30},
+{name: 'CAS',     wave: '1.0.1...0.1',                 phase: 0.70, period: 2},
+]}
+</script>
+<hr/>
+<h2>7. Write to I/O Bus With I/O Bus Idle</h3>
+<script type="WaveDrom">
+{signal: [
+{name: 'BS',      wave: '22222|22|222222', period: 2, data:['X',0,1,2,3,0,0,0,0,0,1,2,3], phase:-0.3},
+{name: 'MCLK',    wave: 'p....|..|......', period: 2},
+{name: 'A',       wave: 'x2..x|..|..2..x', phase:0.25, period: 2, data:['50-5F, 90-BF, D0-FF','50-5F, 90-BF, D0-FF']},
+{name: 'RW',      wave: 'x0..x|..|..0..x', phase:0.25, period: 2},
+{name: 'AS',      wave: '1..x0........x1.....|...........|..........x0........x1...', phase:-0.75, period: 0.5},
+{name: 'DS (WR)', wave: '1......x0....x1.....|...........|..............x0....x1...', phase:-0.75, period: 0.5},
+{name: 'DTACK',   wave: '1.0..|1.|...0.1', phase:-0.3, period: 2},
+{name: 'D (WR)',  wave: 'z..x2...z..|.....|.....x2...z.', phase:0.00},
+{name: 'PS',      wave: '22222|22|222222', period: 2, data:[0,0,3,2,2,2,0,0,0,0,3,2,2], phase:-0.3},
+{name: 'IOACT',   wave: '0....|1.|.0....', phase:-0.3, period: 2},
+{name: 'IOREQ',   wave: '0.1..|.0|...1..', phase:-0.3, period: 2},
+{name: 'ALE0',    wave: '1..0.|.1|....0.', phase:-0.3, period: 2},
+{name: 'IORW',    wave: 'x.0..|..|......', phase:-0.3, period: 2, data:['R/W', 'R/W']},
+{name: 'IOLU',    wave: 'x..2.|..|....2.', phase:-0.3, period: 2, data:['LDS, UDS', 'LDS, UDS']},
+]}
+</script>
+<hr/>
+<h2>8. Write to I/O Bus Before Previous Write Finished</h3>
+<script type="WaveDrom">
+{signal: [
+{name: 'BS',      wave: '22222|222|22222', period: 2, data:['X',0,1,2,3,0,0,0,0,0,1,2,3], phase:-0.3},
+{name: 'MCLK',    wave: 'p....|...|.....', period: 2},
+{name: 'A',       wave: 'x2..x|.2.|....x', phase:0.25, period: 2, data:['50-5F, 90-BF, D0-FF','50-5F, 90-BF, D0-FF']},
+{name: 'RW',      wave: 'x0..x|.0.|....x', phase:0.25, period: 2},
+{name: 'AS',      wave: '1..x0........x1.....|......x0.......|................x1...', phase:-0.75, period: 0.5},
+{name: 'DS (WR)', wave: '1......x0....x1.....|..........x0...|................x1...', phase:-0.75, period: 0.5},
+{name: 'DTACK',   wave: '1.0..|1..|..0.1', phase:-0.3, period: 2},
+{name: 'D (WR)',  wave: 'z..x2...z..|...x2..|........z.', phase:0.00},
+{name: 'PS',      wave: '22222|222|22222', period: 2, data:[0,0,3,2,2,2,0,0,0,0,3,2,2], phase:-0.3},
+{name: 'IOACT',   wave: '0....|1..|.0...', phase:-0.3, period: 2},
+{name: 'IOREQ',   wave: '0.1..|.01|.....', phase:-0.3, period: 2},
+{name: 'ALE0',    wave: '1..0.|.1.|...0.', phase:-0.3, period: 2},
+{name: 'IORW',    wave: 'x.0..|...|.....', phase:-0.3, period: 2, data:['R/W', 'R/W']},
+{name: 'IOLU',    wave: 'x..2.|...|...2.', phase:-0.3, period: 2, data:['LDS, UDS', 'LDS, UDS']},
+]}
+</script>
+<hr/>
+<h2>9. Write to I/O Bus Immediately After Previous Write Accepted</h3>
+<script type="WaveDrom">
+{signal: [
+{name: 'BS',      wave: '22222|222|22222', period: 2, data:['X',0,1,2,3,0,0,0,0,0,1,2,3], phase:-0.3},
+{name: 'MCLK',    wave: 'p....|...|.....', period: 2},
+{name: 'A',       wave: 'x2..x|.2.|....x', phase:0.25, period: 2, data:['50-5F, 90-BF, D0-FF','50-5F, 90-BF, D0-FF']},
+{name: 'RW',      wave: 'x0..x|.0.|....x', phase:0.25, period: 2},
+{name: 'AS',      wave: '1..x0........x1.....|......x0.......|................x1...', phase:-0.75, period: 0.5},
+{name: 'DS (WR)', wave: '1......x0....x1.....|..........x0...|................x1...', phase:-0.75, period: 0.5},
+{name: 'DTACK',   wave: '1.0..|1..|..0.1', phase:-0.3, period: 2},
+{name: 'D (WR)',  wave: 'z..x2...z..|...x2..|........z.', phase:0.00},
+{name: 'PS',      wave: '22222|222|22222', period: 2, data:[0,0,3,2,2,2,2,0,0,0,3,2,2], phase:-0.3},
+{name: 'IOACT',   wave: '0....|.1.|.0...', phase:-0.3, period: 2},
+{name: 'IOREQ',   wave: '0.1..|...|.....', phase:-0.3, period: 2},
+{name: 'ALE0',    wave: '1..0.|..1|...0.', phase:-0.3, period: 2},
+{name: 'IORW',    wave: 'x.0..|...|.....', phase:-0.3, period: 2, data:['R/W', 'R/W']},
+{name: 'IOLU',    wave: 'x..2.|...|...2.', phase:-0.3, period: 2, data:['LDS, UDS', 'LDS, UDS']},
+]}
+</script>
+<hr/>
+<h2>10. Write to I/O Bus Before Previous Write Accepted</h3>
+<script type="WaveDrom">
+{signal: [
+{name: 'BS',      wave: '2222222|22|2222', period: 2, data:['X',0,1,2,3,0,0,0,0,0,1,2,3], phase:-0.3},
+{name: 'MCLK',    wave: 'p......|..|....', period: 2},
+{name: 'A',       wave: 'x2..x2.|..|...x', phase:0.25, period: 2, data:['50-5F, 90-BF, D0-FF','50-5F, 90-BF, D0-FF']},
+{name: 'RW',      wave: 'x0..x0.|..|...x', phase:0.25, period: 2},
+{name: 'AS',      wave: '1..x0........x1....x0.......|...........|............x1...', phase:-0.75, period: 0.5},
+{name: 'DS (WR)', wave: '1......x0....x1........x0...|...........|............x1...', phase:-0.75, period: 0.5},
+{name: 'DTACK',   wave: '1.0..1.|..|.0.1', phase:-0.3, period: 2},
+{name: 'D (WR)',  wave: 'z..x2...z..x2..|.....|......z.', phase:0.00},
+{name: 'PS',      wave: '2222222|22|2222', period: 2, data:[0,0,3,2,2,2,2,2,0,0,3,2,2], phase:-0.3},
+{name: 'IOACT',   wave: '0......|1.|0...', phase:-0.3, period: 2},
+{name: 'IOREQ',   wave: '0.1....|..|....', phase:-0.3, period: 2},
+{name: 'ALE0',    wave: '1..0...|.1|..0.', phase:-0.3, period: 2},
+{name: 'IORW',    wave: 'x.0....|..|....', phase:-0.3, period: 2, data:['R/W', 'R/W']},
+{name: 'IOLU',    wave: 'x..2...|..|..2.', phase:-0.3, period: 2, data:['LDS, UDS', 'LDS, UDS']},
+]}
+</script>
+<hr/>
+<h2>11. Read from I/O Bus With I/O Bus Idle</h3>
+<script type="WaveDrom">
+{signal: [
+{name: 'BS',      wave: '2222|22|22222', period: 2, data:[0,0,0,0,0,0,0,1,2,3,0], phase:-0.3},
+{name: 'MCLK',    wave: 'p...|..|.....', period: 2},
+{name: 'A',       wave: 'x2..|..|...x.', phase:0.25, period: 2, data:['50-5F, 90-BF, D0-FF','50-5F, 90-BF, D0-FE']},
+{name: 'RW',      wave: 'x1..|..|...x.', phase:0.25, period: 2},
+{name: 'AS',      wave: '1..x0...........|...........|............x1.......', phase:-0.75, period: 0.5},
+{name: 'DS',      wave: '1..x0...........|...........|............x1.......', phase:-0.75, period: 0.5},
+{name: 'DTACK',   wave: '1...|..|.0..1', phase:-0.3, period: 2},
+{name: 'D',       wave: 'z..x.....|.....|..2...z...', phase:0.00},
+{name: 'PS',      wave: '2222|22|22222', period: 2, data:[0,0,3,2,2,1,1,0,0,0,0,0], phase:-0.3},
+{name: 'IOACT',   wave: '0...|1.|0....', phase:-0.3, period: 2},
+{name: 'IOREQ',   wave: '0.1.|.0|.....', phase:-0.3, period: 2},
+{name: 'ALE0',    wave: '1..0|.1|.....', phase:-0.3, period: 2},
+{name: 'IORW',    wave: 'x.1.|..|.....', phase:-0.3, period: 2, data:['R/W', 'R/W']},
+{name: 'IOLU',    wave: 'x..2|..|.....', phase:-0.3, period: 2, data:['LDS, UDS', 'LDS, UDS']},
+]}
+</script>
+<hr/>
+<h2>12. Read from I/O Bus Before Previous Write Finished</h3>
+<script type="WaveDrom">
+{signal: [
+{name: 'BS',      wave: '222|222|22|2222', period: 2, data:[0,0,0,0,0,0,0,0,0,1,2,3], phase:-0.3},
+{name: 'MCLK',    wave: 'p..|...|..|....', period: 2},
+{name: 'A',       wave: 'x2.|...|..|...x', phase:0.25, period: 2, data:['50-5F, 90-BF, D0-FF','50-5F, 90-BF, D0-FE']},
+{name: 'RW',      wave: 'x1.|...|..|...x', phase:0.25, period: 2},
+{name: 'AS',      wave: '1..x0.......|...............|...........|............x1...', phase:-0.75, period: 0.5},
+{name: 'DS',      wave: '1..x0.......|...............|...........|............x1...', phase:-0.75, period: 0.5},
+{name: 'DTACK',   wave: '1..|...|..|.0..', phase:-0.3, period: 2},
+{name: 'D',       wave: 'z..x...|.......|.....|....2.z.', phase:0.00},
+{name: 'PS',      wave: '222|222|22|2222', period: 2, data:[0,0,0,0,3,2,2,1,1,0,0,0,0,0], phase:-0.3},
+{name: 'IOACT',   wave: '1..|0..|1.|0...', phase:-0.3, period: 2},
+{name: 'IOREQ',   wave: '0.1|...|.0|....', phase:-0.3, period: 2},
+{name: 'ALE0',    wave: '1..|..0|.1|....', phase:-0.3, period: 2},
+{name: 'IORW',    wave: '0..|.1.|..|....', phase:-0.3, period: 2, data:['R/W', 'R/W']},
+{name: 'IOLU',    wave: 'x..|..2|..|....', phase:-0.3, period: 2, data:['LDS, UDS', 'LDS, UDS']},
+]}
+</script>
+<hr/>
+<h2>13. Read from I/O Bus Immediately After Previous Write Accepted</h3>
+<script type="WaveDrom">
+{signal: [
+{name: 'BS',      wave: '222|222|22|2222', period: 2, data:[0,0,0,0,0,0,0,0,0,1,2,3], phase:-0.3},
+{name: 'MCLK',    wave: 'p..|...|..|....', period: 2},
+{name: 'A',       wave: 'x2.|...|..|...x', phase:0.25, period: 2, data:['50-5F, 90-BF, D0-FF','50-5F, 90-BF, D0-FE']},
+{name: 'RW',      wave: 'x1.|...|..|...x', phase:0.25, period: 2},
+{name: 'AS',      wave: '1..x0.......|...............|...........|............x1...', phase:-0.75, period: 0.5},
+{name: 'DS',      wave: '1..x0.......|...............|...........|............x1...', phase:-0.75, period: 0.5},
+{name: 'DTACK',   wave: '1..|...|..|.0..', phase:-0.3, period: 2},
+{name: 'D',       wave: 'z..x...|.......|.....|..2...z.', phase:0.00},
+{name: 'PS',      wave: '222|222|22|2222', period: 2, data:[2,2,0,0,3,2,2,1,1,0,0,0,0,0], phase:-0.3},
+{name: 'IOACT',   wave: '01.|0..|1.|0...', phase:-0.3, period: 2},
+{name: 'IOREQ',   wave: '101|...|.0|....', phase:-0.3, period: 2},
+{name: 'ALE0',    wave: '1..|..0|.1|....', phase:-0.3, period: 2},
+{name: 'IORW',    wave: '0..|.1.|..|....', phase:-0.3, period: 2, data:['R/W', 'R/W']},
+{name: 'IOLU',    wave: 'x..|..2|..|....', phase:-0.3, period: 2, data:['LDS, UDS', 'LDS, UDS']},
+]}
+</script>
+<hr/>
+<h2>14. Read from I/O Bus Before Previous Write Accepted</h3>
+<script type="WaveDrom">
+{signal: [
+{name: 'BS',      wave: '222|22|222|22|', period: 2, data:[0,0,0,0,0,0,0,0,0,0,0,0,1,2,3], phase:-0.3},
+{name: 'MCLK',    wave: 'p..|..|...|..|', period: 2},
+{name: 'A',       wave: 'x2.|..|...|..|', phase:0.25, period: 2, data:['50-5F, 90-BF, D0-FF','50-5F, 90-BF, D0-FE']},
+{name: 'RW',      wave: 'x1.|..|...|..|', phase:0.25, period: 2},
+{name: 'AS',      wave: '1..x0.......|...........|...............|...........|...', phase:-0.75, period: 0.5},
+{name: 'DS',      wave: '1..x0.......|...........|...............|...........|...', phase:-0.75, period: 0.5},
+{name: 'DTACK',   wave: '1..|..|...|..|', phase:-0.3, period: 2},
+{name: 'D',       wave: 'z..x...|.....|.......|.....|', phase:0.00},
+{name: 'PS',      wave: '222|22|222|22|', period: 2, data:[2,2,2,2,0,0,3,2,2,1,1,0,0,0,0,0], phase:-0.3},
+{name: 'IOACT',   wave: '0..|1.|0..|1.|', phase:-0.3, period: 2},
+{name: 'IOREQ',   wave: '0..|.1|...|..|', phase:-0.3, period: 2},
+{name: 'ALE0',    wave: '1..|..|..0|.1|', phase:-0.3, period: 2},
+{name: 'IORW',    wave: '0..|..|.1.|..|', phase:-0.3, period: 2, data:['R/W', 'R/W']},
+{name: 'IOLU',    wave: 'x..|..|..2|..|', phase:-0.3, period: 2, data:['LDS, UDS', 'LDS, UDS']},
+]}
+</script>
+<hr/>
+<h2>15. Interrupt Acknowledge Cycle Terminated by VPA</h3>
+<script type="WaveDrom">
+{signal: [
+{name: 'BS',      wave: '22|2222|222', period: 2, data:[0,0,0,1,2,3,3,3,0], phase:-0.3},
+{name: 'MCLK',    wave: 'p.|....|...', period: 2},
+{name: 'A',       wave: '2.|....|.x.', phase:0.25, period: 2, data:['FF000000-FFFFFFFF']},
+{name: 'RW',      wave: '1.|....|.x.', phase:0.25, period: 2},
+{name: 'AS',      wave: '0.......|...................|....x1.......', phase:-0.75, period: 0.5},
+{name: 'DS',      wave: '0.......|...................|....x1.......', phase:-0.75, period: 0.5},
+{name: 'VPA',     wave: '1.|.0..|..1', phase:-0.3, period: 2},
+{name: 'D',       wave: 'x....|2........|..z...', phase:0.00},
+{name: 'PS',      wave: '22|2222|222', period: 2, data:[2,1,1,0,0,0,0,0], phase:-0.3},
+{name: 'IOACT',   wave: '1.|0...|...', phase:-0.3, period: 2},
+{name: 'IOREQ',   wave: '10|....|...', phase:-0.3, period: 2},
+{name: 'ALE0',    wave: '01|....|...', phase:-0.3, period: 2},
+{name: 'IORW',    wave: '1.|....|...', phase:-0.3, period: 2, data:['R/W', 'R/W']},
+{name: 'IOLU',    wave: '2.|....|...', phase:-0.3, period: 2, data:['LDS, UDS', 'LDS, UDS']},
+]}
+</script>
+<h2>16. BERR Watchdog Timeout</h3>
+<script type="WaveDrom">
+{signal: [
+{name: 'MCLK',    wave: 'p....|.....',              period: 2},
+{name: 'A',       wave: 'x2...|...x.', phase: 0.25, period: 2, data:['00-4F, 60-8F, C0-CF']},
+{name: 'RW',      wave: 'x2...|...x.', phase:0.25, period: 2, data:['read or write']},
+{name: 'AS',      wave: '1..x0...............|............x1.........',            phase:-0.75, period: 0.5},
+{name: 'WDCNT',   wave: '22222|222x2', phase:-0.30, period: 2, data:[0,0,1,2,'...','3F','3F','3F',0]},
+{name: 'BERR',    wave: '1....|.0.x1', phase:-0.30, period: 2},
+]}
+</script>
+<hr/>
+<h2>17. BERR Watchdog Timeout Just Missed</h3>
+<script type="WaveDrom">
+{signal: [
+{name: 'MCLK',    wave: 'p....|.....',              period: 2},
+{name: 'A',       wave: 'x2...|...x.', phase: 0.25, period: 2, data:['00-4F, 60-8F, C0-CF']},
+{name: 'RW',      wave: 'x2...|...x.', phase:0.25, period: 2, data:['read or write']},
+{name: 'AS',      wave: '1..x0...............|............x1.........',            phase:-0.75, period: 0.5},
+{name: 'WDCNT',   wave: '22222|222x2', phase:-0.30, period: 2, data:[0,0,1,2,'...','3D','3E','3F',0]},
+{name: 'BERR',    wave: '1....|...x1', phase:-0.30, period: 2},
+]}
+</script>
+<hr/>
+<h2>18. IO Bus E State, VMA, "ETACK"</h3>
+<script type="WaveDrom">
+{signal: [
+{name: 'C16M',    wave: 'p...........................',              period: 1},
+{name: 'C8M',     wave: '0101010101010101010101010101', phase:-0.25, period: 1},
+{name: 'E',       wave: '10.....1...0..',               phase: 0.90, period: 2},
+{name: 'Er',      wave: '10.....1...0..',               phase:-0.40, period: 2},
+{name: 'Er2',     wave: '1..0...........1.......0....', phase:-0.10, period: 1},
+{name: 'ES',      wave: '2222222222222222222222222222',              period: 1, data:[18,19,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,0,1,2,3,4,5]},
+{name: 'IOACT',   wave: 'x........2x.................',              period: 1},
+{name: 'VPA',     wave: 'x........2x.................',              period: 1},
+{name: 'VMA',     wave: '1.........2............1....',              period: 1},
+{name: 'ETACK',   wave: '1..................21.......',              period: 1},
+]}
+</script>
+<hr/>
+<h2>19. IO Bus Access (Even Phase)</h3>
+<script type="WaveDrom">
+{signal: [
+{name: 'IOS',     wave:'22222222222222222222|222222', period: 1,data:[0,0,0,0,0,0,1,2,3,4,5,6,7,0,1,2,3,4,5,5,5,6,7,0,0,0,0]},
+{name: 'C16M',    wave:'p...................|......', period: 1},
+{name: 'C8M',     wave:'10101010101010101010|101010', phase:-0.25, period: 1},
+{name: 'C8Mr',    wave:'01010101010101010101|010101', phase:-0.10, period: 1},
+{name: 'AS',      wave:'1.....0....1..0.....|.1....', phase:-0.60, period: 1}, 
+{name: 'DTACK',   wave:'x.........0x......1x|2x....', phase:-0.10, period: 1},
+{name: 'ETACK',   wave:'x.........1x......1x|2x....', phase:-0.10, period: 1},
+{name: 'BERR',    wave:'x.........1x......1x|1x....', phase:-0.10, period: 1},
+{name: 'IOACT',   wave:'0.....1....0..1.....|.0....', phase:-0.10, period: 1},
+{name: 'IOREQ',   wave:'0....1x......1x.....|...0..', phase:-0.60, period: 1},
+{name: 'ALE',     wave:'1.....0......10.....|...1..', phase:-0.10, period: 1},
+{name: 'DoutLE',  wave:'1.....0......10.....|...1..', phase:-0.10, period: 1},
+{name: 'DinLE',   wave:'0........1.0.....1..|.0....', phase:-0.60, period: 1},
+]} 
+</script>
+<hr/>
+<h2>20. IO Bus Access (Odd Phase)</h3>
+<script type="WaveDrom">
+{signal: [
+{name: 'IOS',     wave:'22222222222222222222|222222',period: 1,data:[0,0,0,0,0,0,1,2,3,4,5,6,7,0,1,2,3,4,5,5,5,6,7,0,0,0,0]},
+{name: 'C16M',    wave:'p...................|......', period: 1},
+{name: 'C8M',     wave:'10101010101010101010|101010', phase:-0.25, period: 1},
+{name: 'C8Mr',    wave:'01010101010101010101|010101', phase:-0.10, period: 1},
+{name: 'AS',      wave:'1.....0....1..0.....|.1....', phase:-0.60, period: 1}, 
+{name: 'DTACK',   wave:'x.........0x......1x|2x....', phase:-0.10, period: 1},
+{name: 'ETACK',   wave:'x.........1x......1x|2x....', phase:-0.10, period: 1},
+{name: 'BERR',    wave:'x.........1x......1x|1x....', phase:-0.10, period: 1},
+{name: 'IOACT',   wave:'0....1.....0..1.....|.0....', phase:-0.10, period: 1},
+{name: 'IOREQ',   wave:'0...1x.......1x.....|....0.', phase:-0.60, period: 1},
+{name: 'ALE',     wave:'1....0.......10.....|...1..', phase:-0.10, period: 1},
+{name: 'DoutLE',  wave:'1....0.......10.....|...1..', phase:-0.10, period: 1},
+{name: 'DinLE',   wave:'0........1.0.....1..|.0....', phase:-0.60, period: 1},
+]} 
+</script>
+<hr/>
+<h2>21. Posted Write State Machine - Single Read/Write</h3>
+<script type="WaveDrom">
+{signal: [
+{name: 'MCLK',    wave: 'p..|..|..', period: 2},
+{name: 'AS&IO',   wave: '01.|..|..', period: 2, phase:-0.3},
+{name: 'PS',      wave: '222|22|22', period: 2, data:[0,2,2,2,1,1,0], phase:-0.3},
+{name: 'IOACT',   wave: '0..|1.|0.', phase:-0.3, period: 2},
+{name: 'IOREQ',   wave: '01.|.0|..', phase:-0.3, period: 2},
+{name: 'ALE0',    wave: '1.0|.1|..', phase:-0.3, period: 2},
+{name: 'IORW0',   wave: 'x1.|..|..', phase:-0.3, period: 2, data:['R/W', 'R/W']},
+{name: 'IOLU0',   wave: 'x.2|..|..', phase:-0.3, period: 2, data:['LDS, UDS', 'LDS, UDS']},
+]}
+</script>
+<hr/>
+<h2>22. Posted Write State Machine - Two Writes, FIFO never full</h3>
+<script type="WaveDrom">
+{signal: [
+{name: 'MCLK',    wave: 'p..|..|....|..|..', period: 2},
+{name: 'AS&IO',   wave: '01.|..|.01.|..|..', period: 2, phase:-0.3},
+{name: 'PS',      wave: '222|22|2222|22|22', period: 2, data:[0,2,2,2,1,1,0,2,2,2,1,1,0], phase:-0.3},
+{name: 'IOACT',   wave: '0..|1.|0...|1.|0.', phase:-0.3, period: 2},
+{name: 'IOREQ',   wave: '01.|.0|..1.|.0|..', phase:-0.3, period: 2},
+{name: 'ALE0',    wave: '1.0|.1|...0|.1|..', phase:-0.3, period: 2},
+{name: 'IORW0',   wave: 'x0.|..|..0.|..|..', phase:-0.3, period: 2, data:['R/W', 'R/W']},
+{name: 'IOLU0',   wave: 'x.2|..|...2|..|..', phase:-0.3, period: 2, data:['LDS, UDS', 'LDS, UDS']},
+]}
+</script>
+<hr/>
+<h2>23. Posted Write State Machine - Two Writes, FIFO filled (0)</h3>
+<script type="WaveDrom">
+{signal: [
+{name: 'MCLK',    wave: 'p..|..|.....|..|..', period: 2},
+{name: 'AS&IO',   wave: '01.|..|01...|..|..', period: 2, phase:-0.3},
+{name: 'IORDY',   wave: '101|..|.0..1|..|..', phase:-0.3, period: 2},
+{name: 'PS',      wave: '222|22|22222|22|22', period: 2, data:[0,2,2,2,1,1,0,2,2,2,2,1,1,0], phase:-0.3},
+{name: 'IOACT',   wave: '0..|1.|0....|1.|0.', phase:-0.3, period: 2},
+{name: 'IOREQ',   wave: '01.|.0|.1...|.0|..', phase:-0.3, period: 2},
+{name: 'ALE1',    wave: '1..|..|.0..1|..|..', phase:-0.3, period: 2},
+{name: 'IORW1',   wave: 'x..|..|.0...|..|..', phase:-0.3, period: 2, data:['R/W', 'R/W']},
+{name: 'IOLU1',   wave: 'x..|..|..2..|..|..', phase:-0.3, period: 2, data:['LDS, UDS', 'LDS, UDS']},
+{name: 'ALE0',    wave: '1.0|.1|...0.|.1|..', phase:-0.3, period: 2},
+{name: 'IORW0',   wave: 'x0.|..|..0..|..|..', phase:-0.3, period: 2, data:['R/W', 'R/W']},
+{name: 'IOLU0',   wave: 'x.2|..|...2.|..|..', phase:-0.3, period: 2, data:['LDS, UDS', 'LDS, UDS']},
+]}
+</script>
+<hr/>
+<h2>24. Posted Write State Machine - Two Writes, FIFO filled (1)</h3>
+<script type="WaveDrom">
+{signal: [
+{name: 'MCLK',    wave: 'p..|....|.....|..|..', period: 2},
+{name: 'AS&IO',   wave: '01.|.01.|.....|..|..', period: 2, phase:-0.3},
+{name: 'IORDY',   wave: '101|..0.|....1|..|..', phase:-0.3, period: 2},
+{name: 'PS',      wave: '222|2222|22222|22|22', period: 2, data:[0,2,2,2,1,1,1,1,0,2,2,2,2,1,1,0], phase:-0.3},
+{name: 'IOACT',   wave: '0..|1...|0....|1.|0.', phase:-0.3, period: 2},
+{name: 'IOREQ',   wave: '01.|.01.|.....|.0|..', phase:-0.3, period: 2},
+{name: 'ALE1',    wave: '1..|..0.|....1|..|..', phase:-0.3, period: 2},
+{name: 'IORW1',   wave: 'x..|..0.|.....|..|..', phase:-0.3, period: 2, data:['R/W', 'R/W']},
+{name: 'IOLU1',   wave: 'x..|...2|.....|..|..', phase:-0.3, period: 2, data:['LDS, UDS', 'LDS, UDS']},
+{name: 'ALE0',    wave: '1.0|.1..|...0.|.1|..', phase:-0.3, period: 2},
+{name: 'IORW0',   wave: 'x0.|....|..0..|..|..', phase:-0.3, period: 2, data:['R/W', 'R/W']},
+{name: 'IOLU0',   wave: 'x.2|....|...2.|..|..', phase:-0.3, period: 2, data:['LDS, UDS', 'LDS, UDS']},
+]}
+</script>
+<hr/>
+<h2>25. Posted Write State Machine - Two Writes, FIFO filled (2)</h3>
+<script type="WaveDrom">
+{signal: [
+{name: 'MCLK',    wave: 'p..|....|.....|..|..', period: 2},
+{name: 'AS&IO',   wave: '01.|01..|.....|..|..', period: 2, phase:-0.3},
+{name: 'IORDY',   wave: '101|.0..|....1|..|..', phase:-0.3, period: 2},
+{name: 'PS',      wave: '222|2222|22222|22|22', period: 2, data:[0,2,2,2,1,1,1,1,0,2,2,2,2,1,1,0], phase:-0.3},
+{name: 'IOACT',   wave: '0..|1...|0....|1.|0.', phase:-0.3, period: 2},
+{name: 'IOREQ',   wave: '01.|....|.....|.0|..', phase:-0.3, period: 2},
+{name: 'ALE1',    wave: '1..|.0..|....1|..|..', phase:-0.3, period: 2},
+{name: 'IORW1',   wave: 'x..|.0..|.....|..|..', phase:-0.3, period: 2, data:['R/W', 'R/W']},
+{name: 'IOLU1',   wave: 'x..|..2.|.....|..|..', phase:-0.3, period: 2, data:['LDS, UDS', 'LDS, UDS']},
+{name: 'ALE0',    wave: '1.0|.1..|...0.|.1|..', phase:-0.3, period: 2},
+{name: 'IORW0',   wave: 'x0.|....|..0..|..|..', phase:-0.3, period: 2, data:['R/W', 'R/W']},
+{name: 'IOLU0',   wave: 'x.2|....|...2.|..|..', phase:-0.3, period: 2, data:['LDS, UDS', 'LDS, UDS']},
+]}
+</script>
+<hr/>
+<h2>26. Posted Write State Machine - Two Writes, FIFO filled (3)</h3>
+<script type="WaveDrom">
+{signal: [
+{name: 'MCLK',    wave: 'p....|..|.....|..|..', period: 2},
+{name: 'AS&IO',   wave: '0101.|0.|.....|..|..', period: 2, phase:-0.3},
+{name: 'IORDY',   wave: '1.10.|..|....1|..|..', phase:-0.3, period: 2},
+{name: 'PS',      wave: '22222|22|22222|22|22', period: 2, data:[0,2,2,2,2,2,1,1,0,2,2,2,2,1,1,0], phase:-0.3},
+{name: 'IOACT',   wave: '0....|1.|0....|1.|0.', phase:-0.3, period: 2},
+{name: 'IOREQ',   wave: '01...|..|.....|.0|..', phase:-0.3, period: 2},
+{name: 'ALE1',    wave: '1..0.|..|....1|..|..', phase:-0.3, period: 2},
+{name: 'IORW1',   wave: 'x..0.|..|.....|..|..', phase:-0.3, period: 2, data:['R/W', 'R/W']},
+{name: 'IOLU1',   wave: 'x...2|..|.....|..|..', phase:-0.3, period: 2, data:['LDS, UDS', 'LDS, UDS']},
+{name: 'ALE0',    wave: '1.0..|.1|...0.|.1|..', phase:-0.3, period: 2},
+{name: 'IORW0',   wave: 'x0...|..|..0..|..|..', phase:-0.3, period: 2, data:['R/W', 'R/W']},
+{name: 'IOLU0',   wave: 'x.2..|..|...2.|..|..', phase:-0.3, period: 2, data:['LDS, UDS', 'LDS, UDS']},
+]}
+</script>
+<hr/>
+
+</body>
+
+</html>
