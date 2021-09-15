@@ -9,8 +9,8 @@ module IOB(
 	output reg nDinOE, output reg nDoutOE,
 
 	/* FSB interface */
-	output reg IOACTV, input IOREQ, input nADLEEN, output reg ETACK
-	input nLDS, input nUDS, input nWE)
+	output reg IOACTV, input IOREQ, input nADLEEN,
+	input nLDS, input nUDS, input nWE);
 
 	/* E state synchronization */
 	reg [4:0] ES;
@@ -23,6 +23,7 @@ module IOB(
 	end
 
 	/* ETACK and VMA generation */
+	output reg ETACK;
 	always @(posedge C16M) begin
 		if (ES==7) nVMA <= ~(IOACTV && nVPA);
 		else if (ES==20) nVMA <= 1;
@@ -41,8 +42,8 @@ module IOB(
 		if (S==0 && IOREQr) begin
 			TMlatched = 1;
 			if (~TMlatched) begin
-				LDS <= ~nLDS;
-				UDS <= ~nUDS;
+				LDSr <= ~nLDS;
+				UDSr <= ~nUDS;
 				WEr <= ~nWE;
 			end
 		end else if (S==0) begin

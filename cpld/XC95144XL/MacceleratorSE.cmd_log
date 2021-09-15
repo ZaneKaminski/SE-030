@@ -1,0 +1,3 @@
+xst -intstyle ise -ifn "C:/Users/Dog/Documents/GitHub/SE-030/cpld/XC95144XL/MacceleratorSE.xst" -ofn "C:/Users/Dog/Documents/GitHub/SE-030/cpld/XC95144XL/MacceleratorSE.syr" 
+xst -intstyle ise -ifn "C:/Users/Dog/Documents/GitHub/SE-030/cpld/XC95144XL/MacceleratorSE.xst" -ofn "C:/Users/Dog/Documents/GitHub/SE-030/cpld/XC95144XL/MacceleratorSE.syr" 
+xst -intstyle ise -ifn "C:/Users/Dog/Documents/GitHub/SE-030/cpld/XC95144XL/MacceleratorSE.xst" -ofn "C:/Users/Dog/Documents/GitHub/SE-030/cpld/XC95144XL/MacceleratorSE.syr" 
