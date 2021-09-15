@@ -1,0 +1,170 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Reading design: MacceleratorSE.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "MacceleratorSE.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "MacceleratorSE"
+Output Format                      : NGC
+Target Device                      : XC9500XL CPLDs
+
+---- Source Options
+Top Module Name                    : MacceleratorSE
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+
+---- Target Options
+Add IO Buffers                     : YES
+MACRO Preserve                     : YES
+XOR Preserve                       : YES
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : Yes
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Verilog 2001                       : YES
+
+---- Other Options
+Clock Enable                       : YES
+wysiwyg                            : NO
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "../IOB.v" in library work
+ERROR:HDLCompilers:27 - "../IOB.v" line 13 Illegal redeclaration of 'nLDS'
+ERROR:HDLCompilers:27 - "../IOB.v" line 13 Illegal redeclaration of 'nUDS'
+Module <IOB> compiled
+ERROR:HDLCompilers:26 - "../IOB.v" line 26 expecting 'endmodule', found 'output'
+Compiling verilog file "../FSB.v" in library work
+ERROR:HDLCompilers:28 - "../FSB.v" line 29 'CLK' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 32 'Overlay' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 33 'Overlay' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 34 'Overlay' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 35 'Overlay' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 36 'Overlay' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 37 'Overlay' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 55 'Overlay' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 56 'Overlay' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 57 'Overlay' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 58 'Overlay' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 59 'Overlay' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 60 'Overlay' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 74 'RAMCycle' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 74 'RS' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 74 'RS' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 74 'RREQPH' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 74 'RREQPL' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 75 'BS' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 75 'RS' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 75 'IOReadyWR' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 76 'BS' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 79 'BS' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 80 'ROMStart' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 80 'BS' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 80 'RS' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 81 'EmptyStart' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 81 'BS' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 82 'CardStart' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 82 'BS' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 83 'IOReadyRD' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 83 'IOReadyWR' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 83 'BS' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 84 'IOReadyRD' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 84 'IOReadyWR' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 84 'BS' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 89 'S' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 91 'S' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 96 'S' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 101 'S' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 106 'S' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 111 'S' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 115 'S' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 120 'S' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 126 'S' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 128 'IACycle' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 129 'S' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 130 'IACycle' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 131 'IACycle' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 133 'S' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 138 'S' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 144 'S' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 145 'S' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 146 'S' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 151 'S' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 153 'S' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 157 'S' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 163 'S' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 164 'S' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 167 'S' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 168 'S' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 170 'S' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 171 'S' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 181 'S' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 206 'RS' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 211 'RREQL1' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 229 'RS' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 230 'RS' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 231 'RS' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 232 'RS' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 233 'RS' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 238 'RAMCycle' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 239 'ExRowAddrHold' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 257 'RREQ' has not been declared
+ERROR:HDLCompilers:28 - "../FSB.v" line 313 'RREQ' has not been declared
+Compiling verilog file "Maccelerator-SE.v" in library work
+Module <FSB> compiled
+Module <MacceleratorSE> compiled
+Analysis of file <"MacceleratorSE.prj"> failed.
+--> 
+
+Total memory usage is 236476 kilobytes
+
+Number of errors   :   78 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

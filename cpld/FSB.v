@@ -13,7 +13,7 @@ module FSB(
 	input Wait,
 
 	/* IO bus interface */
-	input IOACTV, output reg IOREQ, output reg nADLEEN, input nBERRMac)
+	input IOACTV, output reg IOREQ, output reg nADLEEN, input nBERRMac);
 
 	/* Reset synchronization */
 	reg nRESr0, nRESr1;
@@ -38,26 +38,26 @@ module FSB(
 	wire TopRAMSEL = RAMSEL && (A[23:20]==4'h3 || A[23:20]==4'h7) && A[19:16]==4'hF;
 	wire VidRAMSEL = TopRAMSEL && (
 		((A[15:12]==4'h2 || A[15:12]==4'hA) && 
-			A[11:8]=!4'h0 && A[11:8]=!4'h1 && A[11:8]=!4'h2 && A[11:8]=!4'h3 && 
-			A[11:8]=!4'h4 && A[11:8]=!4'h5 && A[11:8]=!4'h6) || 
+			A[11:8]!=4'h0 && A[11:8]!=4'h1 && A[11:8]!=4'h2 && A[11:8]!=4'h3 && 
+			A[11:8]!=4'h4 && A[11:8]!=4'h5 && A[11:8]!=4'h6) || 
 		((A[15:12]==4'h3 || A[15:12]==4'hB)) || 
 		((A[15:12]==4'h4 || A[15:12]==4'hC)) || 
 		((A[15:12]==4'h5 || A[15:12]==4'hD)) || 
 		((A[15:12]==4'h6 || A[15:12]==4'hE)) || 
 		((A[15:12]==4'h7 || A[15:12]==4'hF) && 
-			A[11:8]!=4'hD && A[11:8]!=4'hE && A[11:8]!=4'hF);
+			A[11:8]!=4'hD && A[11:8]!=4'hE && A[11:8]!=4'hF));
 	wire SndRAMSEL = TopRAMSEL && (
 						(A[15:12]==4'hF && 
 							(A[11:8]==4'hD || A[11:8]==4'hE || A[11:8]==4'hF)) ||
 						(A[15:12]==4'hA && 
-							(A[11:8]==4'h1 || A[11:8]==4'h2 || A[11:8]==4'h3)) ||;
+							(A[11:8]==4'h1 || A[11:8]==4'h2 || A[11:8]==4'h3)));
 	wire ROMSEL = A[23:20]==4'h4 ||
 				 (A[23:20]==4'h0 && Overlay);
 	wire EmptySEL =	(A[23:20]==4'h1 &&  Overlay) ||
 		   			(A[23:20]==4'h2 &&  Overlay) ||
 					(A[23:20]==4'h3 &&  Overlay) ||
 					(A[23:20]==4'h6 && !Overlay) ||
-					(A[23:20]==4'h7 && !Overlay)) ||
+					(A[23:20]==4'h7 && !Overlay) ||
 					 A[23:20]==4'hA;
 	wire CardSEL = A[23:20]==4'h8 || A[23:20]==4'hC;
 	wire FSEL = RAMSEL || ROMSEL || EmptySEL || CardSEL;
@@ -68,7 +68,7 @@ module FSB(
 				  A[23:20]==4'hD || // IWM
 				  A[23:20]==4'hE || // VIA
 				  (~nWE && (VidRAMSEL || SndRAMSEL)); // Video/Sound buffers
-	wire IASEL =  A[23:20]==4'hF // IACK
+	wire IASEL =  A[23:20]==4'hF; // IACK
 
 	/* Devie Access Cycle Start Signals */
 	wire RefStart = ~RAMCycle && (RS==0 || RS==7) && (RREQPH || (RREQPL && ~nAS));
@@ -102,7 +102,7 @@ module FSB(
 				nDTACK <= 0;
 				nVPA <= 1;
 				IOREQ <= 0;
-			end e else if (CardTerm) begin
+			end else if (CardTerm) begin
 				S <= 1;
 				nDTACK <= 0;
 				nVPA <= 1;
@@ -203,7 +203,7 @@ module FSB(
 		if (RCNT==0) begin
 			RREQPH <= 0;
 			RREQPL <= 1;
-		else if (RS==4'h8) begin
+		end else if (RS==4'h8) begin
 			RREQPH <= 0;
 			RREQPL <= 0;
 		end else begin

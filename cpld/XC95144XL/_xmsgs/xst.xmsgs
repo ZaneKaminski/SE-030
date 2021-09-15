@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="error" file="HDLCompilers" num="27" delta="old" ><arg fmt="%s" index="1">&quot;../IOB.v&quot; line 13 </arg>Illegal redeclaration of &apos;<arg fmt="%s" index="2">nLDS</arg>&apos;
+</msg>
+
+<msg type="error" file="HDLCompilers" num="27" delta="old" ><arg fmt="%s" index="1">&quot;../IOB.v&quot; line 13 </arg>Illegal redeclaration of &apos;<arg fmt="%s" index="2">nUDS</arg>&apos;
+</msg>
+
+<msg type="error" file="HDLCompilers" num="26" delta="old" >&quot;<arg fmt="%s" index="1">../IOB.v</arg>&quot; line <arg fmt="%d" index="2">26</arg> <arg fmt="%s" index="3">expecting &apos;endmodule&apos;, found &apos;output&apos;</arg>
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 29 </arg>&apos;<arg fmt="%s" index="2">CLK</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 32 </arg>&apos;<arg fmt="%s" index="2">Overlay</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 33 </arg>&apos;<arg fmt="%s" index="2">Overlay</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 34 </arg>&apos;<arg fmt="%s" index="2">Overlay</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 35 </arg>&apos;<arg fmt="%s" index="2">Overlay</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 36 </arg>&apos;<arg fmt="%s" index="2">Overlay</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 37 </arg>&apos;<arg fmt="%s" index="2">Overlay</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 55 </arg>&apos;<arg fmt="%s" index="2">Overlay</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 56 </arg>&apos;<arg fmt="%s" index="2">Overlay</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 57 </arg>&apos;<arg fmt="%s" index="2">Overlay</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 58 </arg>&apos;<arg fmt="%s" index="2">Overlay</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 59 </arg>&apos;<arg fmt="%s" index="2">Overlay</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 60 </arg>&apos;<arg fmt="%s" index="2">Overlay</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 74 </arg>&apos;<arg fmt="%s" index="2">RAMCycle</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 74 </arg>&apos;<arg fmt="%s" index="2">RS</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 74 </arg>&apos;<arg fmt="%s" index="2">RS</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 74 </arg>&apos;<arg fmt="%s" index="2">RREQPH</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 74 </arg>&apos;<arg fmt="%s" index="2">RREQPL</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 75 </arg>&apos;<arg fmt="%s" index="2">BS</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 75 </arg>&apos;<arg fmt="%s" index="2">RS</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 75 </arg>&apos;<arg fmt="%s" index="2">IOReadyWR</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 76 </arg>&apos;<arg fmt="%s" index="2">BS</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 79 </arg>&apos;<arg fmt="%s" index="2">BS</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 80 </arg>&apos;<arg fmt="%s" index="2">ROMStart</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 80 </arg>&apos;<arg fmt="%s" index="2">BS</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 80 </arg>&apos;<arg fmt="%s" index="2">RS</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 81 </arg>&apos;<arg fmt="%s" index="2">EmptyStart</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 81 </arg>&apos;<arg fmt="%s" index="2">BS</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 82 </arg>&apos;<arg fmt="%s" index="2">CardStart</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 82 </arg>&apos;<arg fmt="%s" index="2">BS</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 83 </arg>&apos;<arg fmt="%s" index="2">IOReadyRD</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 83 </arg>&apos;<arg fmt="%s" index="2">IOReadyWR</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 83 </arg>&apos;<arg fmt="%s" index="2">BS</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 84 </arg>&apos;<arg fmt="%s" index="2">IOReadyRD</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 84 </arg>&apos;<arg fmt="%s" index="2">IOReadyWR</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 84 </arg>&apos;<arg fmt="%s" index="2">BS</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 89 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 91 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 96 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 101 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 106 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 111 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 115 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 120 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 126 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 128 </arg>&apos;<arg fmt="%s" index="2">IACycle</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 129 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 130 </arg>&apos;<arg fmt="%s" index="2">IACycle</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 131 </arg>&apos;<arg fmt="%s" index="2">IACycle</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 133 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 138 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 144 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 145 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 146 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 151 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 153 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 157 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 163 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 164 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 167 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 168 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 170 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 171 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 181 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 206 </arg>&apos;<arg fmt="%s" index="2">RS</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 211 </arg>&apos;<arg fmt="%s" index="2">RREQL1</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 229 </arg>&apos;<arg fmt="%s" index="2">RS</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 230 </arg>&apos;<arg fmt="%s" index="2">RS</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 231 </arg>&apos;<arg fmt="%s" index="2">RS</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 232 </arg>&apos;<arg fmt="%s" index="2">RS</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 233 </arg>&apos;<arg fmt="%s" index="2">RS</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 238 </arg>&apos;<arg fmt="%s" index="2">RAMCycle</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 239 </arg>&apos;<arg fmt="%s" index="2">ExRowAddrHold</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 257 </arg>&apos;<arg fmt="%s" index="2">RREQ</arg>&apos; has not been declared
+</msg>
+
+<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 313 </arg>&apos;<arg fmt="%s" index="2">RREQ</arg>&apos; has not been declared
+</msg>
+
+</messages>
+
