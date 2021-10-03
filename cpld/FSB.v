@@ -1,11 +1,14 @@
 module FSB(
 	/* MC68HC000 interface */
-	input FCLK,
-	output reg nDTACK, output reg nVPA,
-
+	input FCLK, output reg nDTACK, output reg nVPA, output nBERR,
+	/* PDS interface */
+	input nBERRMac,
+	/* AS detection */
 	output ASActive, output ASInactive,
-
-	input Ready, input IACS);
+	/* Ready and IA inputs */
+	input Ready, input IACS,
+	/* Refresh request */
+	output RefReq, output RefUrgent, input RefAck);
 
 	/* AS detection */
 	reg ASrf = 0;
@@ -29,8 +32,8 @@ module FSB(
 	/* Refresh counter */
 	reg [7:0] RefCnt = 0;
 	reg RefDone = 0;
-	wire RefReq = ~RefDone;
-	wire RefUrgent = RefS[7] && ~RefDone;
+	assign RefReq = ~RefDone;
+	assign RefUrgent = RefS[7] && ~RefDone;
 	always @(posedge FCLK) begin
 		RefCnt <= RefCnt+1;
 		if (RefCnt==0) RefDone <= 0;

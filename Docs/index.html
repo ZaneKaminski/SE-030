@@ -68,13 +68,14 @@
 
 <h3 id="t0">0. Generic MC68000 bus cycle</h3>
 <script type="WaveDrom">{signal: [
-{name: 'MCLK',    wave: 'p..|...',                     phase: 0.00, period: 2},
-{name: 'A',       wave: 'x2.|.x.',                     phase: 0.25, period: 2},
+{name: 'MCLK',     wave: 'p..|...',                     phase: 0.00, period: 2},
+{name: 'A',        wave: 'x2.|.x.',                     phase: 0.25, period: 2},
 {name: 'R/W',      wave: 'x..1...|..x...',                     phase: 0.25, period: 1},
 {name: '/AS',      wave: '1...x0.......|....x1....x..',            phase:-0.25, period: 0.5},
 {name: '/DS (RD)', wave: '1...x0.......|....x1....x..',            phase:-0.25, period: 0.5},
 {name: '/DS (WR)', wave: '1.......x0...|....x1....x..',            phase:-0.25, period: 0.5},
-{name: 'BACTV',   wave: '0.1|..0',                     phase:-0.20, period: 2},
+{name: 'ASACTV',   wave: '1...x0.......|....x1....x..',            phase:-0.25, period: 0.5},
+{name: 'ASINACTV', wave: '1...x.....0..|........1.x..',            phase:-0.25, period: 0.5},
 ]}
 </script><br/><p>
 For starters, it is instructive to look at a generic MC68000 bus cycle. <br/>
@@ -83,9 +84,10 @@ Primarily, /AS falls after a rising edge of the clock but rises after a falling 
 Since the worst-case clock-to-output delay of MC68000 is equal to half of one clock cycle, <br/>
 attempting to detect bus activity by registering /AS strictly on the rising or falling edge 
 would result in entrance into a metastable state. <br/>
-Therefore we introduce the "bus actv" BACTV signal. BACTV changes after the rising edge of the clock. <br/>
-BACTV is enabled when /AS is registered low and stays enabled until /AS is registered high on a rising edge 
-as well as the falling edge immediately prior. <br/>
+Therefore we introduce the "AS active" and "AS inactive" signals. ASACTV is simply the negation of /AS. <br/>
+ASINACTV, however, is the conjunction of /AS and /AS as registered on the previous falling edge. <br/>
+With ASACTV and ASINACTV, we understand a bus cycle to be active starting on a rising edge with ASACTV
+and then inactive on the first rising edge with ASINACTV.
 </p>
 
 
@@ -103,19 +105,14 @@ as well as the falling edge immediately prior. <br/>
 {name: 'DTACK',   wave: '1.0..10..1',                     phase:-0.20, period: 2},
 {name: 'D (RD)',  wave: 'z..x..2.z..x..2.z...',           phase:-0.30},
 {name: 'D (WR)',  wave: 'z......x.2......z......x.2......z.......',           phase:-0.30, period:0.5},
-{name: 'BACTV',   wave: '0.1..01...',                     phase:-0.20, period: 2},
 ]}
 </script><br/><p>
-This diagram introduces the simplest memory access type, a read from ROM memory.
+This diagram introduces the simplest memory access type, a read from ROM memory. ROM control is completely asynchronous.<br/>
 </p><p>
-The ROM /CS signal is implemented as an asynchronous decode of the address bus.
+The ROM /CS signal is implemented as a decode of the address bus.
 Similarly, the /OE signal is an asynchronous function of LDS, UDS, and /WE. <br/>
 The /OE signal is shared by the RAM and ROM, so therefore it is critical that the ROMCS signal not be tied low, 
 otherwise bus contention will occur during RAM reads.
-</p><p>
-Concurrent with BACTV going high, if a ROM address (in the range $400000-$4FFFFF) is present, then /DTACK is asserted. <br/>
-For /VPA-terminated accesses, VPA would be asserted at this time. 
-Both /DTACK and /VPA remain asserted until the same time at which BACTV is removed.
 </p>
 
 

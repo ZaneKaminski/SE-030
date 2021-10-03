@@ -1,6 +1,12 @@
 module CS(
-	input A[23:20], output FCS, output IOCS, output IACS,
-	output ROMCS, output RAMCS, output VidRAMCS, output SndRAMCS);
+	/* High-order address input */
+	input A[23:20], 
+	/* Bus domain select outputs */
+	output FCS, output IOCS,
+	/* Device select outputs */
+	output IACS, output ROMCS, output RAMCS,
+	/* Video/sound RAM select outputs */
+	output VidRAMCS, output SndRAMCS);
 
 	/* Select signals - FSB domain */
 	assign RAMCS = (A[23:02]==4'h0 && ~Overlay) ||

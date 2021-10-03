@@ -1,16 +1,13 @@
 module IOBS(
 	/* MC68HC000 interface */
 	input CLK, input nWE,
-
 	/* FSB interface */
-	input IOCS, input ASActive, input ASInactive, output Ready,
-
+	input ASActive, input ASInactive, input IOCS, output Ready,
 	/* Read data OE control */
 	output nDinOE,
-
 	/* IOB Master Controller Interface */
-	reg IOREQ, input IOACT, reg ALE0, reg ALE1,
-	reg IORW0, reg IOL0, reg IOU0);
+	output reg IOREQ, input IOACT, output reg ALE0, output reg ALE1,
+	output reg IORW0, output reg IOL0, output reg IOU0);
 
 	/* Read data OE control */
 	assign nDinOE = IOCS && nWE;

@@ -1,13 +1,10 @@
 module IOBM(
 	/* PDS interface */
 	input C16M, input C8M, input E,
-	output reg nAS, output reg nLDS, output reg nUDS,
-	output reg nVMA,  
+	output reg nAS, output reg nLDS, output reg nUDS, output reg nVMA,  
 	input nDTACK, input nVPA, input nBERR,
-
 	/* PDS address and data latch control */
 	output nAoutOE, output reg nDoutOE, output nADoutLE, output reg nDinLE,
-
 	/* IO bus slave port interface */
 	output reg IOACT, input IOREQ, input nADLEEN,
 	input IOLDS, input IOUDS, input IOWE);

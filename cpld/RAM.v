@@ -3,13 +3,10 @@ module RAM(
 	input CLK,
 	input [21:1] A, input nWE,
 	input nAS, input nLDS, input nUDS,
-
 	/* FSB interface */
-	input RAMCS, input ROMCS, input ASActive, input ASInactive, output Ready,
-
+	input ASActive, input ASInactive, input RAMCS, input ROMCS, output Ready,
 	/* Refresh Counter Interface */
 	input RefReq, input RefUrgent, output RefAck,
-	
 	/* DRAM and NOR flash interface */
 	output [11:0] RA, output nRAS, output reg nCAS,
 	output nLWE, output nUWE, output nOE, 
