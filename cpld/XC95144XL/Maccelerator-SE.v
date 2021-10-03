@@ -24,9 +24,9 @@ module MacceleratorSE(
 	input nLDS_FSB,
 	input nUDS_FSB,
 	input nWE_FSB,
-	input nDTACK_FSB,
-	input nVPA_FSB,
-	input nBERR_FSB,
+	output nDTACK_FSB,
+	output nVPA_FSB,
+	output nBERR_FSB,
 	input CLK_FSB,
 	input CLK2X_IOB,
 	input CLK_IOB,
@@ -38,8 +38,7 @@ module MacceleratorSE(
 	output nUDS_IOB,
 	output nLDS_IOB,
 	input nBERR_IOB,
-	input nRESETin,
-	output nRESETout,
+	input nRES,
 	output nROMCS,
 	output nRAMCS,
 	output nRAMLWE,
@@ -54,14 +53,19 @@ module MacceleratorSE(
 	output nAoutOE,
 	output nDoutOE,
 	output nDinOE,
-	input nDinLE);
+	output nDinLE);
+	
+	reg nRESr0 = 0;
+	reg nRESr1 = 1;
+	always @(negedge CLK_FSB) begin nRESr0 <= nRES; end
+	always @(posedge CLK_FSB) begin nRESr1 <= nRESr0; end
 
 	wire FCS, IOCS;
 	wire IACS, ROMCS, RAMCS;
 	wire VidRAMCS, SndRAMCS;
-	module CS(
+	CS cs(
 		/* High-order address input */
-		A_FSB[23:20], 
+		A_FSB[23:08], CLK_FSB, nRESr0, nWE_FSB,
 		/* Bus domain select outputs */
 		FCS, IOCS,
 		/* Device select outputs */
@@ -70,28 +74,18 @@ module MacceleratorSE(
 		VidRAMCS, SndRAMCS);
 
 	wire ASActive, ASInactive;
-	wire Ready = Ready_IOBS && Ready_RAM;
 	wire RefReq, RefUrgent;
-	module FSB(
-		/* MC68HC000 interface */
-		CLK_FSB, nDTACK_FSB, nVPA, nBERR_FSB,
-		/* PDS interface */
-		nBERR_IOB,
-		/* AS detection */
-		ASActive, ASInactive,
-		/* Ready and IA inputs */
-		Ready, IACS,
-		/* Refresh request */
-		RefReq, RefUrgent, RefAck);
+	
+	wire IOACT;
 
 	wire Ready_IOBS;
 	wire IOREQ;
 	wire ALE0, ALE1;
 	assign nADoutLE1 = ~ALE1;
 	wire IORW0, IOL0, IOU0;
-	module IOBS(
+	IOBS iobs(
 		/* MC68HC000 interface */
-		CLK_FSB, nWE_FSB,
+		CLK_FSB, nWE_FSB, nLDS_FSB, nUDS_FSB,
 		/* FSB interface */
 		ASActive, ASInactive, IOCS, Ready_IOBS,
 		/* Read data OE control */
@@ -103,7 +97,7 @@ module MacceleratorSE(
 
 	wire Ready_RAM;
 	wire RefAck;
-	module RAM(
+	RAM ram(
 		/* MC68HC000 interface */
 		CLK_FSB, A_FSB[21:1], nWE_FSB,
 		nAS_FSB, nLDS_FSB, nUDS_FSB,
@@ -116,8 +110,7 @@ module MacceleratorSE(
 		nRAMLWE, nRAMUWE, nOE, 
 		nROMCS, nROMWE);
 
-	wire IOACT;
-	module IOBM(
+	IOBM iobm(
 		/* PDS interface */
 		CLK2X_IOB, CLK_IOB, E_IOB,
 		nAS_IOB, nLDS_IOB, nUDS_IOB, nVMA_IOB,  
@@ -127,5 +120,18 @@ module MacceleratorSE(
 		/* IO bus slave port interface */
 		IOACT, IOREQ, ALE0,
 		IOLDS0, IOUDS0, IORW0);
+		
+	wire Ready = Ready_IOBS && Ready_RAM;
+	FSB fsb(
+		/* MC68HC000 interface */
+		CLK_FSB, nAS_FSB, nDTACK_FSB, nVPA_FSB, nBERR_FSB, IOCS, FCS,
+		/* PDS interface */
+		nBERR_IOB,
+		/* AS detection */
+		ASActive, ASInactive,
+		/* Ready and IA inputs */
+		Ready, IACS,
+		/* Refresh request */
+		RefReq, RefUrgent, RefAck);
 
 endmodule

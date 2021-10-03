@@ -5,238 +5,86 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="error" file="HDLCompilers" num="27" delta="old" ><arg fmt="%s" index="1">&quot;../IOB.v&quot; line 13 </arg>Illegal redeclaration of &apos;<arg fmt="%s" index="2">nLDS</arg>&apos;
+<msg type="warning" file="Xst" num="1305" delta="old" >Output &lt;<arg fmt="%s" index="1">Ready</arg>&gt; is never assigned. Tied to value <arg fmt="%s" index="2">0</arg>.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="27" delta="old" ><arg fmt="%s" index="1">&quot;../IOB.v&quot; line 13 </arg>Illegal redeclaration of &apos;<arg fmt="%s" index="2">nUDS</arg>&apos;
+<msg type="warning" file="Xst" num="1305" delta="old" >Output &lt;<arg fmt="%s" index="1">ALE0</arg>&gt; is never assigned. Tied to value <arg fmt="%s" index="2">0</arg>.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="26" delta="old" >&quot;<arg fmt="%s" index="1">../IOB.v</arg>&quot; line <arg fmt="%d" index="2">26</arg> <arg fmt="%s" index="3">expecting &apos;endmodule&apos;, found &apos;output&apos;</arg>
+<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">IOWRReady</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 29 </arg>&apos;<arg fmt="%s" index="2">CLK</arg>&apos; has not been declared
+<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">IORDReady</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 32 </arg>&apos;<arg fmt="%s" index="2">Overlay</arg>&apos; has not been declared
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">nBERR</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 33 </arg>&apos;<arg fmt="%s" index="2">Overlay</arg>&apos; has not been declared
+<msg type="warning" file="Xst" num="1306" delta="old" >Output &lt;<arg fmt="%s" index="1">nRAMCS</arg>&gt; is never assigned.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 34 </arg>&apos;<arg fmt="%s" index="2">Overlay</arg>&apos; has not been declared
+<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">nRESr1</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 35 </arg>&apos;<arg fmt="%s" index="2">Overlay</arg>&apos; has not been declared
+<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">VidRAMCS</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 36 </arg>&apos;<arg fmt="%s" index="2">Overlay</arg>&apos; has not been declared
+<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">SndRAMCS</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 37 </arg>&apos;<arg fmt="%s" index="2">Overlay</arg>&apos; has not been declared
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">IOUDS0</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">0</arg>.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 55 </arg>&apos;<arg fmt="%s" index="2">Overlay</arg>&apos; has not been declared
+<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">IOU0</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 56 </arg>&apos;<arg fmt="%s" index="2">Overlay</arg>&apos; has not been declared
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">IOLDS0</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">0</arg>.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 57 </arg>&apos;<arg fmt="%s" index="2">Overlay</arg>&apos; has not been declared
+<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">IOL0</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 58 </arg>&apos;<arg fmt="%s" index="2">Overlay</arg>&apos; has not been declared
+<msg type="warning" file="Xst" num="1426" delta="old" >The value init of the FF/Latch <arg fmt="%s" index="1">0</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">nUDS</arg>.
+You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 59 </arg>&apos;<arg fmt="%s" index="2">Overlay</arg>&apos; has not been declared
+<msg type="warning" file="Xst" num="1426" delta="old" >The value init of the FF/Latch <arg fmt="%s" index="1">0</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">nLDS</arg>.
+You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 60 </arg>&apos;<arg fmt="%s" index="2">Overlay</arg>&apos; has not been declared
+<msg type="warning" file="Xst" num="1898" delta="old" >Due to constant pushing, FF/Latch &lt;<arg fmt="%s" index="1">0</arg>&gt; is unconnected in block &lt;<arg fmt="%s" index="2">RAMReady</arg>&gt;.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 74 </arg>&apos;<arg fmt="%s" index="2">RAMCycle</arg>&apos; has not been declared
+<msg type="warning" file="Xst" num="1898" delta="old" >Due to constant pushing, FF/Latch &lt;<arg fmt="%s" index="1">0</arg>&gt; is unconnected in block &lt;<arg fmt="%s" index="2">ADoutLE</arg>&gt;.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 74 </arg>&apos;<arg fmt="%s" index="2">RS</arg>&apos; has not been declared
+<msg type="warning" file="Xst" num="1426" delta="old" >The value init of the FF/Latch <arg fmt="%s" index="1">nUDS</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">iobm</arg>.
+You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 74 </arg>&apos;<arg fmt="%s" index="2">RS</arg>&apos; has not been declared
+<msg type="warning" file="Xst" num="1426" delta="old" >The value init of the FF/Latch <arg fmt="%s" index="1">nLDS</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">iobm</arg>.
+You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 74 </arg>&apos;<arg fmt="%s" index="2">RREQPH</arg>&apos; has not been declared
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">Load1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">iobs</arg>&gt;.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 74 </arg>&apos;<arg fmt="%s" index="2">RREQPL</arg>&apos; has not been declared
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">IOU0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">iobs</arg>&gt;.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 75 </arg>&apos;<arg fmt="%s" index="2">BS</arg>&apos; has not been declared
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">IOL0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">iobs</arg>&gt;.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 75 </arg>&apos;<arg fmt="%s" index="2">RS</arg>&apos; has not been declared
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">IOU1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">iobs</arg>&gt;.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 75 </arg>&apos;<arg fmt="%s" index="2">IOReadyWR</arg>&apos; has not been declared
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">IOL1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">iobs</arg>&gt;.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 76 </arg>&apos;<arg fmt="%s" index="2">BS</arg>&apos; has not been declared
+<msg type="warning" file="Xst" num="1898" delta="old" >Due to constant pushing, FF/Latch &lt;<arg fmt="%s" index="1">RAMReady</arg>&gt; is unconnected in block &lt;<arg fmt="%s" index="2">ram</arg>&gt;.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 79 </arg>&apos;<arg fmt="%s" index="2">BS</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 80 </arg>&apos;<arg fmt="%s" index="2">ROMStart</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 80 </arg>&apos;<arg fmt="%s" index="2">BS</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 80 </arg>&apos;<arg fmt="%s" index="2">RS</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 81 </arg>&apos;<arg fmt="%s" index="2">EmptyStart</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 81 </arg>&apos;<arg fmt="%s" index="2">BS</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 82 </arg>&apos;<arg fmt="%s" index="2">CardStart</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 82 </arg>&apos;<arg fmt="%s" index="2">BS</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 83 </arg>&apos;<arg fmt="%s" index="2">IOReadyRD</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 83 </arg>&apos;<arg fmt="%s" index="2">IOReadyWR</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 83 </arg>&apos;<arg fmt="%s" index="2">BS</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 84 </arg>&apos;<arg fmt="%s" index="2">IOReadyRD</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 84 </arg>&apos;<arg fmt="%s" index="2">IOReadyWR</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 84 </arg>&apos;<arg fmt="%s" index="2">BS</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 89 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 91 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 96 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 101 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 106 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 111 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 115 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 120 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 126 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 128 </arg>&apos;<arg fmt="%s" index="2">IACycle</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 129 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 130 </arg>&apos;<arg fmt="%s" index="2">IACycle</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 131 </arg>&apos;<arg fmt="%s" index="2">IACycle</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 133 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 138 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 144 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 145 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 146 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 151 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 153 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 157 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 163 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 164 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 167 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 168 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 170 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 171 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 181 </arg>&apos;<arg fmt="%s" index="2">S</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 206 </arg>&apos;<arg fmt="%s" index="2">RS</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 211 </arg>&apos;<arg fmt="%s" index="2">RREQL1</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 229 </arg>&apos;<arg fmt="%s" index="2">RS</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 230 </arg>&apos;<arg fmt="%s" index="2">RS</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 231 </arg>&apos;<arg fmt="%s" index="2">RS</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 232 </arg>&apos;<arg fmt="%s" index="2">RS</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 233 </arg>&apos;<arg fmt="%s" index="2">RS</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 238 </arg>&apos;<arg fmt="%s" index="2">RAMCycle</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 239 </arg>&apos;<arg fmt="%s" index="2">ExRowAddrHold</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 257 </arg>&apos;<arg fmt="%s" index="2">RREQ</arg>&apos; has not been declared
-</msg>
-
-<msg type="error" file="HDLCompilers" num="28" delta="old" ><arg fmt="%s" index="1">&quot;../FSB.v&quot; line 313 </arg>&apos;<arg fmt="%s" index="2">RREQ</arg>&apos; has not been declared
+<msg type="warning" file="Xst" num="1898" delta="old" >Due to constant pushing, FF/Latch &lt;<arg fmt="%s" index="1">ADoutLE</arg>&gt; is unconnected in block &lt;<arg fmt="%s" index="2">iobm</arg>&gt;.
 </msg>
 
 </messages>

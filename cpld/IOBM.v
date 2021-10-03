@@ -13,19 +13,29 @@ module IOBM(
 	reg IOREQr = 0;
 	always @(negedge C16M) begin IOREQr <= IOREQ; end
 
-	/* PDS address and data latch control */
-	assign nAoutOE = 0;
-	reg ADoutLE = 0;
-	assign nADoutLE = ~(ADoutLE || ~nADLEEN);
-	always @(negedge C16M) begin nDinLE <= IOS==4 || IOS==5; end
+	/* E clock state */
+	reg [4:0] ES;
+	reg Er;
+	reg Er2;
+	always @(negedge C8M) begin Er <= E; end
+	always @(posedge C16M) begin Er2 <= Er; end
 	always @(posedge C16M) begin
-		nDoutOE <= ~(IOWE && (IOS==1 || IOS==2 || IOS==3 || 
-							  IOS==4 || IOS==5 || IOS==6));
+		if (~Er && Er2) ES <= 1;
+		else if (ES==0 || ES==19) ES <= 0;
+		else ES <= ES+1;
+	end
 
+	/* ETACK and VMA generation */
+	reg ETACK = 0;
+	always @(posedge C16M) begin ETACK <= ES==16 && ~nVMA; end
+	always @(posedge C16M) begin
+		if (ES==7 && IOACT && ~nVPA) nVMA <= 0;
+		else if (ES==0) nVMA <= 1;
 	end
 
 	/* I/O bus state */
 	reg [2:0] IOS = 0;
+	reg ADoutLE = 0;
 	always @(posedge C16M) begin
 		if (IOS==0) begin
 			if (IOREQr) begin
@@ -77,33 +87,22 @@ module IOBM(
 		end
 	end
 
+	/* PDS address and data latch control */
+	assign nAoutOE = 0;
+	assign nADoutLE = ~(ADoutLE || ~nADLEEN);
+	always @(negedge C16M) begin nDinLE <= IOS==4 || IOS==5; end
+	always @(posedge C16M) begin
+		nDoutOE <= ~(IOWE && (IOS==1 || IOS==2 || IOS==3 || 
+							  IOS==4 || IOS==5 || IOS==6));
+	end
+
 	/* AS, DS control */
 	always @(negedge C16M) begin
-		nAS <= ~(S==1 || S==2 || S==3 || S==4 || S==5);
+		nAS <= ~(IOS==1 || IOS==2 || IOS==3 || IOS==4 || IOS==5);
 	end
 	always @(negedge C16M) begin
-		nLDS <= ~(IOLDS && (((S==1 || S==2) && ~IOWE) || S==3 || S==4 || S==5));
-		nUDS <= ~(IOUDS && (((S==1 || S==2) && ~IOWE) || S==3 || S==4 || S==5));
-	end
-
-	/* E clock state */
-	reg [4:0] ES;
-	reg Er;
-	reg Er2;
-	always @(negedge C8M) begin Er <= E; end
-	always @(posedge C16M) begin Er2 <= Er; end
-	always @(posedge C16M) begin
-		if (~Er && Er2) ES <= 1;
-		else if (ES==0 || ES==19) ES <= 0;
-		else ES <= ES+1;
-	end
-
-	/* ETACK and VMA generation */
-	reg ETACK = 0;
-	always @(posedge C16M) begin ETACK <= ES==16 && ~nVMA; end
-	always @(posedge C16M) begin
-		if (ES==7 && IOACT && ~nVPA) nVMA <= 0;
-		else if (ES==0) nVMA <= 1;
+		nLDS <= ~(IOLDS && (((IOS==1 || IOS==2) && ~IOWE) || IOS==3 || IOS==4 || IOS==5));
+		nUDS <= ~(IOUDS && (((IOS==1 || IOS==2) && ~IOWE) || IOS==3 || IOS==4 || IOS==5));
 	end
 
 endmodule

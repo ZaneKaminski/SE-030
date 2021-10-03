@@ -1,6 +1,6 @@
 module IOBS(
 	/* MC68HC000 interface */
-	input CLK, input nWE,
+	input CLK, input nWE, input nLDS, input nUDS,
 	/* FSB interface */
 	input ASActive, input ASInactive, input IOCS, output Ready,
 	/* Read data OE control */
@@ -8,11 +8,41 @@ module IOBS(
 	/* IOB Master Controller Interface */
 	output reg IOREQ, input IOACT, output reg ALE0, output reg ALE1,
 	output reg IORW0, output reg IOL0, output reg IOU0);
+	
+	/* IOACT input synchronization */
+	reg IOACTr = 0;
+	always @(posedge CLK) begin IOACTr <= IOACT; end
 
 	/* Read data OE control */
 	assign nDinOE = IOCS && nWE;
-
+	
 	reg [1:0] PS = 0;
+	reg Once = 0;
+
+	/* FIFO Secondary Level Control */
+	reg IORW1;
+	reg IOL1;
+	reg IOU1;
+	reg Load1;
+	reg IOWRReady;
+	always @(posedge CLK) begin
+		if (PS!=0 && ASActive && IOCS && ~Once && ~ALE1) begin
+			ALE1 <= 1;
+			IOWRReady <= 0;
+			IORW1 <= nWE;
+			Load1 <= 1;
+		end else begin
+			if (PS==3) ALE1 <= 0;
+			if (~ALE1 || PS==3) IOWRReady <= 1;
+			Load1 <= 0;
+		end
+
+		if (Load1) begin
+			IOL1 <= ~nLDS;
+			IOU1 <= ~nUDS;
+		end
+	end
+	
 	/* FIFO Primary Level Control */
 	always @(posedge CLK) begin
 		if (PS==0) begin
@@ -53,32 +83,7 @@ module IOBS(
 		end
 	end
 
-	/* FIFO Secondary Level Control */
-	reg IORW1;
-	reg IOL1;
-	reg IOU1;
-	reg Load1;
-	reg IOWRReady;
-	always @(posedge CLK) begin
-		if (PS!=0 && ASActive && IOCS && ~Once && ~ALE1) begin
-			ALE1 <= 1;
-			IOWRReady <= 0;
-			IORW1 <= nWE;
-			Load1 <= 1;
-		end else begin
-			if (PS==3) ALE1 <= 0;
-			if (~ALE1 || PS==3) IOWRReady <= 1;
-			Load1 <= 0;
-		end
-
-		if (Load1) begin
-			IOL1 <= ~nLDS;
-			IOU1 <= ~nUDS;
-		end
-	end
-
 	/* Once and ready control */
-	reg Once = 0;
 	reg IORDReady;
 	always @(posedge CLK) begin
 		if (PS!=0 && ASActive && IOCS) Once <= 1;

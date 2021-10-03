@@ -1,6 +1,6 @@
 module FSB(
 	/* MC68HC000 interface */
-	input FCLK, output reg nDTACK, output reg nVPA, output nBERR,
+	input FCLK, input nAS, output reg nDTACK, output reg nVPA, output nBERR, input IOCS, input FCS,
 	/* PDS interface */
 	input nBERRMac,
 	/* AS detection */
@@ -25,7 +25,7 @@ module FSB(
 			if (Ready) begin
 				nDTACK <= IACS;
 				nVPA <= ~IACS;
-			end else begin
+			end 
 		end
 	end
 
@@ -33,7 +33,7 @@ module FSB(
 	reg [7:0] RefCnt = 0;
 	reg RefDone = 0;
 	assign RefReq = ~RefDone;
-	assign RefUrgent = RefS[7] && ~RefDone;
+	assign RefUrgent = RefCnt[7] && ~RefDone;
 	always @(posedge FCLK) begin
 		RefCnt <= RefCnt+1;
 		if (RefCnt==0) RefDone <= 0;
