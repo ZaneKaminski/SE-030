@@ -1,6 +1,40 @@
-xst -intstyle ise -ifn "C:/Users/zanek/Documents/GitHub/SE-030/cpld/XC95144/MacceleratorSE.xst" -ofn "C:/Users/zanek/Documents/GitHub/SE-030/cpld/XC95144/MacceleratorSE.syr" 
-ngdbuild -intstyle ise -dd _ngo -i -p xc95144xl-TQ100-10 MacceleratorSE.ngc MacceleratorSE.ngd  
-cpldfit -intstyle ise -p xc95144xl-10-TQ100 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper MacceleratorSE.ngd 
-xst -intstyle ise -ifn "C:/Users/zanek/Documents/GitHub/SE-030/cpld/XC95144/MacceleratorSE.xst" -ofn "C:/Users/zanek/Documents/GitHub/SE-030/cpld/XC95144/MacceleratorSE.syr" 
-ngdbuild -intstyle ise -dd _ngo -i -p xc95144xl-TQ100-10 MacceleratorSE.ngc MacceleratorSE.ngd  
-cpldfit -intstyle ise -p xc95144xl-10-TQ100 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper MacceleratorSE.ngd 
+xst -intstyle ise -ifn "C:/Users/Zane/Documents/GitHub/SE-030/cpld/XC95144/MacceleratorSE.xst" -ofn "C:/Users/Zane/Documents/GitHub/SE-030/cpld/XC95144/MacceleratorSE.syr" 
+ngdbuild -intstyle ise -dd _ngo -i -p xc95144xl-TQ144-10 MacceleratorSE.ngc MacceleratorSE.ngd  
+cpldfit -intstyle ise -p xc95144xl-10-TQ144 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper MacceleratorSE.ngd 
+xst -intstyle ise -ifn "C:/Users/Zane/Documents/GitHub/SE-030/cpld/XC95144/MacceleratorSE.xst" -ofn "C:/Users/Zane/Documents/GitHub/SE-030/cpld/XC95144/MacceleratorSE.syr" 
+ngdbuild -intstyle ise -dd _ngo -i -p xc95144xl-TQ144-10 MacceleratorSE.ngc MacceleratorSE.ngd  
+cpldfit -intstyle ise -p xc95144xl-10-TQ144 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper MacceleratorSE.ngd 
+xst -intstyle ise -ifn "C:/Users/Zane/Documents/GitHub/SE-030/cpld/XC95144/MacceleratorSE.xst" -ofn "C:/Users/Zane/Documents/GitHub/SE-030/cpld/XC95144/MacceleratorSE.syr" 
+ngdbuild -intstyle ise -dd _ngo -i -p xc95144xl-TQ144-10 MacceleratorSE.ngc MacceleratorSE.ngd  
+cpldfit -intstyle ise -p xc95144xl-10-TQ144 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper MacceleratorSE.ngd 
+xst -intstyle ise -ifn "C:/Users/Zane/Documents/GitHub/SE-030/cpld/XC95144/MacceleratorSE.xst" -ofn "C:/Users/Zane/Documents/GitHub/SE-030/cpld/XC95144/MacceleratorSE.syr" 
+xst -intstyle ise -ifn "C:/Users/Zane/Documents/GitHub/SE-030/cpld/XC95144/MacceleratorSE.xst" -ofn "C:/Users/Zane/Documents/GitHub/SE-030/cpld/XC95144/MacceleratorSE.syr" 
+ngdbuild -intstyle ise -dd _ngo -i -p xc95144xl-TQ144-10 MacceleratorSE.ngc MacceleratorSE.ngd  
+cpldfit -intstyle ise -p xc95144xl-10-TQ144 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper MacceleratorSE.ngd 
+XSLTProcess MacceleratorSE_build.xml 
+tsim -intstyle ise MacceleratorSE MacceleratorSE.nga 
+hprep6 -s IEEE1149 -n MacceleratorSE -i MacceleratorSE 
+xst -intstyle ise -ifn "C:/Users/Zane/Documents/GitHub/SE-030/cpld/XC95144/MacceleratorSE.xst" -ofn "C:/Users/Zane/Documents/GitHub/SE-030/cpld/XC95144/MacceleratorSE.syr" 
+ngdbuild -intstyle ise -dd _ngo -i -p xc95144xl-TQ144-10 MacceleratorSE.ngc MacceleratorSE.ngd  
+cpldfit -intstyle ise -p xc95144xl-10-TQ144 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper MacceleratorSE.ngd 
+XSLTProcess MacceleratorSE_build.xml 
+tsim -intstyle ise MacceleratorSE MacceleratorSE.nga 
+hprep6 -s IEEE1149 -n MacceleratorSE -i MacceleratorSE 
+xst -intstyle ise -ifn "C:/Users/Zane/Documents/GitHub/SE-030/cpld/XC95144/MacceleratorSE.xst" -ofn "C:/Users/Zane/Documents/GitHub/SE-030/cpld/XC95144/MacceleratorSE.syr" 
+ngdbuild -intstyle ise -dd _ngo -i -p xc95144xl-TQ144-10 MacceleratorSE.ngc MacceleratorSE.ngd  
+cpldfit -intstyle ise -p xc95144xl-10-TQ144 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper MacceleratorSE.ngd 
+xst -intstyle ise -ifn "C:/Users/Zane/Documents/GitHub/SE-030/cpld/XC95144/MacceleratorSE.xst" -ofn "C:/Users/Zane/Documents/GitHub/SE-030/cpld/XC95144/MacceleratorSE.syr" 
+ngdbuild -intstyle ise -dd _ngo -i -p xc95144xl-TQ144-10 MacceleratorSE.ngc MacceleratorSE.ngd  
+cpldfit -intstyle ise -p xc95144xl-10-TQ144 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper MacceleratorSE.ngd 
+XSLTProcess MacceleratorSE_build.xml 
+tsim -intstyle ise MacceleratorSE MacceleratorSE.nga 
+hprep6 -s IEEE1149 -n MacceleratorSE -i MacceleratorSE 
+xst -intstyle ise -ifn "C:/Users/Zane/Documents/GitHub/SE-030/cpld/XC95144/MacceleratorSE.xst" -ofn "C:/Users/Zane/Documents/GitHub/SE-030/cpld/XC95144/MacceleratorSE.syr" 
+ngdbuild -intstyle ise -dd _ngo -i -p xc95144xl-TQ144-10 MacceleratorSE.ngc MacceleratorSE.ngd  
+cpldfit -intstyle ise -p xc95144xl-10-TQ144 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper MacceleratorSE.ngd 
+xst -intstyle ise -ifn "C:/Users/Zane/Documents/GitHub/SE-030/cpld/XC95144/MacceleratorSE.xst" -ofn "C:/Users/Zane/Documents/GitHub/SE-030/cpld/XC95144/MacceleratorSE.syr" 
+ngdbuild -intstyle ise -dd _ngo -i -p xc95144xl-TQ144-10 MacceleratorSE.ngc MacceleratorSE.ngd  
+cpldfit -intstyle ise -p xc95144xl-10-TQ144 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper MacceleratorSE.ngd 
+XSLTProcess MacceleratorSE_build.xml 
+tsim -intstyle ise MacceleratorSE MacceleratorSE.nga 
+hprep6 -s IEEE1149 -n MacceleratorSE -i MacceleratorSE 

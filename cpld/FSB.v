@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module FSB(
 	/* MC68HC000 interface */
 	input FCLK, input nAS, output reg nDTACK, output reg nVPA, output nBERR, input IOCS, input FCS,
@@ -52,6 +53,6 @@ module FSB(
 	end
 
 	/* BERR output to fast CPU */
-	assign nBERR = ~(~nAS && ((IOCS && ~nBERRMac) || (FCS && FBERR)) && nDTACK && nVPA);
+	assign nBERR = ~(~nAS && ((IOCS && ~nBERRMac) || (FCS && FBERR)) && (~nDTACK || ~nVPA));
 
 endmodule

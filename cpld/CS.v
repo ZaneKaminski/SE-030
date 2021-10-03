@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module CS(
 	/* High-order address input */
 	input [23:08] A, input CLK, input nRES, input nWE, input ASActive,

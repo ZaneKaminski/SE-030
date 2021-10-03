@@ -1,4 +1,4 @@
-
+`timescale 1ns / 1ps
 module IOBS(
 	/* MC68HC000 interface */
 	input CLK, input nWE, input nLDS, input nUDS,

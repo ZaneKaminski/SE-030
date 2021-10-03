@@ -1,0 +1,173 @@
+Release 8.1i - Fit P.20131013
+Copyright(c) 1995-2003 Xilinx Inc. All rights reserved
+
+10- 3-2021  6:08AM
+
+NOTE: This file is designed to be imported into a spreadsheet program
+such as Microsoft Excel for viewing, printing and sorting. The pipe '|'
+character is used as the data field separator.
+This file is also designed to support parsing.
+
+Input file:  MacceleratorSE.ngd
+output file: MacceleratorSE.pad
+Part type:   xc95144xl
+Speed grade: -10
+Package:     tq144
+
+Pinout by Pin Number:
+
+-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+Pin Number|Signal Name|Pin Usage|Pin Name|Direction|IO Standard|IO Bank Number|{blank}|Slew Rate|Termination|{blank}|Voltage|Constraint|
+P1|VCC||VCCIO||||||||||
+P2|nVPA_IOB|I|I/O/GTS3|INPUT|||||||||
+P3|nLDS_FSB|I|I/O/GTS4|INPUT|||||||||
+P4|TIE||I/O||||||||||
+P5|TIE||I/O/GTS1||||||||||
+P6|A_FSB<8>|I|I/O/GTS2|INPUT|||||||||
+P7|nDinOE|O|I/O|OUTPUT|||||||||
+P8|VCC||VCCINT||||||||||
+P9|E_IOB|I|I/O|INPUT|||||||||
+P10|TIE||I/O||||||||||
+P11|RA<11>|O|I/O|OUTPUT|||||||||
+P12|nROMCS|O|I/O|OUTPUT|||||||||
+P13|TIE||I/O||||||||||
+P14|RA<10>|O|I/O|OUTPUT|||||||||
+P15|TIE||I/O||||||||||
+P16|TIE||I/O||||||||||
+P17|nDTACK_FSB|O|I/O|OUTPUT|||||||||
+P18|GND||GND||||||||||
+P19|TIE||I/O||||||||||
+P20|nDTACK_IOB|I|I/O|INPUT|||||||||
+P21|nVPA_FSB|O|I/O|OUTPUT|||||||||
+P22|TIE||I/O||||||||||
+P23|A_FSB<22>|I|I/O|INPUT|||||||||
+P24|TIE||I/O||||||||||
+P25|A_FSB<1>|I|I/O|INPUT|||||||||
+P26|nROMWE|O|I/O|OUTPUT|||||||||
+P27|TIE||I/O||||||||||
+P28|TIE||I/O||||||||||
+P29|GND||GND||||||||||
+P30|CLK2X_IOB|GCK|I/O/GCK1||||||||||
+P31|TIE||I/O||||||||||
+P32|CLK_FSB|GCK|I/O/GCK2||||||||||
+P33|nUDS_IOB|O|I/O|OUTPUT|||||||||
+P34|A_FSB<17>|I|I/O|INPUT|||||||||
+P35|TIE||I/O||||||||||
+P36|GND||GND||||||||||
+P37|VCC||VCCIO||||||||||
+P38|CLK_IOB|GCK/I|I/O/GCK3||||||||||
+P39|nLDS_IOB|O|I/O|OUTPUT|||||||||
+P40|nDoutOE|O|I/O|OUTPUT|||||||||
+P41|A_FSB<9>|I|I/O|INPUT|||||||||
+P42|VCC||VCCINT||||||||||
+P43|A_FSB<15>|I|I/O|INPUT|||||||||
+P44|TIE||I/O||||||||||
+P45|nAS_IOB|O|I/O|OUTPUT|||||||||
+P46|TIE||I/O||||||||||
+P47|GND||GND||||||||||
+P48|TIE||I/O||||||||||
+P49|TIE||I/O||||||||||
+P50|A_FSB<18>|I|I/O|INPUT|||||||||
+P51|TIE||I/O||||||||||
+P52|RA<3>|O|I/O|OUTPUT|||||||||
+P53|TIE||I/O||||||||||
+P54|RA<7>|O|I/O|OUTPUT|||||||||
+P55|VCC||VCCIO||||||||||
+P56|TIE||I/O||||||||||
+P57|RA<8>|O|I/O|OUTPUT|||||||||
+P58|TIE||I/O||||||||||
+P59|A_FSB<4>|I|I/O|INPUT|||||||||
+P60|RA<9>|O|I/O|OUTPUT|||||||||
+P61|TIE||I/O||||||||||
+P62|GND||GND||||||||||
+P63|TDI||TDI||||||||||
+P64|nCAS|O|I/O|OUTPUT|||||||||
+P65|TMS||TMS||||||||||
+P66|TIE||I/O||||||||||
+P67|TCK||TCK||||||||||
+P68|TIE||I/O||||||||||
+P69|TIE||I/O||||||||||
+P70|TIE||I/O||||||||||
+P71|RA<1>|O|I/O|OUTPUT|||||||||
+P72|GND||GND||||||||||
+P73|VCC||VCCIO||||||||||
+P74|RA<2>|O|I/O|OUTPUT|||||||||
+P75|TIE||I/O||||||||||
+P76|TIE||I/O||||||||||
+P77|TIE||I/O||||||||||
+P78|TIE||I/O||||||||||
+P79|nBERR_IOB|I|I/O|INPUT|||||||||
+P80|nVMA_IOB|O|I/O|OUTPUT|||||||||
+P81|nAoutOE|O|I/O|OUTPUT|||||||||
+P82|TIE||I/O||||||||||
+P83|nDinLE|O|I/O|OUTPUT|||||||||
+P84|VCC||VCCINT||||||||||
+P85|TIE||I/O||||||||||
+P86|A_FSB<21>|I|I/O|INPUT|||||||||
+P87|TIE||I/O||||||||||
+P88|TIE||I/O||||||||||
+P89|GND||GND||||||||||
+P90|GND||GND||||||||||
+P91|nBERR_FSB|O|I/O|OUTPUT|||||||||
+P92|A_FSB<14>|I|I/O|INPUT|||||||||
+P93|TIE||I/O||||||||||
+P94|nADoutLE1|O|I/O|OUTPUT|||||||||
+P95|TIE||I/O||||||||||
+P96|nUDS_FSB|I|I/O|INPUT|||||||||
+P97|TIE||I/O||||||||||
+P98|A_FSB<3>|I|I/O|INPUT|||||||||
+P99|GND||GND||||||||||
+P100|A_FSB<20>|I|I/O|INPUT|||||||||
+P101|A_FSB<13>|I|I/O|INPUT|||||||||
+P102|TIE||I/O||||||||||
+P103|RA<0>|O|I/O|OUTPUT|||||||||
+P104|TIE||I/O||||||||||
+P105|A_FSB<7>|I|I/O|INPUT|||||||||
+P106|RA<4>|O|I/O|OUTPUT|||||||||
+P107|A_FSB<2>|I|I/O|INPUT|||||||||
+P108|GND||GND||||||||||
+P109|VCC||VCCIO||||||||||
+P110|TIE||I/O||||||||||
+P111|A_FSB<23>|I|I/O|INPUT|||||||||
+P112|RA<5>|O|I/O|OUTPUT|||||||||
+P113|nWE_FSB|I|I/O|INPUT|||||||||
+P114|GND||GND||||||||||
+P115|RA<6>|O|I/O|OUTPUT|||||||||
+P116|nAS_FSB|I|I/O|INPUT|||||||||
+P117|TIE||I/O||||||||||
+P118|TIE||I/O||||||||||
+P119|TIE||I/O||||||||||
+P120|TIE||I/O||||||||||
+P121|nADoutLE0|O|I/O|OUTPUT|||||||||
+P122|TDO||TDO||||||||||
+P123|GND||GND||||||||||
+P124|A_FSB<5>|I|I/O|INPUT|||||||||
+P125|TIE||I/O||||||||||
+P126|nRAS|O|I/O|OUTPUT|||||||||
+P127|VCC||VCCIO||||||||||
+P128|A_FSB<10>|I|I/O|INPUT|||||||||
+P129|A_FSB<11>|I|I/O|INPUT|||||||||
+P130|nRAMLWE|O|I/O|OUTPUT|||||||||
+P131|TIE||I/O||||||||||
+P132|A_FSB<6>|I|I/O|INPUT|||||||||
+P133|TIE||I/O||||||||||
+P134|A_FSB<19>|I|I/O|INPUT|||||||||
+P135|TIE||I/O||||||||||
+P136|A_FSB<12>|I|I/O|INPUT|||||||||
+P137|nRAMUWE|O|I/O|OUTPUT|||||||||
+P138|TIE||I/O||||||||||
+P139|TIE||I/O||||||||||
+P140|A_FSB<16>|I|I/O|INPUT|||||||||
+P141|VCC||VCCINT||||||||||
+P142|nOE|O|I/O|OUTPUT|||||||||
+P143|nRES|GSR|I/O/GSR||||||||||
+P144|GND||GND||||||||||
+
+To preserve the pinout above for future design iterations in
+Project Navigator simply execute the (Lock Pins) process
+located under the (Implement Design) process in a toolbox named
+(Optional Implementation Tools) or invoke PIN2UCF from the
+command line. The location constraints will be written into your
+specified UCF file
+
+

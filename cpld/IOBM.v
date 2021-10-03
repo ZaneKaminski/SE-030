@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module IOBM(
 	/* PDS interface */
 	input C16M, input C8M, input E,

@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2021-10-03T05:52:14</DateModified>
+  <DateModified>2021-10-03T05:59:00</DateModified>
   <ModuleName>MacceleratorSE</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/zanek/Documents/GitHub/SE-030/cpld/XC95144/iseconfig/MacceleratorSE.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/zanek/Documents/GitHub/SE-030/cpld/XC95144</ImplementationReportsDirectory>
-  <DateInitialized>2021-10-03T05:52:14</DateInitialized>
+  <SavedFilePath>C:/Users/Zane/Documents/GitHub/SE-030/cpld/XC95144/iseconfig/MacceleratorSE.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/Zane/Documents/GitHub/SE-030/cpld/XC95144</ImplementationReportsDirectory>
+  <DateInitialized>2021-10-03T05:59:00</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>
