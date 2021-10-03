@@ -1,20 +1,20 @@
 module CS(
 	/* High-order address input */
-	input [23:08] A, input CLK, input nRES, input nWE,
+	input [23:08] A, input CLK, input nRES, input nWE, input ASActive,
 	/* Bus domain select outputs */
 	output FCS, output IOCS,
 	/* Device select outputs */
 	output IACS, output ROMCS, output RAMCS,
 	/* Video/sound RAM select outputs */
-	output VidRAMCS, output SndRAMCS);
+	output SndRAMCS);
 
 	/* Overlay control */
 	reg nOverlay = 0;
 	wire Overlay = ~nOverlay;
-	wire ODCS =  A[23:20]==4'h4; // Disable overlay
+	wire ODCS = A[23:20]==4'h4; // Disable overlay
 	always @(posedge CLK, negedge nRES) begin
 		if (~nRES) nOverlay <= 0;
-		else if (ODCS) nOverlay <= 1;
+		else if (ASActive && ODCS) nOverlay <= 1;
 	end
 
 	/* Select signals - FSB domain */
@@ -24,7 +24,7 @@ module CS(
 				   (A[23:20]==4'h3 && ~Overlay) ||
 				   (A[23:20]==4'h6 &&  Overlay) ||
 				   (A[23:20]==4'h7 &&  Overlay);
-	assign VidRAMCS = RAMCS && (A[23:20]==4'h3 || A[23:20]==4'h7) && A[19:16]==4'hF;
+	wire VidRAMCS = RAMCS && (A[23:20]==4'h3 || A[23:20]==4'h7) && A[19:16]==4'hF;
 	assign SndRAMCS = VidRAMCS && (
 						(A[15:12]==4'hF && 
 							(A[11:8]==4'hD || A[11:8]==4'hE || A[11:8]==4'hF)) ||

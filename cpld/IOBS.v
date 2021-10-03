@@ -1,3 +1,4 @@
+
 module IOBS(
 	/* MC68HC000 interface */
 	input CLK, input nWE, input nLDS, input nUDS,
@@ -44,6 +45,7 @@ module IOBS(
 	end
 	
 	/* FIFO Primary Level Control */
+	reg Load0;
 	always @(posedge CLK) begin
 		if (PS==0) begin
 			if (ALE1) begin
@@ -82,6 +84,14 @@ module IOBS(
 			IOREQ <= 0;
 		end
 	end
+	always @(posedge CLK) begin
+		if (PS==0 && ~Load0 && ((ASActive && IOCS && ~Once) || (ALE1))) Load0 <= 1;
+		else Load0 <= 0;
+	end
+	always @(posedge CLK) begin
+		if (Load0) ALE0 <= 1;
+		else if (IOACTr) ALE0 <= 0;
+	end
 
 	/* Once and ready control */
 	reg IORDReady;
@@ -92,5 +102,6 @@ module IOBS(
 	always @(posedge CLK) begin
 		IORDReady <= Once && (PS==0 || PS==1) && ~ALE1 && ~IOACTr;
 	end
+	assign Ready = IOCS ? (nWE ? IORDReady : IOWRReady) : 1;
 
 endmodule
