@@ -1,8 +1,6 @@
 module FSB(
 	/* MC68HC000 interface */
-	input FCLK, input nAS, output reg nDTACK, output reg nVPA, output nBERR,
-	/* Bus domain selects */
-	input IOCS, input FCS,
+	input FCLK, input nAS, output reg nDTACK, output reg nVPA,
 	/* AS detection */
 	output ASActive, output ASInactive,
 	/* Ready and IA inputs */

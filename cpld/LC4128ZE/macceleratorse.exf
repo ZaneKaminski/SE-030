@@ -1,0 +1,151 @@
+Section Type   Array Num   Name                     Real Name          Base     Number     Increment
+// -------------------------------------------------------------------------------------------------
+      Port          1      A_FSB[23:1]                    A_FSB                 23         23            -1
+      Port          2      RA[11:0]                       RA                 11         12            -1
+End
+Section Member   Rename                   Array-Notation          Array Number     Index
+// -------------------------------------------------------------------------------------
+        Port      A_FSB_23_                    A_FSB[23]                       1            0            
+        Port      A_FSB_22_                    A_FSB[22]                       1            1            
+        Port      A_FSB_21_                    A_FSB[21]                       1            2            
+        Port      A_FSB_20_                    A_FSB[20]                       1            3            
+        Port      A_FSB_19_                    A_FSB[19]                       1            4            
+        Port      A_FSB_18_                    A_FSB[18]                       1            5            
+        Port      A_FSB_17_                    A_FSB[17]                       1            6            
+        Port      A_FSB_16_                    A_FSB[16]                       1            7            
+        Port      A_FSB_15_                    A_FSB[15]                       1            8            
+        Port      A_FSB_14_                    A_FSB[14]                       1            9            
+        Port      A_FSB_13_                    A_FSB[13]                       1            10            
+        Port      A_FSB_12_                    A_FSB[12]                       1            11            
+        Port      A_FSB_11_                    A_FSB[11]                       1            12            
+        Port      A_FSB_10_                    A_FSB[10]                       1            13            
+        Port      A_FSB_9_                    A_FSB[9]                       1            14            
+        Port      A_FSB_8_                    A_FSB[8]                       1            15            
+        Port      A_FSB_7_                    A_FSB[7]                       1            16            
+        Port      A_FSB_6_                    A_FSB[6]                       1            17            
+        Port      A_FSB_5_                    A_FSB[5]                       1            18            
+        Port      A_FSB_4_                    A_FSB[4]                       1            19            
+        Port      A_FSB_3_                    A_FSB[3]                       1            20            
+        Port      A_FSB_2_                    A_FSB[2]                       1            21            
+        Port      A_FSB_1_                    A_FSB[1]                       1            22            
+        Port      RA_11_                       RA[11]                       2            0            
+        Port      RA_10_                       RA[10]                       2            1            
+        Port      RA_9_                       RA[9]                       2            2            
+        Port      RA_8_                       RA[8]                       2            3            
+        Port      RA_7_                       RA[7]                       2            4            
+        Port      RA_6_                       RA[6]                       2            5            
+        Port      RA_5_                       RA[5]                       2            6            
+        Port      RA_4_                       RA[4]                       2            7            
+        Port      RA_3_                       RA[3]                       2            8            
+        Port      RA_2_                       RA[2]                       2            9            
+        Port      RA_1_                       RA[1]                       2            10            
+        Port      RA_0_                       RA[0]                       2            11            
+End
+Section Cross Reference File
+Design 'MacceleratorSE' created Mon Oct 04 02:46:05 2021
+   Type              New Name                               Original Name
+// ----------------------------------------------------------------------
+   Net             a_fsb_12__n                                 A_FSB[12]
+   Net                ra_10__n                                    RA[10]
+   Net             a_fsb_11__n                                 A_FSB[11]
+   Net                 ra_2__n                                     RA[2]
+   Net              a_fsb_6__n                                  A_FSB[6]
+   Net             a_fsb_16__n                                 A_FSB[16]
+   Net             a_fsb_13__n                                 A_FSB[13]
+   Net                 ra_0__n                                     RA[0]
+   Net             a_fsb_17__n                                 A_FSB[17]
+   Net              a_fsb_5__n                                  A_FSB[5]
+   Net             a_fsb_21__n                                 A_FSB[21]
+   Net             a_fsb_18__n                                 A_FSB[18]
+   Net             a_fsb_19__n                                 A_FSB[19]
+   Net              a_fsb_2__n                                  A_FSB[2]
+   Net              a_fsb_3__n                                  A_FSB[3]
+   Net              a_fsb_4__n                                  A_FSB[4]
+   Net             a_fsb_22__n                                 A_FSB[22]
+   Net             a_fsb_20__n                                 A_FSB[20]
+   Net              a_fsb_1__n                                  A_FSB[1]
+   Net                 ra_3__n                                     RA[3]
+   Net             a_fsb_14__n                                 A_FSB[14]
+   Net             a_fsb_10__n                                 A_FSB[10]
+   Net             a_fsb_15__n                                 A_FSB[15]
+   Net                 ra_4__n                                     RA[4]
+   Net                 ra_5__n                                     RA[5]
+   Net                 ra_1__n                                     RA[1]
+   Net              a_fsb_8__n                                  A_FSB[8]
+   Net                 ra_6__n                                     RA[6]
+   Net              a_fsb_7__n                                  A_FSB[7]
+   Net                 ra_7__n                                     RA[7]
+   Net                 ra_8__n                                     RA[8]
+   Net              a_fsb_9__n                                  A_FSB[9]
+   Net                 ra_9__n                                     RA[9]
+End
+Section Type      Name
+// ----------------------------------------------------------------------
+        Input     A_FSB_23_
+        Input     nAS_FSB
+        Input     nLDS_FSB
+        Input     nUDS_FSB
+        Input     nWE_FSB
+        Input     CLK_FSB
+        Input     CLK2X_IOB
+        Input     CLK_IOB
+        Input     E_IOB
+        Input     nDTACK_IOB
+        Input     nVPA_IOB
+        Input     nBERR_IOB
+        Input     nRES
+        Input     A_FSB_22_
+        Input     A_FSB_21_
+        Input     A_FSB_20_
+        Input     A_FSB_19_
+        Input     A_FSB_18_
+        Input     A_FSB_17_
+        Input     A_FSB_16_
+        Input     A_FSB_15_
+        Input     A_FSB_14_
+        Input     A_FSB_13_
+        Input     A_FSB_12_
+        Input     A_FSB_11_
+        Input     A_FSB_10_
+        Input     A_FSB_9_
+        Input     A_FSB_8_
+        Input     A_FSB_7_
+        Input     A_FSB_6_
+        Input     A_FSB_5_
+        Input     A_FSB_4_
+        Input     A_FSB_3_
+        Input     A_FSB_2_
+        Input     A_FSB_1_
+        Output     nDTACK_FSB
+        Output     nVPA_FSB
+        Output     nBERR_FSB
+        Output     nVMA_IOB
+        Output     nAS_IOB
+        Output     nUDS_IOB
+        Output     nLDS_IOB
+        Output     nROMCS
+        Output     nRAMLWE
+        Output     nRAMUWE
+        Output     nROMWE
+        Output     nRAS
+        Output     nCAS
+        Output     RA_11_
+        Output     nOE
+        Output     nADoutLE0
+        Output     nADoutLE1
+        Output     nAoutOE
+        Output     nDoutOE
+        Output     nDinOE
+        Output     nDinLE
+        Output     RA_10_
+        Output     RA_9_
+        Output     RA_8_
+        Output     RA_7_
+        Output     RA_6_
+        Output     RA_5_
+        Output     RA_4_
+        Output     RA_3_
+        Output     RA_2_
+        Output     RA_1_
+        Output     RA_0_
+End

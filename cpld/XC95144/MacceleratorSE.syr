@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: MacceleratorSE.prj
 
@@ -98,9 +98,9 @@ Analyzing hierarchy for module <MacceleratorSE> in library <work>.
 
 Analyzing hierarchy for module <CS> in library <work>.
 
-Analyzing hierarchy for module <IOBS> in library <work>.
-
 Analyzing hierarchy for module <RAM> in library <work>.
+
+Analyzing hierarchy for module <IOBS> in library <work>.
 
 Analyzing hierarchy for module <IOBM> in library <work>.
 
@@ -116,11 +116,11 @@ Module <MacceleratorSE> is correct for synthesis.
 Analyzing module <CS> in library <work>.
 Module <CS> is correct for synthesis.
  
-Analyzing module <IOBS> in library <work>.
-Module <IOBS> is correct for synthesis.
- 
 Analyzing module <RAM> in library <work>.
 Module <RAM> is correct for synthesis.
+ 
+Analyzing module <IOBS> in library <work>.
+Module <IOBS> is correct for synthesis.
  
 Analyzing module <IOBM> in library <work>.
 Module <IOBM> is correct for synthesis.
@@ -143,43 +143,9 @@ Synthesizing Unit <CS>.
 Unit <CS> synthesized.
 
 
-Synthesizing Unit <IOBS>.
-    Related source file is "../IOBS.v".
-    Found finite state machine <FSM_0> for signal <PS>.
-    -----------------------------------------------------------------------
-    | States             | 4                                              |
-    | Transitions        | 10                                             |
-    | Inputs             | 5                                              |
-    | Outputs            | 5                                              |
-    | Clock              | CLK                       (rising_edge)        |
-    | Power Up State     | 00                                             |
-    | Encoding           | automatic                                      |
-    | Implementation     | automatic                                      |
-    -----------------------------------------------------------------------
-    Found 1-bit register for signal <IOREQ>.
-    Found 1-bit register for signal <IORW0>.
-    Found 1-bit register for signal <IOL0>.
-    Found 1-bit register for signal <IOU0>.
-    Found 1-bit register for signal <ALE0>.
-    Found 1-bit register for signal <ALE1>.
-    Found 1-bit register for signal <IOACTr>.
-    Found 1-bit register for signal <IOL1>.
-    Found 1-bit register for signal <IORDReady>.
-    Found 1-bit register for signal <IORW1>.
-    Found 1-bit register for signal <IOU1>.
-    Found 1-bit register for signal <IOWRReady>.
-    Found 1-bit register for signal <Load0>.
-    Found 1-bit register for signal <Load1>.
-    Found 1-bit register for signal <Once>.
-    Summary:
-	inferred   1 Finite State Machine(s).
-	inferred   9 D-type flip-flop(s).
-Unit <IOBS> synthesized.
-
-
 Synthesizing Unit <RAM>.
     Related source file is "../RAM.v".
-    Found finite state machine <FSM_1> for signal <RS>.
+    Found finite state machine <FSM_0> for signal <RS>.
     -----------------------------------------------------------------------
     | States             | 10                                             |
     | Transitions        | 23                                             |
@@ -202,14 +168,45 @@ Synthesizing Unit <RAM>.
 Unit <RAM> synthesized.
 
 
+Synthesizing Unit <IOBS>.
+    Related source file is "../IOBS.v".
+    Found finite state machine <FSM_1> for signal <PS>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 5                                              |
+    | Clock              | CLK                       (rising_edge)        |
+    | Power Up State     | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | automatic                                      |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <IOREQ>.
+    Found 1-bit register for signal <IORW0>.
+    Found 1-bit register for signal <IOL0>.
+    Found 1-bit register for signal <IOU0>.
+    Found 1-bit register for signal <ALE0>.
+    Found 1-bit register for signal <ALE1>.
+    Found 1-bit register for signal <IOACTr>.
+    Found 1-bit register for signal <IOL1>.
+    Found 1-bit register for signal <IORDReady>.
+    Found 1-bit register for signal <IORW1>.
+    Found 1-bit register for signal <IOU1>.
+    Found 1-bit register for signal <Load1>.
+    Found 1-bit register for signal <Once>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   9 D-type flip-flop(s).
+Unit <IOBS> synthesized.
+
+
 Synthesizing Unit <IOBM>.
     Related source file is "../IOBM.v".
-WARNING:Xst:647 - Input <nBERR> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found finite state machine <FSM_2> for signal <IOS>.
     -----------------------------------------------------------------------
     | States             | 8                                              |
-    | Transitions        | 13                                             |
-    | Inputs             | 4                                              |
+    | Transitions        | 14                                             |
+    | Inputs             | 5                                              |
     | Outputs            | 8                                              |
     | Clock              | C16M                      (rising_edge)        |
     | Power Up State     | 000                                            |
@@ -222,8 +219,8 @@ WARNING:Xst:647 - Input <nBERR> is never used. This port will be preserved and l
     Found 1-bit register for signal <nUDS>.
     Found 1-bit register for signal <nDinLE>.
     Found 1-bit register for signal <nDoutOE>.
+    Found 1-bit register for signal <ALE0>.
     Found 1-bit register for signal <nVMA>.
-    Found 1-bit register for signal <ADoutLE>.
     Found 1-bit register for signal <Er>.
     Found 1-bit register for signal <Er2>.
     Found 5-bit up counter for signal <ES>.
@@ -240,11 +237,12 @@ Synthesizing Unit <FSB>.
     Related source file is "../FSB.v".
     Found 1-bit register for signal <nVPA>.
     Found 1-bit register for signal <nDTACK>.
+    Found 1-bit register for signal <TimeoutA>.
+    Found 1-bit register for signal <TimeoutB>.
     Found 1-bit register for signal <ASrf>.
-    Found 1-bit register for signal <FBERR>.
-    Found 1-bit register for signal <FBERRArmed>.
     Found 8-bit up counter for signal <RefCnt>.
     Found 1-bit register for signal <RefDone>.
+    Found 1-bit register for signal <TimeoutArmed>.
     Summary:
 	inferred   1 Counter(s).
 	inferred   1 D-type flip-flop(s).
@@ -253,7 +251,6 @@ Unit <FSB> synthesized.
 
 Synthesizing Unit <MacceleratorSE>.
     Related source file is "../Maccelerator-SE.v".
-WARNING:Xst:646 - Signal <SndRAMCS> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 Unit <MacceleratorSE> synthesized.
 
 
@@ -264,8 +261,8 @@ Macro Statistics
 # Counters                                             : 2
  5-bit up counter                                      : 1
  8-bit up counter                                      : 1
-# Registers                                            : 40
- 1-bit register                                        : 40
+# Registers                                            : 39
+ 1-bit register                                        : 39
 
 =========================================================================
 
@@ -288,6 +285,16 @@ Optimizing FSM <iobm/IOS/FSM> on signal <IOS[1:8]> with one-hot encoding.
  111   | 10000000
 -------------------
 Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <iobs/PS/FSM> on signal <PS[1:2]> with johnson encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 11    | 01
+ 10    | 11
+ 01    | 10
+-------------------
+Analyzing FSM <FSM_0> for best encoding.
 Optimizing FSM <ram/RS/FSM> on signal <RS[1:10]> with one-hot encoding.
 ---------------------
  State | Encoding
@@ -303,16 +310,6 @@ Optimizing FSM <ram/RS/FSM> on signal <RS[1:10]> with one-hot encoding.
  1110  | 0100000000
  1111  | 1000000000
 ---------------------
-Analyzing FSM <FSM_0> for best encoding.
-Optimizing FSM <iobs/PS/FSM> on signal <PS[1:2]> with johnson encoding.
--------------------
- State | Encoding
--------------------
- 00    | 00
- 11    | 01
- 10    | 11
- 01    | 10
--------------------
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -336,12 +333,6 @@ Optimizing unit <MacceleratorSE> ...
 Optimizing unit <CS> ...
   implementation constraint: INIT=r	 : nOverlay
 
-Optimizing unit <IOBS> ...
-  implementation constraint: INIT=r	 : IOACTr
-  implementation constraint: INIT=r	 : Once
-  implementation constraint: INIT=r	 : PS_FSM_FFd2
-  implementation constraint: INIT=r	 : PS_FSM_FFd1
-
 Optimizing unit <RAM> ...
   implementation constraint: INIT=r	 : RAMReady
   implementation constraint: INIT=r	 : RASEL
@@ -359,10 +350,15 @@ Optimizing unit <RAM> ...
   implementation constraint: INIT=r	 : RS_FSM_FFd9
   implementation constraint: INIT=s	 : RS_FSM_FFd10
 
+Optimizing unit <IOBS> ...
+  implementation constraint: INIT=r	 : IOACTr
+  implementation constraint: INIT=r	 : Once
+  implementation constraint: INIT=r	 : PS_FSM_FFd1
+  implementation constraint: INIT=r	 : PS_FSM_FFd2
+
 Optimizing unit <IOBM> ...
   implementation constraint: INIT=s	 : IOS_FSM_FFd8
   implementation constraint: INIT=r	 : ETACK
-  implementation constraint: INIT=r	 : ADoutLE
   implementation constraint: INIT=r	 : IOREQr
   implementation constraint: INIT=r	 : IOS_FSM_FFd1
   implementation constraint: INIT=r	 : IOS_FSM_FFd2
@@ -373,10 +369,9 @@ Optimizing unit <IOBM> ...
   implementation constraint: INIT=r	 : IOS_FSM_FFd7
 
 Optimizing unit <FSB> ...
-  implementation constraint: INIT=r	 : ASrf
-  implementation constraint: INIT=r	 : FBERR
-  implementation constraint: INIT=r	 : FBERRArmed
+  implementation constraint: INIT=r	 : TimeoutArmed
   implementation constraint: INIT=r	 : RefDone
+  implementation constraint: INIT=r	 : ASrf
   implementation constraint: INIT=r	 : RefCnt_7
   implementation constraint: INIT=r	 : RefCnt_6
   implementation constraint: INIT=r	 : RefCnt_5
@@ -416,25 +411,25 @@ Design Statistics
 # IOs                              : 67
 
 Cell Usage :
-# BELS                             : 547
-#      AND2                        : 175
+# BELS                             : 563
+#      AND2                        : 182
 #      AND3                        : 19
-#      AND4                        : 10
+#      AND4                        : 12
 #      AND5                        : 2
-#      AND6                        : 2
+#      AND6                        : 3
 #      AND7                        : 1
 #      AND8                        : 1
 #      GND                         : 4
-#      INV                         : 230
-#      OR2                         : 74
-#      OR3                         : 12
+#      INV                         : 234
+#      OR2                         : 75
+#      OR3                         : 13
 #      OR4                         : 2
 #      OR6                         : 1
 #      OR7                         : 1
 #      VCC                         : 1
 #      XOR2                        : 12
-# FlipFlops/Latches                : 73
-#      FD                          : 56
+# FlipFlops/Latches                : 71
+#      FD                          : 54
 #      FDCE                        : 17
 # IO Buffers                       : 67
 #      IBUF                        : 35
@@ -443,13 +438,13 @@ Cell Usage :
 
 
 Total REAL time to Xst completion: 3.00 secs
-Total CPU time to Xst completion: 3.51 secs
+Total CPU time to Xst completion: 3.69 secs
  
 --> 
 
-Total memory usage is 258600 kilobytes
+Total memory usage is 4513520 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    2 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

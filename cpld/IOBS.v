@@ -17,19 +17,17 @@ module IOBS(
 	always @(posedge CLK) begin IOACTr <= IOACT; end
 
 	/* Read data OE control */
-	assign nDinOE = ~nAS && IOCS && nWE;
+	assign nDinOE = ASActive && IOCS && nWE;
 	
 	/* Posted read/write state */
 	reg [1:0] PS = 0;
 	reg Once = 0;
 
-	/* FIFO second level state */
+	/* FIFO second level control */
 	reg Load1;
 	reg IORW1;
 	reg IOL1;
 	reg IOU1;
-
-	/* FIFO second level control */
 	always @(posedge CLK) begin
 		if (PS!=0 && ASActive && IOCS && ~Once && ~ALE1) begin
 			ALE1 <= 1;

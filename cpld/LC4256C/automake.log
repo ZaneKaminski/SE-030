@@ -1,0 +1,9 @@
+ispLEVER Auto-Make Log File
+---------------------------
+
+Updating: Timing Analysis
+Start to record tcl script...
+Finished recording TCL script.
+
+Launching: 'C:\ispLEVER_Classic2_0\ispcpld\bin\timing.exe -prj "macceleratorse_lc4256c" -tti "macceleratorse_lc4256c.tt4" -gui -dir "c:\users\zanek\documents\github\se-030\cpld\lc4256c"'
+

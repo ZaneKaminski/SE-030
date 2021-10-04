@@ -34,16 +34,12 @@ module MacceleratorSE(
 	output nDinOE,
 	output nDinLE);
 
+	/* AS active / inactive signals */
 	wire ASActive, ASInactive;
 
+	/* Refresh request/ack signals */
 	wire RefReq, RefUrgent, RefAck;
 	
-	wire IOREQ, IOACT;
-
-	wire TimeoutA, TimeoutB;
-	wire Ready_IOBS, Ready_RAM;
-	wire Ready = Ready_IOBS && Ready_RAM && (~SndRAMCSWR ? TimeoutA : 1);
-
 	wire FCS, IOCS, IACS, ROMCS, RAMCS, SndRAMCSWR;
 	CS cs(
 		/* High-order address input */
@@ -55,6 +51,7 @@ module MacceleratorSE(
 		/* Sound RAM write select output */
 		SndRAMCSWR);
 
+	wire Ready_RAM;
 	RAM ram(
 		/* MC68HC000 interface */
 		CLK_FSB, A_FSB[21:1], nWE_FSB, nAS_FSB, nLDS_FSB, nUDS_FSB,
@@ -66,6 +63,8 @@ module MacceleratorSE(
 		RA[11:0], nRAS, nCAS,
 		nRAMLWE, nRAMUWE, nOE, nROMCS, nROMWE);
 
+	wire Ready_IOBS;
+	wire IOREQ, IOACT;
 	wire ALE0S, ALE0M, ALE1;
 	assign nADoutLE0 = ~(ALE0S || ALE0M);
 	assign nADoutLE1 = ~ALE1;
@@ -94,12 +93,13 @@ module MacceleratorSE(
 		/* IO bus slave port interface */
 		IOACT, IOREQ, IOL0, IOU0, IORW0);
 
-	wire FBERR;
+	wire TimeoutA, TimeoutB;
+	wire Ready = Ready_IOBS && Ready_RAM && (~SndRAMCSWR ? TimeoutA : 1);
+	assign nBERR_FSB = ~(~nAS_FSB && ((IOCS && ~nBERR_IOB) || (FCS && TimeoutB)) &&
+		nDTACK_FSB && nVPA_FSB && nDTACK_IOB && nVPA_IOB);
 	FSB fsb(
 		/* MC68HC000 interface */
 		CLK_FSB, nAS_FSB, nDTACK_FSB, nVPA_FSB, 
-		/* Bus domain selects */
-		IOCS, FCS,
 		/* AS detection */
 		ASActive, ASInactive,
 		/* Ready and IA inputs */
@@ -108,8 +108,5 @@ module MacceleratorSE(
 		RefReq, RefUrgent, RefAck,
 		/* Timeout signals */
 		TimeoutA, TimeoutB);
-
-	/* BERR output to fast CPU */
-	assign nBERR_FSB = ~(~nAS && ((IOCS && ~nBERR_IOB) || (FCS && TimeoutB)) && nDTACK && nVPA);
 
 endmodule

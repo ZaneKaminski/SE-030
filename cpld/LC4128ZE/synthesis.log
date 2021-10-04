@@ -1,0 +1,239 @@
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2015 Lattice Semiconductor Corporation,  All rights reserved.
+Mon Oct 04 02:46:04 2021
+
+
+Command Line:  C:\ispLEVER_Classic2_0\lse/bin/nt/synthesis -f MacceleratorSE.synproj 
+
+Synthesis options:
+The -a option is ispMACH400ZE.
+The -t option is not used.
+The -d option is LC4128ZE.
+Using default performance grade 6.
+                                                          
+
+##########################################################
+
+### Lattice Family : ispMACH400ZE
+
+### Device  : LC4128ZE
+
+### Package : 
+
+##########################################################
+
+                                                          
+
+Optimization goal = Area
+Top-level module name = MacceleratorSE.
+WARNING - synthesis: Ignoring Frequency option in Area Mode. Setting to default frequency of 1.0 MHz.
+WARNING - synthesis: Ignoring SDC constraints in Area Mode!
+Target frequency = 1.000000 MHz.
+Timing path count = 3
+fsm_encoding_style = auto
+resolve_mixed_drivers = 0
+Use IO Insertion = TRUE
+Resource Sharing = TRUE
+Propagate Constants = TRUE
+Remove Duplicate Registers = TRUE
+Output EDIF file name = MacceleratorSE.edi.
+WARNING - synthesis: Option -force_gsr will be set to false when option -output_edif/-ngo are set
+The -comp option is FALSE.
+The -syn option is FALSE.
+Verilog design file = macceleratorse_lc4128ze.h
+Verilog design file = ../fsb.v
+Verilog design file = ../iobm.v
+Verilog design file = ../iobs.v
+Verilog design file = ../ram.v
+Verilog design file = ../cs.v
+Verilog design file = ../maccelerator-se.v
+-sdc option: SDC file input not used.
+-lpf option: Output file option is not used.
+Hardtimer checking is enabled (default). The -dt option is not used.
+The -r option is OFF. [ Remove LOC Properties is OFF. ]
+Technology check ok...
+
+Analyzing Verilog file C:/ispLEVER_Classic2_0/lse/userware/NT/SYNTHESIS_HEADERS/mach.v. VERI-1482
+Compile design.
+Compile Design Begin
+Analyzing Verilog file macceleratorse_lc4128ze.h. VERI-1482
+Analyzing Verilog file ../fsb.v. VERI-1482
+Analyzing Verilog file ../iobm.v. VERI-1482
+Analyzing Verilog file ../iobs.v. VERI-1482
+Analyzing Verilog file ../ram.v. VERI-1482
+Analyzing Verilog file ../cs.v. VERI-1482
+Analyzing Verilog file ../maccelerator-se.v. VERI-1482
+Analyzing Verilog file C:/ispLEVER_Classic2_0/lse/userware/NT/SYNTHESIS_HEADERS/mach.v. VERI-1482
+Top module name (Verilog): MacceleratorSE
+INFO - synthesis: ../maccelerator-se.v(1): compiling module MacceleratorSE. VERI-1018
+INFO - synthesis: ../cs.v(1): compiling module CS. VERI-1018
+INFO - synthesis: ../ram.v(1): compiling module RAM. VERI-1018
+WARNING - synthesis: ../ram.v(142): expression size 32 truncated to fit in target size 1. VERI-1209
+INFO - synthesis: ../iobs.v(1): compiling module IOBS. VERI-1018
+WARNING - synthesis: ../iobs.v(102): expression size 32 truncated to fit in target size 1. VERI-1209
+INFO - synthesis: ../iobm.v(1): compiling module IOBM. VERI-1018
+WARNING - synthesis: ../iobm.v(24): expression size 32 truncated to fit in target size 5. VERI-1209
+INFO - synthesis: ../fsb.v(1): compiling module FSB. VERI-1018
+WARNING - synthesis: ../fsb.v(36): expression size 32 truncated to fit in target size 8. VERI-1209
+Loading NGL library 'C:/ispLEVER_Classic2_0/lse/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'C:/ispLEVER_Classic2_0/lse/or5g00/data/orc5glib.ngl'...
+Loading device for application map from file 'xo2c640.nph' in environment: C:/ispLEVER_Classic2_0/lse.
+Package Status:                     Final          Version 1.36.
+Top-level module name = MacceleratorSE.
+INFO - synthesis: Extracted state machine for register '\iobm/ES' with sequential encoding
+State machine has 32 reachable states with original encodings of:
+
+ 00000 
+
+ 00001 
+
+ 00010 
+
+ 00011 
+
+ 00100 
+
+ 00101 
+
+ 00110 
+
+ 00111 
+
+ 01000 
+
+ 01001 
+
+ 01010 
+
+ 01011 
+
+ 01100 
+
+ 01101 
+
+ 01110 
+
+ 01111 
+
+ 10000 
+
+ 10001 
+
+ 10010 
+
+ 10011 
+
+ 10100 
+
+ 10101 
+
+ 10110 
+
+ 10111 
+
+ 11000 
+
+ 11001 
+
+ 11010 
+
+ 11011 
+
+ 11100 
+
+ 11101 
+
+ 11110 
+
+ 11111 
+
+
+
+
+Applying 1.000000 MHz constraint to all clocks
+
+WARNING - synthesis: No .lpf file will be written because the -lpf option is not used or is set to zero.
+Results of NGD DRC are available in MacceleratorSE_drc.log.
+
+################### Begin Area Report (MacceleratorSE)######################
+Number of register bits => 60 of 880 (6 % )
+AND2 => 157
+AND3 => 24
+AND4 => 3
+AND5 => 1
+AND6 => 3
+DFF => 35
+DFFC => 24
+DFFCR => 1
+GND => 1
+IBUF => 35
+INV => 106
+OBUF => 32
+OR2 => 117
+OR3 => 18
+OR4 => 3
+OR5 => 1
+VCC => 1
+XOR2 => 13
+################### End Area Report ##################
+
+################### Begin Clock Report ######################
+Clock Nets
+Number of Clocks: 5
+  Net : CLK_FSB_c, loads : 38
+  Net : CLK2X_IOB_c, loads : 14
+  Net : C16M_N_354, loads : 5
+  Net : CLK_N_168, loads : 2
+  Net : C8M_N_335, loads : 1
+Clock Enable Nets
+Number of Clock Enables: 0
+Top 0 highest fanout Clock Enables:
+Highest fanout non-clock nets
+Top 10 highest fanout non-clock nets:
+  Net : ASInactive, loads : 11
+  Net : RASEL_N_132, loads : 11
+  Net : nAS_FSB_c, loads : 10
+  Net : ram/RS_1, loads : 10
+  Net : ram/RASEL, loads : 10
+  Net : RA_c_21_c, loads : 9
+  Net : ASActive, loads : 9
+  Net : ram/RefAck, loads : 9
+  Net : n7, loads : 9
+  Net : iobm/IOS_2, loads : 9
+################### End Clock Report ##################
+
+Timing Report Summary
+--------------
+--------------------------------------------------------------------------------
+Constraint                              |   Constraint|       Actual|Levels
+--------------------------------------------------------------------------------
+                                        |             |             |
+create_clock -period 1000.000000 -name  |             |             |
+clk4 [get_nets C8M_N_335]               |            -|            -|     0  
+                                        |             |             |
+create_clock -period 1000.000000 -name  |             |             |
+clk3 [get_nets CLK_N_168]               |            -|            -|     0  
+                                        |             |             |
+create_clock -period 1000.000000 -name  |             |             |
+clk2 [get_nets C16M_N_354]              |            -|            -|     0  
+                                        |             |             |
+create_clock -period 1000.000000 -name  |             |             |
+clk1 [get_nets CLK2X_IOB_c]             |            -|            -|     0  
+                                        |             |             |
+create_clock -period 1000.000000 -name  |             |             |
+clk0 [get_nets CLK_FSB_c]               |            -|            -|     0  
+                                        |             |             |
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Peak Memory Usage: 34.758  MB
+
+--------------------------------------------------------------
+Elapsed CPU time for LSE flow : 0.641  secs
+--------------------------------------------------------------

@@ -1,0 +1,16 @@
+CLK  i
+nWE  i
+nLDS  i
+nUDS  i
+ASActive  i
+ASInactive  i
+IOCS  i
+Ready  o
+nDinOE  o
+IOREQ  o
+IOACT  i
+ALE0  o
+IORW0  o
+IOL0  o
+IOU0  o
+ALE1  o
