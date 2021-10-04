@@ -306,3 +306,678 @@ if [runCmd "\"$cpld_bin/timing\" -prj \"macceleratorse_lc4256c\" -tti \"macceler
 
 ########## Tcl recorder end at 10/04/21 03:09:37 ###########
 
+
+########## Tcl recorder starts at 10/04/21 03:12:19 ##########
+
+# Commands to make the Process: 
+# Optimization Constraint
+# - none -
+# Application to view the Process: 
+# Optimization Constraint
+if [catch {open opt_cmd.rs2 w} rspFile] {
+	puts stderr "Cannot create response file opt_cmd.rs2: $rspFile"
+} else {
+	puts $rspFile "-global -lci macceleratorse_lc4256c.lct -touch macceleratorse_lc4256c.imp
+"
+	close $rspFile
+}
+if [runCmd "\"$cpld_bin/optedit\" @opt_cmd.rs2"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/04/21 03:12:19 ###########
+
+
+########## Tcl recorder starts at 10/04/21 03:13:04 ##########
+
+# Commands to make the Process: 
+# Fitter Report (HTML)
+if [runCmd "\"$cpld_bin/abelvci\" -vci macceleratorse_lc4256c.lct -blifopt macceleratorse_lc4256c.b2_"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/mblifopt\" macceleratorse_lc4256c.bl2 -sweep -mergefb -err automake.err -o macceleratorse_lc4256c.bl3 @macceleratorse_lc4256c.b2_ "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/abelvci\" -vci macceleratorse_lc4256c.lct -dev lc4k -diofft macceleratorse_lc4256c.d0"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/mdiofft\" macceleratorse_lc4256c.bl3 -family AMDMACH -idev van -o macceleratorse_lc4256c.bl4 -oxrf macceleratorse_lc4256c.xrf -err automake.err @macceleratorse_lc4256c.d0 "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/abelvci\" -vci macceleratorse_lc4256c.lct -dev lc4k -prefit macceleratorse_lc4256c.l0"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/prefit\" -blif -inp macceleratorse_lc4256c.bl4 -out macceleratorse_lc4256c.bl5 -err automake.err -log macceleratorse_lc4256c.log -mod MacceleratorSE @macceleratorse_lc4256c.l0  -sc"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [catch {open macceleratorse_lc4256c.rs1 w} rspFile] {
+	puts stderr "Cannot create response file macceleratorse_lc4256c.rs1: $rspFile"
+} else {
+	puts $rspFile "-i macceleratorse_lc4256c.bl5 -lci macceleratorse_lc4256c.lct -d m4s_256_64 -lco macceleratorse_lc4256c.lco -html_rpt -fti macceleratorse_lc4256c.fti -fmt PLA -tto macceleratorse_lc4256c.tt4 -nojed -eqn macceleratorse_lc4256c.eq3 -tmv NoInput.tmv
+-rpt_num 1
+"
+	close $rspFile
+}
+if [catch {open macceleratorse_lc4256c.rs2 w} rspFile] {
+	puts stderr "Cannot create response file macceleratorse_lc4256c.rs2: $rspFile"
+} else {
+	puts $rspFile "-i macceleratorse_lc4256c.bl5 -lci macceleratorse_lc4256c.lct -d m4s_256_64 -lco macceleratorse_lc4256c.lco -html_rpt -fti macceleratorse_lc4256c.fti -fmt PLA -tto macceleratorse_lc4256c.tt4 -eqn macceleratorse_lc4256c.eq3 -tmv NoInput.tmv
+-rpt_num 1
+"
+	close $rspFile
+}
+if [runCmd "\"$cpld_bin/lpf4k\" \"@macceleratorse_lc4256c.rs2\""] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+file delete macceleratorse_lc4256c.rs1
+file delete macceleratorse_lc4256c.rs2
+if [runCmd "\"$cpld_bin/tda\" -i macceleratorse_lc4256c.bl5 -o macceleratorse_lc4256c.tda -lci macceleratorse_lc4256c.lct -dev m4s_256_64 -family lc4k -mod MacceleratorSE -ovec NoInput.tmv -err tda.err "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/synsvf\" -exe \"$install_dir/ispvmsystem/ispufw\" -prj macceleratorse_lc4256c -if macceleratorse_lc4256c.jed -j2s -log macceleratorse_lc4256c.svl "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/04/21 03:13:04 ###########
+
+
+########## Tcl recorder starts at 10/04/21 03:13:12 ##########
+
+# Commands to make the Process: 
+# Timing Report
+if [runCmd "\"$cpld_bin/timer\" -inp \"macceleratorse_lc4256c.tt4\" -lci \"macceleratorse_lc4256c.lct\" -trp \"macceleratorse_lc4256c.trp\" -exf \"MacceleratorSE.exf\" -lco \"macceleratorse_lc4256c.lco\""] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/04/21 03:13:12 ###########
+
+
+########## Tcl recorder starts at 10/04/21 03:13:28 ##########
+
+# Commands to make the Process: 
+# Optimization Constraint
+# - none -
+# Application to view the Process: 
+# Optimization Constraint
+if [catch {open opt_cmd.rs2 w} rspFile] {
+	puts stderr "Cannot create response file opt_cmd.rs2: $rspFile"
+} else {
+	puts $rspFile "-global -lci macceleratorse_lc4256c.lct -touch macceleratorse_lc4256c.imp
+"
+	close $rspFile
+}
+if [runCmd "\"$cpld_bin/optedit\" @opt_cmd.rs2"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/04/21 03:13:28 ###########
+
+
+########## Tcl recorder starts at 10/04/21 03:13:41 ##########
+
+# Commands to make the Process: 
+# Fit Design
+if [runCmd "\"$cpld_bin/abelvci\" -vci macceleratorse_lc4256c.lct -blifopt macceleratorse_lc4256c.b2_"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/mblifopt\" macceleratorse_lc4256c.bl2 -sweep -mergefb -err automake.err -o macceleratorse_lc4256c.bl3 @macceleratorse_lc4256c.b2_ "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/abelvci\" -vci macceleratorse_lc4256c.lct -dev lc4k -diofft macceleratorse_lc4256c.d0"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/mdiofft\" macceleratorse_lc4256c.bl3 -family AMDMACH -idev van -o macceleratorse_lc4256c.bl4 -oxrf macceleratorse_lc4256c.xrf -err automake.err @macceleratorse_lc4256c.d0 "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/abelvci\" -vci macceleratorse_lc4256c.lct -dev lc4k -prefit macceleratorse_lc4256c.l0"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/prefit\" -blif -inp macceleratorse_lc4256c.bl4 -out macceleratorse_lc4256c.bl5 -err automake.err -log macceleratorse_lc4256c.log -mod MacceleratorSE @macceleratorse_lc4256c.l0  -sc"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [catch {open macceleratorse_lc4256c.rs1 w} rspFile] {
+	puts stderr "Cannot create response file macceleratorse_lc4256c.rs1: $rspFile"
+} else {
+	puts $rspFile "-i macceleratorse_lc4256c.bl5 -lci macceleratorse_lc4256c.lct -d m4s_256_64 -lco macceleratorse_lc4256c.lco -html_rpt -fti macceleratorse_lc4256c.fti -fmt PLA -tto macceleratorse_lc4256c.tt4 -nojed -eqn macceleratorse_lc4256c.eq3 -tmv NoInput.tmv
+-rpt_num 1
+"
+	close $rspFile
+}
+if [catch {open macceleratorse_lc4256c.rs2 w} rspFile] {
+	puts stderr "Cannot create response file macceleratorse_lc4256c.rs2: $rspFile"
+} else {
+	puts $rspFile "-i macceleratorse_lc4256c.bl5 -lci macceleratorse_lc4256c.lct -d m4s_256_64 -lco macceleratorse_lc4256c.lco -html_rpt -fti macceleratorse_lc4256c.fti -fmt PLA -tto macceleratorse_lc4256c.tt4 -eqn macceleratorse_lc4256c.eq3 -tmv NoInput.tmv
+-rpt_num 1
+"
+	close $rspFile
+}
+if [runCmd "\"$cpld_bin/lpf4k\" \"@macceleratorse_lc4256c.rs2\""] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+file delete macceleratorse_lc4256c.rs1
+file delete macceleratorse_lc4256c.rs2
+if [runCmd "\"$cpld_bin/tda\" -i macceleratorse_lc4256c.bl5 -o macceleratorse_lc4256c.tda -lci macceleratorse_lc4256c.lct -dev m4s_256_64 -family lc4k -mod MacceleratorSE -ovec NoInput.tmv -err tda.err "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/synsvf\" -exe \"$install_dir/ispvmsystem/ispufw\" -prj macceleratorse_lc4256c -if macceleratorse_lc4256c.jed -j2s -log macceleratorse_lc4256c.svl "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/04/21 03:13:41 ###########
+
+
+########## Tcl recorder starts at 10/04/21 03:13:47 ##########
+
+# Commands to make the Process: 
+# Constraint Editor
+if [runCmd "\"$cpld_bin/blifstat\" -i macceleratorse_lc4256c.bl5 -o macceleratorse_lc4256c.sif"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+# Application to view the Process: 
+# Constraint Editor
+if [catch {open lattice_cmd.rs2 w} rspFile] {
+	puts stderr "Cannot create response file lattice_cmd.rs2: $rspFile"
+} else {
+	puts $rspFile "-nodal -src macceleratorse_lc4256c.bl5 -type BLIF -presrc macceleratorse_lc4256c.bl3 -crf macceleratorse_lc4256c.crf -sif macceleratorse_lc4256c.sif -devfile \"$install_dir/ispcpld/dat/lc4k/m4s_256_64.dev\" -lci macceleratorse_lc4256c.lct
+"
+	close $rspFile
+}
+if [runCmd "\"$cpld_bin/lciedit\" @lattice_cmd.rs2"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/04/21 03:13:47 ###########
+
+
+########## Tcl recorder starts at 10/04/21 03:14:06 ##########
+
+# Commands to make the Process: 
+# Constraint Editor
+# - none -
+# Application to view the Process: 
+# Constraint Editor
+if [catch {open lattice_cmd.rs2 w} rspFile] {
+	puts stderr "Cannot create response file lattice_cmd.rs2: $rspFile"
+} else {
+	puts $rspFile "-nodal -src macceleratorse_lc4256c.bl5 -type BLIF -presrc macceleratorse_lc4256c.bl3 -crf macceleratorse_lc4256c.crf -sif macceleratorse_lc4256c.sif -devfile \"$install_dir/ispcpld/dat/lc4k/m4s_256_64.dev\" -lci macceleratorse_lc4256c.lct
+"
+	close $rspFile
+}
+if [runCmd "\"$cpld_bin/lciedit\" @lattice_cmd.rs2"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/04/21 03:14:06 ###########
+
+
+########## Tcl recorder starts at 10/04/21 03:14:08 ##########
+
+# Commands to make the Process: 
+# Optimization Constraint
+# - none -
+# Application to view the Process: 
+# Optimization Constraint
+if [catch {open opt_cmd.rs2 w} rspFile] {
+	puts stderr "Cannot create response file opt_cmd.rs2: $rspFile"
+} else {
+	puts $rspFile "-global -lci macceleratorse_lc4256c.lct -touch macceleratorse_lc4256c.imp
+"
+	close $rspFile
+}
+if [runCmd "\"$cpld_bin/optedit\" @opt_cmd.rs2"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/04/21 03:14:08 ###########
+
+
+########## Tcl recorder starts at 10/04/21 03:14:12 ##########
+
+# Commands to make the Process: 
+# Timing Analysis
+# - none -
+# Application to view the Process: 
+# Timing Analysis
+if [runCmd "\"$cpld_bin/timing\" -prj \"macceleratorse_lc4256c\" -tti \"macceleratorse_lc4256c.tt4\" -gui -dir \"$proj_dir\""] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/04/21 03:14:12 ###########
+
+
+########## Tcl recorder starts at 10/04/21 03:14:26 ##########
+
+# Commands to make the Process: 
+# Timing Report
+if [runCmd "\"$cpld_bin/timer\" -inp \"macceleratorse_lc4256c.tt4\" -lci \"macceleratorse_lc4256c.lct\" -trp \"macceleratorse_lc4256c.trp\" -exf \"MacceleratorSE.exf\" -lco \"macceleratorse_lc4256c.lco\""] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/04/21 03:14:26 ###########
+
+
+########## Tcl recorder starts at 10/04/21 03:14:53 ##########
+
+# Commands to make the Process: 
+# Optimization Constraint
+# - none -
+# Application to view the Process: 
+# Optimization Constraint
+if [catch {open opt_cmd.rs2 w} rspFile] {
+	puts stderr "Cannot create response file opt_cmd.rs2: $rspFile"
+} else {
+	puts $rspFile "-global -lci macceleratorse_lc4256c.lct -touch macceleratorse_lc4256c.imp
+"
+	close $rspFile
+}
+if [runCmd "\"$cpld_bin/optedit\" @opt_cmd.rs2"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/04/21 03:14:53 ###########
+
+
+########## Tcl recorder starts at 10/04/21 03:15:08 ##########
+
+# Commands to make the Process: 
+# Fit Design
+if [runCmd "\"$cpld_bin/abelvci\" -vci macceleratorse_lc4256c.lct -blifopt macceleratorse_lc4256c.b2_"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/mblifopt\" macceleratorse_lc4256c.bl2 -sweep -mergefb -err automake.err -o macceleratorse_lc4256c.bl3 @macceleratorse_lc4256c.b2_ "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/abelvci\" -vci macceleratorse_lc4256c.lct -dev lc4k -diofft macceleratorse_lc4256c.d0"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/mdiofft\" macceleratorse_lc4256c.bl3 -family AMDMACH -idev van -o macceleratorse_lc4256c.bl4 -oxrf macceleratorse_lc4256c.xrf -err automake.err @macceleratorse_lc4256c.d0 "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/abelvci\" -vci macceleratorse_lc4256c.lct -dev lc4k -prefit macceleratorse_lc4256c.l0"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/prefit\" -blif -inp macceleratorse_lc4256c.bl4 -out macceleratorse_lc4256c.bl5 -err automake.err -log macceleratorse_lc4256c.log -mod MacceleratorSE @macceleratorse_lc4256c.l0  -sc"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [catch {open macceleratorse_lc4256c.rs1 w} rspFile] {
+	puts stderr "Cannot create response file macceleratorse_lc4256c.rs1: $rspFile"
+} else {
+	puts $rspFile "-i macceleratorse_lc4256c.bl5 -lci macceleratorse_lc4256c.lct -d m4s_256_64 -lco macceleratorse_lc4256c.lco -html_rpt -fti macceleratorse_lc4256c.fti -fmt PLA -tto macceleratorse_lc4256c.tt4 -nojed -eqn macceleratorse_lc4256c.eq3 -tmv NoInput.tmv
+-rpt_num 1
+"
+	close $rspFile
+}
+if [catch {open macceleratorse_lc4256c.rs2 w} rspFile] {
+	puts stderr "Cannot create response file macceleratorse_lc4256c.rs2: $rspFile"
+} else {
+	puts $rspFile "-i macceleratorse_lc4256c.bl5 -lci macceleratorse_lc4256c.lct -d m4s_256_64 -lco macceleratorse_lc4256c.lco -html_rpt -fti macceleratorse_lc4256c.fti -fmt PLA -tto macceleratorse_lc4256c.tt4 -eqn macceleratorse_lc4256c.eq3 -tmv NoInput.tmv
+-rpt_num 1
+"
+	close $rspFile
+}
+if [runCmd "\"$cpld_bin/lpf4k\" \"@macceleratorse_lc4256c.rs2\""] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+file delete macceleratorse_lc4256c.rs1
+file delete macceleratorse_lc4256c.rs2
+if [runCmd "\"$cpld_bin/tda\" -i macceleratorse_lc4256c.bl5 -o macceleratorse_lc4256c.tda -lci macceleratorse_lc4256c.lct -dev m4s_256_64 -family lc4k -mod MacceleratorSE -ovec NoInput.tmv -err tda.err "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/synsvf\" -exe \"$install_dir/ispvmsystem/ispufw\" -prj macceleratorse_lc4256c -if macceleratorse_lc4256c.jed -j2s -log macceleratorse_lc4256c.svl "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/04/21 03:15:08 ###########
+
+
+########## Tcl recorder starts at 10/04/21 03:15:28 ##########
+
+# Commands to make the Process: 
+# Timing Analysis
+# - none -
+# Application to view the Process: 
+# Timing Analysis
+if [runCmd "\"$cpld_bin/timing\" -prj \"macceleratorse_lc4256c\" -tti \"macceleratorse_lc4256c.tt4\" -gui -dir \"$proj_dir\""] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/04/21 03:15:28 ###########
+
+
+########## Tcl recorder starts at 10/04/21 03:15:32 ##########
+
+# Commands to make the Process: 
+# Timing Report
+if [runCmd "\"$cpld_bin/timer\" -inp \"macceleratorse_lc4256c.tt4\" -lci \"macceleratorse_lc4256c.lct\" -trp \"macceleratorse_lc4256c.trp\" -exf \"MacceleratorSE.exf\" -lco \"macceleratorse_lc4256c.lco\""] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/04/21 03:15:32 ###########
+
+
+########## Tcl recorder starts at 10/04/21 03:15:48 ##########
+
+# Commands to make the Process: 
+# Optimization Constraint
+# - none -
+# Application to view the Process: 
+# Optimization Constraint
+if [catch {open opt_cmd.rs2 w} rspFile] {
+	puts stderr "Cannot create response file opt_cmd.rs2: $rspFile"
+} else {
+	puts $rspFile "-global -lci macceleratorse_lc4256c.lct -touch macceleratorse_lc4256c.imp
+"
+	close $rspFile
+}
+if [runCmd "\"$cpld_bin/optedit\" @opt_cmd.rs2"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/04/21 03:15:48 ###########
+
+
+########## Tcl recorder starts at 10/04/21 03:15:56 ##########
+
+# Commands to make the Process: 
+# Timing Report
+if [runCmd "\"$cpld_bin/abelvci\" -vci macceleratorse_lc4256c.lct -blifopt macceleratorse_lc4256c.b2_"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/mblifopt\" macceleratorse_lc4256c.bl2 -sweep -mergefb -err automake.err -o macceleratorse_lc4256c.bl3 @macceleratorse_lc4256c.b2_ "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/abelvci\" -vci macceleratorse_lc4256c.lct -dev lc4k -diofft macceleratorse_lc4256c.d0"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/mdiofft\" macceleratorse_lc4256c.bl3 -family AMDMACH -idev van -o macceleratorse_lc4256c.bl4 -oxrf macceleratorse_lc4256c.xrf -err automake.err @macceleratorse_lc4256c.d0 "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/abelvci\" -vci macceleratorse_lc4256c.lct -dev lc4k -prefit macceleratorse_lc4256c.l0"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/prefit\" -blif -inp macceleratorse_lc4256c.bl4 -out macceleratorse_lc4256c.bl5 -err automake.err -log macceleratorse_lc4256c.log -mod MacceleratorSE @macceleratorse_lc4256c.l0  -sc"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [catch {open macceleratorse_lc4256c.rs1 w} rspFile] {
+	puts stderr "Cannot create response file macceleratorse_lc4256c.rs1: $rspFile"
+} else {
+	puts $rspFile "-i macceleratorse_lc4256c.bl5 -lci macceleratorse_lc4256c.lct -d m4s_256_64 -lco macceleratorse_lc4256c.lco -html_rpt -fti macceleratorse_lc4256c.fti -fmt PLA -tto macceleratorse_lc4256c.tt4 -nojed -eqn macceleratorse_lc4256c.eq3 -tmv NoInput.tmv
+-rpt_num 1
+"
+	close $rspFile
+}
+if [catch {open macceleratorse_lc4256c.rs2 w} rspFile] {
+	puts stderr "Cannot create response file macceleratorse_lc4256c.rs2: $rspFile"
+} else {
+	puts $rspFile "-i macceleratorse_lc4256c.bl5 -lci macceleratorse_lc4256c.lct -d m4s_256_64 -lco macceleratorse_lc4256c.lco -html_rpt -fti macceleratorse_lc4256c.fti -fmt PLA -tto macceleratorse_lc4256c.tt4 -eqn macceleratorse_lc4256c.eq3 -tmv NoInput.tmv
+-rpt_num 1
+"
+	close $rspFile
+}
+if [runCmd "\"$cpld_bin/lpf4k\" \"@macceleratorse_lc4256c.rs2\""] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+file delete macceleratorse_lc4256c.rs1
+file delete macceleratorse_lc4256c.rs2
+if [runCmd "\"$cpld_bin/tda\" -i macceleratorse_lc4256c.bl5 -o macceleratorse_lc4256c.tda -lci macceleratorse_lc4256c.lct -dev m4s_256_64 -family lc4k -mod MacceleratorSE -ovec NoInput.tmv -err tda.err "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/synsvf\" -exe \"$install_dir/ispvmsystem/ispufw\" -prj macceleratorse_lc4256c -if macceleratorse_lc4256c.jed -j2s -log macceleratorse_lc4256c.svl "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/timer\" -inp \"macceleratorse_lc4256c.tt4\" -lci \"macceleratorse_lc4256c.lct\" -trp \"macceleratorse_lc4256c.trp\" -exf \"MacceleratorSE.exf\" -lco \"macceleratorse_lc4256c.lco\""] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/04/21 03:15:56 ###########
+

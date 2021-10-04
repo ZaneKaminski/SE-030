@@ -10,8 +10,8 @@ Status = Production;
 
 [Revision]
 Parent = lc4k256c.lci;
-DATE = 2002;
-TIME = 0:00:00;
+DATE = 10/04/2021;
+TIME = 03:15:54;
 Source_Format = Pure_Verilog_HDL;
 Synthesis = LSE;
 
@@ -22,6 +22,7 @@ Synthesis = LSE;
 [Backannotate Assignments]
 
 [Global Constraints]
+Nodes_collapsing_mode = Fmax;
 
 [Location Assignments]
 layer = OFF;
@@ -109,3 +110,6 @@ layer = OFF;
 [ORP Bypass]
 
 [Register Powerup]
+
+[Constraint Version]
+version = 1.0;
