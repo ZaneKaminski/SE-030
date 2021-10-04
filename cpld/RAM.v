@@ -1,17 +1,13 @@
-`timescale 1ns / 1ps
 module RAM(
 	/* MC68HC000 interface */
-	input CLK,
-	input [21:1] A, input nWE,
-	input nAS, input nLDS, input nUDS,
+	input CLK,input [21:1] A, input nWE, input nAS, input nLDS, input nUDS,
 	/* FSB interface */
 	input ASActive, input ASInactive, input RAMCS, input ROMCS, output Ready,
 	/* Refresh Counter Interface */
 	input RefReq, input RefUrgent, output RefAck,
 	/* DRAM and NOR flash interface */
 	output [11:0] RA, output nRAS, output reg nCAS,
-	output nLWE, output nUWE, output nOE, 
-	output nROMCS, output nROMWE);
+	output nLWE, output nUWE, output nOE, output nROMCS, output nROMWE);
 	
 	reg [3:0] RS = 0;
 	reg RAMReady = 0;

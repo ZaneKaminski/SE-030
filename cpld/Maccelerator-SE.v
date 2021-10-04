@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 module MacceleratorSE(
 	input [23:1] A_FSB,
 	input nAS_FSB,
@@ -36,13 +35,16 @@ module MacceleratorSE(
 	output nDinLE);
 
 	wire ASActive, ASInactive;
-	wire RefReq, RefUrgent;
+
+	wire RefReq, RefUrgent, RefAck;
 	
-	wire IOACT;
-	
-	wire FCS, IOCS;
-	wire IACS, ROMCS, RAMCS;
-	wire SndRAMCS;
+	wire IOREQ, IOACT;
+
+	wire TimeoutA, TimeoutB;
+	wire Ready_IOBS, Ready_RAM;
+	wire Ready = Ready_IOBS && Ready_RAM && (~SndRAMCSWR ? TimeoutA : 1);
+
+	wire FCS, IOCS, IACS, ROMCS, RAMCS, SndRAMCSWR;
 	CS cs(
 		/* High-order address input */
 		A_FSB[23:08], CLK_FSB, nRES, nWE_FSB, ASActive,
@@ -50,12 +52,22 @@ module MacceleratorSE(
 		FCS, IOCS,
 		/* Device select outputs */
 		IACS, ROMCS, RAMCS,
-		/* Video/sound RAM select outputs */
-		SndRAMCS);
+		/* Sound RAM write select output */
+		SndRAMCSWR);
 
-	wire Ready_IOBS;
-	wire IOREQ;
-	wire ALE0, ALE1;
+	RAM ram(
+		/* MC68HC000 interface */
+		CLK_FSB, A_FSB[21:1], nWE_FSB, nAS_FSB, nLDS_FSB, nUDS_FSB,
+		/* FSB interface */
+		ASActive, ASInactive, RAMCS, ROMCS, Ready_RAM,
+		/* Refresh Counter Interface */
+		RefReq, RefUrgent, RefAck,
+		/* DRAM and NOR flash interface */
+		RA[11:0], nRAS, nCAS,
+		nRAMLWE, nRAMUWE, nOE, nROMCS, nROMWE);
+
+	wire ALE0S, ALE0M, ALE1;
+	assign nADoutLE0 = ~(ALE0S || ALE0M);
 	assign nADoutLE1 = ~ALE1;
 	wire IORW0, IOL0, IOU0;
 	IOBS iobs(
@@ -67,46 +79,37 @@ module MacceleratorSE(
 		nDinOE,
 		/* IOB Master Controller Interface */
 		IOREQ, IOACT,
-		ALE0, ALE1,
-		IORW0, IOL0, IOU0);
-
-	wire Ready_RAM;
-	wire RefAck;
-	RAM ram(
-		/* MC68HC000 interface */
-		CLK_FSB, A_FSB[21:1], nWE_FSB,
-		nAS_FSB, nLDS_FSB, nUDS_FSB,
-		/* FSB interface */
-		ASActive, ASInactive, RAMCS, ROMCS, Ready_RAM,
-		/* Refresh Counter Interface */
-		RefReq, RefUrgent, RefAck,
-		/* DRAM and NOR flash interface */
-		RA[11:0], nRAS, nCAS,
-		nRAMLWE, nRAMUWE, nOE, 
-		nROMCS, nROMWE);
+		/* FIFO primary level control */
+		ALE0S, IORW0, IOL0, IOU0,
+		/* FIFO secondary level control */
+		ALE1);
 
 	IOBM iobm(
 		/* PDS interface */
 		CLK2X_IOB, CLK_IOB, E_IOB,
-		nAS_IOB, nLDS_IOB, nUDS_IOB, nVMA_IOB,  
+		nAS_IOB, nLDS_IOB, nUDS_IOB, nVMA_IOB,
 		nDTACK_IOB, nVPA_IOB, nBERR_IOB,
 		/* PDS address and data latch control */
-		nAoutOE, nDoutOE, nADoutLE0, nDinLE,
+		nAoutOE, nDoutOE, ALE0M, nDinLE,
 		/* IO bus slave port interface */
-		IOACT, IOREQ, ALE0,
-		IOL0, IOU0, IORW0);
-		
-	wire Ready = Ready_IOBS && Ready_RAM;
+		IOACT, IOREQ, IOL0, IOU0, IORW0);
+
+	wire FBERR;
 	FSB fsb(
 		/* MC68HC000 interface */
-		CLK_FSB, nAS_FSB, nDTACK_FSB, nVPA_FSB, nBERR_FSB, IOCS, FCS,
-		/* PDS interface */
-		nBERR_IOB,
+		CLK_FSB, nAS_FSB, nDTACK_FSB, nVPA_FSB, 
+		/* Bus domain selects */
+		IOCS, FCS,
 		/* AS detection */
 		ASActive, ASInactive,
 		/* Ready and IA inputs */
 		Ready, IACS,
 		/* Refresh request */
-		RefReq, RefUrgent, RefAck);
+		RefReq, RefUrgent, RefAck,
+		/* Timeout signals */
+		TimeoutA, TimeoutB);
+
+	/* BERR output to fast CPU */
+	assign nBERR_FSB = ~(~nAS && ((IOCS && ~nBERR_IOB) || (FCS && TimeoutB)) && nDTACK && nVPA);
 
 endmodule

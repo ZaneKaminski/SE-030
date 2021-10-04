@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 module CS(
 	/* High-order address input */
 	input [23:08] A, input CLK, input nRES, input nWE, input ASActive,
@@ -7,7 +6,7 @@ module CS(
 	/* Device select outputs */
 	output IACS, output ROMCS, output RAMCS,
 	/* Video/sound RAM select outputs */
-	output SndRAMCS);
+	output SndRAMCSWR);
 
 	/* Overlay control */
 	reg nOverlay = 0;
@@ -26,11 +25,10 @@ module CS(
 				   (A[23:20]==4'h6 &&  Overlay) ||
 				   (A[23:20]==4'h7 &&  Overlay);
 	wire VidRAMCS = RAMCS && (A[23:20]==4'h3 || A[23:20]==4'h7) && A[19:16]==4'hF;
-	assign SndRAMCS = VidRAMCS && (
-						(A[15:12]==4'hF && 
-							(A[11:8]==4'hD || A[11:8]==4'hE || A[11:8]==4'hF)) ||
-						(A[15:12]==4'hA && 
-							(A[11:8]==4'h1 || A[11:8]==4'h2 || A[11:8]==4'h3)));
+	wire SndRAMCS = VidRAMCS && (
+		(A[15:12]==4'hF && (A[11:8]==4'hD || A[11:8]==4'hE || A[11:8]==4'hF)) ||
+		(A[15:12]==4'hA && (A[11:8]==4'h1 || A[11:8]==4'h2 || A[11:8]==4'h3)));
+	assign SndRAMCSWR = SndRAMCS && ~nWE;
 
 	assign ROMCS = A[23:20]==4'h4 || (A[23:20]==4'h0 && Overlay);
 

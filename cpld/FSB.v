@@ -1,15 +1,16 @@
-`timescale 1ns / 1ps
 module FSB(
 	/* MC68HC000 interface */
-	input FCLK, input nAS, output reg nDTACK, output reg nVPA, output nBERR, input IOCS, input FCS,
-	/* PDS interface */
-	input nBERRMac,
+	input FCLK, input nAS, output reg nDTACK, output reg nVPA, output nBERR,
+	/* Bus domain selects */
+	input IOCS, input FCS,
 	/* AS detection */
 	output ASActive, output ASInactive,
 	/* Ready and IA inputs */
 	input Ready, input IACS,
 	/* Refresh request */
-	output RefReq, output RefUrgent, input RefAck);
+	output RefReq, output RefUrgent, input RefAck,
+	/* Timeout signals */
+	output reg TimeoutA, output reg TimeoutB);
 
 	/* AS detection */
 	reg ASrf = 0;
@@ -22,11 +23,9 @@ module FSB(
 		if (ASInactive) begin
 			nDTACK <= 1;
 			nVPA <= 1;
-		end else if (ASActive) begin
-			if (Ready) begin
-				nDTACK <= IACS;
-				nVPA <= ~IACS;
-			end 
+		end else if (ASActive && Ready) begin			
+			nDTACK <= IACS;
+			nVPA <= ~IACS;
 		end
 	end
 
@@ -41,18 +40,18 @@ module FSB(
 		else if (RefAck) RefDone <= 1;
 	end
 
-	/* Fast bus domain BERR */
-	reg FBERRArmed = 0;
-	reg FBERR = 0;
+	/* Timeout signals */
+	reg TimeoutArmed = 0;
 	always @(posedge FCLK) begin
-		if (ASActive && RefCnt==0) FBERRArmed <= 1;
-		else FBERRArmed <= 0;
-
-		if (ASInactive) FBERR <= 0;
-		else if (ASActive && FBERRArmed && RefCnt==0 && ~IOCS) FBERR <= 1;
+		if (ASInactive) TimeoutArmed <= 0;
+		else if (ASActive && RefCnt==0) TimeoutArmed <= 1;
 	end
-
-	/* BERR output to fast CPU */
-	assign nBERR = ~(~nAS && ((IOCS && ~nBERRMac) || (FCS && FBERR)) && (~nDTACK || ~nVPA));
+	always @(posedge FCLK) begin
+		if (ASInactive) begin
+			TimeoutA <= 0;
+			TimeoutB <= 0;
+		end else if (ASActive && RefCnt[4:0]==0) TimeoutA <= 1;
+		else if (ASActive && RefCnt==0 && TimeoutArmed) TimeoutB <= 1;
+	end
 
 endmodule
