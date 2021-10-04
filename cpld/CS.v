@@ -1,21 +1,21 @@
 module CS(
 	/* High-order address input */
 	input [23:08] A, input CLK, input nRES, input nWE, input ASActive,
-	/* Bus domain select outputs */
-	output FCS, output IOCS,
 	/* Device select outputs */
-	output IACS, output ROMCS, output RAMCS,
+	output IOCS, output IACS, output ROMCS, output RAMCS,
 	/* Video/sound RAM select outputs */
 	output SndRAMCSWR);
 
 	/* Overlay control */
-	reg nOverlay = 0;
-	wire Overlay = ~nOverlay;
+	reg nOverlayr0 = 0;
+	reg nOverlayr1 = 0;
+	wire Overlay = ~nOverlayr1;
 	wire ODCS = A[23:20]==4'h4; // Disable overlay
 	always @(posedge CLK, negedge nRES) begin
-		if (~nRES) nOverlay <= 0;
-		else if (ASActive && ODCS) nOverlay <= 1;
+		if (~nRES) nOverlayr0 <= 0;
+		else if (ASActive && ODCS) nOverlayr0 <= 1;
 	end
+	always @(posedge CLK) begin nOverlayr1 <= ~nOverlayr0; end
 
 	/* Select signals - FSB domain */
 	assign RAMCS = (A[23:20]==4'h0 && ~Overlay) ||
@@ -32,13 +32,13 @@ module CS(
 
 	assign ROMCS = A[23:20]==4'h4 || (A[23:20]==4'h0 && Overlay);
 
-	assign FCS  =  A[23:20]==4'h0 || A[23:20]==4'h1 ||
+	/*wire FCS  =    A[23:20]==4'h0 || A[23:20]==4'h1 ||
 				   A[23:20]==4'h2 || A[23:20]==4'h3 ||
 				   A[23:20]==4'h4 ||
 				   A[23:20]==4'h6 || A[23:20]==4'h7 ||
 				   A[23:20]==4'h8 ||
 				   A[23:20]==4'hA ||
-				   A[23:20]==4'hC;
+				   A[23:20]==4'hC;*/
 
 	/* Select signals - IOB domain */
 	assign IACS = A[23:20]==4'hF; // IACK

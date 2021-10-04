@@ -40,14 +40,12 @@ module MXSE(
 	/* Refresh request/ack signals */
 	wire RefReq, RefUrgent, RefAck;
 	
-	wire FCS, IOCS, IACS, ROMCS, RAMCS, SndRAMCSWR;
+	wire IOCS, IACS, ROMCS, RAMCS, SndRAMCSWR;
 	CS cs(
 		/* High-order address input */
 		A_FSB[23:08], CLK_FSB, nRES, nWE_FSB, ASActive,
-		/* Bus domain select outputs */
-		FCS, IOCS,
 		/* Device select outputs */
-		IACS, ROMCS, RAMCS,
+		IOCS, IACS, ROMCS, RAMCS,
 		/* Sound RAM write select output */
 		SndRAMCSWR);
 
@@ -95,8 +93,7 @@ module MXSE(
 
 	wire TimeoutA, TimeoutB;
 	wire Ready = Ready_IOBS && Ready_RAM && (~SndRAMCSWR ? TimeoutA : 1);
-	assign nBERR_FSB = ~(~nAS_FSB && ((IOCS && ~nBERR_IOB) || (FCS && TimeoutB)) &&
-		nDTACK_FSB && nVPA_FSB && nDTACK_IOB && nVPA_IOB);
+	assign nBERR_FSB = ~(~nAS_FSB && ((IOCS && ~nBERR_IOB) || (~IOCS && TimeoutB)));
 	FSB fsb(
 		/* MC68HC000 interface */
 		CLK_FSB, nAS_FSB, nDTACK_FSB, nVPA_FSB, 
