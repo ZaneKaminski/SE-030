@@ -1,6 +1,0 @@
-. MacceleratorSE ..\maccelerator-se.v c:\users\zanek\documents\github\se-030\cpld\maccelerator-se.v
-fsb FSB ..\fsb.v c:\users\zanek\documents\github\se-030\cpld\fsb.v
-iobm IOBM ..\iobm.v c:\users\zanek\documents\github\se-030\cpld\iobm.v
-iobs IOBS ..\iobs.v c:\users\zanek\documents\github\se-030\cpld\iobs.v
-ram RAM ..\ram.v c:\users\zanek\documents\github\se-030\cpld\ram.v
-cs CS ..\cs.v c:\users\zanek\documents\github\se-030\cpld\cs.v
