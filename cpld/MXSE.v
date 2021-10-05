@@ -1,11 +1,10 @@
 module MXSE(
-	input [23:1] A_FSB,
+	input [23:8] A_FSB,
 	input nAS_FSB,
 	input nLDS_FSB,
 	input nUDS_FSB,
 	input nWE_FSB,
 	output nDTACK_FSB,
-	output nVPA_FSB,
 	output nBERR_FSB,
 	input CLK_FSB,
 	input CLK2X_IOB,
@@ -15,18 +14,15 @@ module MXSE(
 	input nVPA_IOB,
 	output nVMA_IOB,
 	output nAS_IOB,
-	output nUDS_IOB,
 	output nLDS_IOB,
+	output nUDS_IOB,
 	input nBERR_IOB,
 	input nRES,
-	output nROMCS,
+	output nRAMOE,
 	output nRAMLWE,
 	output nRAMUWE,
+	output nROMOE,
 	output nROMWE,
-	output nRAS,
-	output nCAS,
-	output [11:0] RA,
-	output nOE,
 	output nADoutLE0,
 	output nADoutLE1,
 	output nAoutOE,
@@ -37,29 +33,22 @@ module MXSE(
 	/* AS active / inactive signals */
 	wire ASActive, ASInactive;
 
-	/* Refresh request/ack signals */
-	wire RefReq, RefUrgent, RefAck;
-	
-	wire IOCS, IACS, ROMCS, RAMCS, SndRAMCSWR;
+	wire IOCS, ROMCS, RAMCS, SndRAMCSWR;
 	CS cs(
 		/* MC68HC000 interface */
-		A_FSB[23:08], CLK_FSB, nRES, nWE_FSB,
+		A_FSB[23:8], CLK_FSB, nRES, nWE_FSB,
 		/* FSB interface */
 		ASActive, ASInactive,
 		/* Device select outputs */
-		IOCS, IACS, ROMCS, RAMCS, SndRAMCSWR);
+		IOCS, ROMCS, RAMCS, SndRAMCSWR);
 
-	wire Ready_RAM;
 	RAM ram(
 		/* MC68HC000 interface */
-		CLK_FSB, A_FSB[21:1], nWE_FSB, nAS_FSB, nLDS_FSB, nUDS_FSB,
+		nWE_FSB, nAS_FSB, nLDS_FSB, nUDS_FSB,
 		/* FSB interface */
-		ASActive, ASInactive, RAMCS, ROMCS, Ready_RAM,
-		/* Refresh Counter Interface */
-		RefReq, RefUrgent, RefAck,
-		/* DRAM and NOR flash interface */
-		RA[11:0], nRAS, nCAS,
-		nRAMLWE, nRAMUWE, nOE, nROMCS, nROMWE);
+		RAMCS, ROMCS,
+		/* SRAM and NOR flash interface */
+		nRAMOE, nRAMLWE, nRAMUWE, nROMOE, nROMWE);
 
 	wire Ready_IOBS;
 	wire IOREQ, IOACT;
@@ -92,17 +81,15 @@ module MXSE(
 		IOACT, IOREQ, IOL0, IOU0, IORW0);
 
 	wire TimeoutA, TimeoutB;
-	wire Ready = Ready_IOBS && Ready_RAM && (~SndRAMCSWR ? TimeoutA : 1);
-	assign nBERR_FSB = ~(~nAS_FSB && nDTACK_FSB && nVPA_FSB && ((IOCS && ~nBERR_IOB) || (~IOCS && TimeoutB)));
+	wire Ready = Ready_IOBS && (SndRAMCSWR ? TimeoutA : 1);
+	assign nBERR_FSB = ~(~nAS_FSB && nDTACK_FSB && ((IOCS && ~nBERR_IOB) || (~IOCS && TimeoutB)));
 	FSB fsb(
 		/* MC68HC000 interface */
-		CLK_FSB, nAS_FSB, nDTACK_FSB, nVPA_FSB, 
+		CLK_FSB, nAS_FSB, nDTACK_FSB, 
 		/* AS detection */
 		ASActive, ASInactive,
 		/* Ready and IA inputs */
-		Ready, IACS,
-		/* Refresh request */
-		RefReq, RefUrgent, RefAck,
+		Ready,
 		/* Timeout signals */
 		TimeoutA, TimeoutB);
 

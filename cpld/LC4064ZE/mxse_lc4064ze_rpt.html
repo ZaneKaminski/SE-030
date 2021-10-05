@@ -1,0 +1,950 @@
+<HTML>
+<HEAD><TITLE>HTML_REPORT_FILE</TITLE>
+<STYLE TYPE="text/css">
+<!--
+.blink {text-decoration:blink}
+.ms  {font-size: 10pt; font-family: monospace; font-weight: normal}
+.msb {font-size: 10pt; font-family: monospace; font-weight: bold  }
+-->
+</STYLE>
+</HEAD>
+<PRE>
+<A name="Top"></A><H2 align=center> ispLEVER Classic 2.0.00.17.20.15 Fitter Report File </H2>
+<H2 align=center>Copyright(C), 1992-2012, Lattice Semiconductor Corporation</H2>
+<H2 align=center>All Rights Reserved</H2>
+
+
+The Basic/Detailed Report Format can be selected in the dialog box
+Tools->Fitter Report File Format...
+
+<A name="Project_Summary"></A><FONT COLOR=maroon><U><B><big>Project_Summary</big></B></U></FONT>
+<BR>
+Project Name         :  mxse_lc4064ze
+Project Path         :  C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE
+Project Fitted on    :  Tue Oct 05 04:15:42 2021
+
+Device               :  M4064_64
+Package              :  100
+GLB Input Mux Size   :  12
+Available Blocks     :  4
+Speed                :  -7.5
+Part Number          :  LC4064ZE-7TN100C
+Source Format        :  Pure_Verilog_HDL
+
+
+<font color=green size=4><span class=blink><strong><B>Project 'mxse_lc4064ze' Fit Successfully!</B></strong></span></font>
+
+
+<A name="Compilation_Times"></A><FONT COLOR=maroon><U><B><big>Compilation_Times</big></B></U></FONT>
+<BR>
+Prefit Time                     0 secs
+Load Design Time                0.05 secs
+Partition Time                  0.05 secs
+Place Time                      0.00 secs
+Route Time                      0.00 secs
+Total Fit Time                  00:00:01
+
+
+<A name="Design_Summary"></A><FONT COLOR=maroon><U><B><big>Design_Summary</big></B></U></FONT>
+<BR>
+Total Input Pins                27
+Total Logic Functions           59
+  Total Output Pins             17
+  Total Bidir I/O Pins          0
+  Total Buried Nodes            42
+Total Flip-Flops                47
+  Total D Flip-Flops            44
+  Total T Flip-Flops            3
+  Total Latches                 0
+Total Product Terms             247
+
+Total Reserved Pins             0
+Total Locked Pins               7
+Total Locked Nodes              0
+
+Total Unique Output Enables     0
+Total Unique Clocks             5
+Total Unique Clock Enables      5
+Total Unique Resets             1
+Total Unique Presets            0
+
+Fmax Logic Levels               2
+
+
+<A name="Device_Resource_Summary"></A><FONT COLOR=maroon><U><B><big>Device_Resource_Summary</big></B></U></FONT>
+<BR>
+<B>                                 Device
+                                 Total    Used   Not Used   Utilization
+-----------------------------------------------------------------------
+</B>Dedicated Pins
+  Clock/Input Pins                  4        4      0    -->   100
+  Input-Only Pins                   6        6      0    -->   100
+  I/O / Enable Pins                 2        2      0    -->   100
+I/O Pins                           62       32     30    -->    51
+Logic Functions                    64       59      5    -->    92
+  Input Registers                  64        0     64    -->     0
+
+GLB Inputs                        144      101     43    -->    70
+Logical Product Terms             320      198    122    -->    61
+Occupied GLBs                       4        4      0    -->   100
+Macrocells                         64       59      5    -->    92
+
+Control Product Terms:
+  GLB Clock/Clock Enables           4        3      1    -->    75
+  GLB Reset/Presets                 4        0      4    -->     0
+  Macrocell Clocks                 64        1     63    -->     1
+  Macrocell Clock Enables          64        4     60    -->     6
+  Macrocell Enables                64        0     64    -->     0
+  Macrocell Resets                 64        1     63    -->     1
+  Macrocell Presets                64        0     64    -->     0
+
+Global Routing Pool               144       71     73    -->    49
+  GRP from IFB                     ..       27     ..    -->    ..
+    (from input signals)           ..       27     ..    -->    ..
+    (from output signals)          ..        0     ..    -->    ..
+    (from bidir signals)           ..        0     ..    -->    ..
+  GRP from MFB                     ..       44     ..    -->    ..
+----------------------------------------------------------------------
+
+&lt;Note&gt; 1 : The available PT is the product term that has not been used.
+&lt;Note&gt; 2 : IFB is I/O feedback.
+&lt;Note&gt; 3 : MFB is macrocell feedback.
+
+
+<A name="GLB_Resource_Summary"></A><FONT COLOR=maroon><U><B><big>GLB_Resource_Summary</big></B></U></FONT>
+<BR>
+<B>                                                                                     # of PT
+               ---  Fanin  ---    I/O    Input  Macrocells       Macrocells   Logic  clusters
+             Unique Shared Total  Pins    Regs Used Inaccessible  available    PTs   used
+-------------------------------------------------------------------------------------------
+Maximum
+  GLB                      36      *(1)     8   --     --             16       80       16
+</B>-------------------------------------------------------------------------------------------
+  GLB    A      8    19    27      8/16     0   15      0              1       54       16
+  GLB    B      5    20    25     10/16     0   15      0              1       41       15
+  GLB    C      5    13    18      6/16     0   15      0              1       39       15
+  GLB    D     13    18    31      8/16     0   14      0              2       64       15
+-------------------------------------------------------------------------------------------
+TOTALS:        31    70   101     32/64     0   59      0              5      198       61
+
+&lt;Note&gt; 1 : For ispMACH 4000 devices, the number of IOs depends on the GLB.
+&lt;Note&gt; 2 : Four rightmost columns above reflect last status of the placement process.
+
+
+<A name="GLB_Control_Summary"></A><FONT COLOR=maroon><U><B><big>GLB_Control_Summary</big></B></U></FONT>
+<BR>
+<B>           Shared Shared | Mcell  Mcell  Mcell  Mcell  Mcell 
+           Clk/CE Rst/Pr | Clock  CE     Enable Reset  Preset
+------------------------------------------------------------------------------
+Maximum
+  GLB        1      1        16     16     16     16     16  
+==============================================================================
+</B>  GLB    A   1      0         0      4      0      0      0
+  GLB    B   1      0         0      0      0      0      0
+  GLB    C   0      0         0      0      0      0      0
+  GLB    D   1      0         1      0      0      1      0
+------------------------------------------------------------------------------
+
+&lt;Note&gt; 1 : For ispMACH 4000 devices, the number of output enables depends on the GLB.
+
+
+<A name="Optimizer_and_Fitter_Options"></A><FONT COLOR=maroon><U><B><big>Optimizer_and_Fitter_Options</big></B></U></FONT>
+<BR>
+Pin Assignment :                       No
+Group Assignment :                     No
+Pin Reservation :                      No
+
+@Ignore_Project_Constraints :
+  Pin Assignments :                    No
+      Keep Block Assignment            --
+      Keep Segment Assignment          --
+  Group Assignments :                  No
+  Macrocell Assignment :               No
+      Keep Block Assignment            --
+      Keep Segment Assignment          --
+
+@Backannotate_Project_Constraints
+  Pin Assignments :                    No
+  Pin And Block Assignments :          No
+  Pin, Macrocell and Block :           No
+
+@Timing_Constraints :                  No
+
+@Global_Project_Optimization :
+  Balanced Partitioning :              No
+  Spread Placement :                   Yes
+
+  Note :
+    Pack Design :
+       Balanced Partitioning = No
+       Spread Placement      = No
+    Spread Design :
+       Balanced Partitioning = Yes
+       Spread Placement      = Yes
+
+
+@Logic_Synthesis :
+  Logic Reduction :                    Yes
+  Node Collapsing :                    FMAX
+  Fmax_Logic_Level :                   1
+  D/T Synthesis :                      Yes
+  XOR Synthesis :                      Yes
+  Max. P-Term for Collapsing :         16
+  Max. P-Term for Splitting :          80
+  Max Symbols :                        24
+
+@Utilization_options
+  Max. % of Macrocells used :          100
+@Usercode                               (HEX)
+@IO_Types                              Default = LVCMOS18 (2)
+@Output_Slew_Rate                      Default = FAST (2)
+@Power                                 Default = HIGH (2)
+@Pull                                  Default = PULLUP_DOWN (2)
+@Input_Registers                       Default = None (2)
+@Register_Powerup                      Default = None
+
+Device Options:
+&lt;Note&gt; 1 : Reserved unused I/Os can be independently driven to Low or High, and does not
+           follow the drive level set for the Global Configure Unused I/O Option.
+&lt;Note&gt; 2 : For user-specified constraints on individual signals, refer to the Output,
+           Bidir and Buried Signal Lists.
+
+
+<A name="Pinout_Listing"></A><FONT COLOR=maroon><U><B><big>Pinout_Listing</big></B></U></FONT>
+<BR>
+<B>      | Pin   | Bank |GLB |Assigned|                 | Signal|            | PG
+Pin No| Type  |Number|Pad |Pin     |     I/O Type    | Type  | Signal name| Enable
+</B>-------------------------------------------------------------------------------------
+1     | GND   |   -  |    |        |                 |       |            |
+2     | TDI   |   -  |    |        |                 |       |            |
+3     |  I_O  |   0  | A8 |        |LVCMOS18         | Input |<A href=#35>A_FSB_16_</A>|
+4     |  I_O  |   0  | A9 |        |                 |       |            |
+5     |  I_O  |   0  | A10|        |                 |       |            |
+6     |  I_O  |   0  | A11|        |                 |       |            |
+7     |GNDIO0 |   -  |    |        |                 |       |            |
+8     |  I_O  |   0  | A12|        |                 |       |            |
+9     |  I_O  |   0  | A13|        |                 |       |            |
+10    |  I_O  |   0  | A14|        |                 |       |            |
+11    |  I_O  |   0  | A15|        |                 |       |            |
+12    | IN0   |   0  |    |    *   |LVCMOS18         | Input |<A href=#37>A_FSB_14_</A>|
+13    |VCCIO0 |   -  |    |        |                 |       |            |
+14    |  I_O  |   0  | B15|        |                 |       |            |
+15    |  I_O  |   0  | B14|        |                 |       |            |
+16    |  I_O  |   0  | B13|        |                 |       |            |
+17    |  I_O  |   0  | B12|        |                 |       |            |
+18    |GNDIO0 |   -  |    |        |                 |       |            |
+19    |  I_O  |   0  | B11|        |                 |       |            |
+20    |  I_O  |   0  | B10|        |                 |       |            |
+21    |  I_O  |   0  | B9 |        |LVCMOS18         | Input |<A href=#30>A_FSB_19_</A>|
+22    |  I_O  |   0  | B8 |        |LVCMOS18         | Input |<A href=#19>nRES</A>|
+23    | IN1   |   0  |    |    *   |LVCMOS18         | Input |<A href=#38>A_FSB_13_</A>|
+24    | TCK   |   -  |    |        |                 |       |            |
+25    | VCC   |   -  |    |        |                 |       |            |
+26    | GND   |   -  |    |        |                 |       |            |
+27    | IN2   |   0  |    |    *   |LVCMOS18         | Input |<A href=#39>A_FSB_12_</A>|
+28    |  I_O  |   0  | B7 |        |LVCMOS18         | Input |<A href=#15>E_IOB</A>|
+29    |  I_O  |   0  | B6 |        |LVCMOS18         | Input |<A href=#7>nAS_FSB</A>|
+30    |  I_O  |   0  | B5 |        |LVCMOS18         | Output|<A href=#49>nDinLE</A>|
+31    |  I_O  |   0  | B4 |        |LVCMOS18         | Output|<A href=#45>nAS_IOB</A>|
+32    |GNDIO0 |   -  |    |        |                 |       |            |
+33    |VCCIO0 |   -  |    |        |                 |       |            |
+34    |  I_O  |   0  | B3 |        |LVCMOS18         | Output|<A href=#11>nBERR_FSB</A>|
+35    |  I_O  |   0  | B2 |        |LVCMOS18         | Output|<A href=#48>nDoutOE</A>|
+36    |  I_O  |   0  | B1 |        |LVCMOS18         | Output|<A href=#47>nUDS_IOB</A>|
+37    |  I_O  |   0  | B0 |        |LVCMOS18         | Output|<A href=#46>nLDS_IOB</A>|
+38    |INCLK1 |   0  |    |    *   |LVCMOS18         | Input |<A href=#36>A_FSB_15_</A>|
+39    |INCLK2 |   1  |    |        |LVCMOS18         | Input |<A href=#12>CLK_FSB</A>|
+40    | VCC   |   -  |    |        |                 |       |            |
+41    |  I_O  |   1  | C0 |        |LVCMOS18         | Input |<A href=#8>nLDS_FSB</A>|
+42    |  I_O  |   1  | C1 |        |LVCMOS18         | Output|<A href=#44>nVMA_IOB</A>|
+43    |  I_O  |   1  | C2 |        |LVCMOS18         | Input |<A href=#16>nDTACK_IOB</A>|
+44    |  I_O  |   1  | C3 |        |LVCMOS18         | Output|<A href=#27>nADoutLE0</A>|
+45    |VCCIO1 |   -  |    |        |                 |       |            |
+46    |GNDIO1 |   -  |    |        |                 |       |            |
+47    |  I_O  |   1  | C4 |        |LVCMOS18         | Input |<A href=#24>A_FSB_22_</A>|
+48    |  I_O  |   1  | C5 |        |LVCMOS18         | Input |<A href=#32>A_FSB_18_</A>|
+49    |  I_O  |   1  | C6 |        |                 |       |            |
+50    |  I_O  |   1  | C7 |        |                 |       |            |
+51    | GND   |   -  |    |        |                 |       |            |
+52    | TMS   |   -  |    |        |                 |       |            |
+53    |  I_O  |   1  | C8 |        |                 |       |            |
+54    |  I_O  |   1  | C9 |        |                 |       |            |
+55    |  I_O  |   1  | C10|        |                 |       |            |
+56    |  I_O  |   1  | C11|        |                 |       |            |
+57    |GNDIO1 |   -  |    |        |                 |       |            |
+58    |  I_O  |   1  | C12|        |                 |       |            |
+59    |  I_O  |   1  | C13|        |                 |       |            |
+60    |  I_O  |   1  | C14|        |                 |       |            |
+61    |  I_O  |   1  | C15|        |                 |       |            |
+62    | IN3   |   1  |    |    *   |LVCMOS18         | Input |<A href=#40>A_FSB_11_</A>|
+63    |VCCIO1 |   -  |    |        |                 |       |            |
+64    |  I_O  |   1  | D15|        |                 |       |            |
+65    |  I_O  |   1  | D14|        |                 |       |            |
+66    |  I_O  |   1  | D13|        |                 |       |            |
+67    |  I_O  |   1  | D12|        |                 |       |            |
+68    |GNDIO1 |   -  |    |        |                 |       |            |
+69    |  I_O  |   1  | D11|        |                 |       |            |
+70    |  I_O  |   1  | D10|        |                 |       |            |
+71    |  I_O  |   1  | D9 |        |                 |       |            |
+72    |  I_O  |   1  | D8 |        |LVCMOS18         | Input |<A href=#33>A_FSB_17_</A>|
+73    | IN4   |   1  |    |    *   |LVCMOS18         | Input |<A href=#41>A_FSB_10_</A>|
+74    | TDO   |   -  |    |        |                 |       |            |
+75    | VCC   |   -  |    |        |                 |       |            |
+76    | GND   |   -  |    |        |                 |       |            |
+77    | IN5   |   1  |    |    *   |LVCMOS18         | Input |<A href=#42>A_FSB_9_</A>|
+78    |  I_O  |   1  | D7 |        |LVCMOS18         | Input |<A href=#26>A_FSB_21_</A>|
+79    |  I_O  |   1  | D6 |        |LVCMOS18         | Output|<A href=#25>nROMWE</A>|
+80    |  I_O  |   1  | D5 |        |LVCMOS18         | Input |<A href=#17>nVPA_IOB</A>|
+81    |  I_O  |   1  | D4 |        |LVCMOS18         | Input |<A href=#9>nUDS_FSB</A>|
+82    |GNDIO1 |   -  |    |        |                 |       |            |
+83    |VCCIO1 |   -  |    |        |                 |       |            |
+84    |  I_O  |   1  | D3 |        |LVCMOS18         | Output|<A href=#34>nDinOE</A>|
+85    |  I_O  |   1  | D2 |        |LVCMOS18         | Output|<A href=#20>nRAMOE</A>|
+86    |  I_O  |   1  | D1 |        |LVCMOS18         | Output|<A href=#29>nADoutLE1</A>|
+87    | I_O/OE|   1  | D0 |        |LVCMOS18         | Output|<A href=#43>nDTACK_FSB</A>|
+88    |INCLK3 |   1  |    |        |LVCMOS18         | Input |<A href=#13>CLK2X_IOB</A>|
+89    |INCLK0 |   0  |    |        |LVCMOS18         | Input |<A href=#14>CLK_IOB</A>|
+90    | VCC   |   -  |    |        |                 |       |            |
+91    | I_O/OE|   0  | A0 |        |LVCMOS18         | Output|<A href=#31>nAoutOE</A>|
+92    |  I_O  |   0  | A1 |        |LVCMOS18         | Input |<A href=#6>A_FSB_23_</A>|
+93    |  I_O  |   0  | A2 |        |LVCMOS18         | Input |<A href=#10>nWE_FSB</A>|
+94    |  I_O  |   0  | A3 |        |LVCMOS18         | Output|<A href=#21>nRAMLWE</A>|
+95    |VCCIO0 |   -  |    |        |                 |       |            |
+96    |GNDIO0 |   -  |    |        |                 |       |            |
+97    |  I_O  |   0  | A4 |        |LVCMOS18         | Output|<A href=#22>nRAMUWE</A>|
+98    |  I_O  |   0  | A5 |        |LVCMOS18         | Output|<A href=#23>nROMOE</A>|
+99    |  I_O  |   0  | A6 |        |LVCMOS18         | Input |<A href=#18>nBERR_IOB</A>|
+100   |  I_O  |   0  | A7 |        |LVCMOS18         | Input |<A href=#28>A_FSB_20_</A>|
+-------------------------------------------------------------------------------------
+
+&lt;Note&gt; GLB Pad : This notation refers to the GLB I/O pad number in the device.
+&lt;Note&gt; Assigned Pin : user or dedicated input assignment (E.g. Clock pins).
+&lt;Note&gt; Pin Type : 
+          ClkIn : Dedicated input or clock pin 
+           CLK  : Dedicated clock pin
+           I_O  : Input/Output pin
+           INP  : Dedicated input pin
+           JTAG : JTAG Control and test pin
+           NC   : No connected
+
+
+<A name="Input_Signal_List"></A><FONT COLOR=maroon><U><B><big>Input_Signal_List</big></B></U></FONT>
+<BR>
+<B>                Input
+         Pin    Fanout
+ Pin GLB Type           Pullup Signal
+</B>-----------------------------------------
+  73  --  IN    1 ---D    Down <A name=41>A_FSB_10_</A>
+  62  --  IN    1 ---D    Down <A name=40>A_FSB_11_</A>
+  27  --  IN    1 ---D    Down <A name=39>A_FSB_12_</A>
+  23  --  IN    1 ---D    Down <A name=38>A_FSB_13_</A>
+  12  --  IN    1 ---D    Down <A name=37>A_FSB_14_</A>
+  38  -- INCLK  1 ---D    Down <A name=36>A_FSB_15_</A>
+   3   A  I/O   2 A--D    Down <A name=35>A_FSB_16_</A>
+  72   D  I/O   2 A--D    Down <A name=33>A_FSB_17_</A>
+  48   C  I/O   2 A--D    Down <A name=32>A_FSB_18_</A>
+  21   B  I/O   2 A--D    Down <A name=30>A_FSB_19_</A>
+ 100   A  I/O   2 A--D    Down <A name=28>A_FSB_20_</A>
+  78   D  I/O   2 A--D    Down <A name=26>A_FSB_21_</A>
+  47   C  I/O   2 A--D    Down <A name=24>A_FSB_22_</A>
+  92   A  I/O   2 A--D    Down <A name=6>A_FSB_23_</A>
+  77  --  IN    1 ---D    Down <A name=42>A_FSB_9_</A>
+  88  -- INCLK  1 -B--    Down <A name=13>CLK2X_IOB</A>
+  39  -- INCLK  1 ---D    Down <A name=12>CLK_FSB</A>
+  89  -- INCLK  1 -B--    Down <A name=14>CLK_IOB</A>
+  28   B  I/O   1 --C-    Down <A name=15>E_IOB</A>
+  29   B  I/O   3 AB-D    Down <A name=7>nAS_FSB</A>
+  99   A  I/O   1 -B--    Down <A name=18>nBERR_IOB</A>
+  43   C  I/O   1 -B--    Down <A name=16>nDTACK_IOB</A>
+  41   C  I/O   1 A---    Down <A name=8>nLDS_FSB</A>
+  22   B  I/O   1 ---D    Down <A name=19>nRES</A>
+  81   D  I/O   1 A---    Down <A name=9>nUDS_FSB</A>
+  80   D  I/O   1 --C-    Down <A name=17>nVPA_IOB</A>
+  93   A  I/O   2 A--D    Down <A name=10>nWE_FSB</A>
+-----------------------------------------
+
+
+<A name="Output_Signal_List"></A><FONT COLOR=maroon><U><B><big>Output_Signal_List</big></B></U></FONT>
+<BR>
+<B>          I         C      P R P       O Output
+          N         L Mc   R E U C O F B Fanout
+ Pin GLB  P LL PTs  S Type E S P E E P P         Slew Pullup Signal
+</B>-----------------------------------------------------------------------
+  44   C  2  -   1  1 COM                  ----  Fast   Down <A href=#27>nADoutLE0</A>
+  86   D  1  -   1  1 COM                  ----  Fast   Down <A href=#29>nADoutLE1</A>
+  31   B  4  1   2  1 DFF      R           ----  Fast   Down <A href=#45>nAS_IOB</A>
+  91   A  0  -   0  1 COM                  ----  Fast   Down <A href=#31>nAoutOE</A>
+  34   B  5  2   2  1 COM                  ----  Fast   Down <A href=#11>nBERR_FSB</A>
+  87   D 23  1  12  3 DFF      R         2 -B-D  Fast   Down <A href=#43>nDTACK_FSB</A>
+  30   B  3  1   1  1 DFF      R           ----  Fast   Down <A href=#49>nDinLE</A>
+  84   D  3  2   1  1 COM                  ----  Fast   Down <A href=#34>nDinOE</A>
+  35   B  4  1   3  1 DFF      R           ----  Fast   Down <A href=#48>nDoutOE</A>
+  37   B  6  1   4  1 DFF      R           ----  Fast   Down <A href=#46>nLDS_IOB</A>
+  94   A  6  1   2  1 COM                  ----  Fast   Down <A href=#21>nRAMLWE</A>
+  85   D  6  1   2  1 COM                  ----  Fast   Down <A href=#20>nRAMOE</A>
+  97   A  6  1   2  1 COM                  ----  Fast   Down <A href=#22>nRAMUWE</A>
+  98   A  7  1   2  1 COM                  ----  Fast   Down <A href=#23>nROMOE</A>
+  79   D  7  1   2  1 COM                  ----  Fast   Down <A href=#25>nROMWE</A>
+  36   B  6  1   4  1 DFF      R           ----  Fast   Down <A href=#47>nUDS_IOB</A>
+  42   C  8  1   2  1 TFF      R         1 --C-  Fast   Down <A href=#44>nVMA_IOB</A>
+-----------------------------------------------------------------------
+
+&lt;Note&gt; CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+<A name="Bidir_Signal_List"></A><FONT COLOR=maroon><U><B><big>Bidir_Signal_List</big></B></U></FONT>
+<BR>
+<B>          I         C      P R P       O Bidir
+          N         L Mc   R E U C O F B Fanout
+ Pin GLB  P LL PTs  S Type E S P E E P P         Slew Pullup Signal
+</B>-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+&lt;Note&gt; CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+<A name="Buried_Signal_List"></A><FONT COLOR=maroon><U><B><big>Buried_Signal_List</big></B></U></FONT>
+<BR>
+<B>        I         C      P R P       Node
+        N         L Mc   R E U C I F Fanout
+Mc GLB  P LL PTs  S Type E S P E R P         Signal
+</B>-----------------------------------------------------------
+ 8   A 10  -   4  1 COM              2 -B-D  <A href=#88>IOCS_i</A>
+ 0   D  7  1   3  1 DFF    * R       1 ---D  <A href=#90>cs_nOverlay0</A>
+11   D  3  1   1  1 DFF      R *     2 A--D  <A href=#89>cs_nOverlay1</A>
+ 3   D  2  -   2  1 DFF      R       2 -B-D  <A href=#60>fsb_ASrf</A>
+13   B  1  1   1  1 DFF      R       2 -BC-  <A href=#64>fsb_RefCnt_0_</A>
+ 9   C  2  1   2  1 DFF      R       2 -BC-  <A href=#62>fsb_RefCnt_1_</A>
+ 5   C  3  1   3  1 DFF      R       2 -BC-  <A href=#63>fsb_RefCnt_2_</A>
+ 2   C  4  1   4  1 DFF      R       2 -BC-  <A href=#66>fsb_RefCnt_3_</A>
+ 7   C  5  1   2  1 DFF      R       2 -BC-  <A href=#65>fsb_RefCnt_4_</A>
+12   B  5  1   1  1 TFF      R       1 -B--  <A href=#61>fsb_RefCnt_5_</A>
+ 6   B  9  1   3  1 DFF      R       2 -B-D  <A href=#58>fsb_TimeoutA</A>
+ 7   B 10  1   3  1 DFF      R       1 -B--  <A href=#59>fsb_TimeoutB</A>
+10   B  4  1   2  1 DFF      R       1 --C-  <A href=#57>iobm_ALE0</A>
+ 3   C  7  1   4  1 DFF      R       1 --C-  <A href=#70>iobm_ES_0_</A>
+ 6   C  4  1   3  1 DFF      R       1 --C-  <A href=#71>iobm_ES_1_</A>
+ 0   C  7  1   5  1 DFF      R       1 --C-  <A href=#69>iobm_ES_2_</A>
+ 1   C  6  1   5  1 DFF      R       1 --C-  <A href=#72>iobm_ES_3_</A>
+ 4   C  7  1   4  1 TFF      R       1 --C-  <A href=#73>iobm_ES_4_</A>
+13   C  5  1   1  1 DFF      R       1 -B--  <A href=#78>iobm_ETACK</A>
+11   C  1  -   1  1 DFF      R       1 --C-  <A href=#68>iobm_Er</A>
+12   C  1  1   1  1 DFF      R       1 --C-  <A href=#77>iobm_Er2</A>
+ 0   B  8  1   5  1 DFF      R       1 --C-  <A href=#51>iobm_IOACT</A>
+14   B  2  1   1  1 DFF      R       1 -B--  <A href=#67>iobm_IOREQr</A>
+ 1   B  8  1   5  1 DFF      R       2 AB--  <A href=#74>iobm_IOS_0_</A>
+ 4   B  7  1   4  1 DFF      R       2 AB--  <A href=#75>iobm_IOS_1_</A>
+ 9   A  3  1   3  1 DFF      R       2 AB--  <A href=#76>iobm_IOS_2_</A>
+ 9   D  2  1   1  1 DFF      R       1 --C-  <A href=#52>iobs_ALE0</A>
+ 4   D 15  1  10  2 DFF      R       2 A--D  <A href=#56>iobs_ALE1</A>
+14   C  1  1   1  1 DFF      R       2 A--D  <A href=#79>iobs_IOACTr</A>
+13   A  5  1   2  1 DFF      R *     1 -B--  <A href=#54>iobs_IOL0</A>
+ 2   A  2  -   2  1 DFF      R *     1 A---  <A href=#83>iobs_IOL1</A>
+ 6   D  6  1   3  1 DFF      R       1 ---D  <A href=#85>iobs_IORDReady</A>
+ 3   A 16  1   7  2 DFF      R       1 -B--  <A href=#50>iobs_IOREQ</A>
+ 1   A 17  1  11  3 DFF      R *     2 AB--  <A href=#53>iobs_IORW0</A>
+ 6   A  2  -   2  1 DFF      R *     1 A---  <A href=#87>iobs_IORW1</A>
+12   D 15  -   8  2 COM              1 A---  <A href=#91>iobs_IORW1_0</A>
+14   A  5  1   2  1 DFF      R *     1 -B--  <A href=#55>iobs_IOU0</A>
+ 4   A  2  -   2  1 DFF      R *     1 A---  <A href=#84>iobs_IOU1</A>
+10   D 15  1   8  2 DFF      R       1 A---  <A href=#86>iobs_Load1</A>
+ 5   D 16  1  10  2 DFF      R       2 A--D  <A href=#81>iobs_Once</A>
+ 7   A 16  1   6  2 DFF      R       2 A--D  <A href=#82>iobs_PS_0_</A>
+ 5   A 16  1   7  2 DFF      R       2 A--D  <A href=#80>iobs_PS_1_</A>
+-----------------------------------------------------------
+
+&lt;Note&gt; CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        IR = Input register
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+<A name="PostFit_Equations"></A><FONT COLOR=maroon><U><B><big>PostFit_Equations</big></B></U></FONT>
+<BR>
+<A name=88>IOCS_i</A> = !( !<A href=#10>nWE_FSB</A> & !<A href=#24>A_FSB_22_</A> & <A href=#26>A_FSB_21_</A> & <A href=#28>A_FSB_20_</A> & <A href=#30>A_FSB_19_</A>
+       & <A href=#32>A_FSB_18_</A> & <A href=#33>A_FSB_17_</A> & <A href=#35>A_FSB_16_</A> & <A href=#89>cs_nOverlay1.Q</A>
+    # !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_ & A_FSB_17_
+       & A_FSB_16_ & !cs_nOverlay1.Q
+    # A_FSB_22_ & !A_FSB_21_ & A_FSB_20_
+    # <A href=#6>A_FSB_23_</A> ) ; (4 pterms, 10 signals)
+
+<A name=90>cs_nOverlay0.D</A> = !<A href=#6>A_FSB_23_</A> & !<A href=#7>nAS_FSB</A> & <A href=#24>A_FSB_22_</A> & !<A href=#26>A_FSB_21_</A> & !<A href=#28>A_FSB_20_</A>
+    # <A href=#90>cs_nOverlay0.Q</A> ; (2 pterms, 6 signals)
+cs_nOverlay0.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+cs_nOverlay0.AR = !<A href=#19>nRES</A> ; (1 pterm, 1 signal)
+
+<A name=89>cs_nOverlay1.D</A> = <A href=#90>cs_nOverlay0.Q</A> ; (1 pterm, 1 signal)
+cs_nOverlay1.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+cs_nOverlay1.CE = <A href=#7>nAS_FSB</A> & !<A href=#60>fsb_ASrf.Q</A> ; (1 pterm, 2 signals)
+
+<A name=60>fsb_ASrf.D</A> = !<A href=#7>nAS_FSB</A> ; (1 pterm, 1 signal)
+fsb_ASrf.C = !<A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+
+<A name=64>fsb_RefCnt_0_.D</A> = !<A href=#64>fsb_RefCnt_0_.Q</A> ; (1 pterm, 1 signal)
+fsb_RefCnt_0_.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+
+<A name=62>fsb_RefCnt_1_.D</A> = <A href=#62>fsb_RefCnt_1_.Q</A> & !<A href=#64>fsb_RefCnt_0_.Q</A>
+    # !fsb_RefCnt_1_.Q & fsb_RefCnt_0_.Q ; (2 pterms, 2 signals)
+fsb_RefCnt_1_.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+
+<A name=63>fsb_RefCnt_2_.D</A> = <A href=#62>fsb_RefCnt_1_.Q</A> & !<A href=#63>fsb_RefCnt_2_.Q</A> & <A href=#64>fsb_RefCnt_0_.Q</A>
+    # !fsb_RefCnt_1_.Q & fsb_RefCnt_2_.Q
+    # fsb_RefCnt_2_.Q & !fsb_RefCnt_0_.Q ; (3 pterms, 3 signals)
+fsb_RefCnt_2_.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+
+<A name=66>fsb_RefCnt_3_.D</A> = <A href=#62>fsb_RefCnt_1_.Q</A> & <A href=#63>fsb_RefCnt_2_.Q</A> & <A href=#64>fsb_RefCnt_0_.Q</A>
+       & !<A href=#66>fsb_RefCnt_3_.Q</A>
+    # !fsb_RefCnt_0_.Q & fsb_RefCnt_3_.Q
+    # !fsb_RefCnt_2_.Q & fsb_RefCnt_3_.Q
+    # !fsb_RefCnt_1_.Q & fsb_RefCnt_3_.Q ; (4 pterms, 4 signals)
+fsb_RefCnt_3_.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+
+<A name=65>fsb_RefCnt_4_.D.X1</A> = <A href=#62>fsb_RefCnt_1_.Q</A> & <A href=#63>fsb_RefCnt_2_.Q</A> & <A href=#64>fsb_RefCnt_0_.Q</A>
+       & <A href=#66>fsb_RefCnt_3_.Q</A> ; (1 pterm, 4 signals)
+fsb_RefCnt_4_.D.X2 = <A href=#65>fsb_RefCnt_4_.Q</A> ; (1 pterm, 1 signal)
+fsb_RefCnt_4_.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+
+<A name=61>fsb_RefCnt_5_.T</A> = <A href=#62>fsb_RefCnt_1_.Q</A> & <A href=#63>fsb_RefCnt_2_.Q</A> & <A href=#64>fsb_RefCnt_0_.Q</A>
+       & <A href=#65>fsb_RefCnt_4_.Q</A> & <A href=#66>fsb_RefCnt_3_.Q</A> ; (1 pterm, 5 signals)
+fsb_RefCnt_5_.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+
+<A name=58>fsb_TimeoutA.D</A> = !<A href=#7>nAS_FSB</A> & !<A href=#61>fsb_RefCnt_5_.Q</A> & !<A href=#62>fsb_RefCnt_1_.Q</A>
+       & !<A href=#63>fsb_RefCnt_2_.Q</A> & !<A href=#64>fsb_RefCnt_0_.Q</A> & !<A href=#65>fsb_RefCnt_4_.Q</A>
+       & !<A href=#66>fsb_RefCnt_3_.Q</A>
+    # <A href=#58>fsb_TimeoutA.Q</A> & <A href=#60>fsb_ASrf.Q</A>
+    # !nAS_FSB & fsb_TimeoutA.Q ; (3 pterms, 9 signals)
+fsb_TimeoutA.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+
+<A name=59>fsb_TimeoutB.D</A> = !<A href=#7>nAS_FSB</A> & <A href=#58>fsb_TimeoutA.Q</A> & !<A href=#61>fsb_RefCnt_5_.Q</A>
+       & !<A href=#62>fsb_RefCnt_1_.Q</A> & !<A href=#63>fsb_RefCnt_2_.Q</A> & !<A href=#64>fsb_RefCnt_0_.Q</A>
+       & !<A href=#65>fsb_RefCnt_4_.Q</A> & !<A href=#66>fsb_RefCnt_3_.Q</A>
+    # <A href=#59>fsb_TimeoutB.Q</A> & <A href=#60>fsb_ASrf.Q</A>
+    # !nAS_FSB & fsb_TimeoutB.Q ; (3 pterms, 10 signals)
+fsb_TimeoutB.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+
+<A name=57>iobm_ALE0.D</A> = !( !<A href=#67>iobm_IOREQr.Q</A> & !<A href=#74>iobm_IOS_0_.Q</A> & !<A href=#75>iobm_IOS_1_.Q</A>
+       & !<A href=#76>iobm_IOS_2_.Q</A>
+    # iobm_IOS_1_.Q & iobm_IOS_2_.Q ) ; (2 pterms, 4 signals)
+iobm_ALE0.C = <A href=#13>CLK2X_IOB</A> ; (1 pterm, 1 signal)
+
+<A name=70>iobm_ES_0_.D</A> = !( <A href=#68>iobm_Er.Q</A> & !<A href=#69>iobm_ES_2_.Q</A> & !<A href=#71>iobm_ES_1_.Q</A> & !<A href=#72>iobm_ES_3_.Q</A>
+       & !<A href=#73>iobm_ES_4_.Q</A>
+    # !iobm_ES_2_.Q & !iobm_ES_1_.Q & !iobm_ES_3_.Q & !iobm_ES_4_.Q
+       & !<A href=#77>iobm_Er2.Q</A>
+    # iobm_Er.Q & <A href=#70>iobm_ES_0_.Q</A>
+    # iobm_ES_0_.Q & !iobm_Er2.Q ) ; (4 pterms, 7 signals)
+iobm_ES_0_.C = <A href=#13>CLK2X_IOB</A> ; (1 pterm, 1 signal)
+
+<A name=71>iobm_ES_1_.D</A> = !( !<A href=#70>iobm_ES_0_.Q</A> & !<A href=#71>iobm_ES_1_.Q</A>
+    # iobm_ES_0_.Q & iobm_ES_1_.Q
+    # !<A href=#68>iobm_Er.Q</A> & <A href=#77>iobm_Er2.Q</A> ) ; (3 pterms, 4 signals)
+iobm_ES_1_.C = <A href=#13>CLK2X_IOB</A> ; (1 pterm, 1 signal)
+
+<A name=69>iobm_ES_2_.D</A> = !( !<A href=#69>iobm_ES_2_.Q</A> & !<A href=#72>iobm_ES_3_.Q</A> & <A href=#73>iobm_ES_4_.Q</A>
+    # iobm_ES_2_.Q & <A href=#70>iobm_ES_0_.Q</A> & <A href=#71>iobm_ES_1_.Q</A>
+    # !iobm_ES_2_.Q & !iobm_ES_1_.Q
+    # !iobm_ES_2_.Q & !iobm_ES_0_.Q
+    # !<A href=#68>iobm_Er.Q</A> & <A href=#77>iobm_Er2.Q</A> ) ; (5 pterms, 7 signals)
+iobm_ES_2_.C = <A href=#13>CLK2X_IOB</A> ; (1 pterm, 1 signal)
+
+<A name=72>iobm_ES_3_.D</A> = !( <A href=#69>iobm_ES_2_.Q</A> & <A href=#70>iobm_ES_0_.Q</A> & <A href=#71>iobm_ES_1_.Q</A> & <A href=#72>iobm_ES_3_.Q</A>
+    # !iobm_ES_1_.Q & !iobm_ES_3_.Q
+    # !iobm_ES_0_.Q & !iobm_ES_3_.Q
+    # !iobm_ES_2_.Q & !iobm_ES_3_.Q
+    # !<A href=#68>iobm_Er.Q</A> & <A href=#77>iobm_Er2.Q</A> ) ; (5 pterms, 6 signals)
+iobm_ES_3_.C = <A href=#13>CLK2X_IOB</A> ; (1 pterm, 1 signal)
+
+<A name=73>iobm_ES_4_.T</A> = <A href=#68>iobm_Er.Q</A> & <A href=#69>iobm_ES_2_.Q</A> & <A href=#70>iobm_ES_0_.Q</A> & <A href=#71>iobm_ES_1_.Q</A>
+       & <A href=#72>iobm_ES_3_.Q</A>
+    # !iobm_ES_2_.Q & iobm_ES_0_.Q & iobm_ES_1_.Q & !iobm_ES_3_.Q
+       & <A href=#73>iobm_ES_4_.Q</A>
+    # iobm_ES_2_.Q & iobm_ES_0_.Q & iobm_ES_1_.Q & iobm_ES_3_.Q & !<A href=#77>iobm_Er2.Q</A>
+    # !iobm_Er.Q & iobm_ES_4_.Q & iobm_Er2.Q ; (4 pterms, 7 signals)
+iobm_ES_4_.C = <A href=#13>CLK2X_IOB</A> ; (1 pterm, 1 signal)
+
+<A name=78>iobm_ETACK.D</A> = !<A href=#44>nVMA_IOB.Q</A> & !<A href=#70>iobm_ES_0_.Q</A> & !<A href=#71>iobm_ES_1_.Q</A> & !<A href=#72>iobm_ES_3_.Q</A>
+       & <A href=#73>iobm_ES_4_.Q</A> ; (1 pterm, 5 signals)
+iobm_ETACK.C = <A href=#13>CLK2X_IOB</A> ; (1 pterm, 1 signal)
+
+<A name=68>iobm_Er.D</A> = <A href=#15>E_IOB</A> ; (1 pterm, 1 signal)
+iobm_Er.C = !<A href=#14>CLK_IOB</A> ; (1 pterm, 1 signal)
+
+<A name=77>iobm_Er2.D</A> = <A href=#68>iobm_Er.Q</A> ; (1 pterm, 1 signal)
+iobm_Er2.C = <A href=#13>CLK2X_IOB</A> ; (1 pterm, 1 signal)
+
+<A name=51>iobm_IOACT.D</A> = !( !<A href=#67>iobm_IOREQr.Q</A> & !<A href=#74>iobm_IOS_0_.Q</A> & !<A href=#75>iobm_IOS_1_.Q</A>
+       & !<A href=#76>iobm_IOS_2_.Q</A>
+    # <A href=#14>CLK_IOB</A> & !<A href=#18>nBERR_IOB</A> & iobm_IOS_0_.Q & iobm_IOS_2_.Q
+    # CLK_IOB & !<A href=#16>nDTACK_IOB</A> & iobm_IOS_0_.Q & iobm_IOS_2_.Q
+    # CLK_IOB & iobm_IOS_0_.Q & iobm_IOS_2_.Q & <A href=#78>iobm_ETACK.Q</A>
+    # iobm_IOS_1_.Q & iobm_IOS_2_.Q ) ; (5 pterms, 8 signals)
+iobm_IOACT.C = <A href=#13>CLK2X_IOB</A> ; (1 pterm, 1 signal)
+
+<A name=67>iobm_IOREQr.D</A> = <A href=#50>iobs_IOREQ.Q</A> ; (1 pterm, 1 signal)
+iobm_IOREQr.C = !<A href=#13>CLK2X_IOB</A> ; (1 pterm, 1 signal)
+
+<A name=74>iobm_IOS_0_.D</A> = <A href=#16>nDTACK_IOB</A> & <A href=#18>nBERR_IOB</A> & !<A href=#75>iobm_IOS_1_.Q</A> & <A href=#76>iobm_IOS_2_.Q</A>
+       & !<A href=#78>iobm_ETACK.Q</A>
+    # !<A href=#14>CLK_IOB</A> & !iobm_IOS_1_.Q & iobm_IOS_2_.Q
+    # !CLK_IOB & <A href=#67>iobm_IOREQr.Q</A> & !<A href=#74>iobm_IOS_0_.Q</A>
+    # !iobm_IOS_0_.Q & iobm_IOS_1_.Q
+    # !iobm_IOS_0_.Q & iobm_IOS_2_.Q ; (5 pterms, 8 signals)
+iobm_IOS_0_.C = <A href=#13>CLK2X_IOB</A> ; (1 pterm, 1 signal)
+
+<A name=75>iobm_IOS_1_.D</A> = !( <A href=#16>nDTACK_IOB</A> & <A href=#18>nBERR_IOB</A> & !<A href=#75>iobm_IOS_1_.Q</A> & <A href=#76>iobm_IOS_2_.Q</A>
+       & !<A href=#78>iobm_ETACK.Q</A>
+    # !<A href=#14>CLK_IOB</A> & !iobm_IOS_1_.Q & iobm_IOS_2_.Q
+    # <A href=#74>iobm_IOS_0_.Q</A> & iobm_IOS_1_.Q
+    # !iobm_IOS_0_.Q & !iobm_IOS_1_.Q ) ; (4 pterms, 7 signals)
+iobm_IOS_1_.C = <A href=#13>CLK2X_IOB</A> ; (1 pterm, 1 signal)
+
+<A name=76>iobm_IOS_2_.D</A> = <A href=#74>iobm_IOS_0_.Q</A> & <A href=#75>iobm_IOS_1_.Q</A> & !<A href=#76>iobm_IOS_2_.Q</A>
+    # !iobm_IOS_1_.Q & iobm_IOS_2_.Q
+    # !iobm_IOS_0_.Q & iobm_IOS_2_.Q ; (3 pterms, 3 signals)
+iobm_IOS_2_.C = <A href=#13>CLK2X_IOB</A> ; (1 pterm, 1 signal)
+
+<A name=52>iobs_ALE0.D</A> = <A href=#80>iobs_PS_1_.Q</A> & <A href=#82>iobs_PS_0_.Q</A> ; (1 pterm, 2 signals)
+iobs_ALE0.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+
+<A name=56>iobs_ALE1.D</A> = !<A href=#7>nAS_FSB</A> & !<A href=#10>nWE_FSB</A> & !<A href=#24>A_FSB_22_</A> & <A href=#26>A_FSB_21_</A> & <A href=#28>A_FSB_20_</A>
+       & <A href=#30>A_FSB_19_</A> & <A href=#32>A_FSB_18_</A> & <A href=#33>A_FSB_17_</A> & <A href=#35>A_FSB_16_</A> & !<A href=#56>iobs_ALE1.Q</A>
+       & <A href=#80>iobs_PS_1_.Q</A> & !<A href=#81>iobs_Once.Q</A> & <A href=#89>cs_nOverlay1.Q</A>
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & iobs_PS_1_.Q & !iobs_Once.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & !iobs_Once.Q
+       & <A href=#82>iobs_PS_0_.Q</A> & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & !iobs_Once.Q & iobs_PS_0_.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_ALE1.Q
+       & iobs_PS_1_.Q & !iobs_Once.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_ALE1.Q
+       & !iobs_Once.Q & iobs_PS_0_.Q
+    # <A href=#6>A_FSB_23_</A> & !nAS_FSB & !iobs_ALE1.Q & iobs_PS_1_.Q & !iobs_Once.Q
+    # A_FSB_23_ & !nAS_FSB & !iobs_ALE1.Q & !iobs_Once.Q & iobs_PS_0_.Q
+    # iobs_ALE1.Q & !iobs_PS_0_.Q
+    # iobs_ALE1.Q & !iobs_PS_1_.Q ; (10 pterms, 15 signals)
+iobs_ALE1.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+
+<A name=79>iobs_IOACTr.D</A> = <A href=#51>iobm_IOACT.Q</A> ; (1 pterm, 1 signal)
+iobs_IOACTr.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+
+<A name=54>iobs_IOL0.D</A> = !<A href=#8>nLDS_FSB</A> & !<A href=#56>iobs_ALE1.Q</A>
+    # iobs_ALE1.Q & <A href=#83>iobs_IOL1.Q</A> ; (2 pterms, 3 signals)
+iobs_IOL0.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+iobs_IOL0.CE = <A href=#80>iobs_PS_1_.Q</A> & <A href=#82>iobs_PS_0_.Q</A> ; (1 pterm, 2 signals)
+
+<A name=83>iobs_IOL1.D</A> = !<A href=#8>nLDS_FSB</A> ; (1 pterm, 1 signal)
+iobs_IOL1.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+iobs_IOL1.CE = <A href=#86>iobs_Load1.Q</A> ; (1 pterm, 1 signal)
+
+<A name=85>iobs_IORDReady.D</A> = !<A href=#7>nAS_FSB</A> & !<A href=#79>iobs_IOACTr.Q</A> & !<A href=#80>iobs_PS_1_.Q</A> & <A href=#81>iobs_Once.Q</A>
+    # <A href=#60>fsb_ASrf.Q</A> & <A href=#85>iobs_IORDReady.Q</A>
+    # !nAS_FSB & iobs_IORDReady.Q ; (3 pterms, 6 signals)
+iobs_IORDReady.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+
+<A name=50>iobs_IOREQ.D</A> = !<A href=#7>nAS_FSB</A> & !<A href=#10>nWE_FSB</A> & !<A href=#24>A_FSB_22_</A> & <A href=#26>A_FSB_21_</A> & <A href=#28>A_FSB_20_</A>
+       & <A href=#30>A_FSB_19_</A> & <A href=#32>A_FSB_18_</A> & <A href=#33>A_FSB_17_</A> & <A href=#35>A_FSB_16_</A> & !<A href=#80>iobs_PS_1_.Q</A>
+       & !<A href=#81>iobs_Once.Q</A> & !<A href=#82>iobs_PS_0_.Q</A> & <A href=#89>cs_nOverlay1.Q</A>
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_PS_1_.Q & !iobs_Once.Q & !iobs_PS_0_.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_PS_1_.Q
+       & !iobs_Once.Q & !iobs_PS_0_.Q
+    # <A href=#6>A_FSB_23_</A> & !nAS_FSB & !iobs_PS_1_.Q & !iobs_Once.Q & !iobs_PS_0_.Q
+    # <A href=#56>iobs_ALE1.Q</A> & !iobs_PS_1_.Q & !iobs_PS_0_.Q
+    # iobs_PS_1_.Q & iobs_PS_0_.Q
+    # !<A href=#79>iobs_IOACTr.Q</A> & iobs_PS_1_.Q ; (7 pterms, 16 signals)
+iobs_IOREQ.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+
+<A name=53>iobs_IORW0.D</A> = !( !<A href=#7>nAS_FSB</A> & !<A href=#10>nWE_FSB</A> & !<A href=#24>A_FSB_22_</A> & <A href=#26>A_FSB_21_</A> & <A href=#28>A_FSB_20_</A>
+       & <A href=#30>A_FSB_19_</A> & <A href=#32>A_FSB_18_</A> & <A href=#33>A_FSB_17_</A> & <A href=#35>A_FSB_16_</A> & !<A href=#56>iobs_ALE1.Q</A>
+       & !<A href=#81>iobs_Once.Q</A> & <A href=#89>cs_nOverlay1.Q</A>
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & !iobs_Once.Q & !cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_ALE1.Q
+       & !iobs_Once.Q
+    # <A href=#6>A_FSB_23_</A> & !nAS_FSB & !nWE_FSB & !iobs_ALE1.Q & !iobs_Once.Q
+    # !A_FSB_23_ & !A_FSB_20_ & !<A href=#53>iobs_IORW0.Q</A> & !iobs_ALE1.Q
+    # !A_FSB_23_ & A_FSB_21_ & !iobs_IORW0.Q & !iobs_ALE1.Q
+    # !A_FSB_23_ & !A_FSB_22_ & !iobs_IORW0.Q & !iobs_ALE1.Q
+    # iobs_ALE1.Q & !<A href=#87>iobs_IORW1.Q</A>
+    # !iobs_IORW0.Q & !iobs_ALE1.Q & iobs_Once.Q
+    # nAS_FSB & !iobs_IORW0.Q & !iobs_ALE1.Q ) ; (10 pterms, 15 signals)
+iobs_IORW0.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+iobs_IORW0.CE = !<A href=#80>iobs_PS_1_.Q</A> & !<A href=#82>iobs_PS_0_.Q</A> ; (1 pterm, 2 signals)
+
+<A name=87>iobs_IORW1.D</A> = <A href=#10>nWE_FSB</A> ; (1 pterm, 1 signal)
+iobs_IORW1.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+iobs_IORW1.CE = <A href=#91>iobs_IORW1_0</A> ; (1 pterm, 1 signal)
+
+<A name=91>iobs_IORW1_0</A> = <A href=#6>A_FSB_23_</A> & !<A href=#7>nAS_FSB</A> & !<A href=#56>iobs_ALE1.Q</A> & <A href=#80>iobs_PS_1_.Q</A>
+       & !<A href=#81>iobs_Once.Q</A>
+    # A_FSB_23_ & !nAS_FSB & !iobs_ALE1.Q & !iobs_Once.Q & <A href=#82>iobs_PS_0_.Q</A>
+    # !nAS_FSB & <A href=#24>A_FSB_22_</A> & !<A href=#26>A_FSB_21_</A> & <A href=#28>A_FSB_20_</A> & !iobs_ALE1.Q
+       & iobs_PS_1_.Q & !iobs_Once.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_ALE1.Q
+       & !iobs_Once.Q & iobs_PS_0_.Q
+    # !nAS_FSB & !<A href=#10>nWE_FSB</A> & A_FSB_22_ & A_FSB_20_ & <A href=#30>A_FSB_19_</A> & <A href=#32>A_FSB_18_</A>
+       & <A href=#33>A_FSB_17_</A> & <A href=#35>A_FSB_16_</A> & !iobs_ALE1.Q & iobs_PS_1_.Q & !iobs_Once.Q
+       & !<A href=#89>cs_nOverlay1.Q</A>
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & !iobs_Once.Q & iobs_PS_0_.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & iobs_PS_1_.Q
+       & !iobs_Once.Q & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & !iobs_Once.Q
+       & iobs_PS_0_.Q & cs_nOverlay1.Q ; (8 pterms, 15 signals)
+
+<A name=55>iobs_IOU0.D</A> = !<A href=#9>nUDS_FSB</A> & !<A href=#56>iobs_ALE1.Q</A>
+    # iobs_ALE1.Q & <A href=#84>iobs_IOU1.Q</A> ; (2 pterms, 3 signals)
+iobs_IOU0.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+iobs_IOU0.CE = <A href=#80>iobs_PS_1_.Q</A> & <A href=#82>iobs_PS_0_.Q</A> ; (1 pterm, 2 signals)
+
+<A name=84>iobs_IOU1.D</A> = !<A href=#9>nUDS_FSB</A> ; (1 pterm, 1 signal)
+iobs_IOU1.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+iobs_IOU1.CE = <A href=#86>iobs_Load1.Q</A> ; (1 pterm, 1 signal)
+
+<A name=86>iobs_Load1.D</A> = !<A href=#7>nAS_FSB</A> & !<A href=#10>nWE_FSB</A> & !<A href=#24>A_FSB_22_</A> & <A href=#26>A_FSB_21_</A> & <A href=#28>A_FSB_20_</A>
+       & <A href=#30>A_FSB_19_</A> & <A href=#32>A_FSB_18_</A> & <A href=#33>A_FSB_17_</A> & <A href=#35>A_FSB_16_</A> & !<A href=#56>iobs_ALE1.Q</A>
+       & !<A href=#81>iobs_Once.Q</A> & <A href=#82>iobs_PS_0_.Q</A> & <A href=#89>cs_nOverlay1.Q</A>
+    # !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & <A href=#80>iobs_PS_1_.Q</A>
+       & !iobs_Once.Q & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & !iobs_Once.Q & iobs_PS_0_.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & iobs_PS_1_.Q & !iobs_Once.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_ALE1.Q
+       & !iobs_Once.Q & iobs_PS_0_.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_ALE1.Q
+       & iobs_PS_1_.Q & !iobs_Once.Q
+    # <A href=#6>A_FSB_23_</A> & !nAS_FSB & !iobs_ALE1.Q & !iobs_Once.Q & iobs_PS_0_.Q
+    # A_FSB_23_ & !nAS_FSB & !iobs_ALE1.Q & iobs_PS_1_.Q & !iobs_Once.Q ; (8 pterms, 15 signals)
+iobs_Load1.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+
+<A name=81>iobs_Once.D</A> = !<A href=#7>nAS_FSB</A> & !<A href=#10>nWE_FSB</A> & !<A href=#24>A_FSB_22_</A> & <A href=#26>A_FSB_21_</A> & <A href=#28>A_FSB_20_</A>
+       & <A href=#30>A_FSB_19_</A> & <A href=#32>A_FSB_18_</A> & <A href=#33>A_FSB_17_</A> & <A href=#35>A_FSB_16_</A> & !<A href=#80>iobs_PS_1_.Q</A>
+       & !<A href=#82>iobs_PS_0_.Q</A> & <A href=#89>cs_nOverlay1.Q</A>
+    # !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !<A href=#56>iobs_ALE1.Q</A> & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_PS_1_.Q & !iobs_PS_0_.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & !cs_nOverlay1.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_PS_1_.Q
+       & !iobs_PS_0_.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_ALE1.Q
+    # <A href=#6>A_FSB_23_</A> & !nAS_FSB & !iobs_PS_1_.Q & !iobs_PS_0_.Q
+    # <A href=#60>fsb_ASrf.Q</A> & <A href=#81>iobs_Once.Q</A>
+    # A_FSB_23_ & !nAS_FSB & !iobs_ALE1.Q
+    # !nAS_FSB & iobs_Once.Q ; (10 pterms, 16 signals)
+iobs_Once.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+
+<A name=82>iobs_PS_0_.D</A> = !<A href=#7>nAS_FSB</A> & !<A href=#10>nWE_FSB</A> & !<A href=#24>A_FSB_22_</A> & <A href=#26>A_FSB_21_</A> & <A href=#28>A_FSB_20_</A>
+       & <A href=#30>A_FSB_19_</A> & <A href=#32>A_FSB_18_</A> & <A href=#33>A_FSB_17_</A> & <A href=#35>A_FSB_16_</A> & !<A href=#80>iobs_PS_1_.Q</A>
+       & !<A href=#81>iobs_Once.Q</A> & !<A href=#82>iobs_PS_0_.Q</A> & <A href=#89>cs_nOverlay1.Q</A>
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_PS_1_.Q & !iobs_Once.Q & !iobs_PS_0_.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_PS_1_.Q
+       & !iobs_Once.Q & !iobs_PS_0_.Q
+    # <A href=#6>A_FSB_23_</A> & !nAS_FSB & !iobs_PS_1_.Q & !iobs_Once.Q & !iobs_PS_0_.Q
+    # <A href=#79>iobs_IOACTr.Q</A> & iobs_PS_1_.Q & !iobs_PS_0_.Q
+    # <A href=#56>iobs_ALE1.Q</A> & !iobs_PS_1_.Q & !iobs_PS_0_.Q ; (6 pterms, 16 signals)
+iobs_PS_0_.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+
+<A name=80>iobs_PS_1_.D</A> = !<A href=#7>nAS_FSB</A> & !<A href=#10>nWE_FSB</A> & !<A href=#24>A_FSB_22_</A> & <A href=#26>A_FSB_21_</A> & <A href=#28>A_FSB_20_</A>
+       & <A href=#30>A_FSB_19_</A> & <A href=#32>A_FSB_18_</A> & <A href=#33>A_FSB_17_</A> & <A href=#35>A_FSB_16_</A> & !<A href=#80>iobs_PS_1_.Q</A>
+       & !<A href=#81>iobs_Once.Q</A> & !<A href=#82>iobs_PS_0_.Q</A> & <A href=#89>cs_nOverlay1.Q</A>
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_PS_1_.Q & !iobs_Once.Q & !iobs_PS_0_.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_PS_1_.Q
+       & !iobs_Once.Q & !iobs_PS_0_.Q
+    # <A href=#6>A_FSB_23_</A> & !nAS_FSB & !iobs_PS_1_.Q & !iobs_Once.Q & !iobs_PS_0_.Q
+    # <A href=#56>iobs_ALE1.Q</A> & !iobs_PS_1_.Q & !iobs_PS_0_.Q
+    # <A href=#79>iobs_IOACTr.Q</A> & iobs_PS_0_.Q
+    # !iobs_IOACTr.Q & iobs_PS_1_.Q ; (7 pterms, 16 signals)
+iobs_PS_1_.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+
+<A name=27>nADoutLE0</A> = !<A href=#52>iobs_ALE0.Q</A> & !<A href=#57>iobm_ALE0.Q</A> ; (1 pterm, 2 signals)
+
+<A name=29>nADoutLE1</A> = !<A href=#56>iobs_ALE1.Q</A> ; (1 pterm, 1 signal)
+
+<A name=45>nAS_IOB.D</A> = !<A href=#74>iobm_IOS_0_.Q</A> & !<A href=#75>iobm_IOS_1_.Q</A> & !<A href=#76>iobm_IOS_2_.Q</A>
+    # iobm_IOS_1_.Q & iobm_IOS_2_.Q ; (2 pterms, 3 signals)
+nAS_IOB.C = !<A href=#13>CLK2X_IOB</A> ; (1 pterm, 1 signal)
+
+<A name=31>nAoutOE</A> = 0 ; (0 pterm, 0 signal)
+
+<A name=11>nBERR_FSB</A> = !( !<A href=#7>nAS_FSB</A> & !<A href=#18>nBERR_IOB</A> & <A href=#43>nDTACK_FSB.Q</A> & !<A href=#88>IOCS_i</A>
+    # !nAS_FSB & nDTACK_FSB.Q & <A href=#59>fsb_TimeoutB.Q</A> & IOCS_i ) ; (2 pterms, 5 signals)
+
+<A name=43>nDTACK_FSB.D</A> = !<A href=#6>A_FSB_23_</A> & !<A href=#10>nWE_FSB</A> & !<A href=#24>A_FSB_22_</A> & <A href=#26>A_FSB_21_</A> & <A href=#28>A_FSB_20_</A>
+       & <A href=#30>A_FSB_19_</A> & <A href=#32>A_FSB_18_</A> & <A href=#33>A_FSB_17_</A> & <A href=#35>A_FSB_16_</A> & <A href=#36>A_FSB_15_</A>
+       & !<A href=#37>A_FSB_14_</A> & <A href=#38>A_FSB_13_</A> & !<A href=#39>A_FSB_12_</A> & !<A href=#40>A_FSB_11_</A> & !<A href=#41>A_FSB_10_</A>
+       & <A href=#42>A_FSB_9_</A> & <A href=#43>nDTACK_FSB.Q</A> & !<A href=#58>fsb_TimeoutA.Q</A> & <A href=#89>cs_nOverlay1.Q</A>
+    # !A_FSB_23_ & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & A_FSB_15_ & A_FSB_14_ & A_FSB_13_
+       & A_FSB_12_ & A_FSB_11_ & A_FSB_10_ & A_FSB_9_ & nDTACK_FSB.Q
+       & !fsb_TimeoutA.Q & cs_nOverlay1.Q
+    # !A_FSB_23_ & !nWE_FSB & A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & A_FSB_15_ & !A_FSB_14_
+       & A_FSB_13_ & !A_FSB_12_ & !A_FSB_11_ & !A_FSB_10_ & A_FSB_9_
+       & nDTACK_FSB.Q & !fsb_TimeoutA.Q & !cs_nOverlay1.Q
+    # !A_FSB_23_ & !nWE_FSB & A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & A_FSB_15_ & A_FSB_14_ & A_FSB_13_
+       & A_FSB_12_ & A_FSB_11_ & A_FSB_10_ & A_FSB_9_ & nDTACK_FSB.Q
+       & !fsb_TimeoutA.Q & !cs_nOverlay1.Q
+    # !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & nDTACK_FSB.Q & <A href=#56>iobs_ALE1.Q</A> & cs_nOverlay1.Q
+    # !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_ & A_FSB_17_
+       & A_FSB_16_ & nDTACK_FSB.Q & iobs_ALE1.Q & !cs_nOverlay1.Q
+    # nWE_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & nDTACK_FSB.Q
+       & !<A href=#85>iobs_IORDReady.Q</A>
+    # !nWE_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & nDTACK_FSB.Q
+       & iobs_ALE1.Q
+    # A_FSB_23_ & nWE_FSB & nDTACK_FSB.Q & !iobs_IORDReady.Q
+    # A_FSB_23_ & !nWE_FSB & nDTACK_FSB.Q & iobs_ALE1.Q
+    # <A href=#7>nAS_FSB</A> & !<A href=#60>fsb_ASrf.Q</A>
+    # nAS_FSB & nDTACK_FSB.Q ; (12 pterms, 23 signals)
+nDTACK_FSB.C = <A href=#12>CLK_FSB</A> ; (1 pterm, 1 signal)
+
+<A name=49>nDinLE.D</A> = !<A href=#75>iobm_IOS_1_.Q</A> & <A href=#76>iobm_IOS_2_.Q</A> ; (1 pterm, 2 signals)
+nDinLE.C = !<A href=#13>CLK2X_IOB</A> ; (1 pterm, 1 signal)
+
+<A name=34>nDinOE</A> = !<A href=#7>nAS_FSB</A> & <A href=#10>nWE_FSB</A> & !<A href=#88>IOCS_i</A> ; (1 pterm, 3 signals)
+
+<A name=48>nDoutOE.D</A> = !<A href=#74>iobm_IOS_0_.Q</A> & !<A href=#75>iobm_IOS_1_.Q</A> & !<A href=#76>iobm_IOS_2_.Q</A>
+    # iobm_IOS_0_.Q & iobm_IOS_1_.Q & iobm_IOS_2_.Q
+    # !<A href=#53>iobs_IORW0.Q</A> ; (3 pterms, 4 signals)
+nDoutOE.C = <A href=#13>CLK2X_IOB</A> ; (1 pterm, 1 signal)
+
+<A name=46>nLDS_IOB.D</A> = !( !<A href=#53>iobs_IORW0.Q</A> & <A href=#54>iobs_IOL0.Q</A> & <A href=#74>iobm_IOS_0_.Q</A> & !<A href=#76>iobm_IOS_2_.Q</A>
+    # iobs_IOL0.Q & !<A href=#75>iobm_IOS_1_.Q</A> & iobm_IOS_2_.Q
+    # iobs_IOL0.Q & iobm_IOS_0_.Q & iobm_IOS_1_.Q & !iobm_IOS_2_.Q
+    # !iobs_IORW0.Q & iobs_IOL0.Q & iobm_IOS_1_.Q & !iobm_IOS_2_.Q ) ; (4 pterms, 5 signals)
+nLDS_IOB.C = !<A href=#13>CLK2X_IOB</A> ; (1 pterm, 1 signal)
+
+<A name=21>nRAMLWE</A> = !( !<A href=#6>A_FSB_23_</A> & !<A href=#8>nLDS_FSB</A> & !<A href=#10>nWE_FSB</A> & <A href=#24>A_FSB_22_</A> & <A href=#26>A_FSB_21_</A>
+       & !<A href=#89>cs_nOverlay1.Q</A>
+    # !A_FSB_23_ & !nLDS_FSB & !nWE_FSB & !A_FSB_22_ & cs_nOverlay1.Q ) ; (2 pterms, 6 signals)
+
+<A name=20>nRAMOE</A> = !( !<A href=#6>A_FSB_23_</A> & !<A href=#7>nAS_FSB</A> & <A href=#10>nWE_FSB</A> & <A href=#24>A_FSB_22_</A> & <A href=#26>A_FSB_21_</A>
+       & !<A href=#89>cs_nOverlay1.Q</A>
+    # !A_FSB_23_ & !nAS_FSB & nWE_FSB & !A_FSB_22_ & cs_nOverlay1.Q ) ; (2 pterms, 6 signals)
+
+<A name=22>nRAMUWE</A> = !( !<A href=#6>A_FSB_23_</A> & !<A href=#9>nUDS_FSB</A> & !<A href=#10>nWE_FSB</A> & <A href=#24>A_FSB_22_</A> & <A href=#26>A_FSB_21_</A>
+       & !<A href=#89>cs_nOverlay1.Q</A>
+    # !A_FSB_23_ & !nUDS_FSB & !nWE_FSB & !A_FSB_22_ & cs_nOverlay1.Q ) ; (2 pterms, 6 signals)
+
+<A name=23>nROMOE</A> = !( !<A href=#6>A_FSB_23_</A> & !<A href=#7>nAS_FSB</A> & <A href=#10>nWE_FSB</A> & <A href=#24>A_FSB_22_</A> & !<A href=#26>A_FSB_21_</A>
+       & !<A href=#28>A_FSB_20_</A>
+    # !A_FSB_23_ & !nAS_FSB & nWE_FSB & !A_FSB_21_ & !A_FSB_20_
+       & !<A href=#89>cs_nOverlay1.Q</A> ) ; (2 pterms, 7 signals)
+
+<A name=25>nROMWE</A> = !( !<A href=#6>A_FSB_23_</A> & !<A href=#7>nAS_FSB</A> & !<A href=#10>nWE_FSB</A> & <A href=#24>A_FSB_22_</A> & !<A href=#26>A_FSB_21_</A>
+       & !<A href=#28>A_FSB_20_</A>
+    # !A_FSB_23_ & !nAS_FSB & !nWE_FSB & !A_FSB_21_ & !A_FSB_20_
+       & !<A href=#89>cs_nOverlay1.Q</A> ) ; (2 pterms, 7 signals)
+
+<A name=47>nUDS_IOB.D</A> = !( !<A href=#53>iobs_IORW0.Q</A> & <A href=#55>iobs_IOU0.Q</A> & <A href=#74>iobm_IOS_0_.Q</A> & !<A href=#76>iobm_IOS_2_.Q</A>
+    # iobs_IOU0.Q & !<A href=#75>iobm_IOS_1_.Q</A> & iobm_IOS_2_.Q
+    # iobs_IOU0.Q & iobm_IOS_0_.Q & iobm_IOS_1_.Q & !iobm_IOS_2_.Q
+    # !iobs_IORW0.Q & iobs_IOU0.Q & iobm_IOS_1_.Q & !iobm_IOS_2_.Q ) ; (4 pterms, 5 signals)
+nUDS_IOB.C = !<A href=#13>CLK2X_IOB</A> ; (1 pterm, 1 signal)
+
+<A name=44>nVMA_IOB.T</A> = !<A href=#17>nVPA_IOB</A> & <A href=#44>nVMA_IOB.Q</A> & <A href=#51>iobm_IOACT.Q</A> & <A href=#69>iobm_ES_2_.Q</A>
+       & <A href=#70>iobm_ES_0_.Q</A> & <A href=#71>iobm_ES_1_.Q</A> & !<A href=#72>iobm_ES_3_.Q</A> & !<A href=#73>iobm_ES_4_.Q</A>
+    # !nVMA_IOB.Q & !iobm_ES_2_.Q & !iobm_ES_0_.Q & !iobm_ES_1_.Q
+       & !iobm_ES_3_.Q & !iobm_ES_4_.Q ; (2 pterms, 8 signals)
+nVMA_IOB.C = <A href=#13>CLK2X_IOB</A> ; (1 pterm, 1 signal)
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+
+

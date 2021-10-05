@@ -1,0 +1,9 @@
+ispLEVER Auto-Make Log File
+---------------------------
+
+Updating: Timing Analysis
+Start to record tcl script...
+Finished recording TCL script.
+
+Launching: 'C:\ispLEVER_Classic2_0\ispcpld\bin\timing.exe -prj "mxse_lc4064ze" -tti "mxse_lc4064ze.tt4" -gui -dir "c:\users\zanek\documents\github\se-030\cpld\lc4064ze"'
+

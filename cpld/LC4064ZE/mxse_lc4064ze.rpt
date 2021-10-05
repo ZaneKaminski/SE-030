@@ -1,0 +1,903 @@
+|--------------------------------------------------------------|
+|- ispLEVER Classic 2.0.00.17.20.15 Fitter Report File        -|
+|- Copyright(C), 1992-2012, Lattice Semiconductor Corporation -|
+|- All Rights Reserved.                                       -|
+|--------------------------------------------------------------|
+
+
+
+
+The Basic/Detailed Report Format can be selected in the dialog box
+Tools->Fitter Report File Format...
+
+Project_Summary
+~~~~~~~~~~~~~~~
+Project Name         :  mxse_lc4064ze
+Project Path         :  C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE
+Project Fitted on    :  Tue Oct 05 04:15:42 2021
+
+Device               :  M4064_64
+Package              :  100
+GLB Input Mux Size   :  12
+Available Blocks     :  4
+Speed                :  -7.5
+Part Number          :  LC4064ZE-7TN100C
+Source Format        :  Pure_Verilog_HDL
+
+
+// Project 'mxse_lc4064ze' Fit Successfully! //
+
+
+Compilation_Times
+~~~~~~~~~~~~~~~~~
+Prefit Time                     0 secs
+Load Design Time                0.05 secs
+Partition Time                  0.05 secs
+Place Time                      0.00 secs
+Route Time                      0.00 secs
+Total Fit Time                  00:00:01
+
+
+Design_Summary
+~~~~~~~~~~~~~~
+Total Input Pins                27
+Total Logic Functions           59
+  Total Output Pins             17
+  Total Bidir I/O Pins          0
+  Total Buried Nodes            42
+Total Flip-Flops                47
+  Total D Flip-Flops            44
+  Total T Flip-Flops            3
+  Total Latches                 0
+Total Product Terms             247
+
+Total Reserved Pins             0
+Total Locked Pins               7
+Total Locked Nodes              0
+
+Total Unique Output Enables     0
+Total Unique Clocks             5
+Total Unique Clock Enables      5
+Total Unique Resets             1
+Total Unique Presets            0
+
+Fmax Logic Levels               2
+
+
+Device_Resource_Summary
+~~~~~~~~~~~~~~~~~~~~~~~
+                                 Device
+                                 Total    Used   Not Used   Utilization
+-----------------------------------------------------------------------
+Dedicated Pins
+  Clock/Input Pins                  4        4      0    -->   100
+  Input-Only Pins                   6        6      0    -->   100
+  I/O / Enable Pins                 2        2      0    -->   100
+I/O Pins                           62       32     30    -->    51
+Logic Functions                    64       59      5    -->    92
+  Input Registers                  64        0     64    -->     0
+
+GLB Inputs                        144      101     43    -->    70
+Logical Product Terms             320      198    122    -->    61
+Occupied GLBs                       4        4      0    -->   100
+Macrocells                         64       59      5    -->    92
+
+Control Product Terms:
+  GLB Clock/Clock Enables           4        3      1    -->    75
+  GLB Reset/Presets                 4        0      4    -->     0
+  Macrocell Clocks                 64        1     63    -->     1
+  Macrocell Clock Enables          64        4     60    -->     6
+  Macrocell Enables                64        0     64    -->     0
+  Macrocell Resets                 64        1     63    -->     1
+  Macrocell Presets                64        0     64    -->     0
+
+Global Routing Pool               144       71     73    -->    49
+  GRP from IFB                     ..       27     ..    -->    ..
+    (from input signals)           ..       27     ..    -->    ..
+    (from output signals)          ..        0     ..    -->    ..
+    (from bidir signals)           ..        0     ..    -->    ..
+  GRP from MFB                     ..       44     ..    -->    ..
+----------------------------------------------------------------------
+
+<Note> 1 : The available PT is the product term that has not been used.
+<Note> 2 : IFB is I/O feedback.
+<Note> 3 : MFB is macrocell feedback.
+
+
+
+GLB_Resource_Summary
+~~~~~~~~~~~~~~~~~~~~
+                                                                                     # of PT
+               ---  Fanin  ---    I/O    Input  Macrocells       Macrocells   Logic  clusters
+             Unique Shared Total  Pins    Regs Used Inaccessible  available    PTs   used
+-------------------------------------------------------------------------------------------
+Maximum
+  GLB                      36      *(1)     8   --     --             16       80       16
+-------------------------------------------------------------------------------------------
+  GLB    A      8    19    27      8/16     0   15      0              1       54       16
+  GLB    B      5    20    25     10/16     0   15      0              1       41       15
+  GLB    C      5    13    18      6/16     0   15      0              1       39       15
+  GLB    D     13    18    31      8/16     0   14      0              2       64       15
+-------------------------------------------------------------------------------------------
+TOTALS:        31    70   101     32/64     0   59      0              5      198       61
+
+<Note> 1 : For ispMACH 4000 devices, the number of IOs depends on the GLB.
+<Note> 2 : Four rightmost columns above reflect last status of the placement process.
+
+
+
+GLB_Control_Summary
+~~~~~~~~~~~~~~~~~~~
+           Shared Shared | Mcell  Mcell  Mcell  Mcell  Mcell 
+           Clk/CE Rst/Pr | Clock  CE     Enable Reset  Preset
+------------------------------------------------------------------------------
+Maximum
+  GLB        1      1        16     16     16     16     16  
+==============================================================================
+  GLB    A   1      0         0      4      0      0      0
+  GLB    B   1      0         0      0      0      0      0
+  GLB    C   0      0         0      0      0      0      0
+  GLB    D   1      0         1      0      0      1      0
+------------------------------------------------------------------------------
+
+<Note> 1 : For ispMACH 4000 devices, the number of output enables depends on the GLB.
+
+
+
+Optimizer_and_Fitter_Options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pin Assignment :                       No
+Group Assignment :                     No
+Pin Reservation :                      No
+
+@Ignore_Project_Constraints :
+  Pin Assignments :                    No
+      Keep Block Assignment            --
+      Keep Segment Assignment          --
+  Group Assignments :                  No
+  Macrocell Assignment :               No
+      Keep Block Assignment            --
+      Keep Segment Assignment          --
+
+@Backannotate_Project_Constraints
+  Pin Assignments :                    No
+  Pin And Block Assignments :          No
+  Pin, Macrocell and Block :           No
+
+@Timing_Constraints :                  No
+
+@Global_Project_Optimization :
+  Balanced Partitioning :              No
+  Spread Placement :                   Yes
+
+  Note :
+    Pack Design :
+       Balanced Partitioning = No
+       Spread Placement      = No
+    Spread Design :
+       Balanced Partitioning = Yes
+       Spread Placement      = Yes
+
+
+@Logic_Synthesis :
+  Logic Reduction :                    Yes
+  Node Collapsing :                    FMAX
+  Fmax_Logic_Level :                   1
+  D/T Synthesis :                      Yes
+  XOR Synthesis :                      Yes
+  Max. P-Term for Collapsing :         16
+  Max. P-Term for Splitting :          80
+  Max Symbols :                        24
+
+@Utilization_options
+  Max. % of Macrocells used :          100
+@Usercode                               (HEX)
+@IO_Types                              Default = LVCMOS18 (2)
+@Output_Slew_Rate                      Default = FAST (2)
+@Power                                 Default = HIGH (2)
+@Pull                                  Default = PULLUP_DOWN (2)
+@Input_Registers                       Default = None (2)
+@Register_Powerup                      Default = None
+
+Device Options:
+<Note> 1 : Reserved unused I/Os can be independently driven to Low or High, and does not
+           follow the drive level set for the Global Configure Unused I/O Option.
+<Note> 2 : For user-specified constraints on individual signals, refer to the Output,
+           Bidir and Buried Signal Lists.
+
+
+
+Pinout_Listing
+~~~~~~~~~~~~~~
+      | Pin   | Bank |GLB |Assigned|                 | Signal|            | PG
+Pin No| Type  |Number|Pad |Pin     |     I/O Type    | Type  | Signal name| Enable
+-------------------------------------------------------------------------------------
+1     | GND   |   -  |    |        |                 |       |            |
+2     | TDI   |   -  |    |        |                 |       |            |
+3     |  I_O  |   0  | A8 |        |LVCMOS18         | Input |A_FSB_16_   |
+4     |  I_O  |   0  | A9 |        |                 |       |            |
+5     |  I_O  |   0  | A10|        |                 |       |            |
+6     |  I_O  |   0  | A11|        |                 |       |            |
+7     |GNDIO0 |   -  |    |        |                 |       |            |
+8     |  I_O  |   0  | A12|        |                 |       |            |
+9     |  I_O  |   0  | A13|        |                 |       |            |
+10    |  I_O  |   0  | A14|        |                 |       |            |
+11    |  I_O  |   0  | A15|        |                 |       |            |
+12    | IN0   |   0  |    |    *   |LVCMOS18         | Input |A_FSB_14_   |
+13    |VCCIO0 |   -  |    |        |                 |       |            |
+14    |  I_O  |   0  | B15|        |                 |       |            |
+15    |  I_O  |   0  | B14|        |                 |       |            |
+16    |  I_O  |   0  | B13|        |                 |       |            |
+17    |  I_O  |   0  | B12|        |                 |       |            |
+18    |GNDIO0 |   -  |    |        |                 |       |            |
+19    |  I_O  |   0  | B11|        |                 |       |            |
+20    |  I_O  |   0  | B10|        |                 |       |            |
+21    |  I_O  |   0  | B9 |        |LVCMOS18         | Input |A_FSB_19_   |
+22    |  I_O  |   0  | B8 |        |LVCMOS18         | Input |nRES        |
+23    | IN1   |   0  |    |    *   |LVCMOS18         | Input |A_FSB_13_   |
+24    | TCK   |   -  |    |        |                 |       |            |
+25    | VCC   |   -  |    |        |                 |       |            |
+26    | GND   |   -  |    |        |                 |       |            |
+27    | IN2   |   0  |    |    *   |LVCMOS18         | Input |A_FSB_12_   |
+28    |  I_O  |   0  | B7 |        |LVCMOS18         | Input |E_IOB       |
+29    |  I_O  |   0  | B6 |        |LVCMOS18         | Input |nAS_FSB     |
+30    |  I_O  |   0  | B5 |        |LVCMOS18         | Output|nDinLE      |
+31    |  I_O  |   0  | B4 |        |LVCMOS18         | Output|nAS_IOB     |
+32    |GNDIO0 |   -  |    |        |                 |       |            |
+33    |VCCIO0 |   -  |    |        |                 |       |            |
+34    |  I_O  |   0  | B3 |        |LVCMOS18         | Output|nBERR_FSB   |
+35    |  I_O  |   0  | B2 |        |LVCMOS18         | Output|nDoutOE     |
+36    |  I_O  |   0  | B1 |        |LVCMOS18         | Output|nUDS_IOB    |
+37    |  I_O  |   0  | B0 |        |LVCMOS18         | Output|nLDS_IOB    |
+38    |INCLK1 |   0  |    |    *   |LVCMOS18         | Input |A_FSB_15_   |
+39    |INCLK2 |   1  |    |        |LVCMOS18         | Input |CLK_FSB     |
+40    | VCC   |   -  |    |        |                 |       |            |
+41    |  I_O  |   1  | C0 |        |LVCMOS18         | Input |nLDS_FSB    |
+42    |  I_O  |   1  | C1 |        |LVCMOS18         | Output|nVMA_IOB    |
+43    |  I_O  |   1  | C2 |        |LVCMOS18         | Input |nDTACK_IOB  |
+44    |  I_O  |   1  | C3 |        |LVCMOS18         | Output|nADoutLE0   |
+45    |VCCIO1 |   -  |    |        |                 |       |            |
+46    |GNDIO1 |   -  |    |        |                 |       |            |
+47    |  I_O  |   1  | C4 |        |LVCMOS18         | Input |A_FSB_22_   |
+48    |  I_O  |   1  | C5 |        |LVCMOS18         | Input |A_FSB_18_   |
+49    |  I_O  |   1  | C6 |        |                 |       |            |
+50    |  I_O  |   1  | C7 |        |                 |       |            |
+51    | GND   |   -  |    |        |                 |       |            |
+52    | TMS   |   -  |    |        |                 |       |            |
+53    |  I_O  |   1  | C8 |        |                 |       |            |
+54    |  I_O  |   1  | C9 |        |                 |       |            |
+55    |  I_O  |   1  | C10|        |                 |       |            |
+56    |  I_O  |   1  | C11|        |                 |       |            |
+57    |GNDIO1 |   -  |    |        |                 |       |            |
+58    |  I_O  |   1  | C12|        |                 |       |            |
+59    |  I_O  |   1  | C13|        |                 |       |            |
+60    |  I_O  |   1  | C14|        |                 |       |            |
+61    |  I_O  |   1  | C15|        |                 |       |            |
+62    | IN3   |   1  |    |    *   |LVCMOS18         | Input |A_FSB_11_   |
+63    |VCCIO1 |   -  |    |        |                 |       |            |
+64    |  I_O  |   1  | D15|        |                 |       |            |
+65    |  I_O  |   1  | D14|        |                 |       |            |
+66    |  I_O  |   1  | D13|        |                 |       |            |
+67    |  I_O  |   1  | D12|        |                 |       |            |
+68    |GNDIO1 |   -  |    |        |                 |       |            |
+69    |  I_O  |   1  | D11|        |                 |       |            |
+70    |  I_O  |   1  | D10|        |                 |       |            |
+71    |  I_O  |   1  | D9 |        |                 |       |            |
+72    |  I_O  |   1  | D8 |        |LVCMOS18         | Input |A_FSB_17_   |
+73    | IN4   |   1  |    |    *   |LVCMOS18         | Input |A_FSB_10_   |
+74    | TDO   |   -  |    |        |                 |       |            |
+75    | VCC   |   -  |    |        |                 |       |            |
+76    | GND   |   -  |    |        |                 |       |            |
+77    | IN5   |   1  |    |    *   |LVCMOS18         | Input |A_FSB_9_    |
+78    |  I_O  |   1  | D7 |        |LVCMOS18         | Input |A_FSB_21_   |
+79    |  I_O  |   1  | D6 |        |LVCMOS18         | Output|nROMWE      |
+80    |  I_O  |   1  | D5 |        |LVCMOS18         | Input |nVPA_IOB    |
+81    |  I_O  |   1  | D4 |        |LVCMOS18         | Input |nUDS_FSB    |
+82    |GNDIO1 |   -  |    |        |                 |       |            |
+83    |VCCIO1 |   -  |    |        |                 |       |            |
+84    |  I_O  |   1  | D3 |        |LVCMOS18         | Output|nDinOE      |
+85    |  I_O  |   1  | D2 |        |LVCMOS18         | Output|nRAMOE      |
+86    |  I_O  |   1  | D1 |        |LVCMOS18         | Output|nADoutLE1   |
+87    | I_O/OE|   1  | D0 |        |LVCMOS18         | Output|nDTACK_FSB  |
+88    |INCLK3 |   1  |    |        |LVCMOS18         | Input |CLK2X_IOB   |
+89    |INCLK0 |   0  |    |        |LVCMOS18         | Input |CLK_IOB     |
+90    | VCC   |   -  |    |        |                 |       |            |
+91    | I_O/OE|   0  | A0 |        |LVCMOS18         | Output|nAoutOE     |
+92    |  I_O  |   0  | A1 |        |LVCMOS18         | Input |A_FSB_23_   |
+93    |  I_O  |   0  | A2 |        |LVCMOS18         | Input |nWE_FSB     |
+94    |  I_O  |   0  | A3 |        |LVCMOS18         | Output|nRAMLWE     |
+95    |VCCIO0 |   -  |    |        |                 |       |            |
+96    |GNDIO0 |   -  |    |        |                 |       |            |
+97    |  I_O  |   0  | A4 |        |LVCMOS18         | Output|nRAMUWE     |
+98    |  I_O  |   0  | A5 |        |LVCMOS18         | Output|nROMOE      |
+99    |  I_O  |   0  | A6 |        |LVCMOS18         | Input |nBERR_IOB   |
+100   |  I_O  |   0  | A7 |        |LVCMOS18         | Input |A_FSB_20_   |
+-------------------------------------------------------------------------------------
+
+<Note> GLB Pad : This notation refers to the GLB I/O pad number in the device.
+<Note> Assigned Pin : user or dedicated input assignment (E.g. Clock pins).
+<Note> Pin Type : 
+          ClkIn : Dedicated input or clock pin 
+           CLK  : Dedicated clock pin
+           I_O  : Input/Output pin
+           INP  : Dedicated input pin
+           JTAG : JTAG Control and test pin
+           NC   : No connected
+
+
+
+Input_Signal_List
+~~~~~~~~~~~~~~~~~
+                Input
+         Pin    Fanout
+ Pin GLB Type           Pullup Signal
+-----------------------------------------
+  73  --  IN    1 ---D    Down A_FSB_10_
+  62  --  IN    1 ---D    Down A_FSB_11_
+  27  --  IN    1 ---D    Down A_FSB_12_
+  23  --  IN    1 ---D    Down A_FSB_13_
+  12  --  IN    1 ---D    Down A_FSB_14_
+  38  -- INCLK  1 ---D    Down A_FSB_15_
+   3   A  I/O   2 A--D    Down A_FSB_16_
+  72   D  I/O   2 A--D    Down A_FSB_17_
+  48   C  I/O   2 A--D    Down A_FSB_18_
+  21   B  I/O   2 A--D    Down A_FSB_19_
+ 100   A  I/O   2 A--D    Down A_FSB_20_
+  78   D  I/O   2 A--D    Down A_FSB_21_
+  47   C  I/O   2 A--D    Down A_FSB_22_
+  92   A  I/O   2 A--D    Down A_FSB_23_
+  77  --  IN    1 ---D    Down A_FSB_9_
+  88  -- INCLK  1 -B--    Down CLK2X_IOB
+  39  -- INCLK  1 ---D    Down CLK_FSB
+  89  -- INCLK  1 -B--    Down CLK_IOB
+  28   B  I/O   1 --C-    Down E_IOB
+  29   B  I/O   3 AB-D    Down nAS_FSB
+  99   A  I/O   1 -B--    Down nBERR_IOB
+  43   C  I/O   1 -B--    Down nDTACK_IOB
+  41   C  I/O   1 A---    Down nLDS_FSB
+  22   B  I/O   1 ---D    Down nRES
+  81   D  I/O   1 A---    Down nUDS_FSB
+  80   D  I/O   1 --C-    Down nVPA_IOB
+  93   A  I/O   2 A--D    Down nWE_FSB
+-----------------------------------------
+
+
+
+Output_Signal_List
+~~~~~~~~~~~~~~~~~~
+          I         C      P R P       O Output
+          N         L Mc   R E U C O F B Fanout
+ Pin GLB  P LL PTs  S Type E S P E E P P         Slew Pullup Signal
+-----------------------------------------------------------------------
+  44   C  2  -   1  1 COM                  ----  Fast   Down nADoutLE0
+  86   D  1  -   1  1 COM                  ----  Fast   Down nADoutLE1
+  31   B  4  1   2  1 DFF      R           ----  Fast   Down nAS_IOB
+  91   A  0  -   0  1 COM                  ----  Fast   Down nAoutOE
+  34   B  5  2   2  1 COM                  ----  Fast   Down nBERR_FSB
+  87   D 23  1  12  3 DFF      R         2 -B-D  Fast   Down nDTACK_FSB
+  30   B  3  1   1  1 DFF      R           ----  Fast   Down nDinLE
+  84   D  3  2   1  1 COM                  ----  Fast   Down nDinOE
+  35   B  4  1   3  1 DFF      R           ----  Fast   Down nDoutOE
+  37   B  6  1   4  1 DFF      R           ----  Fast   Down nLDS_IOB
+  94   A  6  1   2  1 COM                  ----  Fast   Down nRAMLWE
+  85   D  6  1   2  1 COM                  ----  Fast   Down nRAMOE
+  97   A  6  1   2  1 COM                  ----  Fast   Down nRAMUWE
+  98   A  7  1   2  1 COM                  ----  Fast   Down nROMOE
+  79   D  7  1   2  1 COM                  ----  Fast   Down nROMWE
+  36   B  6  1   4  1 DFF      R           ----  Fast   Down nUDS_IOB
+  42   C  8  1   2  1 TFF      R         1 --C-  Fast   Down nVMA_IOB
+-----------------------------------------------------------------------
+
+<Note> CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+
+Bidir_Signal_List
+~~~~~~~~~~~~~~~~~
+          I         C      P R P       O Bidir
+          N         L Mc   R E U C O F B Fanout
+ Pin GLB  P LL PTs  S Type E S P E E P P         Slew Pullup Signal
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+<Note> CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+
+Buried_Signal_List
+~~~~~~~~~~~~~~~~~~
+        I         C      P R P       Node
+        N         L Mc   R E U C I F Fanout
+Mc GLB  P LL PTs  S Type E S P E R P         Signal
+-----------------------------------------------------------
+ 8   A 10  -   4  1 COM              2 -B-D  IOCS_i
+ 0   D  7  1   3  1 DFF    * R       1 ---D  cs_nOverlay0
+11   D  3  1   1  1 DFF      R *     2 A--D  cs_nOverlay1
+ 3   D  2  -   2  1 DFF      R       2 -B-D  fsb_ASrf
+13   B  1  1   1  1 DFF      R       2 -BC-  fsb_RefCnt_0_
+ 9   C  2  1   2  1 DFF      R       2 -BC-  fsb_RefCnt_1_
+ 5   C  3  1   3  1 DFF      R       2 -BC-  fsb_RefCnt_2_
+ 2   C  4  1   4  1 DFF      R       2 -BC-  fsb_RefCnt_3_
+ 7   C  5  1   2  1 DFF      R       2 -BC-  fsb_RefCnt_4_
+12   B  5  1   1  1 TFF      R       1 -B--  fsb_RefCnt_5_
+ 6   B  9  1   3  1 DFF      R       2 -B-D  fsb_TimeoutA
+ 7   B 10  1   3  1 DFF      R       1 -B--  fsb_TimeoutB
+10   B  4  1   2  1 DFF      R       1 --C-  iobm_ALE0
+ 3   C  7  1   4  1 DFF      R       1 --C-  iobm_ES_0_
+ 6   C  4  1   3  1 DFF      R       1 --C-  iobm_ES_1_
+ 0   C  7  1   5  1 DFF      R       1 --C-  iobm_ES_2_
+ 1   C  6  1   5  1 DFF      R       1 --C-  iobm_ES_3_
+ 4   C  7  1   4  1 TFF      R       1 --C-  iobm_ES_4_
+13   C  5  1   1  1 DFF      R       1 -B--  iobm_ETACK
+11   C  1  -   1  1 DFF      R       1 --C-  iobm_Er
+12   C  1  1   1  1 DFF      R       1 --C-  iobm_Er2
+ 0   B  8  1   5  1 DFF      R       1 --C-  iobm_IOACT
+14   B  2  1   1  1 DFF      R       1 -B--  iobm_IOREQr
+ 1   B  8  1   5  1 DFF      R       2 AB--  iobm_IOS_0_
+ 4   B  7  1   4  1 DFF      R       2 AB--  iobm_IOS_1_
+ 9   A  3  1   3  1 DFF      R       2 AB--  iobm_IOS_2_
+ 9   D  2  1   1  1 DFF      R       1 --C-  iobs_ALE0
+ 4   D 15  1  10  2 DFF      R       2 A--D  iobs_ALE1
+14   C  1  1   1  1 DFF      R       2 A--D  iobs_IOACTr
+13   A  5  1   2  1 DFF      R *     1 -B--  iobs_IOL0
+ 2   A  2  -   2  1 DFF      R *     1 A---  iobs_IOL1
+ 6   D  6  1   3  1 DFF      R       1 ---D  iobs_IORDReady
+ 3   A 16  1   7  2 DFF      R       1 -B--  iobs_IOREQ
+ 1   A 17  1  11  3 DFF      R *     2 AB--  iobs_IORW0
+ 6   A  2  -   2  1 DFF      R *     1 A---  iobs_IORW1
+12   D 15  -   8  2 COM              1 A---  iobs_IORW1_0
+14   A  5  1   2  1 DFF      R *     1 -B--  iobs_IOU0
+ 4   A  2  -   2  1 DFF      R *     1 A---  iobs_IOU1
+10   D 15  1   8  2 DFF      R       1 A---  iobs_Load1
+ 5   D 16  1  10  2 DFF      R       2 A--D  iobs_Once
+ 7   A 16  1   6  2 DFF      R       2 A--D  iobs_PS_0_
+ 5   A 16  1   7  2 DFF      R       2 A--D  iobs_PS_1_
+-----------------------------------------------------------
+
+<Note> CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        IR = Input register
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+
+PostFit_Equations
+~~~~~~~~~~~~~~~~~
+IOCS_i = !( !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & cs_nOverlay1.Q
+    # !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_ & A_FSB_17_
+       & A_FSB_16_ & !cs_nOverlay1.Q
+    # A_FSB_22_ & !A_FSB_21_ & A_FSB_20_
+    # A_FSB_23_ ) ; (4 pterms, 10 signals)
+
+cs_nOverlay0.D = !A_FSB_23_ & !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & !A_FSB_20_
+    # cs_nOverlay0.Q ; (2 pterms, 6 signals)
+cs_nOverlay0.C = CLK_FSB ; (1 pterm, 1 signal)
+cs_nOverlay0.AR = !nRES ; (1 pterm, 1 signal)
+
+cs_nOverlay1.D = cs_nOverlay0.Q ; (1 pterm, 1 signal)
+cs_nOverlay1.C = CLK_FSB ; (1 pterm, 1 signal)
+cs_nOverlay1.CE = nAS_FSB & !fsb_ASrf.Q ; (1 pterm, 2 signals)
+
+fsb_ASrf.D = !nAS_FSB ; (1 pterm, 1 signal)
+fsb_ASrf.C = !CLK_FSB ; (1 pterm, 1 signal)
+
+fsb_RefCnt_0_.D = !fsb_RefCnt_0_.Q ; (1 pterm, 1 signal)
+fsb_RefCnt_0_.C = CLK_FSB ; (1 pterm, 1 signal)
+
+fsb_RefCnt_1_.D = fsb_RefCnt_1_.Q & !fsb_RefCnt_0_.Q
+    # !fsb_RefCnt_1_.Q & fsb_RefCnt_0_.Q ; (2 pterms, 2 signals)
+fsb_RefCnt_1_.C = CLK_FSB ; (1 pterm, 1 signal)
+
+fsb_RefCnt_2_.D = fsb_RefCnt_1_.Q & !fsb_RefCnt_2_.Q & fsb_RefCnt_0_.Q
+    # !fsb_RefCnt_1_.Q & fsb_RefCnt_2_.Q
+    # fsb_RefCnt_2_.Q & !fsb_RefCnt_0_.Q ; (3 pterms, 3 signals)
+fsb_RefCnt_2_.C = CLK_FSB ; (1 pterm, 1 signal)
+
+fsb_RefCnt_3_.D = fsb_RefCnt_1_.Q & fsb_RefCnt_2_.Q & fsb_RefCnt_0_.Q
+       & !fsb_RefCnt_3_.Q
+    # !fsb_RefCnt_0_.Q & fsb_RefCnt_3_.Q
+    # !fsb_RefCnt_2_.Q & fsb_RefCnt_3_.Q
+    # !fsb_RefCnt_1_.Q & fsb_RefCnt_3_.Q ; (4 pterms, 4 signals)
+fsb_RefCnt_3_.C = CLK_FSB ; (1 pterm, 1 signal)
+
+fsb_RefCnt_4_.D.X1 = fsb_RefCnt_1_.Q & fsb_RefCnt_2_.Q & fsb_RefCnt_0_.Q
+       & fsb_RefCnt_3_.Q ; (1 pterm, 4 signals)
+fsb_RefCnt_4_.D.X2 = fsb_RefCnt_4_.Q ; (1 pterm, 1 signal)
+fsb_RefCnt_4_.C = CLK_FSB ; (1 pterm, 1 signal)
+
+fsb_RefCnt_5_.T = fsb_RefCnt_1_.Q & fsb_RefCnt_2_.Q & fsb_RefCnt_0_.Q
+       & fsb_RefCnt_4_.Q & fsb_RefCnt_3_.Q ; (1 pterm, 5 signals)
+fsb_RefCnt_5_.C = CLK_FSB ; (1 pterm, 1 signal)
+
+fsb_TimeoutA.D = !nAS_FSB & !fsb_RefCnt_5_.Q & !fsb_RefCnt_1_.Q
+       & !fsb_RefCnt_2_.Q & !fsb_RefCnt_0_.Q & !fsb_RefCnt_4_.Q
+       & !fsb_RefCnt_3_.Q
+    # fsb_TimeoutA.Q & fsb_ASrf.Q
+    # !nAS_FSB & fsb_TimeoutA.Q ; (3 pterms, 9 signals)
+fsb_TimeoutA.C = CLK_FSB ; (1 pterm, 1 signal)
+
+fsb_TimeoutB.D = !nAS_FSB & fsb_TimeoutA.Q & !fsb_RefCnt_5_.Q
+       & !fsb_RefCnt_1_.Q & !fsb_RefCnt_2_.Q & !fsb_RefCnt_0_.Q
+       & !fsb_RefCnt_4_.Q & !fsb_RefCnt_3_.Q
+    # fsb_TimeoutB.Q & fsb_ASrf.Q
+    # !nAS_FSB & fsb_TimeoutB.Q ; (3 pterms, 10 signals)
+fsb_TimeoutB.C = CLK_FSB ; (1 pterm, 1 signal)
+
+iobm_ALE0.D = !( !iobm_IOREQr.Q & !iobm_IOS_0_.Q & !iobm_IOS_1_.Q
+       & !iobm_IOS_2_.Q
+    # iobm_IOS_1_.Q & iobm_IOS_2_.Q ) ; (2 pterms, 4 signals)
+iobm_ALE0.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobm_ES_0_.D = !( iobm_Er.Q & !iobm_ES_2_.Q & !iobm_ES_1_.Q & !iobm_ES_3_.Q
+       & !iobm_ES_4_.Q
+    # !iobm_ES_2_.Q & !iobm_ES_1_.Q & !iobm_ES_3_.Q & !iobm_ES_4_.Q
+       & !iobm_Er2.Q
+    # iobm_Er.Q & iobm_ES_0_.Q
+    # iobm_ES_0_.Q & !iobm_Er2.Q ) ; (4 pterms, 7 signals)
+iobm_ES_0_.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobm_ES_1_.D = !( !iobm_ES_0_.Q & !iobm_ES_1_.Q
+    # iobm_ES_0_.Q & iobm_ES_1_.Q
+    # !iobm_Er.Q & iobm_Er2.Q ) ; (3 pterms, 4 signals)
+iobm_ES_1_.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobm_ES_2_.D = !( !iobm_ES_2_.Q & !iobm_ES_3_.Q & iobm_ES_4_.Q
+    # iobm_ES_2_.Q & iobm_ES_0_.Q & iobm_ES_1_.Q
+    # !iobm_ES_2_.Q & !iobm_ES_1_.Q
+    # !iobm_ES_2_.Q & !iobm_ES_0_.Q
+    # !iobm_Er.Q & iobm_Er2.Q ) ; (5 pterms, 7 signals)
+iobm_ES_2_.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobm_ES_3_.D = !( iobm_ES_2_.Q & iobm_ES_0_.Q & iobm_ES_1_.Q & iobm_ES_3_.Q
+    # !iobm_ES_1_.Q & !iobm_ES_3_.Q
+    # !iobm_ES_0_.Q & !iobm_ES_3_.Q
+    # !iobm_ES_2_.Q & !iobm_ES_3_.Q
+    # !iobm_Er.Q & iobm_Er2.Q ) ; (5 pterms, 6 signals)
+iobm_ES_3_.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobm_ES_4_.T = iobm_Er.Q & iobm_ES_2_.Q & iobm_ES_0_.Q & iobm_ES_1_.Q
+       & iobm_ES_3_.Q
+    # !iobm_ES_2_.Q & iobm_ES_0_.Q & iobm_ES_1_.Q & !iobm_ES_3_.Q
+       & iobm_ES_4_.Q
+    # iobm_ES_2_.Q & iobm_ES_0_.Q & iobm_ES_1_.Q & iobm_ES_3_.Q & !iobm_Er2.Q
+    # !iobm_Er.Q & iobm_ES_4_.Q & iobm_Er2.Q ; (4 pterms, 7 signals)
+iobm_ES_4_.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobm_ETACK.D = !nVMA_IOB.Q & !iobm_ES_0_.Q & !iobm_ES_1_.Q & !iobm_ES_3_.Q
+       & iobm_ES_4_.Q ; (1 pterm, 5 signals)
+iobm_ETACK.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobm_Er.D = E_IOB ; (1 pterm, 1 signal)
+iobm_Er.C = !CLK_IOB ; (1 pterm, 1 signal)
+
+iobm_Er2.D = iobm_Er.Q ; (1 pterm, 1 signal)
+iobm_Er2.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobm_IOACT.D = !( !iobm_IOREQr.Q & !iobm_IOS_0_.Q & !iobm_IOS_1_.Q
+       & !iobm_IOS_2_.Q
+    # CLK_IOB & !nBERR_IOB & iobm_IOS_0_.Q & iobm_IOS_2_.Q
+    # CLK_IOB & !nDTACK_IOB & iobm_IOS_0_.Q & iobm_IOS_2_.Q
+    # CLK_IOB & iobm_IOS_0_.Q & iobm_IOS_2_.Q & iobm_ETACK.Q
+    # iobm_IOS_1_.Q & iobm_IOS_2_.Q ) ; (5 pterms, 8 signals)
+iobm_IOACT.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobm_IOREQr.D = iobs_IOREQ.Q ; (1 pterm, 1 signal)
+iobm_IOREQr.C = !CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobm_IOS_0_.D = nDTACK_IOB & nBERR_IOB & !iobm_IOS_1_.Q & iobm_IOS_2_.Q
+       & !iobm_ETACK.Q
+    # !CLK_IOB & !iobm_IOS_1_.Q & iobm_IOS_2_.Q
+    # !CLK_IOB & iobm_IOREQr.Q & !iobm_IOS_0_.Q
+    # !iobm_IOS_0_.Q & iobm_IOS_1_.Q
+    # !iobm_IOS_0_.Q & iobm_IOS_2_.Q ; (5 pterms, 8 signals)
+iobm_IOS_0_.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobm_IOS_1_.D = !( nDTACK_IOB & nBERR_IOB & !iobm_IOS_1_.Q & iobm_IOS_2_.Q
+       & !iobm_ETACK.Q
+    # !CLK_IOB & !iobm_IOS_1_.Q & iobm_IOS_2_.Q
+    # iobm_IOS_0_.Q & iobm_IOS_1_.Q
+    # !iobm_IOS_0_.Q & !iobm_IOS_1_.Q ) ; (4 pterms, 7 signals)
+iobm_IOS_1_.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobm_IOS_2_.D = iobm_IOS_0_.Q & iobm_IOS_1_.Q & !iobm_IOS_2_.Q
+    # !iobm_IOS_1_.Q & iobm_IOS_2_.Q
+    # !iobm_IOS_0_.Q & iobm_IOS_2_.Q ; (3 pterms, 3 signals)
+iobm_IOS_2_.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobs_ALE0.D = iobs_PS_1_.Q & iobs_PS_0_.Q ; (1 pterm, 2 signals)
+iobs_ALE0.C = CLK_FSB ; (1 pterm, 1 signal)
+
+iobs_ALE1.D = !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_
+       & A_FSB_19_ & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q
+       & iobs_PS_1_.Q & !iobs_Once.Q & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & iobs_PS_1_.Q & !iobs_Once.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & !iobs_Once.Q
+       & iobs_PS_0_.Q & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & !iobs_Once.Q & iobs_PS_0_.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_ALE1.Q
+       & iobs_PS_1_.Q & !iobs_Once.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_ALE1.Q
+       & !iobs_Once.Q & iobs_PS_0_.Q
+    # A_FSB_23_ & !nAS_FSB & !iobs_ALE1.Q & iobs_PS_1_.Q & !iobs_Once.Q
+    # A_FSB_23_ & !nAS_FSB & !iobs_ALE1.Q & !iobs_Once.Q & iobs_PS_0_.Q
+    # iobs_ALE1.Q & !iobs_PS_0_.Q
+    # iobs_ALE1.Q & !iobs_PS_1_.Q ; (10 pterms, 15 signals)
+iobs_ALE1.C = CLK_FSB ; (1 pterm, 1 signal)
+
+iobs_IOACTr.D = iobm_IOACT.Q ; (1 pterm, 1 signal)
+iobs_IOACTr.C = CLK_FSB ; (1 pterm, 1 signal)
+
+iobs_IOL0.D = !nLDS_FSB & !iobs_ALE1.Q
+    # iobs_ALE1.Q & iobs_IOL1.Q ; (2 pterms, 3 signals)
+iobs_IOL0.C = CLK_FSB ; (1 pterm, 1 signal)
+iobs_IOL0.CE = iobs_PS_1_.Q & iobs_PS_0_.Q ; (1 pterm, 2 signals)
+
+iobs_IOL1.D = !nLDS_FSB ; (1 pterm, 1 signal)
+iobs_IOL1.C = CLK_FSB ; (1 pterm, 1 signal)
+iobs_IOL1.CE = iobs_Load1.Q ; (1 pterm, 1 signal)
+
+iobs_IORDReady.D = !nAS_FSB & !iobs_IOACTr.Q & !iobs_PS_1_.Q & iobs_Once.Q
+    # fsb_ASrf.Q & iobs_IORDReady.Q
+    # !nAS_FSB & iobs_IORDReady.Q ; (3 pterms, 6 signals)
+iobs_IORDReady.C = CLK_FSB ; (1 pterm, 1 signal)
+
+iobs_IOREQ.D = !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_
+       & A_FSB_19_ & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_PS_1_.Q
+       & !iobs_Once.Q & !iobs_PS_0_.Q & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_PS_1_.Q & !iobs_Once.Q & !iobs_PS_0_.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_PS_1_.Q
+       & !iobs_Once.Q & !iobs_PS_0_.Q
+    # A_FSB_23_ & !nAS_FSB & !iobs_PS_1_.Q & !iobs_Once.Q & !iobs_PS_0_.Q
+    # iobs_ALE1.Q & !iobs_PS_1_.Q & !iobs_PS_0_.Q
+    # iobs_PS_1_.Q & iobs_PS_0_.Q
+    # !iobs_IOACTr.Q & iobs_PS_1_.Q ; (7 pterms, 16 signals)
+iobs_IOREQ.C = CLK_FSB ; (1 pterm, 1 signal)
+
+iobs_IORW0.D = !( !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_
+       & A_FSB_19_ & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q
+       & !iobs_Once.Q & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & !iobs_Once.Q & !cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_ALE1.Q
+       & !iobs_Once.Q
+    # A_FSB_23_ & !nAS_FSB & !nWE_FSB & !iobs_ALE1.Q & !iobs_Once.Q
+    # !A_FSB_23_ & !A_FSB_20_ & !iobs_IORW0.Q & !iobs_ALE1.Q
+    # !A_FSB_23_ & A_FSB_21_ & !iobs_IORW0.Q & !iobs_ALE1.Q
+    # !A_FSB_23_ & !A_FSB_22_ & !iobs_IORW0.Q & !iobs_ALE1.Q
+    # iobs_ALE1.Q & !iobs_IORW1.Q
+    # !iobs_IORW0.Q & !iobs_ALE1.Q & iobs_Once.Q
+    # nAS_FSB & !iobs_IORW0.Q & !iobs_ALE1.Q ) ; (10 pterms, 15 signals)
+iobs_IORW0.C = CLK_FSB ; (1 pterm, 1 signal)
+iobs_IORW0.CE = !iobs_PS_1_.Q & !iobs_PS_0_.Q ; (1 pterm, 2 signals)
+
+iobs_IORW1.D = nWE_FSB ; (1 pterm, 1 signal)
+iobs_IORW1.C = CLK_FSB ; (1 pterm, 1 signal)
+iobs_IORW1.CE = iobs_IORW1_0 ; (1 pterm, 1 signal)
+
+iobs_IORW1_0 = A_FSB_23_ & !nAS_FSB & !iobs_ALE1.Q & iobs_PS_1_.Q
+       & !iobs_Once.Q
+    # A_FSB_23_ & !nAS_FSB & !iobs_ALE1.Q & !iobs_Once.Q & iobs_PS_0_.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_ALE1.Q
+       & iobs_PS_1_.Q & !iobs_Once.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_ALE1.Q
+       & !iobs_Once.Q & iobs_PS_0_.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & iobs_PS_1_.Q & !iobs_Once.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & !iobs_Once.Q & iobs_PS_0_.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & iobs_PS_1_.Q
+       & !iobs_Once.Q & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & !iobs_Once.Q
+       & iobs_PS_0_.Q & cs_nOverlay1.Q ; (8 pterms, 15 signals)
+
+iobs_IOU0.D = !nUDS_FSB & !iobs_ALE1.Q
+    # iobs_ALE1.Q & iobs_IOU1.Q ; (2 pterms, 3 signals)
+iobs_IOU0.C = CLK_FSB ; (1 pterm, 1 signal)
+iobs_IOU0.CE = iobs_PS_1_.Q & iobs_PS_0_.Q ; (1 pterm, 2 signals)
+
+iobs_IOU1.D = !nUDS_FSB ; (1 pterm, 1 signal)
+iobs_IOU1.C = CLK_FSB ; (1 pterm, 1 signal)
+iobs_IOU1.CE = iobs_Load1.Q ; (1 pterm, 1 signal)
+
+iobs_Load1.D = !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_
+       & A_FSB_19_ & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q
+       & !iobs_Once.Q & iobs_PS_0_.Q & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & iobs_PS_1_.Q
+       & !iobs_Once.Q & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & !iobs_Once.Q & iobs_PS_0_.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & iobs_PS_1_.Q & !iobs_Once.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_ALE1.Q
+       & !iobs_Once.Q & iobs_PS_0_.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_ALE1.Q
+       & iobs_PS_1_.Q & !iobs_Once.Q
+    # A_FSB_23_ & !nAS_FSB & !iobs_ALE1.Q & !iobs_Once.Q & iobs_PS_0_.Q
+    # A_FSB_23_ & !nAS_FSB & !iobs_ALE1.Q & iobs_PS_1_.Q & !iobs_Once.Q ; (8 pterms, 15 signals)
+iobs_Load1.C = CLK_FSB ; (1 pterm, 1 signal)
+
+iobs_Once.D = !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_
+       & A_FSB_19_ & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_PS_1_.Q
+       & !iobs_PS_0_.Q & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_PS_1_.Q & !iobs_PS_0_.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & !cs_nOverlay1.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_PS_1_.Q
+       & !iobs_PS_0_.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_ALE1.Q
+    # A_FSB_23_ & !nAS_FSB & !iobs_PS_1_.Q & !iobs_PS_0_.Q
+    # fsb_ASrf.Q & iobs_Once.Q
+    # A_FSB_23_ & !nAS_FSB & !iobs_ALE1.Q
+    # !nAS_FSB & iobs_Once.Q ; (10 pterms, 16 signals)
+iobs_Once.C = CLK_FSB ; (1 pterm, 1 signal)
+
+iobs_PS_0_.D = !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_
+       & A_FSB_19_ & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_PS_1_.Q
+       & !iobs_Once.Q & !iobs_PS_0_.Q & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_PS_1_.Q & !iobs_Once.Q & !iobs_PS_0_.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_PS_1_.Q
+       & !iobs_Once.Q & !iobs_PS_0_.Q
+    # A_FSB_23_ & !nAS_FSB & !iobs_PS_1_.Q & !iobs_Once.Q & !iobs_PS_0_.Q
+    # iobs_IOACTr.Q & iobs_PS_1_.Q & !iobs_PS_0_.Q
+    # iobs_ALE1.Q & !iobs_PS_1_.Q & !iobs_PS_0_.Q ; (6 pterms, 16 signals)
+iobs_PS_0_.C = CLK_FSB ; (1 pterm, 1 signal)
+
+iobs_PS_1_.D = !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_
+       & A_FSB_19_ & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_PS_1_.Q
+       & !iobs_Once.Q & !iobs_PS_0_.Q & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_PS_1_.Q & !iobs_Once.Q & !iobs_PS_0_.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_PS_1_.Q
+       & !iobs_Once.Q & !iobs_PS_0_.Q
+    # A_FSB_23_ & !nAS_FSB & !iobs_PS_1_.Q & !iobs_Once.Q & !iobs_PS_0_.Q
+    # iobs_ALE1.Q & !iobs_PS_1_.Q & !iobs_PS_0_.Q
+    # iobs_IOACTr.Q & iobs_PS_0_.Q
+    # !iobs_IOACTr.Q & iobs_PS_1_.Q ; (7 pterms, 16 signals)
+iobs_PS_1_.C = CLK_FSB ; (1 pterm, 1 signal)
+
+nADoutLE0 = !iobs_ALE0.Q & !iobm_ALE0.Q ; (1 pterm, 2 signals)
+
+nADoutLE1 = !iobs_ALE1.Q ; (1 pterm, 1 signal)
+
+nAS_IOB.D = !iobm_IOS_0_.Q & !iobm_IOS_1_.Q & !iobm_IOS_2_.Q
+    # iobm_IOS_1_.Q & iobm_IOS_2_.Q ; (2 pterms, 3 signals)
+nAS_IOB.C = !CLK2X_IOB ; (1 pterm, 1 signal)
+
+nAoutOE = 0 ; (0 pterm, 0 signal)
+
+nBERR_FSB = !( !nAS_FSB & !nBERR_IOB & nDTACK_FSB.Q & !IOCS_i
+    # !nAS_FSB & nDTACK_FSB.Q & fsb_TimeoutB.Q & IOCS_i ) ; (2 pterms, 5 signals)
+
+nDTACK_FSB.D = !A_FSB_23_ & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_
+       & A_FSB_19_ & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & A_FSB_15_
+       & !A_FSB_14_ & A_FSB_13_ & !A_FSB_12_ & !A_FSB_11_ & !A_FSB_10_
+       & A_FSB_9_ & nDTACK_FSB.Q & !fsb_TimeoutA.Q & cs_nOverlay1.Q
+    # !A_FSB_23_ & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & A_FSB_15_ & A_FSB_14_ & A_FSB_13_
+       & A_FSB_12_ & A_FSB_11_ & A_FSB_10_ & A_FSB_9_ & nDTACK_FSB.Q
+       & !fsb_TimeoutA.Q & cs_nOverlay1.Q
+    # !A_FSB_23_ & !nWE_FSB & A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & A_FSB_15_ & !A_FSB_14_
+       & A_FSB_13_ & !A_FSB_12_ & !A_FSB_11_ & !A_FSB_10_ & A_FSB_9_
+       & nDTACK_FSB.Q & !fsb_TimeoutA.Q & !cs_nOverlay1.Q
+    # !A_FSB_23_ & !nWE_FSB & A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & A_FSB_15_ & A_FSB_14_ & A_FSB_13_
+       & A_FSB_12_ & A_FSB_11_ & A_FSB_10_ & A_FSB_9_ & nDTACK_FSB.Q
+       & !fsb_TimeoutA.Q & !cs_nOverlay1.Q
+    # !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & nDTACK_FSB.Q & iobs_ALE1.Q & cs_nOverlay1.Q
+    # !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_ & A_FSB_17_
+       & A_FSB_16_ & nDTACK_FSB.Q & iobs_ALE1.Q & !cs_nOverlay1.Q
+    # nWE_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & nDTACK_FSB.Q
+       & !iobs_IORDReady.Q
+    # !nWE_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & nDTACK_FSB.Q
+       & iobs_ALE1.Q
+    # A_FSB_23_ & nWE_FSB & nDTACK_FSB.Q & !iobs_IORDReady.Q
+    # A_FSB_23_ & !nWE_FSB & nDTACK_FSB.Q & iobs_ALE1.Q
+    # nAS_FSB & !fsb_ASrf.Q
+    # nAS_FSB & nDTACK_FSB.Q ; (12 pterms, 23 signals)
+nDTACK_FSB.C = CLK_FSB ; (1 pterm, 1 signal)
+
+nDinLE.D = !iobm_IOS_1_.Q & iobm_IOS_2_.Q ; (1 pterm, 2 signals)
+nDinLE.C = !CLK2X_IOB ; (1 pterm, 1 signal)
+
+nDinOE = !nAS_FSB & nWE_FSB & !IOCS_i ; (1 pterm, 3 signals)
+
+nDoutOE.D = !iobm_IOS_0_.Q & !iobm_IOS_1_.Q & !iobm_IOS_2_.Q
+    # iobm_IOS_0_.Q & iobm_IOS_1_.Q & iobm_IOS_2_.Q
+    # !iobs_IORW0.Q ; (3 pterms, 4 signals)
+nDoutOE.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+nLDS_IOB.D = !( !iobs_IORW0.Q & iobs_IOL0.Q & iobm_IOS_0_.Q & !iobm_IOS_2_.Q
+    # iobs_IOL0.Q & !iobm_IOS_1_.Q & iobm_IOS_2_.Q
+    # iobs_IOL0.Q & iobm_IOS_0_.Q & iobm_IOS_1_.Q & !iobm_IOS_2_.Q
+    # !iobs_IORW0.Q & iobs_IOL0.Q & iobm_IOS_1_.Q & !iobm_IOS_2_.Q ) ; (4 pterms, 5 signals)
+nLDS_IOB.C = !CLK2X_IOB ; (1 pterm, 1 signal)
+
+nRAMLWE = !( !A_FSB_23_ & !nLDS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_21_
+       & !cs_nOverlay1.Q
+    # !A_FSB_23_ & !nLDS_FSB & !nWE_FSB & !A_FSB_22_ & cs_nOverlay1.Q ) ; (2 pterms, 6 signals)
+
+nRAMOE = !( !A_FSB_23_ & !nAS_FSB & nWE_FSB & A_FSB_22_ & A_FSB_21_
+       & !cs_nOverlay1.Q
+    # !A_FSB_23_ & !nAS_FSB & nWE_FSB & !A_FSB_22_ & cs_nOverlay1.Q ) ; (2 pterms, 6 signals)
+
+nRAMUWE = !( !A_FSB_23_ & !nUDS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_21_
+       & !cs_nOverlay1.Q
+    # !A_FSB_23_ & !nUDS_FSB & !nWE_FSB & !A_FSB_22_ & cs_nOverlay1.Q ) ; (2 pterms, 6 signals)
+
+nROMOE = !( !A_FSB_23_ & !nAS_FSB & nWE_FSB & A_FSB_22_ & !A_FSB_21_
+       & !A_FSB_20_
+    # !A_FSB_23_ & !nAS_FSB & nWE_FSB & !A_FSB_21_ & !A_FSB_20_
+       & !cs_nOverlay1.Q ) ; (2 pterms, 7 signals)
+
+nROMWE = !( !A_FSB_23_ & !nAS_FSB & !nWE_FSB & A_FSB_22_ & !A_FSB_21_
+       & !A_FSB_20_
+    # !A_FSB_23_ & !nAS_FSB & !nWE_FSB & !A_FSB_21_ & !A_FSB_20_
+       & !cs_nOverlay1.Q ) ; (2 pterms, 7 signals)
+
+nUDS_IOB.D = !( !iobs_IORW0.Q & iobs_IOU0.Q & iobm_IOS_0_.Q & !iobm_IOS_2_.Q
+    # iobs_IOU0.Q & !iobm_IOS_1_.Q & iobm_IOS_2_.Q
+    # iobs_IOU0.Q & iobm_IOS_0_.Q & iobm_IOS_1_.Q & !iobm_IOS_2_.Q
+    # !iobs_IORW0.Q & iobs_IOU0.Q & iobm_IOS_1_.Q & !iobm_IOS_2_.Q ) ; (4 pterms, 5 signals)
+nUDS_IOB.C = !CLK2X_IOB ; (1 pterm, 1 signal)
+
+nVMA_IOB.T = !nVPA_IOB & nVMA_IOB.Q & iobm_IOACT.Q & iobm_ES_2_.Q
+       & iobm_ES_0_.Q & iobm_ES_1_.Q & !iobm_ES_3_.Q & !iobm_ES_4_.Q
+    # !nVMA_IOB.Q & !iobm_ES_2_.Q & !iobm_ES_0_.Q & !iobm_ES_1_.Q
+       & !iobm_ES_3_.Q & !iobm_ES_4_.Q ; (2 pterms, 8 signals)
+nVMA_IOB.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+
+
+

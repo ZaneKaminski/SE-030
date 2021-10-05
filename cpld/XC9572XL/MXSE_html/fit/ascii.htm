@@ -1,0 +1,943 @@
+<html><body>
+<pre>
+ 
+cpldfit:  version P.20131013                        Xilinx Inc.
+                                  Fitter Report
+Design Name: MXSE                                Date: 10- 5-2021,  4:04AM
+Device Used: XC9572XL-10-VQ64
+Fitting Status: Successful
+
+*************************  Mapped Resource Summary  **************************
+
+Macrocells     Product Terms    Function Block   Registers      Pins           
+Used/Tot       Used/Tot         Inps Used/Tot    Used/Tot       Used/Tot       
+60 /72  ( 83%) 181 /360  ( 50%) 104/216 ( 48%)   51 /72  ( 71%) 44 /52  ( 85%)
+
+** Function Block Resources **
+
+Function    Mcells      FB Inps     Pterms      IO          
+Block       Used/Tot    Used/Tot    Used/Tot    Used/Tot    
+FB1           9/18       13/54       13/90      11/13
+FB2          18/18*      32/54       38/90      13/13*
+FB3          18/18*      26/54       49/90      10/14
+FB4          15/18       33/54       81/90      10/12
+             -----       -----       -----      -----    
+             60/72      104/216     181/360     44/52 
+
+* - Resource is exhausted
+
+** Global Control Resources **
+
+Signal 'CLK2X_IOB' mapped onto global clock net GCK1.
+Signal 'CLK_FSB' mapped onto global clock net GCK2.
+Signal 'CLK_IOB' mapped onto global clock net GCK3.
+Global output enable net(s) unused.
+Signal 'nRES' mapped onto global set/reset net GSR.
+
+** Pin Resources **
+
+Signal Type    Required     Mapped  |  Pin Type            Used    Total 
+------------------------------------|------------------------------------
+Input         :   23          23    |  I/O              :    38      46
+Output        :   17          17    |  GCK/IO           :     3       3
+Bidirectional :    0           0    |  GTS/IO           :     2       2
+GCK           :    3           3    |  GSR/IO           :     1       1
+GTS           :    0           0    |
+GSR           :    1           1    |
+                 ----        ----
+        Total     44          44
+
+** Power Data **
+
+There are 60 macrocells in high performance mode (MCHP).
+There are 0 macrocells in low power mode (MCLP).
+End of Mapped Resource Summary
+**************************  Errors and Warnings  ***************************
+
+WARNING:Cpld - Unable to retrieve the path to the iSE Project Repository. Will
+   use the default filename of 'MXSE.ise'.
+*************************  Summary of Mapped Logic  ************************
+
+** 17 Outputs **
+
+Signal              Total Total Loc     Pin  Pin     Pin     Pwr  Slew Reg Init
+Name                Pts   Inps          No.  Type    Use     Mode Rate State
+nDinOE              2     6     FB1_2   8    I/O     O       STD  FAST 
+nRAMOE              2     6     FB1_5   9    I/O     O       STD  FAST 
+nROMOE              2     7     FB1_6   10   I/O     O       STD  FAST 
+nROMWE              2     7     FB1_10  18   I/O     O       STD  FAST 
+nADoutLE0           1     2     FB1_15  19   I/O     O       STD  FAST 
+nBERR_FSB           13    14    FB2_2   60   I/O     O       STD  FAST 
+nRAMLWE             2     6     FB2_6   62   I/O     O       STD  FAST 
+nRAMUWE             2     6     FB2_10  1    I/O     O       STD  FAST 
+nLDS_IOB            3     7     FB3_2   22   I/O     O       STD  FAST RESET
+nUDS_IOB            3     7     FB3_5   24   I/O     O       STD  FAST RESET
+nDoutOE             2     7     FB3_9   27   I/O     O       STD  FAST RESET
+nVMA_IOB            2     8     FB3_12  40   I/O     O       STD  FAST RESET
+nAS_IOB             1     5     FB3_16  42   I/O     O       STD  FAST RESET
+nADoutLE1           9     15    FB4_5   44   I/O     O       STD  FAST SET
+nAoutOE             0     0     FB4_10  51   I/O     O       STD  FAST 
+nDinLE              1     2     FB4_14  50   I/O     O       STD  FAST RESET
+nDTACK_FSB          12    23    FB4_17  57   I/O     O       STD  FAST RESET
+
+** 43 Buried Nodes **
+
+Signal              Total Total Loc     Pwr  Reg Init
+Name                Pts   Inps          Mode State
+iobm/IOS_FSM_FFd6   1     1     FB1_14  STD  RESET
+iobm/IOS_FSM_FFd5   1     1     FB1_16  STD  RESET
+iobm/IOS_FSM_FFd4   1     1     FB1_17  STD  RESET
+iobm/IOS_FSM_FFd1   1     1     FB1_18  STD  RESET
+iobs/IOACTr         1     1     FB2_1   STD  RESET
+iobm/IOREQr         1     1     FB2_3   STD  RESET
+iobm/Er             1     1     FB2_4   STD  RESET
+fsb/RefCnt<4>       1     4     FB2_5   STD  RESET
+fsb/RefCnt<3>       1     3     FB2_7   STD  RESET
+fsb/RefCnt<2>       1     2     FB2_8   STD  RESET
+fsb/RefCnt<1>       1     1     FB2_9   STD  RESET
+fsb/RefCnt<0>       0     0     FB2_11  STD  RESET
+fsb/ASrf            1     1     FB2_12  STD  RESET
+iobs/IOU1           2     2     FB2_13  STD  RESET
+iobs/IOL1           2     2     FB2_14  STD  RESET
+cs/nOverlay1        2     3     FB2_15  STD  RESET
+TimeoutB            2     9     FB2_16  STD  RESET
+TimeoutA            2     8     FB2_17  STD  RESET
+IOU0                3     5     FB2_18  STD  RESET
+iobm/IOS_FSM_FFd7   1     3     FB3_1   STD  RESET
+iobm/Er2            1     1     FB3_3   STD  RESET
+iobm/ETACK          1     6     FB3_4   STD  RESET
+iobm/IOS_FSM_FFd8   2     4     FB3_6   STD  SET
+ALE0M               2     7     FB3_7   STD  RESET
+iobm/IOS_FSM_FFd3   3     6     FB3_8   STD  RESET
+iobm/IOS_FSM_FFd2   3     5     FB3_10  STD  RESET
+iobm/ES<3>          3     6     FB3_11  STD  RESET
+iobm/ES<1>          3     4     FB3_13  STD  RESET
+iobm/ES<0>          3     7     FB3_14  STD  RESET
+iobm/ES<4>          4     7     FB3_15  STD  RESET
+iobm/ES<2>          5     7     FB3_17  STD  RESET
+IOACT               7     11    FB3_18  STD  RESET
+iobs/IORW1          12    16    FB4_1   STD  RESET
+ALE0S               1     2     FB4_4   STD  RESET
+iobs/PS_FSM_FFd1    2     3     FB4_6   STD  RESET
+iobs/IORDReady      2     6     FB4_7   STD  RESET
+IOL0                3     5     FB4_8   STD  RESET
+iobs/PS_FSM_FFd2    6     16    FB4_9   STD  RESET
+IOREQ               7     16    FB4_11  STD  RESET
+iobs/Load1          8     15    FB4_12  STD  RESET
+
+Signal              Total Total Loc     Pwr  Reg Init
+Name                Pts   Inps          Mode State
+IORW0               8     17    FB4_13  STD  RESET
+cs/nOverlay0        1     5     FB4_15  STD  RESET
+iobs/Once           9     16    FB4_16  STD  RESET
+
+** 27 Inputs **
+
+Signal              Loc     Pin  Pin     Pin     
+Name                        No.  Type    Use     
+nUDS_FSB            FB1_3   12   I/O     I
+nVPA_IOB            FB1_4   13   I/O     I
+nDTACK_IOB          FB1_8   11   I/O     I
+CLK2X_IOB           FB1_9   15~  GCK/I/O GCK
+CLK_FSB             FB1_11  16~  GCK/I/O GCK
+CLK_IOB             FB1_14  17~  GCK/I/O GCK/I
+nAS_FSB             FB2_3   58   I/O     I
+A_FSB<16>           FB2_4   59   I/O     I
+A_FSB<9>            FB2_5   61   I/O     I
+E_IOB               FB2_8   63   I/O     I
+nRES                FB2_9   64~  GSR/I/O GSR
+nWE_FSB             FB2_11  2    GTS/I/O I
+nBERR_IOB           FB2_12  4    I/O     I
+A_FSB<11>           FB2_14  5    GTS/I/O I
+A_FSB<12>           FB2_15  6    I/O     I
+A_FSB<21>           FB2_17  7    I/O     I
+A_FSB<23>           FB3_3   31   I/O     I
+A_FSB<14>           FB3_6   34   I/O     I
+A_FSB<22>           FB3_10  39   I/O     I
+A_FSB<15>           FB3_11  33   I/O     I
+A_FSB<13>           FB3_14  35   I/O     I
+nLDS_FSB            FB4_2   43   I/O     I
+A_FSB<20>           FB4_3   46   I/O     I
+A_FSB<18>           FB4_4   47   I/O     I
+A_FSB<19>           FB4_8   45   I/O     I
+A_FSB<17>           FB4_12  52   I/O     I
+A_FSB<10>           FB4_15  56   I/O     I
+
+Legend:
+Pin No. - ~ - User Assigned
+**************************  Function Block Details  ************************
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Imp Pt       - Product terms imported from other macrocells
+Exp Pt       - Product terms exported to other macrocells
+               in direction shown
+Unused Pt    - Unused local product terms remaining in macrocell
+Loc          - Location where logic was mapped in device
+Pin Type/Use - I  - Input             GCK - Global Clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+X            - Signal used as input to the macrocell logic.
+Pin No.      - ~  - User Assigned
+*********************************** FB1  ***********************************
+Number of function block inputs used/remaining:               13/41
+Number of signals used by logic mapping into function block:  13
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0     0   5     FB1_1         (b)     
+nDinOE                2       0     0   3     FB1_2   8     I/O     O
+(unused)              0       0     0   5     FB1_3   12    I/O     I
+(unused)              0       0     0   5     FB1_4   13    I/O     I
+nRAMOE                2       0     0   3     FB1_5   9     I/O     O
+nROMOE                2       0     0   3     FB1_6   10    I/O     O
+(unused)              0       0     0   5     FB1_7         (b)     
+(unused)              0       0     0   5     FB1_8   11    I/O     I
+(unused)              0       0     0   5     FB1_9   15    GCK/I/O GCK
+nROMWE                2       0     0   3     FB1_10  18    I/O     O
+(unused)              0       0     0   5     FB1_11  16    GCK/I/O GCK
+(unused)              0       0     0   5     FB1_12  23    I/O     
+(unused)              0       0     0   5     FB1_13        (b)     
+iobm/IOS_FSM_FFd6     1       0     0   4     FB1_14  17    GCK/I/O GCK/I
+nADoutLE0             1       0     0   4     FB1_15  19    I/O     O
+iobm/IOS_FSM_FFd5     1       0     0   4     FB1_16        (b)     (b)
+iobm/IOS_FSM_FFd4     1       0     0   4     FB1_17  20    I/O     (b)
+iobm/IOS_FSM_FFd1     1       0     0   4     FB1_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: ALE0M              6: A_FSB<23>          10: iobm/IOS_FSM_FFd6 
+  2: ALE0S              7: cs/nOverlay1       11: iobm/IOS_FSM_FFd7 
+  3: A_FSB<20>          8: iobm/IOS_FSM_FFd2  12: nAS_FSB 
+  4: A_FSB<21>          9: iobm/IOS_FSM_FFd5  13: nWE_FSB 
+  5: A_FSB<22>        
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+nDinOE               ..XXXX.....XX........................... 6
+nRAMOE               ...XXXX....XX........................... 6
+nROMOE               ..XXXXX....XX........................... 7
+nROMWE               ..XXXXX....XX........................... 7
+iobm/IOS_FSM_FFd6    ..........X............................. 1
+nADoutLE0            XX...................................... 2
+iobm/IOS_FSM_FFd5    .........X.............................. 1
+iobm/IOS_FSM_FFd4    ........X............................... 1
+iobm/IOS_FSM_FFd1    .......X................................ 1
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB2  ***********************************
+Number of function block inputs used/remaining:               32/22
+Number of signals used by logic mapping into function block:  32
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+iobs/IOACTr           1       0   \/4   0     FB2_1         (b)     (b)
+nBERR_FSB            13       8<-   0   0     FB2_2   60    I/O     O
+iobm/IOREQr           1       0   /\4   0     FB2_3   58    I/O     I
+iobm/Er               1       0     0   4     FB2_4   59    I/O     I
+fsb/RefCnt<4>         1       0     0   4     FB2_5   61    I/O     I
+nRAMLWE               2       0     0   3     FB2_6   62    I/O     O
+fsb/RefCnt<3>         1       0     0   4     FB2_7         (b)     (b)
+fsb/RefCnt<2>         1       0     0   4     FB2_8   63    I/O     I
+fsb/RefCnt<1>         1       0     0   4     FB2_9   64    GSR/I/O GSR
+nRAMUWE               2       0     0   3     FB2_10  1     I/O     O
+fsb/RefCnt<0>         0       0     0   5     FB2_11  2     GTS/I/O I
+fsb/ASrf              1       0     0   4     FB2_12  4     I/O     I
+iobs/IOU1             2       0     0   3     FB2_13        (b)     (b)
+iobs/IOL1             2       0     0   3     FB2_14  5     GTS/I/O I
+cs/nOverlay1          2       0     0   3     FB2_15  6     I/O     I
+TimeoutB              2       0     0   3     FB2_16        (b)     (b)
+TimeoutA              2       0     0   3     FB2_17  7     I/O     I
+IOU0                  3       0     0   2     FB2_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: A_FSB<16>         12: TimeoutA          23: iobs/Load1 
+  2: A_FSB<17>         13: TimeoutB          24: iobs/PS_FSM_FFd1 
+  3: A_FSB<18>         14: cs/nOverlay0      25: iobs/PS_FSM_FFd2 
+  4: A_FSB<19>         15: cs/nOverlay1      26: nADoutLE1 
+  5: A_FSB<20>         16: fsb/ASrf          27: nAS_FSB 
+  6: A_FSB<21>         17: fsb/RefCnt<0>     28: nBERR_IOB 
+  7: A_FSB<22>         18: fsb/RefCnt<1>     29: nDTACK_FSB 
+  8: A_FSB<23>         19: fsb/RefCnt<2>     30: nLDS_FSB 
+  9: E_IOB             20: fsb/RefCnt<3>     31: nUDS_FSB 
+ 10: IOACT             21: fsb/RefCnt<4>     32: nWE_FSB 
+ 11: IOREQ             22: iobs/IOU1        
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+iobs/IOACTr          .........X.............................. 1
+nBERR_FSB            XXXXXXXX....X.X...........XXX..X........ 14
+iobm/IOREQr          ..........X............................. 1
+iobm/Er              ........X............................... 1
+fsb/RefCnt<4>        ................XXXX.................... 4
+nRAMLWE              .....XXX......X..............X.X........ 6
+fsb/RefCnt<3>        ................XXX..................... 3
+fsb/RefCnt<2>        ................XX...................... 2
+fsb/RefCnt<1>        ................X....................... 1
+nRAMUWE              .....XXX......X...............XX........ 6
+fsb/RefCnt<0>        ........................................ 0
+fsb/ASrf             ..........................X............. 1
+iobs/IOU1            ......................X.......X......... 2
+iobs/IOL1            ......................X......X.......... 2
+cs/nOverlay1         .............X.X..........X............. 3
+TimeoutB             ...........XX..XXXXXX.....X............. 9
+TimeoutA             ...........X...XXXXXX.....X............. 8
+IOU0                 .....................X.XXX....X......... 5
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB3  ***********************************
+Number of function block inputs used/remaining:               26/28
+Number of signals used by logic mapping into function block:  26
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+iobm/IOS_FSM_FFd7     1       0   /\2   2     FB3_1         (b)     (b)
+nLDS_IOB              3       0     0   2     FB3_2   22    I/O     O
+iobm/Er2              1       0     0   4     FB3_3   31    I/O     I
+iobm/ETACK            1       0     0   4     FB3_4   32    I/O     (b)
+nUDS_IOB              3       0     0   2     FB3_5   24    I/O     O
+iobm/IOS_FSM_FFd8     2       0     0   3     FB3_6   34    I/O     I
+ALE0M                 2       0     0   3     FB3_7         (b)     (b)
+iobm/IOS_FSM_FFd3     3       0     0   2     FB3_8   25    I/O     (b)
+nDoutOE               2       0     0   3     FB3_9   27    I/O     O
+iobm/IOS_FSM_FFd2     3       0     0   2     FB3_10  39    I/O     I
+iobm/ES<3>            3       0     0   2     FB3_11  33    I/O     I
+nVMA_IOB              2       0     0   3     FB3_12  40    I/O     O
+iobm/ES<1>            3       0     0   2     FB3_13        (b)     (b)
+iobm/ES<0>            3       0     0   2     FB3_14  35    I/O     I
+iobm/ES<4>            4       0     0   1     FB3_15  36    I/O     (b)
+nAS_IOB               1       0     0   4     FB3_16  42    I/O     O
+iobm/ES<2>            5       0     0   0     FB3_17  38    I/O     (b)
+IOACT                 7       2<-   0   0     FB3_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: CLK_IOB           10: iobm/ES<4>         19: iobm/IOS_FSM_FFd5 
+  2: IOACT             11: iobm/ETACK         20: iobm/IOS_FSM_FFd6 
+  3: IOL0              12: iobm/Er            21: iobm/IOS_FSM_FFd7 
+  4: IORW0             13: iobm/Er2           22: iobm/IOS_FSM_FFd8 
+  5: IOU0              14: iobm/IOREQr        23: nBERR_IOB 
+  6: iobm/ES<0>        15: iobm/IOS_FSM_FFd1  24: nDTACK_IOB 
+  7: iobm/ES<1>        16: iobm/IOS_FSM_FFd2  25: nVMA_IOB 
+  8: iobm/ES<2>        17: iobm/IOS_FSM_FFd3  26: nVPA_IOB 
+  9: iobm/ES<3>        18: iobm/IOS_FSM_FFd4 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+iobm/IOS_FSM_FFd7    X............X.......X.................. 3
+nLDS_IOB             ..XX............XXXXX................... 7
+iobm/Er2             ...........X............................ 1
+iobm/ETACK           .....XXXXX..............X............... 6
+nUDS_IOB             ...XX...........XXXXX................... 7
+iobm/IOS_FSM_FFd8    X............XX......X.................. 4
+ALE0M                .............X..XXXXXX.................. 7
+iobm/IOS_FSM_FFd3    X.........X.....XX....XX................ 6
+nDoutOE              ...X...........XXXXXX................... 7
+iobm/IOS_FSM_FFd2    X.........X.....X.....XX................ 5
+iobm/ES<3>           .....XXXX..XX........................... 6
+nVMA_IOB             .X...XXXXX..............XX.............. 8
+iobm/ES<1>           .....XX....XX........................... 4
+iobm/ES<0>           .....XXXXX.XX........................... 7
+iobm/ES<4>           .....XXXXX.XX........................... 7
+nAS_IOB              ................XXXXX................... 5
+iobm/ES<2>           .....XXXXX.XX........................... 7
+IOACT                X.........X..X..XXXXXXXX................ 11
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB4  ***********************************
+Number of function block inputs used/remaining:               33/21
+Number of signals used by logic mapping into function block:  33
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+iobs/IORW1           12       9<- /\2   0     FB4_1         (b)     (b)
+(unused)              0       0   /\5   0     FB4_2   43    I/O     I
+(unused)              0       0   /\4   1     FB4_3   46    I/O     I
+ALE0S                 1       0   \/2   2     FB4_4   47    I/O     I
+nADoutLE1             9       4<-   0   0     FB4_5   44    I/O     O
+iobs/PS_FSM_FFd1      2       0   /\2   1     FB4_6   49    I/O     (b)
+iobs/IORDReady        2       0     0   3     FB4_7         (b)     (b)
+IOL0                  3       0   \/1   1     FB4_8   45    I/O     I
+iobs/PS_FSM_FFd2      6       1<-   0   0     FB4_9         (b)     (b)
+nAoutOE               0       0   \/4   1     FB4_10  51    I/O     O
+IOREQ                 7       4<- \/2   0     FB4_11  48    I/O     (b)
+iobs/Load1            8       3<-   0   0     FB4_12  52    I/O     I
+IORW0                 8       4<- /\1   0     FB4_13        (b)     (b)
+nDinLE                1       0   /\4   0     FB4_14  50    I/O     O
+cs/nOverlay0          1       0   \/4   0     FB4_15  56    I/O     I
+iobs/Once             9       4<-   0   0     FB4_16        (b)     (b)
+nDTACK_FSB           12       7<-   0   0     FB4_17  57    I/O     O
+(unused)              0       0   /\5   0     FB4_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: A_FSB<10>         12: A_FSB<21>          23: iobs/IOL1 
+  2: A_FSB<11>         13: A_FSB<22>          24: iobs/IORDReady 
+  3: A_FSB<12>         14: A_FSB<23>          25: iobs/IORW1 
+  4: A_FSB<13>         15: A_FSB<9>           26: iobs/Once 
+  5: A_FSB<14>         16: IORW0              27: iobs/PS_FSM_FFd1 
+  6: A_FSB<15>         17: TimeoutA           28: iobs/PS_FSM_FFd2 
+  7: A_FSB<16>         18: cs/nOverlay1       29: nADoutLE1 
+  8: A_FSB<17>         19: fsb/ASrf           30: nAS_FSB 
+  9: A_FSB<18>         20: iobm/IOS_FSM_FFd3  31: nDTACK_FSB 
+ 10: A_FSB<19>         21: iobm/IOS_FSM_FFd4  32: nLDS_FSB 
+ 11: A_FSB<20>         22: iobs/IOACTr        33: nWE_FSB 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+iobs/IORW1           ......XXXXXXXX...X......XXXXXX..X....... 16
+ALE0S                ..........................XX............ 2
+nADoutLE1            ......XXXXXXXX...X.......XXXXX..X....... 15
+iobs/PS_FSM_FFd1     .....................X....XX............ 3
+iobs/IORDReady       ..................X..X.X.X.X.X.......... 6
+IOL0                 ......................X...XXX..X........ 5
+iobs/PS_FSM_FFd2     ......XXXXXXXX...X...X...XXXXX..X....... 16
+nAoutOE              ........................................ 0
+IOREQ                ......XXXXXXXX...X...X...XXXXX..X....... 16
+iobs/Load1           ......XXXXXXXX...X.......XXXXX..X....... 15
+IORW0                ......XXXXXXXX.X.X......XXXXXX..X....... 17
+nDinLE               ...................XX................... 2
+cs/nOverlay0         ..........XXXX...............X.......... 5
+iobs/Once            ......XXXXXXXX...XX......XXXXX..X....... 16
+nDTACK_FSB           XXXXXXXXXXXXXXX.XXX....X....XXX.X....... 23
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*******************************  Equations  ********************************
+
+********** Mapped Logic **********
+
+FDCPE_ALE0M: FDCPE port map (ALE0M,ALE0M_D,CLK2X_IOB,'0','0');
+ALE0M_D <= ((NOT iobm/IOS_FSM_FFd3 AND NOT iobm/IOS_FSM_FFd4 AND 
+	NOT iobm/IOS_FSM_FFd5 AND NOT iobm/IOS_FSM_FFd6 AND NOT iobm/IOS_FSM_FFd7 AND 
+	NOT iobm/IOREQr)
+	OR (NOT iobm/IOS_FSM_FFd3 AND NOT iobm/IOS_FSM_FFd4 AND 
+	NOT iobm/IOS_FSM_FFd5 AND NOT iobm/IOS_FSM_FFd6 AND NOT iobm/IOS_FSM_FFd7 AND 
+	NOT iobm/IOS_FSM_FFd8));
+
+FDCPE_ALE0S: FDCPE port map (ALE0S,ALE0S_D,CLK_FSB,'0','0');
+ALE0S_D <= (iobs/PS_FSM_FFd2 AND NOT iobs/PS_FSM_FFd1);
+
+
+
+
+
+
+
+FDCPE_IOACT: FDCPE port map (IOACT,IOACT_D,CLK2X_IOB,'0','0');
+IOACT_D <= ((iobm/IOS_FSM_FFd4)
+	OR (iobm/IOS_FSM_FFd5)
+	OR (iobm/IOS_FSM_FFd6)
+	OR (iobm/IOS_FSM_FFd7)
+	OR (iobm/IOREQr AND iobm/IOS_FSM_FFd8)
+	OR (nDTACK_IOB AND nBERR_IOB AND iobm/IOS_FSM_FFd3 AND 
+	NOT iobm/ETACK)
+	OR (iobm/IOS_FSM_FFd3 AND NOT CLK_IOB));
+
+FDCPE_IOL0: FDCPE port map (IOL0,IOL0_D,CLK_FSB,'0','0',IOL0_CE);
+IOL0_D <= ((NOT nLDS_FSB AND nADoutLE1)
+	OR (iobs/IOL1 AND NOT nADoutLE1));
+IOL0_CE <= (iobs/PS_FSM_FFd2 AND NOT iobs/PS_FSM_FFd1);
+
+FDCPE_IOREQ: FDCPE port map (IOREQ,IOREQ_D,CLK_FSB,'0','0');
+IOREQ_D <= ((NOT iobs/Once AND A_FSB(23) AND NOT nAS_FSB AND 
+	NOT iobs/PS_FSM_FFd1)
+	OR (A_FSB(20) AND NOT iobs/Once AND NOT nAS_FSB AND 
+	NOT iobs/PS_FSM_FFd1 AND A_FSB(22) AND NOT A_FSB(21))
+	OR (A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND A_FSB(17) AND 
+	A_FSB(16) AND NOT cs/nOverlay1 AND NOT iobs/Once AND NOT nWE_FSB AND NOT nAS_FSB AND 
+	NOT iobs/PS_FSM_FFd1 AND A_FSB(22))
+	OR (A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND A_FSB(17) AND 
+	A_FSB(16) AND cs/nOverlay1 AND NOT iobs/Once AND NOT nWE_FSB AND NOT nAS_FSB AND 
+	NOT iobs/PS_FSM_FFd1 AND NOT A_FSB(22) AND A_FSB(21))
+	OR (iobs/PS_FSM_FFd2 AND NOT iobs/PS_FSM_FFd1)
+	OR (iobs/PS_FSM_FFd2 AND NOT iobs/IOACTr)
+	OR (NOT iobs/PS_FSM_FFd1 AND NOT nADoutLE1));
+
+FTCPE_IORW0: FTCPE port map (IORW0,IORW0_T,CLK_FSB,'0','0');
+IORW0_T <= ((A_FSB(20) AND NOT iobs/Once AND IORW0 AND NOT nWE_FSB AND 
+	NOT nAS_FSB AND NOT iobs/PS_FSM_FFd2 AND NOT iobs/PS_FSM_FFd1 AND A_FSB(22) AND 
+	NOT A_FSB(21) AND nADoutLE1)
+	OR (A_FSB(20) AND NOT iobs/Once AND NOT IORW0 AND nWE_FSB AND 
+	NOT nAS_FSB AND NOT iobs/PS_FSM_FFd2 AND NOT iobs/PS_FSM_FFd1 AND A_FSB(22) AND 
+	NOT A_FSB(21) AND nADoutLE1)
+	OR (A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND A_FSB(17) AND 
+	A_FSB(16) AND NOT cs/nOverlay1 AND NOT iobs/Once AND IORW0 AND NOT nWE_FSB AND 
+	NOT nAS_FSB AND NOT iobs/PS_FSM_FFd2 AND NOT iobs/PS_FSM_FFd1 AND A_FSB(22) AND 
+	nADoutLE1)
+	OR (A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND A_FSB(17) AND 
+	A_FSB(16) AND cs/nOverlay1 AND NOT iobs/Once AND IORW0 AND NOT nWE_FSB AND 
+	NOT nAS_FSB AND NOT iobs/PS_FSM_FFd2 AND NOT iobs/PS_FSM_FFd1 AND NOT A_FSB(22) AND 
+	A_FSB(21) AND nADoutLE1)
+	OR (IORW0 AND NOT iobs/IORW1 AND NOT iobs/PS_FSM_FFd2 AND 
+	NOT iobs/PS_FSM_FFd1 AND NOT nADoutLE1)
+	OR (NOT IORW0 AND iobs/IORW1 AND NOT iobs/PS_FSM_FFd2 AND 
+	NOT iobs/PS_FSM_FFd1 AND NOT nADoutLE1)
+	OR (NOT iobs/Once AND IORW0 AND NOT nWE_FSB AND A_FSB(23) AND 
+	NOT nAS_FSB AND NOT iobs/PS_FSM_FFd2 AND NOT iobs/PS_FSM_FFd1 AND nADoutLE1)
+	OR (NOT iobs/Once AND NOT IORW0 AND nWE_FSB AND A_FSB(23) AND 
+	NOT nAS_FSB AND NOT iobs/PS_FSM_FFd2 AND NOT iobs/PS_FSM_FFd1 AND nADoutLE1));
+
+FDCPE_IOU0: FDCPE port map (IOU0,IOU0_D,CLK_FSB,'0','0',IOU0_CE);
+IOU0_D <= ((NOT nUDS_FSB AND nADoutLE1)
+	OR (iobs/IOU1 AND NOT nADoutLE1));
+IOU0_CE <= (iobs/PS_FSM_FFd2 AND NOT iobs/PS_FSM_FFd1);
+
+FTCPE_TimeoutA: FTCPE port map (TimeoutA,TimeoutA_T,CLK_FSB,'0','0');
+TimeoutA_T <= ((TimeoutA AND nAS_FSB AND NOT fsb/ASrf)
+	OR (NOT TimeoutA AND NOT nAS_FSB AND NOT fsb/RefCnt(0) AND 
+	NOT fsb/RefCnt(1) AND NOT fsb/RefCnt(2) AND NOT fsb/RefCnt(3) AND NOT fsb/RefCnt(4)));
+
+FTCPE_TimeoutB: FTCPE port map (TimeoutB,TimeoutB_T,CLK_FSB,'0','0');
+TimeoutB_T <= ((TimeoutB AND nAS_FSB AND NOT fsb/ASrf)
+	OR (TimeoutA AND NOT TimeoutB AND NOT nAS_FSB AND NOT fsb/RefCnt(0) AND 
+	NOT fsb/RefCnt(1) AND NOT fsb/RefCnt(2) AND NOT fsb/RefCnt(3) AND NOT fsb/RefCnt(4)));
+
+FDCPE_cs/nOverlay0: FDCPE port map (cs/nOverlay0,'1',CLK_FSB,NOT nRES,'0',cs/nOverlay0_CE);
+cs/nOverlay0_CE <= (NOT A_FSB(20) AND NOT A_FSB(23) AND NOT nAS_FSB AND A_FSB(22) AND 
+	NOT A_FSB(21));
+
+FDCPE_cs/nOverlay1: FDCPE port map (cs/nOverlay1,cs/nOverlay0,CLK_FSB,'0','0',cs/nOverlay1_CE);
+cs/nOverlay1_CE <= (nAS_FSB AND NOT fsb/ASrf);
+
+FDCPE_fsb/ASrf: FDCPE port map (fsb/ASrf,NOT nAS_FSB,NOT CLK_FSB,'0','0');
+
+FTCPE_fsb/RefCnt0: FTCPE port map (fsb/RefCnt(0),'1',CLK_FSB,'0','0');
+
+FTCPE_fsb/RefCnt1: FTCPE port map (fsb/RefCnt(1),fsb/RefCnt(0),CLK_FSB,'0','0');
+
+FTCPE_fsb/RefCnt2: FTCPE port map (fsb/RefCnt(2),fsb/RefCnt_T(2),CLK_FSB,'0','0');
+fsb/RefCnt_T(2) <= (fsb/RefCnt(0) AND fsb/RefCnt(1));
+
+FTCPE_fsb/RefCnt3: FTCPE port map (fsb/RefCnt(3),fsb/RefCnt_T(3),CLK_FSB,'0','0');
+fsb/RefCnt_T(3) <= (fsb/RefCnt(0) AND fsb/RefCnt(1) AND fsb/RefCnt(2));
+
+FTCPE_fsb/RefCnt4: FTCPE port map (fsb/RefCnt(4),fsb/RefCnt_T(4),CLK_FSB,'0','0');
+fsb/RefCnt_T(4) <= (fsb/RefCnt(0) AND fsb/RefCnt(1) AND fsb/RefCnt(2) AND 
+	fsb/RefCnt(3));
+
+FTCPE_iobm/ES0: FTCPE port map (iobm/ES(0),iobm/ES_T(0),CLK2X_IOB,'0','0');
+iobm/ES_T(0) <= ((iobm/ES(0) AND NOT iobm/Er AND iobm/Er2)
+	OR (NOT iobm/ES(0) AND NOT iobm/ES(1) AND NOT iobm/ES(2) AND 
+	NOT iobm/ES(3) AND NOT iobm/ES(4) AND iobm/Er)
+	OR (NOT iobm/ES(0) AND NOT iobm/ES(1) AND NOT iobm/ES(2) AND 
+	NOT iobm/ES(3) AND NOT iobm/ES(4) AND NOT iobm/Er2));
+
+FDCPE_iobm/ES1: FDCPE port map (iobm/ES(1),iobm/ES_D(1),CLK2X_IOB,'0','0');
+iobm/ES_D(1) <= ((iobm/ES(0) AND iobm/ES(1))
+	OR (NOT iobm/ES(0) AND NOT iobm/ES(1))
+	OR (NOT iobm/Er AND iobm/Er2));
+
+FDCPE_iobm/ES2: FDCPE port map (iobm/ES(2),iobm/ES_D(2),CLK2X_IOB,'0','0');
+iobm/ES_D(2) <= ((NOT iobm/ES(0) AND NOT iobm/ES(2))
+	OR (NOT iobm/ES(1) AND NOT iobm/ES(2))
+	OR (NOT iobm/Er AND iobm/Er2)
+	OR (iobm/ES(0) AND iobm/ES(1) AND iobm/ES(2))
+	OR (NOT iobm/ES(2) AND NOT iobm/ES(3) AND iobm/ES(4)));
+
+FTCPE_iobm/ES3: FTCPE port map (iobm/ES(3),iobm/ES_T(3),CLK2X_IOB,'0','0');
+iobm/ES_T(3) <= ((iobm/ES(3) AND NOT iobm/Er AND iobm/Er2)
+	OR (iobm/ES(0) AND iobm/ES(1) AND iobm/ES(2) AND iobm/Er)
+	OR (iobm/ES(0) AND iobm/ES(1) AND iobm/ES(2) AND NOT iobm/Er2));
+
+FTCPE_iobm/ES4: FTCPE port map (iobm/ES(4),iobm/ES_T(4),CLK2X_IOB,'0','0');
+iobm/ES_T(4) <= ((iobm/ES(4) AND NOT iobm/Er AND iobm/Er2)
+	OR (iobm/ES(0) AND iobm/ES(1) AND iobm/ES(2) AND 
+	iobm/ES(3) AND iobm/Er)
+	OR (iobm/ES(0) AND iobm/ES(1) AND iobm/ES(2) AND 
+	iobm/ES(3) AND NOT iobm/Er2)
+	OR (iobm/ES(0) AND iobm/ES(1) AND NOT iobm/ES(2) AND 
+	NOT iobm/ES(3) AND iobm/ES(4)));
+
+FDCPE_iobm/ETACK: FDCPE port map (iobm/ETACK,iobm/ETACK_D,CLK2X_IOB,'0','0');
+iobm/ETACK_D <= (NOT nVMA_IOB AND NOT iobm/ES(0) AND NOT iobm/ES(1) AND NOT iobm/ES(2) AND 
+	NOT iobm/ES(3) AND iobm/ES(4));
+
+FDCPE_iobm/Er: FDCPE port map (iobm/Er,E_IOB,NOT CLK_IOB,'0','0');
+
+FDCPE_iobm/Er2: FDCPE port map (iobm/Er2,iobm/Er,CLK2X_IOB,'0','0');
+
+FDCPE_iobm/IOREQr: FDCPE port map (iobm/IOREQr,IOREQ,NOT CLK2X_IOB,'0','0');
+
+FDCPE_iobm/IOS_FSM_FFd1: FDCPE port map (iobm/IOS_FSM_FFd1,iobm/IOS_FSM_FFd2,CLK2X_IOB,'0','0');
+
+FDCPE_iobm/IOS_FSM_FFd2: FDCPE port map (iobm/IOS_FSM_FFd2,iobm/IOS_FSM_FFd2_D,CLK2X_IOB,'0','0');
+iobm/IOS_FSM_FFd2_D <= ((NOT nDTACK_IOB AND iobm/IOS_FSM_FFd3 AND CLK_IOB)
+	OR (NOT nBERR_IOB AND iobm/IOS_FSM_FFd3 AND CLK_IOB)
+	OR (iobm/IOS_FSM_FFd3 AND CLK_IOB AND iobm/ETACK));
+
+FDCPE_iobm/IOS_FSM_FFd3: FDCPE port map (iobm/IOS_FSM_FFd3,iobm/IOS_FSM_FFd3_D,CLK2X_IOB,'0','0');
+iobm/IOS_FSM_FFd3_D <= ((iobm/IOS_FSM_FFd4)
+	OR (iobm/IOS_FSM_FFd3 AND NOT CLK_IOB)
+	OR (nDTACK_IOB AND nBERR_IOB AND iobm/IOS_FSM_FFd3 AND 
+	NOT iobm/ETACK));
+
+FDCPE_iobm/IOS_FSM_FFd4: FDCPE port map (iobm/IOS_FSM_FFd4,iobm/IOS_FSM_FFd5,CLK2X_IOB,'0','0');
+
+FDCPE_iobm/IOS_FSM_FFd5: FDCPE port map (iobm/IOS_FSM_FFd5,iobm/IOS_FSM_FFd6,CLK2X_IOB,'0','0');
+
+FDCPE_iobm/IOS_FSM_FFd6: FDCPE port map (iobm/IOS_FSM_FFd6,iobm/IOS_FSM_FFd7,CLK2X_IOB,'0','0');
+
+FDCPE_iobm/IOS_FSM_FFd7: FDCPE port map (iobm/IOS_FSM_FFd7,iobm/IOS_FSM_FFd7_D,CLK2X_IOB,'0','0');
+iobm/IOS_FSM_FFd7_D <= (NOT CLK_IOB AND iobm/IOREQr AND iobm/IOS_FSM_FFd8);
+
+FDCPE_iobm/IOS_FSM_FFd8: FDCPE port map (iobm/IOS_FSM_FFd8,iobm/IOS_FSM_FFd8_D,CLK2X_IOB,'0','0');
+iobm/IOS_FSM_FFd8_D <= ((NOT iobm/IOS_FSM_FFd8 AND NOT iobm/IOS_FSM_FFd1)
+	OR (NOT CLK_IOB AND iobm/IOREQr AND NOT iobm/IOS_FSM_FFd1));
+
+FDCPE_iobs/IOACTr: FDCPE port map (iobs/IOACTr,IOACT,CLK_FSB,'0','0');
+
+FDCPE_iobs/IOL1: FDCPE port map (iobs/IOL1,NOT nLDS_FSB,CLK_FSB,'0','0',iobs/Load1);
+
+FTCPE_iobs/IORDReady: FTCPE port map (iobs/IORDReady,iobs/IORDReady_T,CLK_FSB,'0','0');
+iobs/IORDReady_T <= ((iobs/IORDReady AND nAS_FSB AND NOT fsb/ASrf)
+	OR (iobs/Once AND NOT iobs/IORDReady AND NOT nAS_FSB AND 
+	NOT iobs/PS_FSM_FFd2 AND NOT iobs/IOACTr));
+
+FTCPE_iobs/IORW1: FTCPE port map (iobs/IORW1,iobs/IORW1_T,CLK_FSB,'0','0');
+iobs/IORW1_T <= ((EXP7_.EXP)
+	OR (NOT iobs/Once AND nWE_FSB AND NOT iobs/IORW1 AND A_FSB(23) AND 
+	NOT nAS_FSB AND iobs/PS_FSM_FFd2 AND nADoutLE1)
+	OR (A_FSB(20) AND NOT iobs/Once AND nWE_FSB AND NOT iobs/IORW1 AND 
+	NOT nAS_FSB AND iobs/PS_FSM_FFd2 AND A_FSB(22) AND NOT A_FSB(21) AND 
+	nADoutLE1)
+	OR (A_FSB(20) AND NOT iobs/Once AND nWE_FSB AND NOT iobs/IORW1 AND 
+	NOT nAS_FSB AND iobs/PS_FSM_FFd1 AND A_FSB(22) AND NOT A_FSB(21) AND 
+	nADoutLE1)
+	OR (A_FSB(20) AND NOT iobs/Once AND NOT nWE_FSB AND iobs/IORW1 AND 
+	NOT nAS_FSB AND iobs/PS_FSM_FFd2 AND A_FSB(22) AND NOT A_FSB(21) AND 
+	nADoutLE1)
+	OR (A_FSB(20) AND NOT iobs/Once AND NOT nWE_FSB AND iobs/IORW1 AND 
+	NOT nAS_FSB AND iobs/PS_FSM_FFd1 AND A_FSB(22) AND NOT A_FSB(21) AND 
+	nADoutLE1)
+	OR (NOT iobs/Once AND nWE_FSB AND NOT iobs/IORW1 AND A_FSB(23) AND 
+	NOT nAS_FSB AND iobs/PS_FSM_FFd1 AND nADoutLE1)
+	OR (NOT iobs/Once AND NOT nWE_FSB AND iobs/IORW1 AND A_FSB(23) AND 
+	NOT nAS_FSB AND iobs/PS_FSM_FFd2 AND nADoutLE1)
+	OR (NOT iobs/Once AND NOT nWE_FSB AND iobs/IORW1 AND A_FSB(23) AND 
+	NOT nAS_FSB AND iobs/PS_FSM_FFd1 AND nADoutLE1));
+
+FDCPE_iobs/IOU1: FDCPE port map (iobs/IOU1,NOT nUDS_FSB,CLK_FSB,'0','0',iobs/Load1);
+
+FDCPE_iobs/Load1: FDCPE port map (iobs/Load1,iobs/Load1_D,CLK_FSB,'0','0');
+iobs/Load1_D <= ((A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND A_FSB(17) AND 
+	A_FSB(16) AND NOT cs/nOverlay1 AND NOT iobs/Once AND NOT nWE_FSB AND NOT nAS_FSB AND 
+	iobs/PS_FSM_FFd2 AND A_FSB(22) AND nADoutLE1)
+	OR (A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND A_FSB(17) AND 
+	A_FSB(16) AND cs/nOverlay1 AND NOT iobs/Once AND NOT nWE_FSB AND NOT nAS_FSB AND 
+	iobs/PS_FSM_FFd1 AND NOT A_FSB(22) AND A_FSB(21) AND nADoutLE1)
+	OR (A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND A_FSB(17) AND 
+	A_FSB(16) AND cs/nOverlay1 AND NOT iobs/Once AND NOT nWE_FSB AND NOT nAS_FSB AND 
+	iobs/PS_FSM_FFd2 AND NOT A_FSB(22) AND A_FSB(21) AND nADoutLE1)
+	OR (NOT iobs/Once AND A_FSB(23) AND NOT nAS_FSB AND 
+	iobs/PS_FSM_FFd2 AND nADoutLE1)
+	OR (NOT iobs/Once AND A_FSB(23) AND NOT nAS_FSB AND 
+	iobs/PS_FSM_FFd1 AND nADoutLE1)
+	OR (A_FSB(20) AND NOT iobs/Once AND NOT nAS_FSB AND 
+	iobs/PS_FSM_FFd2 AND A_FSB(22) AND NOT A_FSB(21) AND nADoutLE1)
+	OR (A_FSB(20) AND NOT iobs/Once AND NOT nAS_FSB AND 
+	iobs/PS_FSM_FFd1 AND A_FSB(22) AND NOT A_FSB(21) AND nADoutLE1)
+	OR (A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND A_FSB(17) AND 
+	A_FSB(16) AND NOT cs/nOverlay1 AND NOT iobs/Once AND NOT nWE_FSB AND NOT nAS_FSB AND 
+	iobs/PS_FSM_FFd1 AND A_FSB(22) AND nADoutLE1));
+
+FTCPE_iobs/Once: FTCPE port map (iobs/Once,iobs/Once_T,CLK_FSB,'0','0');
+iobs/Once_T <= ((A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND A_FSB(17) AND 
+	A_FSB(16) AND NOT cs/nOverlay1 AND NOT iobs/Once AND NOT nWE_FSB AND NOT nAS_FSB AND 
+	A_FSB(22) AND nADoutLE1)
+	OR (A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND A_FSB(17) AND 
+	A_FSB(16) AND cs/nOverlay1 AND NOT iobs/Once AND NOT nWE_FSB AND NOT nAS_FSB AND 
+	NOT A_FSB(22) AND A_FSB(21) AND nADoutLE1)
+	OR (A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND A_FSB(17) AND 
+	A_FSB(16) AND NOT cs/nOverlay1 AND NOT iobs/Once AND NOT nWE_FSB AND NOT nAS_FSB AND 
+	NOT iobs/PS_FSM_FFd2 AND NOT iobs/PS_FSM_FFd1 AND A_FSB(22))
+	OR (A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND A_FSB(17) AND 
+	A_FSB(16) AND cs/nOverlay1 AND NOT iobs/Once AND NOT nWE_FSB AND NOT nAS_FSB AND 
+	NOT iobs/PS_FSM_FFd2 AND NOT iobs/PS_FSM_FFd1 AND NOT A_FSB(22) AND A_FSB(21))
+	OR (iobs/Once AND nAS_FSB AND NOT fsb/ASrf)
+	OR (NOT iobs/Once AND A_FSB(23) AND NOT nAS_FSB AND nADoutLE1)
+	OR (NOT iobs/Once AND A_FSB(23) AND NOT nAS_FSB AND 
+	NOT iobs/PS_FSM_FFd2 AND NOT iobs/PS_FSM_FFd1)
+	OR (A_FSB(20) AND NOT iobs/Once AND NOT nAS_FSB AND A_FSB(22) AND 
+	NOT A_FSB(21) AND nADoutLE1)
+	OR (A_FSB(20) AND NOT iobs/Once AND NOT nAS_FSB AND 
+	NOT iobs/PS_FSM_FFd2 AND NOT iobs/PS_FSM_FFd1 AND A_FSB(22) AND NOT A_FSB(21)));
+
+FDCPE_iobs/PS_FSM_FFd1: FDCPE port map (iobs/PS_FSM_FFd1,iobs/PS_FSM_FFd1_D,CLK_FSB,'0','0');
+iobs/PS_FSM_FFd1_D <= ((iobs/PS_FSM_FFd2)
+	OR (iobs/PS_FSM_FFd1 AND iobs/IOACTr));
+
+FTCPE_iobs/PS_FSM_FFd2: FTCPE port map (iobs/PS_FSM_FFd2,iobs/PS_FSM_FFd2_T,CLK_FSB,'0','0');
+iobs/PS_FSM_FFd2_T <= ((iobs/PS_FSM_FFd1 AND iobs/IOACTr)
+	OR (NOT iobs/PS_FSM_FFd2 AND NOT iobs/PS_FSM_FFd1 AND NOT nADoutLE1)
+	OR (NOT iobs/Once AND A_FSB(23) AND NOT nAS_FSB AND 
+	NOT iobs/PS_FSM_FFd2 AND NOT iobs/PS_FSM_FFd1)
+	OR (A_FSB(20) AND NOT iobs/Once AND NOT nAS_FSB AND 
+	NOT iobs/PS_FSM_FFd2 AND NOT iobs/PS_FSM_FFd1 AND A_FSB(22) AND NOT A_FSB(21))
+	OR (A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND A_FSB(17) AND 
+	A_FSB(16) AND NOT cs/nOverlay1 AND NOT iobs/Once AND NOT nWE_FSB AND NOT nAS_FSB AND 
+	NOT iobs/PS_FSM_FFd2 AND NOT iobs/PS_FSM_FFd1 AND A_FSB(22))
+	OR (A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND A_FSB(17) AND 
+	A_FSB(16) AND cs/nOverlay1 AND NOT iobs/Once AND NOT nWE_FSB AND NOT nAS_FSB AND 
+	NOT iobs/PS_FSM_FFd2 AND NOT iobs/PS_FSM_FFd1 AND NOT A_FSB(22) AND A_FSB(21)));
+
+
+nADoutLE0 <= (NOT ALE0M AND NOT ALE0S);
+
+FTCPE_nADoutLE1: FTCPE port map (nADoutLE1,nADoutLE1_T,CLK_FSB,'0','0');
+nADoutLE1_T <= ((A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND A_FSB(17) AND 
+	A_FSB(16) AND NOT cs/nOverlay1 AND NOT iobs/Once AND NOT nWE_FSB AND NOT nAS_FSB AND 
+	iobs/PS_FSM_FFd2 AND A_FSB(22) AND nADoutLE1)
+	OR (A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND A_FSB(17) AND 
+	A_FSB(16) AND NOT cs/nOverlay1 AND NOT iobs/Once AND NOT nWE_FSB AND NOT nAS_FSB AND 
+	iobs/PS_FSM_FFd1 AND A_FSB(22) AND nADoutLE1)
+	OR (A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND A_FSB(17) AND 
+	A_FSB(16) AND cs/nOverlay1 AND NOT iobs/Once AND NOT nWE_FSB AND NOT nAS_FSB AND 
+	iobs/PS_FSM_FFd2 AND NOT A_FSB(22) AND A_FSB(21) AND nADoutLE1)
+	OR (A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND A_FSB(17) AND 
+	A_FSB(16) AND cs/nOverlay1 AND NOT iobs/Once AND NOT nWE_FSB AND NOT nAS_FSB AND 
+	iobs/PS_FSM_FFd1 AND NOT A_FSB(22) AND A_FSB(21) AND nADoutLE1)
+	OR (iobs/PS_FSM_FFd2 AND NOT iobs/PS_FSM_FFd1 AND NOT nADoutLE1)
+	OR (NOT iobs/Once AND A_FSB(23) AND NOT nAS_FSB AND 
+	iobs/PS_FSM_FFd2 AND nADoutLE1)
+	OR (NOT iobs/Once AND A_FSB(23) AND NOT nAS_FSB AND 
+	iobs/PS_FSM_FFd1 AND nADoutLE1)
+	OR (A_FSB(20) AND NOT iobs/Once AND NOT nAS_FSB AND 
+	iobs/PS_FSM_FFd2 AND A_FSB(22) AND NOT A_FSB(21) AND nADoutLE1)
+	OR (A_FSB(20) AND NOT iobs/Once AND NOT nAS_FSB AND 
+	iobs/PS_FSM_FFd1 AND A_FSB(22) AND NOT A_FSB(21) AND nADoutLE1));
+
+FDCPE_nAS_IOB: FDCPE port map (nAS_IOB,nAS_IOB_D,NOT CLK2X_IOB,'0','0');
+nAS_IOB_D <= (NOT iobm/IOS_FSM_FFd3 AND NOT iobm/IOS_FSM_FFd4 AND 
+	NOT iobm/IOS_FSM_FFd5 AND NOT iobm/IOS_FSM_FFd6 AND NOT iobm/IOS_FSM_FFd7);
+
+
+nAoutOE <= '0';
+
+
+nBERR_FSB <= NOT (((NOT A_FSB(18) AND nDTACK_FSB AND TimeoutB AND NOT A_FSB(23) AND 
+	NOT nAS_FSB AND A_FSB(21))
+	OR (NOT A_FSB(17) AND nDTACK_FSB AND TimeoutB AND NOT A_FSB(23) AND 
+	NOT nAS_FSB AND A_FSB(21))
+	OR (NOT A_FSB(16) AND nDTACK_FSB AND TimeoutB AND NOT A_FSB(23) AND 
+	NOT nAS_FSB AND A_FSB(21))
+	OR (nDTACK_FSB AND TimeoutB AND nWE_FSB AND NOT A_FSB(23) AND 
+	NOT nAS_FSB AND A_FSB(21))
+	OR (NOT A_FSB(19) AND nDTACK_FSB AND TimeoutB AND NOT A_FSB(23) AND 
+	NOT nAS_FSB AND A_FSB(21))
+	OR (nDTACK_FSB AND cs/nOverlay1 AND TimeoutB AND 
+	NOT A_FSB(23) AND NOT nAS_FSB AND A_FSB(22) AND A_FSB(21))
+	OR (A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND A_FSB(17) AND 
+	A_FSB(16) AND nDTACK_FSB AND NOT cs/nOverlay1 AND NOT nWE_FSB AND NOT nBERR_IOB AND 
+	NOT nAS_FSB AND A_FSB(22))
+	OR (A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND A_FSB(17) AND 
+	A_FSB(16) AND nDTACK_FSB AND cs/nOverlay1 AND NOT nWE_FSB AND NOT nBERR_IOB AND 
+	NOT nAS_FSB AND NOT A_FSB(22) AND A_FSB(21))
+	OR (nDTACK_FSB AND NOT nBERR_IOB AND A_FSB(23) AND NOT nAS_FSB)
+	OR (NOT A_FSB(20) AND nDTACK_FSB AND TimeoutB AND NOT A_FSB(23) AND 
+	NOT nAS_FSB)
+	OR (A_FSB(20) AND nDTACK_FSB AND NOT nBERR_IOB AND NOT nAS_FSB AND 
+	A_FSB(22) AND NOT A_FSB(21))
+	OR (nDTACK_FSB AND NOT cs/nOverlay1 AND TimeoutB AND 
+	NOT A_FSB(23) AND NOT nAS_FSB AND NOT A_FSB(22))
+	OR (nDTACK_FSB AND TimeoutB AND NOT A_FSB(23) AND NOT nAS_FSB AND 
+	NOT A_FSB(22) AND NOT A_FSB(21))));
+
+FDCPE_nDTACK_FSB: FDCPE port map (nDTACK_FSB,nDTACK_FSB_D,CLK_FSB,'0','0');
+nDTACK_FSB_D <= ((iobs/IORW1.EXP)
+	OR (nDTACK_FSB AND NOT iobs/IORDReady AND nWE_FSB AND 
+	A_FSB(23))
+	OR (nDTACK_FSB AND NOT nWE_FSB AND A_FSB(23) AND NOT nADoutLE1)
+	OR (A_FSB(20) AND nDTACK_FSB AND NOT iobs/IORDReady AND 
+	nWE_FSB AND A_FSB(22) AND NOT A_FSB(21))
+	OR (A_FSB(20) AND nDTACK_FSB AND NOT nWE_FSB AND A_FSB(22) AND 
+	NOT A_FSB(21) AND NOT nADoutLE1)
+	OR (A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND A_FSB(17) AND 
+	A_FSB(16) AND nDTACK_FSB AND NOT cs/nOverlay1 AND NOT nWE_FSB AND A_FSB(22) AND 
+	NOT nADoutLE1)
+	OR (A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND A_FSB(17) AND 
+	A_FSB(16) AND nDTACK_FSB AND cs/nOverlay1 AND NOT nWE_FSB AND NOT A_FSB(22) AND 
+	A_FSB(21) AND NOT nADoutLE1)
+	OR (A_FSB(9) AND A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND 
+	A_FSB(17) AND A_FSB(16) AND A_FSB(15) AND A_FSB(13) AND A_FSB(14) AND 
+	A_FSB(12) AND A_FSB(11) AND A_FSB(10) AND nDTACK_FSB AND 
+	cs/nOverlay1 AND NOT TimeoutA AND NOT nWE_FSB AND NOT A_FSB(23) AND NOT A_FSB(22) AND 
+	A_FSB(21))
+	OR (A_FSB(9) AND A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND 
+	A_FSB(17) AND A_FSB(16) AND A_FSB(15) AND A_FSB(13) AND A_FSB(14) AND 
+	A_FSB(12) AND A_FSB(11) AND A_FSB(10) AND nDTACK_FSB AND 
+	NOT cs/nOverlay1 AND NOT TimeoutA AND NOT nWE_FSB AND NOT A_FSB(23) AND A_FSB(22) AND 
+	A_FSB(21))
+	OR (A_FSB(9) AND A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND 
+	A_FSB(17) AND A_FSB(16) AND A_FSB(15) AND A_FSB(13) AND NOT A_FSB(14) AND 
+	NOT A_FSB(12) AND NOT A_FSB(11) AND NOT A_FSB(10) AND nDTACK_FSB AND 
+	cs/nOverlay1 AND NOT TimeoutA AND NOT nWE_FSB AND NOT A_FSB(23) AND NOT A_FSB(22) AND 
+	A_FSB(21))
+	OR (A_FSB(9) AND A_FSB(20) AND A_FSB(19) AND A_FSB(18) AND 
+	A_FSB(17) AND A_FSB(16) AND A_FSB(15) AND A_FSB(13) AND NOT A_FSB(14) AND 
+	NOT A_FSB(12) AND NOT A_FSB(11) AND NOT A_FSB(10) AND nDTACK_FSB AND 
+	NOT cs/nOverlay1 AND NOT TimeoutA AND NOT nWE_FSB AND NOT A_FSB(23) AND A_FSB(22) AND 
+	A_FSB(21)));
+
+FDCPE_nDinLE: FDCPE port map (nDinLE,nDinLE_D,NOT CLK2X_IOB,'0','0');
+nDinLE_D <= (NOT iobm/IOS_FSM_FFd3 AND NOT iobm/IOS_FSM_FFd4);
+
+
+nDinOE <= ((nWE_FSB AND A_FSB(23) AND NOT nAS_FSB)
+	OR (A_FSB(20) AND nWE_FSB AND NOT nAS_FSB AND A_FSB(22) AND 
+	NOT A_FSB(21)));
+
+FDCPE_nDoutOE: FDCPE port map (nDoutOE,nDoutOE_D,CLK2X_IOB,'0','0');
+nDoutOE_D <= ((NOT IORW0)
+	OR (NOT iobm/IOS_FSM_FFd3 AND NOT iobm/IOS_FSM_FFd4 AND 
+	NOT iobm/IOS_FSM_FFd5 AND NOT iobm/IOS_FSM_FFd6 AND NOT iobm/IOS_FSM_FFd7 AND 
+	NOT iobm/IOS_FSM_FFd2));
+
+FDCPE_nLDS_IOB: FDCPE port map (nLDS_IOB,nLDS_IOB_D,NOT CLK2X_IOB,'0','0');
+nLDS_IOB_D <= ((NOT IOL0)
+	OR (IORW0 AND NOT iobm/IOS_FSM_FFd3 AND NOT iobm/IOS_FSM_FFd4 AND 
+	NOT iobm/IOS_FSM_FFd5)
+	OR (NOT iobm/IOS_FSM_FFd3 AND NOT iobm/IOS_FSM_FFd4 AND 
+	NOT iobm/IOS_FSM_FFd5 AND NOT iobm/IOS_FSM_FFd6 AND NOT iobm/IOS_FSM_FFd7));
+
+
+nRAMLWE <= NOT (((cs/nOverlay1 AND NOT nLDS_FSB AND NOT nWE_FSB AND NOT A_FSB(23) AND 
+	NOT A_FSB(22))
+	OR (NOT cs/nOverlay1 AND NOT nLDS_FSB AND NOT nWE_FSB AND NOT A_FSB(23) AND 
+	A_FSB(22) AND A_FSB(21))));
+
+
+nRAMOE <= NOT (((cs/nOverlay1 AND nWE_FSB AND NOT A_FSB(23) AND NOT nAS_FSB AND 
+	NOT A_FSB(22))
+	OR (NOT cs/nOverlay1 AND nWE_FSB AND NOT A_FSB(23) AND NOT nAS_FSB AND 
+	A_FSB(22) AND A_FSB(21))));
+
+
+nRAMUWE <= NOT (((cs/nOverlay1 AND NOT nWE_FSB AND NOT nUDS_FSB AND NOT A_FSB(23) AND 
+	NOT A_FSB(22))
+	OR (NOT cs/nOverlay1 AND NOT nWE_FSB AND NOT nUDS_FSB AND NOT A_FSB(23) AND 
+	A_FSB(22) AND A_FSB(21))));
+
+
+nROMOE <= NOT (((NOT A_FSB(20) AND NOT cs/nOverlay1 AND nWE_FSB AND NOT A_FSB(23) AND 
+	NOT nAS_FSB AND NOT A_FSB(21))
+	OR (NOT A_FSB(20) AND nWE_FSB AND NOT A_FSB(23) AND NOT nAS_FSB AND 
+	A_FSB(22) AND NOT A_FSB(21))));
+
+
+nROMWE <= NOT (((NOT A_FSB(20) AND NOT cs/nOverlay1 AND NOT nWE_FSB AND NOT A_FSB(23) AND 
+	NOT nAS_FSB AND NOT A_FSB(21))
+	OR (NOT A_FSB(20) AND NOT nWE_FSB AND NOT A_FSB(23) AND NOT nAS_FSB AND 
+	A_FSB(22) AND NOT A_FSB(21))));
+
+FDCPE_nUDS_IOB: FDCPE port map (nUDS_IOB,nUDS_IOB_D,NOT CLK2X_IOB,'0','0');
+nUDS_IOB_D <= ((NOT IOU0)
+	OR (IORW0 AND NOT iobm/IOS_FSM_FFd3 AND NOT iobm/IOS_FSM_FFd4 AND 
+	NOT iobm/IOS_FSM_FFd5)
+	OR (NOT iobm/IOS_FSM_FFd3 AND NOT iobm/IOS_FSM_FFd4 AND 
+	NOT iobm/IOS_FSM_FFd5 AND NOT iobm/IOS_FSM_FFd6 AND NOT iobm/IOS_FSM_FFd7));
+
+FTCPE_nVMA_IOB: FTCPE port map (nVMA_IOB,nVMA_IOB_T,CLK2X_IOB,'0','0');
+nVMA_IOB_T <= ((NOT nVMA_IOB AND NOT iobm/ES(0) AND NOT iobm/ES(1) AND NOT iobm/ES(2) AND 
+	NOT iobm/ES(3) AND NOT iobm/ES(4))
+	OR (nVMA_IOB AND NOT nVPA_IOB AND iobm/ES(0) AND iobm/ES(1) AND 
+	iobm/ES(2) AND NOT iobm/ES(3) AND NOT iobm/ES(4) AND IOACT));
+
+Register Legend:
+ FDCPE (Q,D,C,CLR,PRE,CE); 
+ FTCPE (Q,D,C,CLR,PRE,CE); 
+ LDCP  (Q,D,G,CLR,PRE); 
+
+******************************  Device Pin Out *****************************
+
+Device : XC9572XL-10-VQ64
+
+
+   -----------------------------------------------  
+  /48 47 46 45 44 43 42 41 40 39 38 37 36 35 34 33 \
+ | 49                                           32 | 
+ | 50                                           31 | 
+ | 51                                           30 | 
+ | 52                                           29 | 
+ | 53                                           28 | 
+ | 54                                           27 | 
+ | 55                                           26 | 
+ | 56              XC9572XL-10-VQ64             25 | 
+ | 57                                           24 | 
+ | 58                                           23 | 
+ | 59                                           22 | 
+ | 60                                           21 | 
+ | 61                                           20 | 
+ | 62                                           19 | 
+ | 63                                           18 | 
+ | 64                                           17 | 
+ \ 1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 /
+   -----------------------------------------------  
+
+
+Pin Signal                         Pin Signal                        
+No. Name                           No. Name                          
+  1 nRAMUWE                          33 A_FSB<15>                     
+  2 nWE_FSB                          34 A_FSB<14>                     
+  3 VCC                              35 A_FSB<13>                     
+  4 nBERR_IOB                        36 KPR                           
+  5 A_FSB<11>                        37 VCC                           
+  6 A_FSB<12>                        38 KPR                           
+  7 A_FSB<21>                        39 A_FSB<22>                     
+  8 nDinOE                           40 nVMA_IOB                      
+  9 nRAMOE                           41 GND                           
+ 10 nROMOE                           42 nAS_IOB                       
+ 11 nDTACK_IOB                       43 nLDS_FSB                      
+ 12 nUDS_FSB                         44 nADoutLE1                     
+ 13 nVPA_IOB                         45 A_FSB<19>                     
+ 14 GND                              46 A_FSB<20>                     
+ 15 CLK2X_IOB                        47 A_FSB<18>                     
+ 16 CLK_FSB                          48 KPR                           
+ 17 CLK_IOB                          49 KPR                           
+ 18 nROMWE                           50 nDinLE                        
+ 19 nADoutLE0                        51 nAoutOE                       
+ 20 KPR                              52 A_FSB<17>                     
+ 21 GND                              53 TDO                           
+ 22 nLDS_IOB                         54 GND                           
+ 23 KPR                              55 VCC                           
+ 24 nUDS_IOB                         56 A_FSB<10>                     
+ 25 KPR                              57 nDTACK_FSB                    
+ 26 VCC                              58 nAS_FSB                       
+ 27 nDoutOE                          59 A_FSB<16>                     
+ 28 TDI                              60 nBERR_FSB                     
+ 29 TMS                              61 A_FSB<9>                      
+ 30 TCK                              62 nRAMLWE                       
+ 31 A_FSB<23>                        63 E_IOB                         
+ 32 KPR                              64 nRES                          
+
+
+Legend :  NC  = Not Connected, unbonded pin
+         PGND = Unused I/O configured as additional Ground pin
+         TIE  = Unused I/O floating -- must tie to VCC, GND or other signal
+         KPR  = Unused I/O with weak keeper (leave unconnected)
+         VCC  = Dedicated Power Pin
+         GND  = Dedicated Ground Pin
+         TDI  = Test Data In, JTAG pin
+         TDO  = Test Data Out, JTAG pin
+         TCK  = Test Clock, JTAG pin
+         TMS  = Test Mode Select, JTAG pin
+  PROHIBITED  = User reserved pin
+****************************  Compiler Options  ****************************
+
+Following is a list of all global compiler options used by the fitter run.
+
+Device(s) Specified                         : xc9572xl-10-VQ64
+Optimization Method                         : SPEED
+Multi-Level Logic Optimization              : ON
+Ignore Timing Specifications                : OFF
+Default Register Power Up Value             : LOW
+Keep User Location Constraints              : ON
+What-You-See-Is-What-You-Get                : OFF
+Exhaustive Fitting                          : OFF
+Keep Unused Inputs                          : OFF
+Slew Rate                                   : FAST
+Power Mode                                  : STD
+Ground on Unused IOs                        : OFF
+Set I/O Pin Termination                     : KEEPER
+Global Clock Optimization                   : ON
+Global Set/Reset Optimization               : ON
+Global Ouput Enable Optimization            : ON
+Input Limit                                 : 54
+Pterm Limit                                 : 25
+</pre>
+<form><span class="pgRef"><table width="90%" align="center"><tr>
+<td align="left"><input type="button" onclick="javascript:parent.leftnav.showTop()" onmouseover="window.status='goto top of page'; return true;" onmouseout="window.status=''" value="back to top"></td>
+<td align="right"><input type="button" onclick="window.print()" onmouseover="window.status='print page'; return true;" onmouseout="window.status=''" value="print page"></td>
+</tr></table></span></form>
+</body></html>

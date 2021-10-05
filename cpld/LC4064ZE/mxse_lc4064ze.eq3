@@ -1,0 +1,416 @@
+|--------------------------------------------------- ----------|
+|- ispLEVER Classic 2.0.00.17.20.15 Equations File            -|
+|- Copyright(C), 1992-2012, Lattice Semiconductor Corporation -|
+|- All Rights Reserved.                                       -|
+|--------------------------------------------------------------|
+
+
+Equations:
+
+IOCS_i = !( !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & cs_nOverlay1.Q
+    # !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_ & A_FSB_17_
+       & A_FSB_16_ & !cs_nOverlay1.Q
+    # A_FSB_22_ & !A_FSB_21_ & A_FSB_20_
+    # A_FSB_23_ ) ; (4 pterms, 10 signals)
+
+cs_nOverlay0.D = !A_FSB_23_ & !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & !A_FSB_20_
+    # cs_nOverlay0.Q ; (2 pterms, 6 signals)
+cs_nOverlay0.C = CLK_FSB ; (1 pterm, 1 signal)
+cs_nOverlay0.AR = !nRES ; (1 pterm, 1 signal)
+
+cs_nOverlay1.D = cs_nOverlay0.Q ; (1 pterm, 1 signal)
+cs_nOverlay1.C = CLK_FSB ; (1 pterm, 1 signal)
+cs_nOverlay1.CE = nAS_FSB & !fsb_ASrf.Q ; (1 pterm, 2 signals)
+
+fsb_ASrf.D = !nAS_FSB ; (1 pterm, 1 signal)
+fsb_ASrf.C = !CLK_FSB ; (1 pterm, 1 signal)
+
+fsb_RefCnt_0_.D = !fsb_RefCnt_0_.Q ; (1 pterm, 1 signal)
+fsb_RefCnt_0_.C = CLK_FSB ; (1 pterm, 1 signal)
+
+fsb_RefCnt_1_.D = fsb_RefCnt_1_.Q & !fsb_RefCnt_0_.Q
+    # !fsb_RefCnt_1_.Q & fsb_RefCnt_0_.Q ; (2 pterms, 2 signals)
+fsb_RefCnt_1_.C = CLK_FSB ; (1 pterm, 1 signal)
+
+fsb_RefCnt_2_.D = fsb_RefCnt_1_.Q & !fsb_RefCnt_2_.Q & fsb_RefCnt_0_.Q
+    # !fsb_RefCnt_1_.Q & fsb_RefCnt_2_.Q
+    # fsb_RefCnt_2_.Q & !fsb_RefCnt_0_.Q ; (3 pterms, 3 signals)
+fsb_RefCnt_2_.C = CLK_FSB ; (1 pterm, 1 signal)
+
+fsb_RefCnt_3_.D = fsb_RefCnt_1_.Q & fsb_RefCnt_2_.Q & fsb_RefCnt_0_.Q
+       & !fsb_RefCnt_3_.Q
+    # !fsb_RefCnt_0_.Q & fsb_RefCnt_3_.Q
+    # !fsb_RefCnt_2_.Q & fsb_RefCnt_3_.Q
+    # !fsb_RefCnt_1_.Q & fsb_RefCnt_3_.Q ; (4 pterms, 4 signals)
+fsb_RefCnt_3_.C = CLK_FSB ; (1 pterm, 1 signal)
+
+fsb_RefCnt_4_.D.X1 = fsb_RefCnt_1_.Q & fsb_RefCnt_2_.Q & fsb_RefCnt_0_.Q
+       & fsb_RefCnt_3_.Q ; (1 pterm, 4 signals)
+fsb_RefCnt_4_.D.X2 = fsb_RefCnt_4_.Q ; (1 pterm, 1 signal)
+fsb_RefCnt_4_.C = CLK_FSB ; (1 pterm, 1 signal)
+
+fsb_RefCnt_5_.T = fsb_RefCnt_1_.Q & fsb_RefCnt_2_.Q & fsb_RefCnt_0_.Q
+       & fsb_RefCnt_4_.Q & fsb_RefCnt_3_.Q ; (1 pterm, 5 signals)
+fsb_RefCnt_5_.C = CLK_FSB ; (1 pterm, 1 signal)
+
+fsb_TimeoutA.D = !nAS_FSB & !fsb_RefCnt_5_.Q & !fsb_RefCnt_1_.Q
+       & !fsb_RefCnt_2_.Q & !fsb_RefCnt_0_.Q & !fsb_RefCnt_4_.Q
+       & !fsb_RefCnt_3_.Q
+    # fsb_TimeoutA.Q & fsb_ASrf.Q
+    # !nAS_FSB & fsb_TimeoutA.Q ; (3 pterms, 9 signals)
+fsb_TimeoutA.C = CLK_FSB ; (1 pterm, 1 signal)
+
+fsb_TimeoutB.D = !nAS_FSB & fsb_TimeoutA.Q & !fsb_RefCnt_5_.Q
+       & !fsb_RefCnt_1_.Q & !fsb_RefCnt_2_.Q & !fsb_RefCnt_0_.Q
+       & !fsb_RefCnt_4_.Q & !fsb_RefCnt_3_.Q
+    # fsb_TimeoutB.Q & fsb_ASrf.Q
+    # !nAS_FSB & fsb_TimeoutB.Q ; (3 pterms, 10 signals)
+fsb_TimeoutB.C = CLK_FSB ; (1 pterm, 1 signal)
+
+iobm_ALE0.D = !( !iobm_IOREQr.Q & !iobm_IOS_0_.Q & !iobm_IOS_1_.Q
+       & !iobm_IOS_2_.Q
+    # iobm_IOS_1_.Q & iobm_IOS_2_.Q ) ; (2 pterms, 4 signals)
+iobm_ALE0.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobm_ES_0_.D = !( iobm_Er.Q & !iobm_ES_2_.Q & !iobm_ES_1_.Q & !iobm_ES_3_.Q
+       & !iobm_ES_4_.Q
+    # !iobm_ES_2_.Q & !iobm_ES_1_.Q & !iobm_ES_3_.Q & !iobm_ES_4_.Q
+       & !iobm_Er2.Q
+    # iobm_Er.Q & iobm_ES_0_.Q
+    # iobm_ES_0_.Q & !iobm_Er2.Q ) ; (4 pterms, 7 signals)
+iobm_ES_0_.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobm_ES_1_.D = !( !iobm_ES_0_.Q & !iobm_ES_1_.Q
+    # iobm_ES_0_.Q & iobm_ES_1_.Q
+    # !iobm_Er.Q & iobm_Er2.Q ) ; (3 pterms, 4 signals)
+iobm_ES_1_.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobm_ES_2_.D = !( !iobm_ES_2_.Q & !iobm_ES_3_.Q & iobm_ES_4_.Q
+    # iobm_ES_2_.Q & iobm_ES_0_.Q & iobm_ES_1_.Q
+    # !iobm_ES_2_.Q & !iobm_ES_1_.Q
+    # !iobm_ES_2_.Q & !iobm_ES_0_.Q
+    # !iobm_Er.Q & iobm_Er2.Q ) ; (5 pterms, 7 signals)
+iobm_ES_2_.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobm_ES_3_.D = !( iobm_ES_2_.Q & iobm_ES_0_.Q & iobm_ES_1_.Q & iobm_ES_3_.Q
+    # !iobm_ES_1_.Q & !iobm_ES_3_.Q
+    # !iobm_ES_0_.Q & !iobm_ES_3_.Q
+    # !iobm_ES_2_.Q & !iobm_ES_3_.Q
+    # !iobm_Er.Q & iobm_Er2.Q ) ; (5 pterms, 6 signals)
+iobm_ES_3_.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobm_ES_4_.T = iobm_Er.Q & iobm_ES_2_.Q & iobm_ES_0_.Q & iobm_ES_1_.Q
+       & iobm_ES_3_.Q
+    # !iobm_ES_2_.Q & iobm_ES_0_.Q & iobm_ES_1_.Q & !iobm_ES_3_.Q
+       & iobm_ES_4_.Q
+    # iobm_ES_2_.Q & iobm_ES_0_.Q & iobm_ES_1_.Q & iobm_ES_3_.Q & !iobm_Er2.Q
+    # !iobm_Er.Q & iobm_ES_4_.Q & iobm_Er2.Q ; (4 pterms, 7 signals)
+iobm_ES_4_.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobm_ETACK.D = !nVMA_IOB.Q & !iobm_ES_0_.Q & !iobm_ES_1_.Q & !iobm_ES_3_.Q
+       & iobm_ES_4_.Q ; (1 pterm, 5 signals)
+iobm_ETACK.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobm_Er.D = E_IOB ; (1 pterm, 1 signal)
+iobm_Er.C = !CLK_IOB ; (1 pterm, 1 signal)
+
+iobm_Er2.D = iobm_Er.Q ; (1 pterm, 1 signal)
+iobm_Er2.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobm_IOACT.D = !( !iobm_IOREQr.Q & !iobm_IOS_0_.Q & !iobm_IOS_1_.Q
+       & !iobm_IOS_2_.Q
+    # CLK_IOB & !nBERR_IOB & iobm_IOS_0_.Q & iobm_IOS_2_.Q
+    # CLK_IOB & !nDTACK_IOB & iobm_IOS_0_.Q & iobm_IOS_2_.Q
+    # CLK_IOB & iobm_IOS_0_.Q & iobm_IOS_2_.Q & iobm_ETACK.Q
+    # iobm_IOS_1_.Q & iobm_IOS_2_.Q ) ; (5 pterms, 8 signals)
+iobm_IOACT.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobm_IOREQr.D = iobs_IOREQ.Q ; (1 pterm, 1 signal)
+iobm_IOREQr.C = !CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobm_IOS_0_.D = nDTACK_IOB & nBERR_IOB & !iobm_IOS_1_.Q & iobm_IOS_2_.Q
+       & !iobm_ETACK.Q
+    # !CLK_IOB & !iobm_IOS_1_.Q & iobm_IOS_2_.Q
+    # !CLK_IOB & iobm_IOREQr.Q & !iobm_IOS_0_.Q
+    # !iobm_IOS_0_.Q & iobm_IOS_1_.Q
+    # !iobm_IOS_0_.Q & iobm_IOS_2_.Q ; (5 pterms, 8 signals)
+iobm_IOS_0_.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobm_IOS_1_.D = !( nDTACK_IOB & nBERR_IOB & !iobm_IOS_1_.Q & iobm_IOS_2_.Q
+       & !iobm_ETACK.Q
+    # !CLK_IOB & !iobm_IOS_1_.Q & iobm_IOS_2_.Q
+    # iobm_IOS_0_.Q & iobm_IOS_1_.Q
+    # !iobm_IOS_0_.Q & !iobm_IOS_1_.Q ) ; (4 pterms, 7 signals)
+iobm_IOS_1_.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobm_IOS_2_.D = iobm_IOS_0_.Q & iobm_IOS_1_.Q & !iobm_IOS_2_.Q
+    # !iobm_IOS_1_.Q & iobm_IOS_2_.Q
+    # !iobm_IOS_0_.Q & iobm_IOS_2_.Q ; (3 pterms, 3 signals)
+iobm_IOS_2_.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+iobs_ALE0.D = iobs_PS_1_.Q & iobs_PS_0_.Q ; (1 pterm, 2 signals)
+iobs_ALE0.C = CLK_FSB ; (1 pterm, 1 signal)
+
+iobs_ALE1.D = !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_
+       & A_FSB_19_ & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q
+       & iobs_PS_1_.Q & !iobs_Once.Q & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & iobs_PS_1_.Q & !iobs_Once.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & !iobs_Once.Q
+       & iobs_PS_0_.Q & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & !iobs_Once.Q & iobs_PS_0_.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_ALE1.Q
+       & iobs_PS_1_.Q & !iobs_Once.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_ALE1.Q
+       & !iobs_Once.Q & iobs_PS_0_.Q
+    # A_FSB_23_ & !nAS_FSB & !iobs_ALE1.Q & iobs_PS_1_.Q & !iobs_Once.Q
+    # A_FSB_23_ & !nAS_FSB & !iobs_ALE1.Q & !iobs_Once.Q & iobs_PS_0_.Q
+    # iobs_ALE1.Q & !iobs_PS_0_.Q
+    # iobs_ALE1.Q & !iobs_PS_1_.Q ; (10 pterms, 15 signals)
+iobs_ALE1.C = CLK_FSB ; (1 pterm, 1 signal)
+
+iobs_IOACTr.D = iobm_IOACT.Q ; (1 pterm, 1 signal)
+iobs_IOACTr.C = CLK_FSB ; (1 pterm, 1 signal)
+
+iobs_IOL0.D = !nLDS_FSB & !iobs_ALE1.Q
+    # iobs_ALE1.Q & iobs_IOL1.Q ; (2 pterms, 3 signals)
+iobs_IOL0.C = CLK_FSB ; (1 pterm, 1 signal)
+iobs_IOL0.CE = iobs_PS_1_.Q & iobs_PS_0_.Q ; (1 pterm, 2 signals)
+
+iobs_IOL1.D = !nLDS_FSB ; (1 pterm, 1 signal)
+iobs_IOL1.C = CLK_FSB ; (1 pterm, 1 signal)
+iobs_IOL1.CE = iobs_Load1.Q ; (1 pterm, 1 signal)
+
+iobs_IORDReady.D = !nAS_FSB & !iobs_IOACTr.Q & !iobs_PS_1_.Q & iobs_Once.Q
+    # fsb_ASrf.Q & iobs_IORDReady.Q
+    # !nAS_FSB & iobs_IORDReady.Q ; (3 pterms, 6 signals)
+iobs_IORDReady.C = CLK_FSB ; (1 pterm, 1 signal)
+
+iobs_IOREQ.D = !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_
+       & A_FSB_19_ & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_PS_1_.Q
+       & !iobs_Once.Q & !iobs_PS_0_.Q & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_PS_1_.Q & !iobs_Once.Q & !iobs_PS_0_.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_PS_1_.Q
+       & !iobs_Once.Q & !iobs_PS_0_.Q
+    # A_FSB_23_ & !nAS_FSB & !iobs_PS_1_.Q & !iobs_Once.Q & !iobs_PS_0_.Q
+    # iobs_ALE1.Q & !iobs_PS_1_.Q & !iobs_PS_0_.Q
+    # iobs_PS_1_.Q & iobs_PS_0_.Q
+    # !iobs_IOACTr.Q & iobs_PS_1_.Q ; (7 pterms, 16 signals)
+iobs_IOREQ.C = CLK_FSB ; (1 pterm, 1 signal)
+
+iobs_IORW0.D = !( !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_
+       & A_FSB_19_ & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q
+       & !iobs_Once.Q & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & !iobs_Once.Q & !cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_ALE1.Q
+       & !iobs_Once.Q
+    # A_FSB_23_ & !nAS_FSB & !nWE_FSB & !iobs_ALE1.Q & !iobs_Once.Q
+    # !A_FSB_23_ & !A_FSB_20_ & !iobs_IORW0.Q & !iobs_ALE1.Q
+    # !A_FSB_23_ & A_FSB_21_ & !iobs_IORW0.Q & !iobs_ALE1.Q
+    # !A_FSB_23_ & !A_FSB_22_ & !iobs_IORW0.Q & !iobs_ALE1.Q
+    # iobs_ALE1.Q & !iobs_IORW1.Q
+    # !iobs_IORW0.Q & !iobs_ALE1.Q & iobs_Once.Q
+    # nAS_FSB & !iobs_IORW0.Q & !iobs_ALE1.Q ) ; (10 pterms, 15 signals)
+iobs_IORW0.C = CLK_FSB ; (1 pterm, 1 signal)
+iobs_IORW0.CE = !iobs_PS_1_.Q & !iobs_PS_0_.Q ; (1 pterm, 2 signals)
+
+iobs_IORW1.D = nWE_FSB ; (1 pterm, 1 signal)
+iobs_IORW1.C = CLK_FSB ; (1 pterm, 1 signal)
+iobs_IORW1.CE = iobs_IORW1_0 ; (1 pterm, 1 signal)
+
+iobs_IORW1_0 = A_FSB_23_ & !nAS_FSB & !iobs_ALE1.Q & iobs_PS_1_.Q
+       & !iobs_Once.Q
+    # A_FSB_23_ & !nAS_FSB & !iobs_ALE1.Q & !iobs_Once.Q & iobs_PS_0_.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_ALE1.Q
+       & iobs_PS_1_.Q & !iobs_Once.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_ALE1.Q
+       & !iobs_Once.Q & iobs_PS_0_.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & iobs_PS_1_.Q & !iobs_Once.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & !iobs_Once.Q & iobs_PS_0_.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & iobs_PS_1_.Q
+       & !iobs_Once.Q & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & !iobs_Once.Q
+       & iobs_PS_0_.Q & cs_nOverlay1.Q ; (8 pterms, 15 signals)
+
+iobs_IOU0.D = !nUDS_FSB & !iobs_ALE1.Q
+    # iobs_ALE1.Q & iobs_IOU1.Q ; (2 pterms, 3 signals)
+iobs_IOU0.C = CLK_FSB ; (1 pterm, 1 signal)
+iobs_IOU0.CE = iobs_PS_1_.Q & iobs_PS_0_.Q ; (1 pterm, 2 signals)
+
+iobs_IOU1.D = !nUDS_FSB ; (1 pterm, 1 signal)
+iobs_IOU1.C = CLK_FSB ; (1 pterm, 1 signal)
+iobs_IOU1.CE = iobs_Load1.Q ; (1 pterm, 1 signal)
+
+iobs_Load1.D = !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_
+       & A_FSB_19_ & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q
+       & !iobs_Once.Q & iobs_PS_0_.Q & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & iobs_PS_1_.Q
+       & !iobs_Once.Q & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & !iobs_Once.Q & iobs_PS_0_.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & iobs_PS_1_.Q & !iobs_Once.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_ALE1.Q
+       & !iobs_Once.Q & iobs_PS_0_.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_ALE1.Q
+       & iobs_PS_1_.Q & !iobs_Once.Q
+    # A_FSB_23_ & !nAS_FSB & !iobs_ALE1.Q & !iobs_Once.Q & iobs_PS_0_.Q
+    # A_FSB_23_ & !nAS_FSB & !iobs_ALE1.Q & iobs_PS_1_.Q & !iobs_Once.Q ; (8 pterms, 15 signals)
+iobs_Load1.C = CLK_FSB ; (1 pterm, 1 signal)
+
+iobs_Once.D = !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_
+       & A_FSB_19_ & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_PS_1_.Q
+       & !iobs_PS_0_.Q & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_PS_1_.Q & !iobs_PS_0_.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_ALE1.Q & !cs_nOverlay1.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_PS_1_.Q
+       & !iobs_PS_0_.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_ALE1.Q
+    # A_FSB_23_ & !nAS_FSB & !iobs_PS_1_.Q & !iobs_PS_0_.Q
+    # fsb_ASrf.Q & iobs_Once.Q
+    # A_FSB_23_ & !nAS_FSB & !iobs_ALE1.Q
+    # !nAS_FSB & iobs_Once.Q ; (10 pterms, 16 signals)
+iobs_Once.C = CLK_FSB ; (1 pterm, 1 signal)
+
+iobs_PS_0_.D = !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_
+       & A_FSB_19_ & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_PS_1_.Q
+       & !iobs_Once.Q & !iobs_PS_0_.Q & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_PS_1_.Q & !iobs_Once.Q & !iobs_PS_0_.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_PS_1_.Q
+       & !iobs_Once.Q & !iobs_PS_0_.Q
+    # A_FSB_23_ & !nAS_FSB & !iobs_PS_1_.Q & !iobs_Once.Q & !iobs_PS_0_.Q
+    # iobs_IOACTr.Q & iobs_PS_1_.Q & !iobs_PS_0_.Q
+    # iobs_ALE1.Q & !iobs_PS_1_.Q & !iobs_PS_0_.Q ; (6 pterms, 16 signals)
+iobs_PS_0_.C = CLK_FSB ; (1 pterm, 1 signal)
+
+iobs_PS_1_.D = !nAS_FSB & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_
+       & A_FSB_19_ & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & !iobs_PS_1_.Q
+       & !iobs_Once.Q & !iobs_PS_0_.Q & cs_nOverlay1.Q
+    # !nAS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & !iobs_PS_1_.Q & !iobs_Once.Q & !iobs_PS_0_.Q
+       & !cs_nOverlay1.Q
+    # !nAS_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & !iobs_PS_1_.Q
+       & !iobs_Once.Q & !iobs_PS_0_.Q
+    # A_FSB_23_ & !nAS_FSB & !iobs_PS_1_.Q & !iobs_Once.Q & !iobs_PS_0_.Q
+    # iobs_ALE1.Q & !iobs_PS_1_.Q & !iobs_PS_0_.Q
+    # iobs_IOACTr.Q & iobs_PS_0_.Q
+    # !iobs_IOACTr.Q & iobs_PS_1_.Q ; (7 pterms, 16 signals)
+iobs_PS_1_.C = CLK_FSB ; (1 pterm, 1 signal)
+
+nADoutLE0 = !iobs_ALE0.Q & !iobm_ALE0.Q ; (1 pterm, 2 signals)
+
+nADoutLE1 = !iobs_ALE1.Q ; (1 pterm, 1 signal)
+
+nAS_IOB.D = !iobm_IOS_0_.Q & !iobm_IOS_1_.Q & !iobm_IOS_2_.Q
+    # iobm_IOS_1_.Q & iobm_IOS_2_.Q ; (2 pterms, 3 signals)
+nAS_IOB.C = !CLK2X_IOB ; (1 pterm, 1 signal)
+
+nAoutOE = 0 ; (0 pterm, 0 signal)
+
+nBERR_FSB = !( !nAS_FSB & !nBERR_IOB & nDTACK_FSB.Q & !IOCS_i
+    # !nAS_FSB & nDTACK_FSB.Q & fsb_TimeoutB.Q & IOCS_i ) ; (2 pterms, 5 signals)
+
+nDTACK_FSB.D = !A_FSB_23_ & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_
+       & A_FSB_19_ & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & A_FSB_15_
+       & !A_FSB_14_ & A_FSB_13_ & !A_FSB_12_ & !A_FSB_11_ & !A_FSB_10_
+       & A_FSB_9_ & nDTACK_FSB.Q & !fsb_TimeoutA.Q & cs_nOverlay1.Q
+    # !A_FSB_23_ & !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & A_FSB_15_ & A_FSB_14_ & A_FSB_13_
+       & A_FSB_12_ & A_FSB_11_ & A_FSB_10_ & A_FSB_9_ & nDTACK_FSB.Q
+       & !fsb_TimeoutA.Q & cs_nOverlay1.Q
+    # !A_FSB_23_ & !nWE_FSB & A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & A_FSB_15_ & !A_FSB_14_
+       & A_FSB_13_ & !A_FSB_12_ & !A_FSB_11_ & !A_FSB_10_ & A_FSB_9_
+       & nDTACK_FSB.Q & !fsb_TimeoutA.Q & !cs_nOverlay1.Q
+    # !A_FSB_23_ & !nWE_FSB & A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_
+       & A_FSB_18_ & A_FSB_17_ & A_FSB_16_ & A_FSB_15_ & A_FSB_14_ & A_FSB_13_
+       & A_FSB_12_ & A_FSB_11_ & A_FSB_10_ & A_FSB_9_ & nDTACK_FSB.Q
+       & !fsb_TimeoutA.Q & !cs_nOverlay1.Q
+    # !nWE_FSB & !A_FSB_22_ & A_FSB_21_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_
+       & A_FSB_17_ & A_FSB_16_ & nDTACK_FSB.Q & iobs_ALE1.Q & cs_nOverlay1.Q
+    # !nWE_FSB & A_FSB_22_ & A_FSB_20_ & A_FSB_19_ & A_FSB_18_ & A_FSB_17_
+       & A_FSB_16_ & nDTACK_FSB.Q & iobs_ALE1.Q & !cs_nOverlay1.Q
+    # nWE_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & nDTACK_FSB.Q
+       & !iobs_IORDReady.Q
+    # !nWE_FSB & A_FSB_22_ & !A_FSB_21_ & A_FSB_20_ & nDTACK_FSB.Q
+       & iobs_ALE1.Q
+    # A_FSB_23_ & nWE_FSB & nDTACK_FSB.Q & !iobs_IORDReady.Q
+    # A_FSB_23_ & !nWE_FSB & nDTACK_FSB.Q & iobs_ALE1.Q
+    # nAS_FSB & !fsb_ASrf.Q
+    # nAS_FSB & nDTACK_FSB.Q ; (12 pterms, 23 signals)
+nDTACK_FSB.C = CLK_FSB ; (1 pterm, 1 signal)
+
+nDinLE.D = !iobm_IOS_1_.Q & iobm_IOS_2_.Q ; (1 pterm, 2 signals)
+nDinLE.C = !CLK2X_IOB ; (1 pterm, 1 signal)
+
+nDinOE = !nAS_FSB & nWE_FSB & !IOCS_i ; (1 pterm, 3 signals)
+
+nDoutOE.D = !iobm_IOS_0_.Q & !iobm_IOS_1_.Q & !iobm_IOS_2_.Q
+    # iobm_IOS_0_.Q & iobm_IOS_1_.Q & iobm_IOS_2_.Q
+    # !iobs_IORW0.Q ; (3 pterms, 4 signals)
+nDoutOE.C = CLK2X_IOB ; (1 pterm, 1 signal)
+
+nLDS_IOB.D = !( !iobs_IORW0.Q & iobs_IOL0.Q & iobm_IOS_0_.Q & !iobm_IOS_2_.Q
+    # iobs_IOL0.Q & !iobm_IOS_1_.Q & iobm_IOS_2_.Q
+    # iobs_IOL0.Q & iobm_IOS_0_.Q & iobm_IOS_1_.Q & !iobm_IOS_2_.Q
+    # !iobs_IORW0.Q & iobs_IOL0.Q & iobm_IOS_1_.Q & !iobm_IOS_2_.Q ) ; (4 pterms, 5 signals)
+nLDS_IOB.C = !CLK2X_IOB ; (1 pterm, 1 signal)
+
+nRAMLWE = !( !A_FSB_23_ & !nLDS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_21_
+       & !cs_nOverlay1.Q
+    # !A_FSB_23_ & !nLDS_FSB & !nWE_FSB & !A_FSB_22_ & cs_nOverlay1.Q ) ; (2 pterms, 6 signals)
+
+nRAMOE = !( !A_FSB_23_ & !nAS_FSB & nWE_FSB & A_FSB_22_ & A_FSB_21_
+       & !cs_nOverlay1.Q
+    # !A_FSB_23_ & !nAS_FSB & nWE_FSB & !A_FSB_22_ & cs_nOverlay1.Q ) ; (2 pterms, 6 signals)
+
+nRAMUWE = !( !A_FSB_23_ & !nUDS_FSB & !nWE_FSB & A_FSB_22_ & A_FSB_21_
+       & !cs_nOverlay1.Q
+    # !A_FSB_23_ & !nUDS_FSB & !nWE_FSB & !A_FSB_22_ & cs_nOverlay1.Q ) ; (2 pterms, 6 signals)
+
+nROMOE = !( !A_FSB_23_ & !nAS_FSB & nWE_FSB & A_FSB_22_ & !A_FSB_21_
+       & !A_FSB_20_
+    # !A_FSB_23_ & !nAS_FSB & nWE_FSB & !A_FSB_21_ & !A_FSB_20_
+       & !cs_nOverlay1.Q ) ; (2 pterms, 7 signals)
+
+nROMWE = !( !A_FSB_23_ & !nAS_FSB & !nWE_FSB & A_FSB_22_ & !A_FSB_21_
+       & !A_FSB_20_
+    # !A_FSB_23_ & !nAS_FSB & !nWE_FSB & !A_FSB_21_ & !A_FSB_20_
+       & !cs_nOverlay1.Q ) ; (2 pterms, 7 signals)
+
+nUDS_IOB.D = !( !iobs_IORW0.Q & iobs_IOU0.Q & iobm_IOS_0_.Q & !iobm_IOS_2_.Q
+    # iobs_IOU0.Q & !iobm_IOS_1_.Q & iobm_IOS_2_.Q
+    # iobs_IOU0.Q & iobm_IOS_0_.Q & iobm_IOS_1_.Q & !iobm_IOS_2_.Q
+    # !iobs_IORW0.Q & iobs_IOU0.Q & iobm_IOS_1_.Q & !iobm_IOS_2_.Q ) ; (4 pterms, 5 signals)
+nUDS_IOB.C = !CLK2X_IOB ; (1 pterm, 1 signal)
+
+nVMA_IOB.T = !nVPA_IOB & nVMA_IOB.Q & iobm_IOACT.Q & iobm_ES_2_.Q
+       & iobm_ES_0_.Q & iobm_ES_1_.Q & !iobm_ES_3_.Q & !iobm_ES_4_.Q
+    # !nVMA_IOB.Q & !iobm_ES_2_.Q & !iobm_ES_0_.Q & !iobm_ES_1_.Q
+       & !iobm_ES_3_.Q & !iobm_ES_4_.Q ; (2 pterms, 8 signals)
+nVMA_IOB.C = CLK2X_IOB ; (1 pterm, 1 signal)
+

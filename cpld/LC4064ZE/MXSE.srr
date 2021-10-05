@@ -1,0 +1,95 @@
+#Build: Synplify Pro I-2014.03LC , Build 063R, May 27 2014
+#install: C:\ispLEVER_Classic2_0\synpbase
+#OS: Windows 7 6.2
+#Hostname: ZANEPC
+
+#Implementation: lc4064ze
+
+$ Start of Compile
+#Tue Oct 05 04:15:33 2021
+
+Synopsys Verilog Compiler, version comp201403rcp1, Build 060R, built May 27 2014
+@N|Running in 64-bit mode
+Copyright (C) 1994-2014 Synopsys, Inc. This software and the associated documentation are proprietary to Synopsys, Inc. This software may only be used in accordance with the terms and conditions of a written license agreement with Synopsys, Inc.  All other use, reproduction, or distribution of this software is strictly prohibited.
+
+@I::"C:\ispLEVER_Classic2_0\synpbase\lib\vlog\umr_capim.v"
+@I::"C:\ispLEVER_Classic2_0\synpbase\lib\vlog\scemi_objects.v"
+@I::"C:\ispLEVER_Classic2_0\synpbase\lib\vlog\scemi_pipes.svh"
+@I::"C:\ispLEVER_Classic2_0\synpbase\lib\vlog\hypermods.v"
+@I::"C:\ispLEVER_Classic2_0\ispcpld\..\cae_library\synthesis\verilog\mach.v"
+@I::"C:\users\zanek\documents\github\se-030\cpld\lc4064ze\mxse_lc4064ze.h"
+@I::"C:\users\zanek\documents\github\se-030\cpld\fsb.v"
+@I::"C:\users\zanek\documents\github\se-030\cpld\iobm.v"
+@I::"C:\users\zanek\documents\github\se-030\cpld\iobs.v"
+@I::"C:\users\zanek\documents\github\se-030\cpld\ram.v"
+@I::"C:\users\zanek\documents\github\se-030\cpld\cs.v"
+@I::"C:\users\zanek\documents\github\se-030\cpld\mxse.v"
+Verilog syntax check successful!
+File C:\users\zanek\documents\github\se-030\cpld\fsb.v changed - recompiling
+File C:\users\zanek\documents\github\se-030\cpld\ram.v changed - recompiling
+Selecting top level module MXSE
+@N: CG364 :"C:\users\zanek\documents\github\se-030\cpld\cs.v":1:7:1:8|Synthesizing module CS
+
+@N: CG364 :"C:\users\zanek\documents\github\se-030\cpld\ram.v":1:7:1:9|Synthesizing module RAM
+
+@N: CG364 :"C:\users\zanek\documents\github\se-030\cpld\iobs.v":1:7:1:10|Synthesizing module IOBS
+
+@N: CG364 :"C:\users\zanek\documents\github\se-030\cpld\iobm.v":1:7:1:10|Synthesizing module IOBM
+
+@N: CG364 :"C:\users\zanek\documents\github\se-030\cpld\fsb.v":1:7:1:9|Synthesizing module FSB
+
+@N: CG364 :"C:\users\zanek\documents\github\se-030\cpld\mxse.v":1:7:1:10|Synthesizing module MXSE
+
+@N: CL201 :"C:\users\zanek\documents\github\se-030\cpld\iobm.v":37:1:37:6|Trying to extract state machine for register IOS
+@N: CL201 :"C:\users\zanek\documents\github\se-030\cpld\iobs.v":49:1:49:6|Trying to extract state machine for register PS
+@W: CL247 :"C:\users\zanek\documents\github\se-030\cpld\cs.v":3:14:3:14|Input port bit 8 of A[23:8] is unused
+
+@END
+
+At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 69MB peak: 70MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Tue Oct 05 04:15:33 2021
+
+###########################################################]
+Synopsys Netlist Linker, version comp201403rcp1, Build 060R, built May 27 2014
+@N|Running in 64-bit mode
+File C:\users\zanek\documents\github\se-030\cpld\lc4064ze\synwork\MXSE_comp.srs changed - recompiling
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 67MB peak: 68MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Tue Oct 05 04:15:34 2021
+
+###########################################################]
+Map & Optimize Report
+
+Synopsys CPLD Technology Mapper, Version maplat, Build 923R, Built May  6 2014
+Copyright (C) 1994-2013, Synopsys, Inc. This software and the associated documentation are proprietary to Synopsys, Inc. This software may only be used in accordance with the terms and conditions of a written license agreement with Synopsys, Inc.  All other use or distribution of the software is strictly prohibited.
+Product Version I-2014.03LC 
+@N: MF248 |Running in 64-bit mode.
+---------------------------------------
+Resource Usage Report
+
+Simple gate primitives:
+DFFC            7 uses
+DFFR            1 use
+DFF             39 uses
+IBUF            28 uses
+OBUF            17 uses
+AND2            189 uses
+INV             142 uses
+XOR2            9 uses
+OR2             6 uses
+
+
+@N: FC100 |Timing Report not generated for this device, please use place and route tools for timing analysis.
+I-2014.03LC 
+Mapper successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 40MB peak: 104MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Tue Oct 05 04:15:34 2021
+
+###########################################################]

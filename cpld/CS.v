@@ -1,10 +1,10 @@
 module CS(
 	/* MC68HC000 interface */
-	input [23:08] A, input CLK, input nRES, input nWE, 
+	input [23:8] A, input CLK, input nRES, input nWE, 
 	/* FSB interface */
 	input ASActive, input ASInactive,
 	/* Device select outputs */
-	output IOCS, output IACS, output ROMCS, output RAMCS, output SndRAMCSWR);
+	output IOCS, output ROMCS, output RAMCS, output SndRAMCSWR);
 
 	/* Overlay control */
 	reg nOverlay0 = 0;
@@ -30,7 +30,6 @@ module CS(
 	assign ROMCS = A[23:20]==4'h4 || (A[23:20]==4'h0 && Overlay);
 
 	/* Select signals - IOB domain */
-	assign IACS = A[23:20]==4'hF; // IACK
 	assign IOCS = A[23:20]==4'h5 || // SCSI
 	              A[23:20]==4'h8 || // empty
 	              A[23:20]==4'h9 || // SCC read/reset

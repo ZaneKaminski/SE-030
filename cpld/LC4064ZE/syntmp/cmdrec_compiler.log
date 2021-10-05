@@ -1,0 +1,14 @@
+C:\ispLEVER_Classic2_0\synpbase\bin64\c_ver.exe  -osyn  C:\users\zanek\documents\github\se-030\cpld\lc4064ze\synwork\MXSE_comp.srs  -top  MXSE  -prodtype  synplify_pro  -nostructver -I c:\users\zanek\documents\github\se-030\cpld\lc4064ze\  -I C:\ispLEVER_Classic2_0\synpbase\lib  -v2001  -encrypt  -pro  -dmgen  C:\users\zanek\documents\github\se-030\cpld\lc4064ze\dm  -compiler_compatible -ui -fid2 -ram -sharing on -ll 2000 -autosm -lib work C:\ispLEVER_Classic2_0\ispcpld\..\cae_library\synthesis\verilog\mach.v -lib work C:\users\zanek\documents\github\se-030\cpld\lc4064ze\mxse_lc4064ze.h -lib work C:\users\zanek\documents\github\se-030\cpld\fsb.v -lib work C:\users\zanek\documents\github\se-030\cpld\iobm.v -lib work C:\users\zanek\documents\github\se-030\cpld\iobs.v -lib work C:\users\zanek\documents\github\se-030\cpld\ram.v -lib work C:\users\zanek\documents\github\se-030\cpld\cs.v -lib work C:\users\zanek\documents\github\se-030\cpld\mxse.v -loga  C:\users\zanek\documents\github\se-030\cpld\lc4064ze\MXSE.srr 
+rc:1 success:1
+C:\users\zanek\documents\github\se-030\cpld\lc4064ze\synwork\MXSE_comp.srs|o|1633421733|15265
+C:\ispLEVER_Classic2_0\ispcpld\..\cae_library\synthesis\verilog\mach.v|i|1336523408|12168
+C:\users\zanek\documents\github\se-030\cpld\lc4064ze\mxse_lc4064ze.h|i|1633421408|0
+C:\users\zanek\documents\github\se-030\cpld\fsb.v|i|1633421491|910
+C:\users\zanek\documents\github\se-030\cpld\iobm.v|i|1633328523|2552
+C:\users\zanek\documents\github\se-030\cpld\iobs.v|i|1633417222|2302
+C:\users\zanek\documents\github\se-030\cpld\ram.v|i|1633421693|495
+C:\users\zanek\documents\github\se-030\cpld\cs.v|i|1633419985|1652
+C:\users\zanek\documents\github\se-030\cpld\mxse.v|i|1633421291|2300
+C:\users\zanek\documents\github\se-030\cpld\lc4064ze\MXSE.srr|o|1633421733|2860
+C:\ispLEVER_Classic2_0\synpbase\bin\c_ver.exe|i|1401245450|2292224
+C:\ispLEVER_Classic2_0\synpbase\bin64\c_ver.exe|i|1401245650|5829632

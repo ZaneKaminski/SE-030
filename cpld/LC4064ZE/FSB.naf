@@ -1,0 +1,8 @@
+FCLK  i
+nAS  i
+nDTACK  o
+ASActive  o
+ASInactive  o
+Ready  i
+TimeoutA  o
+TimeoutB  o

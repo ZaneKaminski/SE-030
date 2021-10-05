@@ -1,0 +1,1087 @@
+#$ DATE Tue Oct 05 04:15:38 2021
+#$ TOOL EDIF2BLIF version IspLever 1.0 
+#$ MODULE mxse
+#$ PINS 45 A_FSB_23_ nAS_FSB nLDS_FSB nUDS_FSB nWE_FSB nDTACK_FSB nBERR_FSB CLK_FSB CLK2X_IOB CLK_IOB E_IOB nDTACK_IOB nVPA_IOB nVMA_IOB nAS_IOB nLDS_IOB nUDS_IOB nBERR_IOB nRES nRAMOE nRAMLWE nRAMUWE nROMOE A_FSB_22_ nROMWE A_FSB_21_ nADoutLE0 A_FSB_20_ nADoutLE1 A_FSB_19_ nAoutOE A_FSB_18_ nDoutOE A_FSB_17_ nDinOE A_FSB_16_ nDinLE A_FSB_15_ A_FSB_14_ A_FSB_13_ A_FSB_12_ A_FSB_11_ A_FSB_10_ A_FSB_9_ A_FSB_8_
+#$ NODES 392 nUDS_FSB_c un1_nBERR_FSB nWE_FSB_c ASInactive IOCS fsb_nDTACKreg Ready_IOBS iobs_IOREQ iobm_IOACT CLK_FSB_c \
+#  iobs_ALE0 iobs_IORW0 CLK2X_IOB_c iobs_IOL0 iobs_IOU0 CLK_IOB_c iobs_ALE1 iobm_ALE0 fsb_TimeoutA fsb_TimeoutB \
+#  nDTACK_IOB_c gnd_n_n ram_un1_nramoe_n nVPA_IOB_c ram_un1_nramlwe_n ram_un1_nramuwe_n iobm_nVMAreg ram_un1_nromoe_n ram_un1_nromwe_n iobm_nASreg \
+#  fsb_ASrf fsb_RefCnt_5_ iobm_nLDSreg fsb_RefCnt_1_ fsb_RefCnt_2_ iobm_nUDSreg fsb_RefCnt_0_ fsb_RefCnt_4_ nBERR_IOB_c fsb_RefCnt_3_ \
+#  fsb_G_3 nRES_c fsb_G_5 fsb_G_7 fsb_G_9 fsb_G_11 iobm_un1_nlds_n iobm_un1_nuds_n iobm_nDoutOEreg iobm_IOREQr \
+#  iobm_Er iobm_ES_2_ iobm_nDinLEreg iobm_ES_0_ iobm_ES_1_ iobm_n_2_0_n iobm_ES_3_ iobm_es14_i_n iobm_ES_4_ iobm_un6_es_m_i_0__n \
+#  iobm_IOS_0_ iobm_es_3_0_0__n iobm_IOS_1_ iobm_un1_es14_1_i_n iobm_IOS_2_ iobm_un1_es_2_i_n iobm_Er2 iobm_etack_i_n iobm_ETACK iobm_n_54_0_n \
+#  iobm_n_50_i_n iobm_ndinle_2_n iobm_n_33_i_n iobm_ios_5_0_2__n iobm_n_37_i_n iobm_un2_nlds_0_n iobm_n_52_i_n iobm_n_42_i_n iobm_un1_ios42_0_n iobm_n_39_i_n \
+#  iobm_ale0_2_iv_i_n iobm_ndinle_2_i_n iobm_n_24_n iobm_n_40_i_n iobm_n_29_n iobm_n_22_i_n iobm_n_48_n iobm_n_23_i_n iobm_n_31_n iobm_n_24_i_n \
+#  iobm_n_50_n TimeoutA_i iobm_n_34_n N_6_0 iobm_n_35_n fsb_n_3_i_n iobm_n_36_n fsb_n_4_0_n iobm_n_38_n TimeoutB_i \
+#  iobm_n_40_n fsb_timeoutb_0_sqmuxa_i_n iobm_n_52_n fsb_n_6_0_n iobs_IOACTr fsb_timeouta_0_sqmuxa_i_n iobs_PS_1_ fsb_n_5_0_n iobs_Once iobs_n_28_0_n \
+#  iobs_PS_0_ iobs_n_65_i_n iobs_ale15_n iobs_n_62_i_n iobs_IOL1 iobs_n_13_0_n iobs_IOU1 iobs_n_59_i_n iobs_IORDReady iobs_n_60_i_n \
+#  iobs_ale19_n iobs_n_14_0_n iobs_Load1 cs_un3_romcs_i_n iobs_IORW1 cs_un4_romcs_i_n ROMCS_0 IOCS_i cs_vidramcswr_i_n cs_un4_iocs_i_n \
+#  cs_un2_sndramcswr_i_n iobs_n_29_n cs_un14_sndramcswr_i_n iobs_n_30_n cs_n_6_0_n iobs_n_37_n cs_noverlay0_i_n iobs_n_48_n cs_noverlay05_i_n iobs_n_51_n \
+#  cs_n_2_0_n iobs_n_52_n iobs_n_37_0_n iobs_n_53_n iobs_n_54_i_n iobs_n_55_n iobs_n_63_i_n iobs_n_57_n iobs_n_34_0_n iobs_n_58_n \
+#  iobs_n_30_0_n iobs_n_60_n iobs_once_i_n iobs_n_62_n iobs_n_29_0_n iobs_n_64_n iobs_n_55_i_n iobs_n_65_n iobs_ps_5_0_0__n iobs_n_66_n \
+#  iobs_ale15_i_n cs_nOverlay1 iobs_n_19_0_n cs_nOverlay0 iobs_n_47_i_n iobs_n_15_0_n cs_un11_ramcs_n iobs_n_7_i_n cs_vidramcswr_n ALE0M_i \
+#  RAMCS ALE0S_i cs_un5_ramcs_n N_4_0 iobm_n_38_i_n iobm_n_12_0_n iobs_n_47_n iobm_n_34_i_n iobs_n_54_n iobm_n_35_i_n \
+#  iobs_n_63_n iobm_n_36_i_n ROMCS iobm_ios_5_0_0__n cs_noverlay05_n iobm_n_29_i_n cs_un3_romcs_n iobm_n_31_i_n cs_un14_sndramcswr_n iobm_n_48_i_n \
+#  cs_un2_sndramcswr_n iobm_ios_5_0_1__n cs_n_6_n iobs_n_57_i_n cs_un4_romcs_n iobs_n_58_i_n cs_un4_romcs_2_n cs_un4_iocs_n iobs_n_53_i_n iobs_n_59_n \
+#  iobs_n_64_i_n fsb_n_14_n Ready_IOBS_0 fsb_n_16_n iobs_n_48_i_n fsb_n_18_n iobs_n_51_i_n fsb_n_20_n iobs_n_52_i_n fsb_timeouta6_n \
+#  fsb_timeoutb_0_sqmuxa_n N_6_0_1 fsb_n_5_n iobm_n_54_0_1_n fsb_timeouta_0_sqmuxa_n cs_un11_ramcs_1_n fsb_n_6_n cs_vidramcswr_1_n fsb_n_3_n cs_vidramcswr_2_n \
+#  fsb_un1_ready_0__n cs_vidramcswr_3_n Ready cs_vidramcswr_4_n un1_timeoutb_0__n cs_vidramcswr_5_n N_6 cs_vidramcswr_6_n iobm_n_27_n ram_un1_nromwe_1_n \
+#  iobm_n_54_n ram_un1_nromoe_1_n iobm_n_23_n ram_un1_nramuwe_1_n iobm_n_39_n ram_un1_nramlwe_1_n iobm_n_42_n ram_un1_nramoe_1_n iobm_un2_nlds_n cs_un14_sndramcswr_1_n \
+#  iobm_n_37_n cs_un14_sndramcswr_2_n iobm_n_33_n cs_un14_sndramcswr_3_n iobm_es14_n cs_un14_sndramcswr_4_n iobm_nvma5_1_n cs_un14_sndramcswr_5_n iobm_n_30_n cs_un2_sndramcswr_1_n \
+#  iobm_n_32_n cs_un2_sndramcswr_2_n iobm_G_34 cs_un2_sndramcswr_3_n iobm_G_32 cs_un2_sndramcswr_4_n iobm_G_30 cs_un2_sndramcswr_5_n iobm_G_28 cs_un4_romcs_1_n \
+#  iobm_nvma5_n cs_un3_romcs_1_n iobm_un1_es_2_n cs_un4_iocs_1_n iobm_nvma6_n IOCS_i_1 iobm_un6_es_m_0__n fsb_timeouta6_1_n iobm_n_2_n fsb_timeouta6_2_n \
+#  ALE1_i fsb_timeouta6_3_n ram_un1_nromwe_i_n fsb_timeouta6_4_n ram_un1_nromoe_i_n fsb_timeoutb_0_sqmuxa_1_n ram_un1_nramuwe_i_n un1_nBERR_FSB_1 ram_un1_nramlwe_i_n iobm_nvma5_1_0_n \
+#  ram_un1_nramoe_i_n iobm_nvma5_2_n un1_nBERR_FSB_i iobm_nvma5_3_n iobm_nvma5_i_n iobm_nvma5_4_n iobm_es_i_0__n iobm_etack_2_1_n iobm_nvma6_i_0_n iobm_etack_2_2_n \
+#  iobm_es_i_4__n iobm_etack_2_3_n iobm_es_i_2__n iobm_un1_es_2_1_n iobm_es_i_1__n iobm_un1_es_2_2_n iobm_es_i_3__n iobm_nvma6_1_n nVMA_IOB_i iobm_nvma6_2_n \
+#  nVPA_IOB_i iobm_nvma6_3_n iobm_er_i_n iobm_un1_es14_1_i_1_n nBERR_IOB_i iobm_n_12_0_1_n iobm_ios_i_0__n iobm_ios_5_0_1_0__n IORW0_i iobm_ios_5_0_1_1__n \
+#  iobm_n_27_i_n iobm_n_40_1_n iobm_ioreqr_i_n iobm_n_36_1_n iobm_ios_i_1__n iobm_n_50_1_n CLK_IOB_i iobm_n_31_1_n nAS_FSB_i iobs_n_50_0_1_n \
+#  fsb_asrf_i_n Ready_IOBS_0_1 nDTACK_FSB_i_0 iobs_n_17_0_1_n fsb_un1_ready_i_0__n iobs_n_62_1_n ASInactive_i iobs_n_60_1_n fsb_refcnt_i_0__n iobs_n_60_2_n \
+#  fsb_refcnt_i_5__n iobs_n_55_1_n fsb_refcnt_i_2__n iobs_ale19_1_n fsb_refcnt_i_1__n iobm_un2_nlds_0_m2_un3_n fsb_refcnt_i_4__n iobm_un2_nlds_0_m2_un1_n fsb_refcnt_i_3__n iobm_un2_nlds_0_m2_un0_n \
+#  a_fsb_i_21__n fsb_un1_ready_0__un3_n a_fsb_i_20__n fsb_un1_ready_0__un1_n a_fsb_i_23__n fsb_un1_ready_0__un0_n cs_noverlay1_i_n ram_un1_timeoutb_0__un3_n a_fsb_i_12__n ram_un1_timeoutb_0__un1_n \
+#  a_fsb_i_11__n ram_un1_timeoutb_0__un0_n a_fsb_i_10__n iobs_iou0_4_un3_n a_fsb_i_14__n iobs_iou0_4_un1_n nLDS_FSB_i iobs_iou0_4_un0_n nWE_FSB_i cs_un1_ramcs_0__un3_n \
+#  nUDS_FSB_i cs_un1_ramcs_0__un1_n iobs_ioactr_i_n cs_un1_ramcs_0__un0_n iobs_n_66_i_n iobs_iol0_4_un3_n iobs_iorw1_i_0_n iobs_iol0_4_un1_n a_fsb_i_22__n iobs_iol0_4_un0_n \
+#  a_fsb_8__n iobm_ios_i_2__n CLK2X_IOB_i iobs_ps_i_1__n iobs_ps_i_0__n a_fsb_c_9__n a_fsb_c_10__n a_fsb_c_11__n a_fsb_c_12__n a_fsb_c_13__n \
+#  a_fsb_c_14__n a_fsb_c_15__n a_fsb_c_16__n a_fsb_c_17__n a_fsb_c_18__n a_fsb_c_19__n a_fsb_c_20__n a_fsb_c_21__n a_fsb_c_22__n a_fsb_c_23__n \
+#  nAS_FSB_c nLDS_FSB_c 
+.model mxse
+.inputs A_FSB_23_.BLIF nAS_FSB.BLIF nLDS_FSB.BLIF nUDS_FSB.BLIF nWE_FSB.BLIF CLK_FSB.BLIF CLK2X_IOB.BLIF CLK_IOB.BLIF E_IOB.BLIF \
+  nDTACK_IOB.BLIF nVPA_IOB.BLIF nBERR_IOB.BLIF nRES.BLIF A_FSB_22_.BLIF A_FSB_21_.BLIF A_FSB_20_.BLIF A_FSB_19_.BLIF A_FSB_18_.BLIF \
+  A_FSB_17_.BLIF A_FSB_16_.BLIF A_FSB_15_.BLIF A_FSB_14_.BLIF A_FSB_13_.BLIF A_FSB_12_.BLIF A_FSB_11_.BLIF A_FSB_10_.BLIF A_FSB_9_.BLIF \
+  A_FSB_8_.BLIF nUDS_FSB_c.BLIF un1_nBERR_FSB.BLIF nWE_FSB_c.BLIF ASInactive.BLIF IOCS.BLIF fsb_nDTACKreg.BLIF Ready_IOBS.BLIF iobs_IOREQ.BLIF \
+  iobm_IOACT.BLIF CLK_FSB_c.BLIF iobs_ALE0.BLIF iobs_IORW0.BLIF CLK2X_IOB_c.BLIF iobs_IOL0.BLIF iobs_IOU0.BLIF CLK_IOB_c.BLIF iobs_ALE1.BLIF \
+  iobm_ALE0.BLIF fsb_TimeoutA.BLIF fsb_TimeoutB.BLIF nDTACK_IOB_c.BLIF gnd_n_n.BLIF ram_un1_nramoe_n.BLIF nVPA_IOB_c.BLIF ram_un1_nramlwe_n.BLIF ram_un1_nramuwe_n.BLIF \
+  iobm_nVMAreg.BLIF ram_un1_nromoe_n.BLIF ram_un1_nromwe_n.BLIF iobm_nASreg.BLIF fsb_ASrf.BLIF fsb_RefCnt_5_.BLIF iobm_nLDSreg.BLIF fsb_RefCnt_1_.BLIF fsb_RefCnt_2_.BLIF \
+  iobm_nUDSreg.BLIF fsb_RefCnt_0_.BLIF fsb_RefCnt_4_.BLIF nBERR_IOB_c.BLIF fsb_RefCnt_3_.BLIF fsb_G_3.BLIF nRES_c.BLIF fsb_G_5.BLIF fsb_G_7.BLIF \
+  fsb_G_9.BLIF fsb_G_11.BLIF iobm_un1_nlds_n.BLIF iobm_un1_nuds_n.BLIF iobm_nDoutOEreg.BLIF iobm_IOREQr.BLIF iobm_Er.BLIF iobm_ES_2_.BLIF iobm_nDinLEreg.BLIF \
+  iobm_ES_0_.BLIF iobm_ES_1_.BLIF iobm_n_2_0_n.BLIF iobm_ES_3_.BLIF iobm_es14_i_n.BLIF iobm_ES_4_.BLIF iobm_un6_es_m_i_0__n.BLIF iobm_IOS_0_.BLIF iobm_es_3_0_0__n.BLIF \
+  iobm_IOS_1_.BLIF iobm_un1_es14_1_i_n.BLIF iobm_IOS_2_.BLIF iobm_un1_es_2_i_n.BLIF iobm_Er2.BLIF iobm_etack_i_n.BLIF iobm_ETACK.BLIF iobm_n_54_0_n.BLIF iobm_n_50_i_n.BLIF \
+  iobm_ndinle_2_n.BLIF iobm_n_33_i_n.BLIF iobm_ios_5_0_2__n.BLIF iobm_n_37_i_n.BLIF iobm_un2_nlds_0_n.BLIF iobm_n_52_i_n.BLIF iobm_n_42_i_n.BLIF iobm_un1_ios42_0_n.BLIF iobm_n_39_i_n.BLIF \
+  iobm_ale0_2_iv_i_n.BLIF iobm_ndinle_2_i_n.BLIF iobm_n_24_n.BLIF iobm_n_40_i_n.BLIF iobm_n_29_n.BLIF iobm_n_22_i_n.BLIF iobm_n_48_n.BLIF iobm_n_23_i_n.BLIF iobm_n_31_n.BLIF \
+  iobm_n_24_i_n.BLIF iobm_n_50_n.BLIF TimeoutA_i.BLIF iobm_n_34_n.BLIF N_6_0.BLIF iobm_n_35_n.BLIF fsb_n_3_i_n.BLIF iobm_n_36_n.BLIF fsb_n_4_0_n.BLIF \
+  iobm_n_38_n.BLIF TimeoutB_i.BLIF iobm_n_40_n.BLIF fsb_timeoutb_0_sqmuxa_i_n.BLIF iobm_n_52_n.BLIF fsb_n_6_0_n.BLIF iobs_IOACTr.BLIF fsb_timeouta_0_sqmuxa_i_n.BLIF iobs_PS_1_.BLIF \
+  fsb_n_5_0_n.BLIF iobs_Once.BLIF iobs_n_28_0_n.BLIF iobs_PS_0_.BLIF iobs_n_65_i_n.BLIF iobs_ale15_n.BLIF iobs_n_62_i_n.BLIF iobs_IOL1.BLIF iobs_n_13_0_n.BLIF \
+  iobs_IOU1.BLIF iobs_n_59_i_n.BLIF iobs_IORDReady.BLIF iobs_n_60_i_n.BLIF iobs_ale19_n.BLIF iobs_n_14_0_n.BLIF iobs_Load1.BLIF cs_un3_romcs_i_n.BLIF iobs_IORW1.BLIF \
+  cs_un4_romcs_i_n.BLIF ROMCS_0.BLIF IOCS_i.BLIF cs_vidramcswr_i_n.BLIF cs_un4_iocs_i_n.BLIF cs_un2_sndramcswr_i_n.BLIF iobs_n_29_n.BLIF cs_un14_sndramcswr_i_n.BLIF iobs_n_30_n.BLIF \
+  cs_n_6_0_n.BLIF iobs_n_37_n.BLIF cs_noverlay0_i_n.BLIF iobs_n_48_n.BLIF cs_noverlay05_i_n.BLIF iobs_n_51_n.BLIF cs_n_2_0_n.BLIF iobs_n_52_n.BLIF iobs_n_37_0_n.BLIF \
+  iobs_n_53_n.BLIF iobs_n_54_i_n.BLIF iobs_n_55_n.BLIF iobs_n_63_i_n.BLIF iobs_n_57_n.BLIF iobs_n_34_0_n.BLIF iobs_n_58_n.BLIF iobs_n_30_0_n.BLIF iobs_n_60_n.BLIF \
+  iobs_once_i_n.BLIF iobs_n_62_n.BLIF iobs_n_29_0_n.BLIF iobs_n_64_n.BLIF iobs_n_55_i_n.BLIF iobs_n_65_n.BLIF iobs_ps_5_0_0__n.BLIF iobs_n_66_n.BLIF iobs_ale15_i_n.BLIF \
+  cs_nOverlay1.BLIF iobs_n_19_0_n.BLIF cs_nOverlay0.BLIF iobs_n_47_i_n.BLIF iobs_n_15_0_n.BLIF cs_un11_ramcs_n.BLIF iobs_n_7_i_n.BLIF cs_vidramcswr_n.BLIF ALE0M_i.BLIF \
+  RAMCS.BLIF ALE0S_i.BLIF cs_un5_ramcs_n.BLIF N_4_0.BLIF iobm_n_38_i_n.BLIF iobm_n_12_0_n.BLIF iobs_n_47_n.BLIF iobm_n_34_i_n.BLIF iobs_n_54_n.BLIF \
+  iobm_n_35_i_n.BLIF iobs_n_63_n.BLIF iobm_n_36_i_n.BLIF ROMCS.BLIF iobm_ios_5_0_0__n.BLIF cs_noverlay05_n.BLIF iobm_n_29_i_n.BLIF cs_un3_romcs_n.BLIF iobm_n_31_i_n.BLIF \
+  cs_un14_sndramcswr_n.BLIF iobm_n_48_i_n.BLIF cs_un2_sndramcswr_n.BLIF iobm_ios_5_0_1__n.BLIF cs_n_6_n.BLIF iobs_n_57_i_n.BLIF cs_un4_romcs_n.BLIF iobs_n_58_i_n.BLIF cs_un4_romcs_2_n.BLIF \
+  cs_un4_iocs_n.BLIF iobs_n_53_i_n.BLIF iobs_n_59_n.BLIF iobs_n_64_i_n.BLIF fsb_n_14_n.BLIF Ready_IOBS_0.BLIF fsb_n_16_n.BLIF iobs_n_48_i_n.BLIF fsb_n_18_n.BLIF \
+  iobs_n_51_i_n.BLIF fsb_n_20_n.BLIF iobs_n_52_i_n.BLIF fsb_timeouta6_n.BLIF fsb_timeoutb_0_sqmuxa_n.BLIF N_6_0_1.BLIF fsb_n_5_n.BLIF iobm_n_54_0_1_n.BLIF fsb_timeouta_0_sqmuxa_n.BLIF \
+  cs_un11_ramcs_1_n.BLIF fsb_n_6_n.BLIF cs_vidramcswr_1_n.BLIF fsb_n_3_n.BLIF cs_vidramcswr_2_n.BLIF fsb_un1_ready_0__n.BLIF cs_vidramcswr_3_n.BLIF Ready.BLIF cs_vidramcswr_4_n.BLIF \
+  un1_timeoutb_0__n.BLIF cs_vidramcswr_5_n.BLIF N_6.BLIF cs_vidramcswr_6_n.BLIF iobm_n_27_n.BLIF ram_un1_nromwe_1_n.BLIF iobm_n_54_n.BLIF ram_un1_nromoe_1_n.BLIF iobm_n_23_n.BLIF \
+  ram_un1_nramuwe_1_n.BLIF iobm_n_39_n.BLIF ram_un1_nramlwe_1_n.BLIF iobm_n_42_n.BLIF ram_un1_nramoe_1_n.BLIF iobm_un2_nlds_n.BLIF cs_un14_sndramcswr_1_n.BLIF iobm_n_37_n.BLIF cs_un14_sndramcswr_2_n.BLIF \
+  iobm_n_33_n.BLIF cs_un14_sndramcswr_3_n.BLIF iobm_es14_n.BLIF cs_un14_sndramcswr_4_n.BLIF iobm_nvma5_1_n.BLIF cs_un14_sndramcswr_5_n.BLIF iobm_n_30_n.BLIF cs_un2_sndramcswr_1_n.BLIF iobm_n_32_n.BLIF \
+  cs_un2_sndramcswr_2_n.BLIF iobm_G_34.BLIF cs_un2_sndramcswr_3_n.BLIF iobm_G_32.BLIF cs_un2_sndramcswr_4_n.BLIF iobm_G_30.BLIF cs_un2_sndramcswr_5_n.BLIF iobm_G_28.BLIF cs_un4_romcs_1_n.BLIF \
+  iobm_nvma5_n.BLIF cs_un3_romcs_1_n.BLIF iobm_un1_es_2_n.BLIF cs_un4_iocs_1_n.BLIF iobm_nvma6_n.BLIF IOCS_i_1.BLIF iobm_un6_es_m_0__n.BLIF fsb_timeouta6_1_n.BLIF iobm_n_2_n.BLIF \
+  fsb_timeouta6_2_n.BLIF ALE1_i.BLIF fsb_timeouta6_3_n.BLIF ram_un1_nromwe_i_n.BLIF fsb_timeouta6_4_n.BLIF ram_un1_nromoe_i_n.BLIF fsb_timeoutb_0_sqmuxa_1_n.BLIF ram_un1_nramuwe_i_n.BLIF un1_nBERR_FSB_1.BLIF \
+  ram_un1_nramlwe_i_n.BLIF iobm_nvma5_1_0_n.BLIF ram_un1_nramoe_i_n.BLIF iobm_nvma5_2_n.BLIF un1_nBERR_FSB_i.BLIF iobm_nvma5_3_n.BLIF iobm_nvma5_i_n.BLIF iobm_nvma5_4_n.BLIF iobm_es_i_0__n.BLIF \
+  iobm_etack_2_1_n.BLIF iobm_nvma6_i_0_n.BLIF iobm_etack_2_2_n.BLIF iobm_es_i_4__n.BLIF iobm_etack_2_3_n.BLIF iobm_es_i_2__n.BLIF iobm_un1_es_2_1_n.BLIF iobm_es_i_1__n.BLIF iobm_un1_es_2_2_n.BLIF \
+  iobm_es_i_3__n.BLIF iobm_nvma6_1_n.BLIF nVMA_IOB_i.BLIF iobm_nvma6_2_n.BLIF nVPA_IOB_i.BLIF iobm_nvma6_3_n.BLIF iobm_er_i_n.BLIF iobm_un1_es14_1_i_1_n.BLIF nBERR_IOB_i.BLIF \
+  iobm_n_12_0_1_n.BLIF iobm_ios_i_0__n.BLIF iobm_ios_5_0_1_0__n.BLIF IORW0_i.BLIF iobm_ios_5_0_1_1__n.BLIF iobm_n_27_i_n.BLIF iobm_n_40_1_n.BLIF iobm_ioreqr_i_n.BLIF iobm_n_36_1_n.BLIF \
+  iobm_ios_i_1__n.BLIF iobm_n_50_1_n.BLIF CLK_IOB_i.BLIF iobm_n_31_1_n.BLIF nAS_FSB_i.BLIF iobs_n_50_0_1_n.BLIF fsb_asrf_i_n.BLIF Ready_IOBS_0_1.BLIF nDTACK_FSB_i_0.BLIF \
+  iobs_n_17_0_1_n.BLIF fsb_un1_ready_i_0__n.BLIF iobs_n_62_1_n.BLIF ASInactive_i.BLIF iobs_n_60_1_n.BLIF fsb_refcnt_i_0__n.BLIF iobs_n_60_2_n.BLIF fsb_refcnt_i_5__n.BLIF iobs_n_55_1_n.BLIF \
+  fsb_refcnt_i_2__n.BLIF iobs_ale19_1_n.BLIF fsb_refcnt_i_1__n.BLIF iobm_un2_nlds_0_m2_un3_n.BLIF fsb_refcnt_i_4__n.BLIF iobm_un2_nlds_0_m2_un1_n.BLIF fsb_refcnt_i_3__n.BLIF iobm_un2_nlds_0_m2_un0_n.BLIF a_fsb_i_21__n.BLIF \
+  fsb_un1_ready_0__un3_n.BLIF a_fsb_i_20__n.BLIF fsb_un1_ready_0__un1_n.BLIF a_fsb_i_23__n.BLIF fsb_un1_ready_0__un0_n.BLIF cs_noverlay1_i_n.BLIF ram_un1_timeoutb_0__un3_n.BLIF a_fsb_i_12__n.BLIF ram_un1_timeoutb_0__un1_n.BLIF \
+  a_fsb_i_11__n.BLIF ram_un1_timeoutb_0__un0_n.BLIF a_fsb_i_10__n.BLIF iobs_iou0_4_un3_n.BLIF a_fsb_i_14__n.BLIF iobs_iou0_4_un1_n.BLIF nLDS_FSB_i.BLIF iobs_iou0_4_un0_n.BLIF nWE_FSB_i.BLIF \
+  cs_un1_ramcs_0__un3_n.BLIF nUDS_FSB_i.BLIF cs_un1_ramcs_0__un1_n.BLIF iobs_ioactr_i_n.BLIF cs_un1_ramcs_0__un0_n.BLIF iobs_n_66_i_n.BLIF iobs_iol0_4_un3_n.BLIF iobs_iorw1_i_0_n.BLIF iobs_iol0_4_un1_n.BLIF \
+  a_fsb_i_22__n.BLIF iobs_iol0_4_un0_n.BLIF a_fsb_8__n.BLIF iobm_ios_i_2__n.BLIF CLK2X_IOB_i.BLIF iobs_ps_i_1__n.BLIF iobs_ps_i_0__n.BLIF a_fsb_c_9__n.BLIF a_fsb_c_10__n.BLIF \
+  a_fsb_c_11__n.BLIF a_fsb_c_12__n.BLIF a_fsb_c_13__n.BLIF a_fsb_c_14__n.BLIF a_fsb_c_15__n.BLIF a_fsb_c_16__n.BLIF a_fsb_c_17__n.BLIF a_fsb_c_18__n.BLIF a_fsb_c_19__n.BLIF \
+  a_fsb_c_20__n.BLIF a_fsb_c_21__n.BLIF a_fsb_c_22__n.BLIF a_fsb_c_23__n.BLIF nAS_FSB_c.BLIF nLDS_FSB_c.BLIF  
+.outputs nDTACK_FSB nBERR_FSB nVMA_IOB nAS_IOB nLDS_IOB nUDS_IOB nRAMOE nRAMLWE nRAMUWE nROMOE nROMWE \
+  nADoutLE0 nADoutLE1 nAoutOE nDoutOE nDinOE nDinLE cs_nOverlay1.D cs_nOverlay1.CE cs_nOverlay1.C cs_nOverlay0.D cs_nOverlay0.C \
+  cs_nOverlay0.AR iobs_PS_0_.D iobs_PS_0_.C iobs_PS_1_.D iobs_PS_1_.C iobs_IOU1.D iobs_IOU1.CE iobs_IOU1.C iobs_IOL1.D iobs_IOL1.CE iobs_IOL1.C \
+  iobs_IORW1.D iobs_IORW1.CE iobs_IORW1.C iobs_IOU0.D iobs_IOU0.CE iobs_IOU0.C iobs_IOL0.D iobs_IOL0.CE iobs_IOL0.C iobs_ALE1.D iobs_ALE1.C \
+  iobs_Once.D iobs_Once.C iobs_IORDReady.D iobs_IORDReady.C iobs_Load1.D iobs_Load1.C iobs_IOREQ.D iobs_IOREQ.C iobs_IORW0.D iobs_IORW0.CE iobs_IORW0.C \
+  iobs_ALE0.D iobs_ALE0.C iobs_IOACTr.D iobs_IOACTr.C iobm_ES_3_.D iobm_ES_3_.C iobm_ES_4_.D iobm_ES_4_.C iobm_IOS_0_.D iobm_IOS_0_.C iobm_IOS_1_.D \
+  iobm_IOS_1_.C iobm_IOS_2_.D iobm_IOS_2_.C iobm_nLDSreg.D iobm_nLDSreg.C iobm_nUDSreg.D iobm_nUDSreg.C iobm_IOACT.D iobm_IOACT.C iobm_nVMAreg.D iobm_nVMAreg.C \
+  iobm_ES_0_.D iobm_ES_0_.C iobm_ES_1_.D iobm_ES_1_.C iobm_ES_2_.D iobm_ES_2_.C iobm_nDoutOEreg.D iobm_nDoutOEreg.C iobm_ALE0.D iobm_ALE0.C iobm_nDinLEreg.D \
+  iobm_nDinLEreg.C iobm_nASreg.D iobm_nASreg.C iobm_ETACK.D iobm_ETACK.C iobm_Er2.D iobm_Er2.C iobm_IOREQr.D iobm_IOREQr.C iobm_Er.D iobm_Er.C \
+  fsb_RefCnt_1_.D fsb_RefCnt_1_.C fsb_RefCnt_2_.D fsb_RefCnt_2_.C fsb_RefCnt_3_.D fsb_RefCnt_3_.C fsb_RefCnt_4_.D fsb_RefCnt_4_.C fsb_RefCnt_5_.D fsb_RefCnt_5_.C fsb_nDTACKreg.D \
+  fsb_nDTACKreg.C fsb_TimeoutB.D fsb_TimeoutB.C fsb_TimeoutA.D fsb_TimeoutA.C fsb_RefCnt_0_.D fsb_RefCnt_0_.C fsb_ASrf.D fsb_ASrf.C iobm_G_34.X1 iobm_G_34.X2 \
+  iobm_G_32.X1 iobm_G_32.X2 iobm_G_30.X1 iobm_G_30.X2 iobm_G_28.X1 iobm_G_28.X2 fsb_G_5.X1 fsb_G_5.X2 fsb_G_7.X1 fsb_G_7.X2 fsb_G_9.X1 \
+  fsb_G_9.X2 fsb_G_11.X1 fsb_G_11.X2 fsb_G_3.X1 fsb_G_3.X2 nUDS_FSB_c un1_nBERR_FSB nWE_FSB_c ASInactive IOCS Ready_IOBS \
+  CLK_FSB_c CLK2X_IOB_c CLK_IOB_c nDTACK_IOB_c gnd_n_n ram_un1_nramoe_n nVPA_IOB_c ram_un1_nramlwe_n ram_un1_nramuwe_n ram_un1_nromoe_n ram_un1_nromwe_n \
+  nBERR_IOB_c nRES_c iobm_un1_nlds_n iobm_un1_nuds_n iobm_n_2_0_n iobm_es14_i_n iobm_un6_es_m_i_0__n iobm_es_3_0_0__n iobm_un1_es14_1_i_n iobm_un1_es_2_i_n iobm_etack_i_n \
+  iobm_n_54_0_n iobm_n_50_i_n iobm_ndinle_2_n iobm_n_33_i_n iobm_ios_5_0_2__n iobm_n_37_i_n iobm_un2_nlds_0_n iobm_n_52_i_n iobm_n_42_i_n iobm_un1_ios42_0_n iobm_n_39_i_n \
+  iobm_ale0_2_iv_i_n iobm_ndinle_2_i_n iobm_n_24_n iobm_n_40_i_n iobm_n_29_n iobm_n_22_i_n iobm_n_48_n iobm_n_23_i_n iobm_n_31_n iobm_n_24_i_n iobm_n_50_n \
+  TimeoutA_i iobm_n_34_n N_6_0 iobm_n_35_n fsb_n_3_i_n iobm_n_36_n fsb_n_4_0_n iobm_n_38_n TimeoutB_i iobm_n_40_n fsb_timeoutb_0_sqmuxa_i_n \
+  iobm_n_52_n fsb_n_6_0_n fsb_timeouta_0_sqmuxa_i_n fsb_n_5_0_n iobs_n_28_0_n iobs_n_65_i_n iobs_ale15_n iobs_n_62_i_n iobs_n_13_0_n iobs_n_59_i_n iobs_n_60_i_n \
+  iobs_ale19_n iobs_n_14_0_n cs_un3_romcs_i_n cs_un4_romcs_i_n ROMCS_0 IOCS_i cs_vidramcswr_i_n cs_un4_iocs_i_n cs_un2_sndramcswr_i_n iobs_n_29_n cs_un14_sndramcswr_i_n \
+  iobs_n_30_n cs_n_6_0_n iobs_n_37_n cs_noverlay0_i_n iobs_n_48_n cs_noverlay05_i_n iobs_n_51_n cs_n_2_0_n iobs_n_52_n iobs_n_37_0_n iobs_n_53_n \
+  iobs_n_54_i_n iobs_n_55_n iobs_n_63_i_n iobs_n_57_n iobs_n_34_0_n iobs_n_58_n iobs_n_30_0_n iobs_n_60_n iobs_once_i_n iobs_n_62_n iobs_n_29_0_n \
+  iobs_n_64_n iobs_n_55_i_n iobs_n_65_n iobs_ps_5_0_0__n iobs_n_66_n iobs_ale15_i_n iobs_n_19_0_n iobs_n_47_i_n iobs_n_15_0_n cs_un11_ramcs_n iobs_n_7_i_n \
+  cs_vidramcswr_n ALE0M_i RAMCS ALE0S_i cs_un5_ramcs_n N_4_0 iobm_n_38_i_n iobm_n_12_0_n iobs_n_47_n iobm_n_34_i_n iobs_n_54_n \
+  iobm_n_35_i_n iobs_n_63_n iobm_n_36_i_n ROMCS iobm_ios_5_0_0__n cs_noverlay05_n iobm_n_29_i_n cs_un3_romcs_n iobm_n_31_i_n cs_un14_sndramcswr_n iobm_n_48_i_n \
+  cs_un2_sndramcswr_n iobm_ios_5_0_1__n cs_n_6_n iobs_n_57_i_n cs_un4_romcs_n iobs_n_58_i_n cs_un4_romcs_2_n cs_un4_iocs_n iobs_n_53_i_n iobs_n_59_n iobs_n_64_i_n \
+  fsb_n_14_n Ready_IOBS_0 fsb_n_16_n iobs_n_48_i_n fsb_n_18_n iobs_n_51_i_n fsb_n_20_n iobs_n_52_i_n fsb_timeouta6_n fsb_timeoutb_0_sqmuxa_n N_6_0_1 \
+  fsb_n_5_n iobm_n_54_0_1_n fsb_timeouta_0_sqmuxa_n cs_un11_ramcs_1_n fsb_n_6_n cs_vidramcswr_1_n fsb_n_3_n cs_vidramcswr_2_n fsb_un1_ready_0__n cs_vidramcswr_3_n Ready \
+  cs_vidramcswr_4_n un1_timeoutb_0__n cs_vidramcswr_5_n N_6 cs_vidramcswr_6_n iobm_n_27_n ram_un1_nromwe_1_n iobm_n_54_n ram_un1_nromoe_1_n iobm_n_23_n ram_un1_nramuwe_1_n \
+  iobm_n_39_n ram_un1_nramlwe_1_n iobm_n_42_n ram_un1_nramoe_1_n iobm_un2_nlds_n cs_un14_sndramcswr_1_n iobm_n_37_n cs_un14_sndramcswr_2_n iobm_n_33_n cs_un14_sndramcswr_3_n iobm_es14_n \
+  cs_un14_sndramcswr_4_n iobm_nvma5_1_n cs_un14_sndramcswr_5_n iobm_n_30_n cs_un2_sndramcswr_1_n iobm_n_32_n cs_un2_sndramcswr_2_n cs_un2_sndramcswr_3_n cs_un2_sndramcswr_4_n cs_un2_sndramcswr_5_n cs_un4_romcs_1_n \
+  iobm_nvma5_n cs_un3_romcs_1_n iobm_un1_es_2_n cs_un4_iocs_1_n iobm_nvma6_n IOCS_i_1 iobm_un6_es_m_0__n fsb_timeouta6_1_n iobm_n_2_n fsb_timeouta6_2_n ALE1_i \
+  fsb_timeouta6_3_n ram_un1_nromwe_i_n fsb_timeouta6_4_n ram_un1_nromoe_i_n fsb_timeoutb_0_sqmuxa_1_n ram_un1_nramuwe_i_n un1_nBERR_FSB_1 ram_un1_nramlwe_i_n iobm_nvma5_1_0_n ram_un1_nramoe_i_n iobm_nvma5_2_n \
+  un1_nBERR_FSB_i iobm_nvma5_3_n iobm_nvma5_i_n iobm_nvma5_4_n iobm_es_i_0__n iobm_etack_2_1_n iobm_nvma6_i_0_n iobm_etack_2_2_n iobm_es_i_4__n iobm_etack_2_3_n iobm_es_i_2__n \
+  iobm_un1_es_2_1_n iobm_es_i_1__n iobm_un1_es_2_2_n iobm_es_i_3__n iobm_nvma6_1_n nVMA_IOB_i iobm_nvma6_2_n nVPA_IOB_i iobm_nvma6_3_n iobm_er_i_n iobm_un1_es14_1_i_1_n \
+  nBERR_IOB_i iobm_n_12_0_1_n iobm_ios_i_0__n iobm_ios_5_0_1_0__n IORW0_i iobm_ios_5_0_1_1__n iobm_n_27_i_n iobm_n_40_1_n iobm_ioreqr_i_n iobm_n_36_1_n iobm_ios_i_1__n \
+  iobm_n_50_1_n CLK_IOB_i iobm_n_31_1_n nAS_FSB_i iobs_n_50_0_1_n fsb_asrf_i_n Ready_IOBS_0_1 nDTACK_FSB_i_0 iobs_n_17_0_1_n fsb_un1_ready_i_0__n iobs_n_62_1_n \
+  ASInactive_i iobs_n_60_1_n fsb_refcnt_i_0__n iobs_n_60_2_n fsb_refcnt_i_5__n iobs_n_55_1_n fsb_refcnt_i_2__n iobs_ale19_1_n fsb_refcnt_i_1__n iobm_un2_nlds_0_m2_un3_n fsb_refcnt_i_4__n \
+  iobm_un2_nlds_0_m2_un1_n fsb_refcnt_i_3__n iobm_un2_nlds_0_m2_un0_n a_fsb_i_21__n fsb_un1_ready_0__un3_n a_fsb_i_20__n fsb_un1_ready_0__un1_n a_fsb_i_23__n fsb_un1_ready_0__un0_n cs_noverlay1_i_n ram_un1_timeoutb_0__un3_n \
+  a_fsb_i_12__n ram_un1_timeoutb_0__un1_n a_fsb_i_11__n ram_un1_timeoutb_0__un0_n a_fsb_i_10__n iobs_iou0_4_un3_n a_fsb_i_14__n iobs_iou0_4_un1_n nLDS_FSB_i iobs_iou0_4_un0_n nWE_FSB_i \
+  cs_un1_ramcs_0__un3_n nUDS_FSB_i cs_un1_ramcs_0__un1_n iobs_ioactr_i_n cs_un1_ramcs_0__un0_n iobs_n_66_i_n iobs_iol0_4_un3_n iobs_iorw1_i_0_n iobs_iol0_4_un1_n a_fsb_i_22__n iobs_iol0_4_un0_n \
+  a_fsb_8__n iobm_ios_i_2__n CLK2X_IOB_i iobs_ps_i_1__n iobs_ps_i_0__n a_fsb_c_9__n a_fsb_c_10__n a_fsb_c_11__n a_fsb_c_12__n a_fsb_c_13__n a_fsb_c_14__n \
+  a_fsb_c_15__n a_fsb_c_16__n a_fsb_c_17__n a_fsb_c_18__n a_fsb_c_19__n a_fsb_c_20__n a_fsb_c_21__n a_fsb_c_22__n a_fsb_c_23__n nAS_FSB_c nLDS_FSB_c
+.names  iobs_n_55_n.BLIF iobs_n_55_i_n
+0 1
+.names  CLK_FSB_c.BLIF iobs_IOU1.C
+1 1
+.names  iobs_ps_5_0_0__n.BLIF iobs_PS_0_.D
+0 1
+.names  iobs_ale15_n.BLIF iobs_ale15_i_n
+0 1
+.names  iobs_n_19_0_n.BLIF iobs_IOREQ.D
+0 1
+.names  nLDS_FSB_i.BLIF iobs_IOL1.D
+1 1
+.names  fsb_timeouta_0_sqmuxa_n.BLIF fsb_timeouta_0_sqmuxa_i_n
+0 1
+.names  fsb_n_5_0_n.BLIF fsb_n_5_n
+0 1
+.names  iobs_Load1.BLIF iobs_IOL1.CE
+1 1
+.names  iobs_n_65_n.BLIF iobs_n_65_i_n
+0 1
+.names  iobs_n_62_n.BLIF iobs_n_62_i_n
+0 1
+.names  CLK_FSB_c.BLIF iobs_IOL1.C
+1 1
+.names  iobs_n_13_0_n.BLIF iobs_Once.D
+0 1
+.names  iobs_n_59_n.BLIF iobs_n_59_i_n
+0 1
+.names  iobs_n_60_n.BLIF iobs_n_60_i_n
+0 1
+.names  nWE_FSB_c.BLIF iobs_IORW1.D
+1 1
+.names  iobs_n_14_0_n.BLIF iobs_IORDReady.D
+0 1
+.names  cs_un3_romcs_n.BLIF cs_un3_romcs_i_n
+0 1
+.names  iobs_ale19_n.BLIF iobs_IORW1.CE
+1 1
+.names  cs_un4_romcs_n.BLIF cs_un4_romcs_i_n
+0 1
+.names  ROMCS_0.BLIF ROMCS
+0 1
+.names  CLK_FSB_c.BLIF iobs_IORW1.C
+1 1
+.names  IOCS_i.BLIF IOCS
+0 1
+.names  cs_vidramcswr_n.BLIF cs_vidramcswr_i_n
+0 1
+.names  cs_un4_iocs_n.BLIF cs_un4_iocs_i_n
+0 1
+.names  cs_un2_sndramcswr_n.BLIF cs_un2_sndramcswr_i_n
+0 1
+.names  iobs_ale15_n.BLIF iobs_IOU0.CE
+1 1
+.names  iobm_n_52_n.BLIF iobm_n_52_i_n
+0 1
+.names  iobm_n_42_n.BLIF iobm_n_42_i_n
+0 1
+.names  CLK_FSB_c.BLIF iobs_IOU0.C
+1 1
+.names  iobm_un1_ios42_0_n.BLIF iobm_nASreg.D
+0 1
+.names  iobm_n_39_n.BLIF iobm_n_39_i_n
+0 1
+.names  iobm_ndinle_2_n.BLIF iobm_ndinle_2_i_n
+0 1
+.names  iobm_n_40_n.BLIF iobm_n_40_i_n
+0 1
+.names  iobs_ale15_n.BLIF iobs_IOL0.CE
+1 1
+.names  iobm_n_23_i_n.BLIF iobm_n_23_n
+0 1
+.names  iobm_n_24_i_n.BLIF iobm_n_24_n
+0 1
+.names  CLK_FSB_c.BLIF iobs_IOL0.C
+1 1
+.names  fsb_TimeoutA.BLIF TimeoutA_i
+0 1
+.names  N_6_0.BLIF N_6
+0 1
+.names  fsb_n_3_n.BLIF fsb_n_3_i_n
+0 1
+.names  fsb_n_4_0_n.BLIF fsb_nDTACKreg.D
+0 1
+.names  CLK_FSB_c.BLIF iobs_ALE1.C
+1 1
+.names  fsb_TimeoutB.BLIF TimeoutB_i
+0 1
+.names  fsb_timeoutb_0_sqmuxa_n.BLIF fsb_timeoutb_0_sqmuxa_i_n
+0 1
+.names  fsb_n_6_0_n.BLIF fsb_n_6_n
+0 1
+.names  iobm_n_2_0_n.BLIF iobm_n_2_n
+0 1
+.names  CLK_FSB_c.BLIF iobs_Once.C
+1 1
+.names  iobm_es14_n.BLIF iobm_es14_i_n
+0 1
+.names  iobm_un6_es_m_0__n.BLIF iobm_un6_es_m_i_0__n
+0 1
+.names  iobm_es_3_0_0__n.BLIF iobm_ES_0_.D
+0 1
+.names  iobm_un1_es_2_n.BLIF iobm_un1_es_2_i_n
+0 1
+.names  CLK_FSB_c.BLIF iobs_IORDReady.C
+1 1
+.names  iobm_ETACK.BLIF iobm_etack_i_n
+0 1
+.names  iobm_n_54_0_n.BLIF iobm_n_54_n
+0 1
+.names  iobm_n_50_n.BLIF iobm_n_50_i_n
+0 1
+.names  iobs_ale19_n.BLIF iobs_Load1.D
+1 1
+.names  iobm_n_33_n.BLIF iobm_n_33_i_n
+0 1
+.names  iobm_ios_5_0_2__n.BLIF iobm_IOS_2_.D
+0 1
+.names  CLK_FSB_c.BLIF iobs_Load1.C
+1 1
+.names  iobm_n_37_n.BLIF iobm_n_37_i_n
+0 1
+.names  iobm_un2_nlds_0_n.BLIF iobm_un2_nlds_n
+0 1
+.names  ram_un1_nramlwe_n.BLIF ram_un1_nramlwe_i_n
+0 1
+.names  ram_un1_nramoe_n.BLIF ram_un1_nramoe_i_n
+0 1
+.names  CLK_FSB_c.BLIF iobs_IOREQ.C
+1 1
+.names  un1_nBERR_FSB.BLIF un1_nBERR_FSB_i
+0 1
+.names  iobm_es14_i_n.BLIF iobm_un6_es_m_i_0__n.BLIF iobm_es_3_0_0__n
+11 1
+.names  iobm_ES_0_.BLIF iobm_es_i_0__n
+0 1
+.names  iobm_nvma6_n.BLIF iobm_nvma6_i_0_n
+0 1
+.names  iobs_n_30_0_n.BLIF iobs_IORW0.CE
+1 1
+.names  iobm_es_i_0__n.BLIF iobm_nvma6_i_0_n.BLIF iobm_un6_es_m_0__n
+11 1
+.names  iobm_nvma6_i_0_n.BLIF nVMA_IOB_i.BLIF iobm_n_2_0_n
+11 1
+.names  CLK_FSB_c.BLIF iobs_IORW0.C
+1 1
+.names  iobm_nvma5_n.BLIF iobm_nvma5_i_n
+0 1
+.names  iobm_n_2_n.BLIF iobm_nvma5_i_n.BLIF iobm_nVMAreg.D
+11 1
+.names  iobm_un1_es14_1_i_n.BLIF iobm_G_34.BLIF iobm_ES_4_.D
+11 1
+.names  iobs_ale15_n.BLIF iobs_ALE0.D
+1 1
+.names  iobm_un1_es14_1_i_n.BLIF iobm_G_32.BLIF iobm_ES_3_.D
+11 1
+.names  iobm_un1_es14_1_i_n.BLIF iobm_G_30.BLIF iobm_ES_2_.D
+11 1
+.names  CLK_FSB_c.BLIF iobs_ALE0.C
+1 1
+.names  iobm_un1_es14_1_i_n.BLIF iobm_G_28.BLIF iobm_ES_1_.D
+11 1
+.names  iobs_ALE1.BLIF ALE1_i
+0 1
+.names  ram_un1_nromwe_n.BLIF ram_un1_nromwe_i_n
+0 1
+.names  iobm_IOACT.BLIF iobs_IOACTr.D
+1 1
+.names  ram_un1_nromoe_n.BLIF ram_un1_nromoe_i_n
+0 1
+.names  ram_un1_nramuwe_n.BLIF ram_un1_nramuwe_i_n
+0 1
+.names  CLK_FSB_c.BLIF iobs_IOACTr.C
+1 1
+.names  iobm_Er.BLIF iobm_er_i_n
+0 1
+.names  iobm_Er2.BLIF iobm_er_i_n.BLIF iobm_es14_n
+11 1
+.names  iobm_ES_0_.BLIF iobm_ES_1_.BLIF iobm_nvma5_1_n
+11 1
+.names  iobm_ES_2_.BLIF iobm_nvma5_1_n.BLIF iobm_n_30_n
+11 1
+.names  CLK2X_IOB_c.BLIF iobm_ES_3_.C
+1 1
+.names  iobm_ES_3_.BLIF iobm_n_30_n.BLIF iobm_n_32_n
+11 1
+.names  CLK2X_IOB_c.BLIF iobm_ES_4_.C
+1 1
+.names  nVPA_IOB_c.BLIF nVPA_IOB_i
+0 1
+.names  iobm_nVMAreg.BLIF nVMA_IOB_i
+0 1
+.names  iobm_ES_3_.BLIF iobm_es_i_3__n
+0 1
+.names  CLK2X_IOB_c.BLIF iobm_IOS_0_.C
+1 1
+.names  iobm_ES_1_.BLIF iobm_es_i_1__n
+0 1
+.names  iobm_ES_4_.BLIF iobm_es_i_4__n
+0 1
+.names  iobm_ES_2_.BLIF iobm_es_i_2__n
+0 1
+.names  iobm_IOREQr.BLIF iobm_ioreqr_i_n
+0 1
+.names  CLK2X_IOB_c.BLIF iobm_IOS_1_.C
+1 1
+.names  A_FSB_9_.BLIF a_fsb_c_9__n
+1 1
+.names  iobm_ioreqr_i_n.BLIF iobm_n_52_n.BLIF iobm_n_39_n
+11 1
+.names  A_FSB_10_.BLIF a_fsb_c_10__n
+1 1
+.names  iobm_IOS_0_.BLIF iobm_n_42_n.BLIF iobm_n_38_n
+11 1
+.names  A_FSB_11_.BLIF a_fsb_c_11__n
+1 1
+.names  iobs_IORW0.BLIF IORW0_i
+0 1
+.names  A_FSB_12_.BLIF a_fsb_c_12__n
+1 1
+.names  iobm_n_27_n.BLIF iobm_n_27_i_n
+0 1
+.names  CLK2X_IOB_c.BLIF iobm_IOS_2_.C
+1 1
+.names  A_FSB_13_.BLIF a_fsb_c_13__n
+1 1
+.names  IORW0_i.BLIF iobm_n_27_i_n.BLIF iobm_n_37_n
+11 1
+.names  A_FSB_14_.BLIF a_fsb_c_14__n
+1 1
+.names  iobm_ios_i_0__n.BLIF iobm_n_23_n.BLIF iobm_n_35_n
+11 1
+.names  A_FSB_15_.BLIF a_fsb_c_15__n
+1 1
+.names  iobm_n_24_n.BLIF iobm_ndinle_2_n.BLIF iobm_n_34_n
+11 1
+.names  A_FSB_16_.BLIF a_fsb_c_16__n
+1 1
+.names  iobm_IOS_2_.BLIF iobm_ios_i_0__n.BLIF iobm_n_33_n
+11 1
+.names  CLK2X_IOB_i.BLIF iobm_nLDSreg.C
+1 1
+.names  A_FSB_17_.BLIF a_fsb_c_17__n
+1 1
+.names  iobm_IOS_0_.BLIF iobm_n_23_i_n.BLIF iobm_n_48_n
+11 1
+.names  A_FSB_18_.BLIF a_fsb_c_18__n
+1 1
+.names  iobm_IOS_0_.BLIF iobm_ios_i_0__n
+0 1
+.names  A_FSB_19_.BLIF a_fsb_c_19__n
+1 1
+.names  iobm_IOS_1_.BLIF iobm_ios_i_0__n.BLIF iobm_n_29_n
+11 1
+.names  A_FSB_20_.BLIF a_fsb_c_20__n
+1 1
+.names  nBERR_IOB_c.BLIF nBERR_IOB_i
+0 1
+.names  CLK2X_IOB_i.BLIF iobm_nUDSreg.C
+1 1
+.names  A_FSB_21_.BLIF a_fsb_c_21__n
+1 1
+.names  iobs_IOU0.BLIF iobm_un2_nlds_n.BLIF iobm_un1_nuds_n
+11 1
+.names  A_FSB_22_.BLIF a_fsb_c_22__n
+1 1
+.names  iobs_IOL0.BLIF iobm_un2_nlds_n.BLIF iobm_un1_nlds_n
+11 1
+.names  A_FSB_23_.BLIF a_fsb_c_23__n
+1 1
+.names  nAS_FSB_c.BLIF nAS_FSB_i
+0 1
+.names  nAS_FSB.BLIF nAS_FSB_c
+1 1
+.names  iobm_IOS_1_.BLIF iobm_un2_nlds_0_m2_un3_n
+0 1
+.names  CLK2X_IOB_c.BLIF iobm_IOACT.C
+1 1
+.names  nLDS_FSB.BLIF nLDS_FSB_c
+1 1
+.names  iobm_IOS_2_.BLIF iobm_IOS_1_.BLIF iobm_un2_nlds_0_m2_un1_n
+11 1
+.names  nUDS_FSB.BLIF nUDS_FSB_c
+1 1
+.names  iobm_ios_i_0__n.BLIF iobm_un2_nlds_0_m2_un3_n.BLIF iobm_un2_nlds_0_m2_un0_n
+11 1
+.names  nWE_FSB.BLIF nWE_FSB_c
+1 1
+.names  iobm_un2_nlds_0_m2_un1_n.BLIF iobm_un2_nlds_0_m2_un0_n.BLIF iobm_n_27_n
+1- 1
+-1 1
+.names  fsb_nDTACKreg.BLIF nDTACK_FSB
+1 1
+.names  CLK_IOB_c.BLIF CLK_IOB_i
+0 1
+.names  CLK2X_IOB_c.BLIF iobm_nVMAreg.C
+1 1
+.names  un1_nBERR_FSB_i.BLIF nBERR_FSB
+1 1
+.names  CLK_IOB_c.BLIF iobm_n_54_n.BLIF iobm_n_24_i_n
+11 1
+.names  CLK_FSB.BLIF CLK_FSB_c
+1 1
+.names  iobm_ios_i_1__n.BLIF iobm_ios_i_2__n.BLIF iobm_n_23_i_n
+11 1
+.names  CLK2X_IOB.BLIF CLK2X_IOB_c
+1 1
+.names  iobm_n_40_i_n.BLIF iobm_ndinle_2_i_n.BLIF iobm_n_22_i_n
+11 1
+.names  CLK_IOB.BLIF CLK_IOB_c
+1 1
+.names  iobm_n_39_i_n.BLIF iobm_n_42_i_n.BLIF iobm_ale0_2_iv_i_n
+11 1
+.names  CLK2X_IOB_c.BLIF iobm_ES_0_.C
+1 1
+.names  E_IOB.BLIF iobm_Er.D
+1 1
+.names  iobm_n_42_i_n.BLIF iobm_n_52_i_n.BLIF iobm_un1_ios42_0_n
+11 1
+.names  nDTACK_IOB.BLIF nDTACK_IOB_c
+1 1
+.names  iobm_n_22_i_n.BLIF iobm_n_37_i_n.BLIF iobm_un2_nlds_0_n
+11 1
+.names  nVPA_IOB.BLIF nVPA_IOB_c
+1 1
+.names  iobm_n_22_i_n.BLIF iobm_n_33_i_n.BLIF iobm_ios_5_0_2__n
+11 1
+.names  iobm_nVMAreg.BLIF nVMA_IOB
+1 1
+.names  iobm_ale0_2_iv_i_n.BLIF iobm_n_50_i_n.BLIF iobm_IOACT.D
+11 1
+.names  CLK2X_IOB_c.BLIF iobm_ES_1_.C
+1 1
+.names  iobm_nASreg.BLIF nAS_IOB
+1 1
+.names  iobm_ios_i_0__n.BLIF iobm_n_23_i_n.BLIF iobm_n_52_n
+11 1
+.names  iobm_nLDSreg.BLIF nLDS_IOB
+1 1
+.names  iobm_IOS_1_.BLIF iobm_IOS_2_.BLIF iobm_n_42_n
+11 1
+.names  iobm_nUDSreg.BLIF nUDS_IOB
+1 1
+.names  iobm_IOS_1_.BLIF iobm_ios_i_1__n
+0 1
+.names  nBERR_IOB.BLIF nBERR_IOB_c
+1 1
+.names  iobm_IOS_2_.BLIF iobm_ios_i_1__n.BLIF iobm_ndinle_2_n
+11 1
+.names  CLK2X_IOB_c.BLIF iobm_ES_2_.C
+1 1
+.names  nRES.BLIF nRES_c
+1 1
+.names  TimeoutA_i.BLIF fsb_timeouta_0_sqmuxa_i_n.BLIF fsb_n_5_0_n
+11 1
+.names  ram_un1_nramoe_i_n.BLIF nRAMOE
+1 1
+.names  TimeoutB_i.BLIF fsb_timeoutb_0_sqmuxa_i_n.BLIF fsb_n_6_0_n
+11 1
+.names  ram_un1_nramlwe_i_n.BLIF nRAMLWE
+1 1
+.names  ASInactive_i.BLIF fsb_n_3_i_n.BLIF fsb_n_4_0_n
+11 1
+.names  ram_un1_nramuwe_i_n.BLIF nRAMUWE
+1 1
+.names  ASInactive_i.BLIF fsb_n_5_n.BLIF fsb_TimeoutA.D
+11 1
+.names  CLK2X_IOB_c.BLIF iobm_nDoutOEreg.C
+1 1
+.names  ram_un1_nromoe_i_n.BLIF nROMOE
+1 1
+.names  ASInactive.BLIF ASInactive_i
+0 1
+.names  ram_un1_nromwe_i_n.BLIF nROMWE
+1 1
+.names  ASInactive_i.BLIF fsb_n_6_n.BLIF fsb_TimeoutB.D
+11 1
+.names  N_4_0.BLIF nADoutLE0
+1 1
+.names  fsb_un1_ready_0__n.BLIF fsb_un1_ready_i_0__n
+0 1
+.names  iobm_ale0_2_iv_i_n.BLIF iobm_ALE0.D
+1 1
+.names  ALE1_i.BLIF nADoutLE1
+1 1
+.names  fsb_un1_ready_i_0__n.BLIF fsb_nDTACKreg.BLIF fsb_n_3_n
+11 1
+.names  gnd_n_n.BLIF nAoutOE
+1 1
+.names  fsb_timeouta6_n.BLIF nAS_FSB_i.BLIF fsb_timeouta_0_sqmuxa_n
+11 1
+.names  CLK2X_IOB_c.BLIF iobm_ALE0.C
+1 1
+.names  iobm_nDoutOEreg.BLIF nDoutOE
+1 1
+.names  fsb_nDTACKreg.BLIF nDTACK_FSB_i_0
+0 1
+.names  iobs_n_7_i_n.BLIF nDinOE
+1 1
+.names  nAS_FSB_c.BLIF fsb_un1_ready_0__un3_n
+0 1
+.names  iobm_nDinLEreg.BLIF nDinLE
+1 1
+.names  nDTACK_FSB_i_0.BLIF nAS_FSB_c.BLIF fsb_un1_ready_0__un1_n
+11 1
+.names  iobm_ndinle_2_n.BLIF iobm_nDinLEreg.D
+1 1
+.names  iobs_ale19_1_n.BLIF iobs_n_30_n.BLIF iobs_ale19_n
+11 1
+.names  Ready.BLIF fsb_un1_ready_0__un3_n.BLIF fsb_un1_ready_0__un0_n
+11 1
+.names  iobm_n_31_1_n.BLIF iobm_ios_i_1__n.BLIF iobm_n_31_n
+11 1
+.names  fsb_un1_ready_0__un1_n.BLIF fsb_un1_ready_0__un0_n.BLIF fsb_un1_ready_0__n
+1- 1
+-1 1
+.names  CLK2X_IOB_i.BLIF iobm_nDinLEreg.C
+1 1
+.names  iobs_n_57_i_n.BLIF iobs_n_58_i_n.BLIF iobs_n_50_0_1_n
+11 1
+.names  fsb_ASrf.BLIF fsb_asrf_i_n
+0 1
+.names  iobs_n_50_0_1_n.BLIF iobs_n_66_i_n.BLIF iobs_ALE1.D
+11 1
+.names  fsb_asrf_i_n.BLIF nAS_FSB_c.BLIF ASInactive
+11 1
+.names  IOCS.BLIF iobs_n_53_i_n.BLIF Ready_IOBS_0_1
+11 1
+.names  IOCS.BLIF ram_un1_timeoutb_0__un3_n
+0 1
+.names  Ready_IOBS_0_1.BLIF iobs_n_64_i_n.BLIF Ready_IOBS_0
+11 1
+.names  nBERR_IOB_i.BLIF IOCS.BLIF ram_un1_timeoutb_0__un1_n
+11 1
+.names  CLK2X_IOB_i.BLIF iobm_nASreg.C
+1 1
+.names  iobs_n_48_i_n.BLIF iobs_n_51_i_n.BLIF iobs_n_17_0_1_n
+11 1
+.names  fsb_TimeoutB.BLIF ram_un1_timeoutb_0__un3_n.BLIF ram_un1_timeoutb_0__un0_n
+11 1
+.names  iobs_n_17_0_1_n.BLIF iobs_n_52_i_n.BLIF iobs_IORW0.D
+11 1
+.names  ram_un1_timeoutb_0__un1_n.BLIF ram_un1_timeoutb_0__un0_n.BLIF un1_timeoutb_0__n
+1- 1
+-1 1
+.names  iobs_n_37_n.BLIF ASInactive_i.BLIF iobs_n_62_1_n
+11 1
+.names  N_6.BLIF Ready_IOBS.BLIF Ready
+11 1
+.names  iobs_n_62_1_n.BLIF iobs_n_28_0_n.BLIF iobs_n_62_n
+11 1
+.names  fsb_RefCnt_0_.BLIF fsb_RefCnt_1_.BLIF fsb_n_14_n
+11 1
+.names  CLK2X_IOB_c.BLIF iobm_ETACK.C
+1 1
+.names  iobs_ioactr_i_n.BLIF iobs_n_65_n.BLIF iobs_n_60_1_n
+11 1
+.names  fsb_n_14_n.BLIF fsb_RefCnt_2_.BLIF fsb_n_16_n
+11 1
+.names  iobs_ps_i_1__n.BLIF nAS_FSB_i.BLIF iobs_n_60_2_n
+11 1
+.names  fsb_n_16_n.BLIF fsb_RefCnt_3_.BLIF fsb_n_18_n
+11 1
+.names  iobs_n_60_1_n.BLIF iobs_n_60_2_n.BLIF iobs_n_60_n
+11 1
+.names  fsb_n_18_n.BLIF fsb_RefCnt_4_.BLIF fsb_n_20_n
+11 1
+.names  iobm_Er.BLIF iobm_Er2.D
+1 1
+.names  iobs_IOACTr.BLIF iobs_PS_1_.BLIF iobs_n_55_1_n
+11 1
+.names  fsb_RefCnt_4_.BLIF fsb_refcnt_i_4__n
+0 1
+.names  iobs_n_55_1_n.BLIF iobs_ps_i_0__n.BLIF iobs_n_55_n
+11 1
+.names  fsb_RefCnt_3_.BLIF fsb_refcnt_i_3__n
+0 1
+.names  CLK2X_IOB_c.BLIF iobm_Er2.C
+1 1
+.names  ALE1_i.BLIF iobs_n_29_0_n.BLIF iobs_ale19_1_n
+11 1
+.names  iobm_es14_i_n.BLIF iobm_nvma6_i_0_n.BLIF iobm_un1_es14_1_i_1_n
+11 1
+.names  iobm_un1_es14_1_i_1_n.BLIF iobm_un1_es_2_i_n.BLIF iobm_un1_es14_1_i_n
+11 1
+.names  iobs_IORW0.BLIF iobm_n_38_i_n.BLIF iobm_n_12_0_1_n
+11 1
+.names  CLK2X_IOB_i.BLIF iobm_IOREQr.C
+1 1
+.names  iobm_n_12_0_1_n.BLIF iobm_n_52_i_n.BLIF iobm_n_12_0_n
+11 1
+.names  iobm_n_34_i_n.BLIF iobm_n_35_i_n.BLIF iobm_ios_5_0_1_0__n
+11 1
+.names  fsb_RefCnt_2_.BLIF fsb_refcnt_i_2__n
+0 1
+.names  iobm_ios_5_0_1_0__n.BLIF iobm_n_36_i_n.BLIF iobm_ios_5_0_0__n
+11 1
+.names  fsb_RefCnt_1_.BLIF fsb_refcnt_i_1__n
+0 1
+.names  iobm_n_29_i_n.BLIF iobm_n_31_i_n.BLIF iobm_ios_5_0_1_1__n
+11 1
+.names  fsb_RefCnt_0_.BLIF fsb_refcnt_i_0__n
+0 1
+.names  CLK_IOB_i.BLIF iobm_Er.C
+1 1
+.names  iobm_ios_5_0_1_1__n.BLIF iobm_n_48_i_n.BLIF iobm_ios_5_0_1__n
+11 1
+.names  fsb_RefCnt_5_.BLIF fsb_refcnt_i_5__n
+0 1
+.names  iobm_ios_i_2__n.BLIF iobm_IOS_0_.BLIF iobm_n_40_1_n
+11 1
+.names  a_fsb_c_14__n.BLIF a_fsb_i_14__n
+0 1
+.names  iobm_n_40_1_n.BLIF iobm_IOS_1_.BLIF iobm_n_40_n
+11 1
+.names  a_fsb_c_11__n.BLIF a_fsb_i_11__n
+0 1
+.names  iobm_ios_i_0__n.BLIF CLK_IOB_i.BLIF iobm_n_36_1_n
+11 1
+.names  a_fsb_c_12__n.BLIF a_fsb_i_12__n
+0 1
+.names  CLK_FSB_c.BLIF fsb_RefCnt_1_.C
+1 1
+.names  iobm_n_36_1_n.BLIF iobm_IOREQr.BLIF iobm_n_36_n
+11 1
+.names  cs_un2_sndramcswr_i_n.BLIF cs_un14_sndramcswr_i_n.BLIF cs_n_6_0_n
+11 1
+.names  iobm_n_24_i_n.BLIF iobm_IOS_0_.BLIF iobm_n_50_1_n
+11 1
+.names  cs_nOverlay1.BLIF cs_noverlay1_i_n
+0 1
+.names  iobm_n_50_1_n.BLIF iobm_IOS_2_.BLIF iobm_n_50_n
+11 1
+.names  a_fsb_c_23__n.BLIF a_fsb_i_23__n
+0 1
+.names  iobm_n_24_i_n.BLIF iobm_IOS_0_.BLIF iobm_n_31_1_n
+11 1
+.names  a_fsb_i_21__n.BLIF a_fsb_i_23__n.BLIF cs_un4_romcs_2_n
+11 1
+.names  CLK_FSB_c.BLIF fsb_RefCnt_2_.C
+1 1
+.names  iobm_IOACT.BLIF iobm_ES_2_.BLIF iobm_nvma5_2_n
+11 1
+.names  a_fsb_c_20__n.BLIF a_fsb_i_20__n
+0 1
+.names  iobm_es_i_3__n.BLIF iobm_es_i_4__n.BLIF iobm_nvma5_3_n
+11 1
+.names  a_fsb_c_21__n.BLIF a_fsb_i_21__n
+0 1
+.names  iobm_nvma5_1_0_n.BLIF iobm_nvma5_2_n.BLIF iobm_nvma5_4_n
+11 1
+.names  cs_un3_romcs_i_n.BLIF cs_un4_romcs_i_n.BLIF ROMCS_0
+11 1
+.names  iobm_nvma5_4_n.BLIF iobm_nvma5_3_n.BLIF iobm_nvma5_n
+11 1
+.names  ASInactive_i.BLIF iobs_IORDReady.BLIF iobs_n_59_n
+11 1
+.names  CLK_FSB_c.BLIF fsb_RefCnt_3_.C
+1 1
+.names  iobm_ES_4_.BLIF iobm_es_i_0__n.BLIF iobm_etack_2_1_n
+11 1
+.names  ASInactive_i.BLIF iobs_Once.BLIF iobs_n_65_n
+11 1
+.names  iobm_es_i_1__n.BLIF iobm_es_i_3__n.BLIF iobm_etack_2_2_n
+11 1
+.names  iobs_n_59_i_n.BLIF iobs_n_60_i_n.BLIF iobs_n_14_0_n
+11 1
+.names  iobm_etack_2_1_n.BLIF iobm_etack_2_2_n.BLIF iobm_etack_2_3_n
+11 1
+.names  iobs_n_62_i_n.BLIF iobs_n_65_i_n.BLIF iobs_n_13_0_n
+11 1
+.names  iobm_etack_2_3_n.BLIF nVMA_IOB_i.BLIF iobm_ETACK.D
+11 1
+.names  IOCS.BLIF nAS_FSB_i.BLIF iobs_n_28_0_n
+11 1
+.names  CLK_FSB_c.BLIF fsb_RefCnt_4_.C
+1 1
+.names  iobm_ES_4_.BLIF iobm_es_i_2__n.BLIF iobm_un1_es_2_1_n
+11 1
+.names  ALE1_i.BLIF iobs_n_29_n.BLIF iobs_n_66_n
+11 1
+.names  iobm_es_i_3__n.BLIF iobm_nvma5_1_n.BLIF iobm_un1_es_2_2_n
+11 1
+.names  iobs_n_28_0_n.BLIF nWE_FSB_c.BLIF iobs_n_7_i_n
+11 1
+.names  iobm_un1_es_2_1_n.BLIF iobm_un1_es_2_2_n.BLIF iobm_un1_es_2_n
+11 1
+.names  iobs_n_34_0_n.BLIF iobs_n_47_i_n.BLIF iobs_n_15_0_n
+11 1
+.names  iobm_es_i_4__n.BLIF iobm_es_i_0__n.BLIF iobm_nvma6_1_n
+11 1
+.names  iobs_ale15_i_n.BLIF iobs_n_34_0_n.BLIF iobs_n_19_0_n
+11 1
+.names  CLK_FSB_c.BLIF fsb_RefCnt_5_.C
+1 1
+.names  iobm_es_i_1__n.BLIF iobm_es_i_2__n.BLIF iobm_nvma6_2_n
+11 1
+.names  iobs_n_54_i_n.BLIF iobs_n_55_i_n.BLIF iobs_ps_5_0_0__n
+11 1
+.names  iobm_nvma6_1_n.BLIF iobm_nvma6_2_n.BLIF iobm_nvma6_3_n
+11 1
+.names  iobs_n_28_0_n.BLIF iobs_once_i_n.BLIF iobs_n_29_0_n
+11 1
+.names  iobm_nvma6_3_n.BLIF iobm_es_i_3__n.BLIF iobm_nvma6_n
+11 1
+.names  iobs_ps_i_0__n.BLIF iobs_ps_i_1__n.BLIF iobs_n_30_0_n
+11 1
+.names  cs_un3_romcs_1_n.BLIF cs_un4_romcs_2_n.BLIF cs_un3_romcs_n
+11 1
+.names  iobs_n_54_i_n.BLIF iobs_n_63_i_n.BLIF iobs_n_34_0_n
+11 1
+.names  CLK_FSB_c.BLIF fsb_nDTACKreg.C
+1 1
+.names  a_fsb_i_21__n.BLIF a_fsb_c_20__n.BLIF cs_un4_iocs_1_n
+11 1
+.names  iobs_ALE1.BLIF iobs_n_30_n.BLIF iobs_n_37_0_n
+11 1
+.names  cs_un4_iocs_1_n.BLIF a_fsb_c_22__n.BLIF cs_un4_iocs_n
+11 1
+.names  nUDS_FSB_c.BLIF nUDS_FSB_i
+0 1
+.names  a_fsb_i_23__n.BLIF cs_vidramcswr_i_n.BLIF IOCS_i_1
+11 1
+.names  nWE_FSB_c.BLIF nWE_FSB_i
+0 1
+.names  IOCS_i_1.BLIF cs_un4_iocs_i_n.BLIF IOCS_i
+11 1
+.names  nLDS_FSB_c.BLIF nLDS_FSB_i
+0 1
+.names  CLK_FSB_c.BLIF fsb_TimeoutB.C
+1 1
+.names  fsb_refcnt_i_4__n.BLIF fsb_refcnt_i_5__n.BLIF fsb_timeouta6_1_n
+11 1
+.names  cs_un3_romcs_n.BLIF nAS_FSB_i.BLIF cs_noverlay05_n
+11 1
+.names  fsb_refcnt_i_0__n.BLIF fsb_refcnt_i_1__n.BLIF fsb_timeouta6_2_n
+11 1
+.names  cs_noverlay05_i_n.BLIF cs_noverlay0_i_n.BLIF cs_n_2_0_n
+11 1
+.names  fsb_refcnt_i_2__n.BLIF fsb_refcnt_i_3__n.BLIF fsb_timeouta6_3_n
+11 1
+.names  a_fsb_c_10__n.BLIF a_fsb_i_10__n
+0 1
+.names  fsb_timeouta6_1_n.BLIF fsb_timeouta6_2_n.BLIF fsb_timeouta6_4_n
+11 1
+.names  iobs_ALE1.BLIF iobs_iou0_4_un3_n
+0 1
+.names  CLK_FSB_c.BLIF fsb_TimeoutA.C
+1 1
+.names  fsb_timeouta6_4_n.BLIF fsb_timeouta6_3_n.BLIF fsb_timeouta6_n
+11 1
+.names  iobs_IOU1.BLIF iobs_ALE1.BLIF iobs_iou0_4_un1_n
+11 1
+.names  fsb_TimeoutA.BLIF fsb_timeouta6_n.BLIF fsb_timeoutb_0_sqmuxa_1_n
+11 1
+.names  nUDS_FSB_i.BLIF iobs_iou0_4_un3_n.BLIF iobs_iou0_4_un0_n
+11 1
+.names  fsb_timeoutb_0_sqmuxa_1_n.BLIF nAS_FSB_i.BLIF fsb_timeoutb_0_sqmuxa_n
+11 1
+.names  iobs_iou0_4_un1_n.BLIF iobs_iou0_4_un0_n.BLIF iobs_IOU0.D
+1- 1
+-1 1
+.names  fsb_refcnt_i_0__n.BLIF fsb_RefCnt_0_.D
+1 1
+.names  un1_timeoutb_0__n.BLIF nAS_FSB_i.BLIF un1_nBERR_FSB_1
+11 1
+.names  iobs_IOACTr.BLIF iobs_PS_0_.BLIF iobs_n_47_n
+11 1
+.names  un1_nBERR_FSB_1.BLIF fsb_nDTACKreg.BLIF un1_nBERR_FSB
+11 1
+.names  IORW0_i.BLIF iobs_n_66_n.BLIF iobs_n_48_n
+11 1
+.names  CLK_FSB_c.BLIF fsb_RefCnt_0_.C
+1 1
+.names  iobm_nvma5_1_n.BLIF nVPA_IOB_i.BLIF iobm_nvma5_1_0_n
+11 1
+.names  iobs_IORW1.BLIF iobs_iorw1_i_0_n
+0 1
+.names  a_fsb_c_9__n.BLIF a_fsb_c_13__n.BLIF cs_un14_sndramcswr_1_n
+11 1
+.names  iobs_ALE1.BLIF iobs_iorw1_i_0_n.BLIF iobs_n_51_n
+11 1
+.names  a_fsb_c_15__n.BLIF a_fsb_i_10__n.BLIF cs_un14_sndramcswr_2_n
+11 1
+.names  iobs_n_29_0_n.BLIF iobs_n_64_n.BLIF iobs_n_52_n
+11 1
+.names  nAS_FSB_i.BLIF fsb_ASrf.D
+1 1
+.names  a_fsb_i_14__n.BLIF a_fsb_i_11__n.BLIF cs_un14_sndramcswr_3_n
+11 1
+.names  iobs_IORDReady.BLIF nWE_FSB_c.BLIF iobs_n_53_n
+11 1
+.names  cs_un14_sndramcswr_1_n.BLIF cs_un14_sndramcswr_2_n.BLIF cs_un14_sndramcswr_4_n
+11 1
+.names  iobs_n_66_n.BLIF iobs_n_66_i_n
+0 1
+.names  cs_un14_sndramcswr_3_n.BLIF a_fsb_i_12__n.BLIF cs_un14_sndramcswr_5_n
+11 1
+.names  iobs_n_30_0_n.BLIF iobs_n_66_i_n.BLIF iobs_n_54_n
+11 1
+.names  cs_un14_sndramcswr_4_n.BLIF cs_un14_sndramcswr_5_n.BLIF cs_un14_sndramcswr_n
+11 1
+.names  iobs_ALE1.BLIF iobs_ale15_n.BLIF iobs_n_57_n
+11 1
+.names  iobm_ES_4_.BLIF iobm_G_34.X1
+1 1
+.names  a_fsb_c_9__n.BLIF a_fsb_c_10__n.BLIF cs_un2_sndramcswr_1_n
+11 1
+.names  ALE1_i.BLIF iobs_n_30_0_n.BLIF iobs_n_58_n
+11 1
+.names  a_fsb_c_11__n.BLIF a_fsb_c_12__n.BLIF cs_un2_sndramcswr_2_n
+11 1
+.names  iobs_IOACTr.BLIF iobs_ioactr_i_n
+0 1
+.names  iobm_n_32_n.BLIF iobm_G_34.X2
+1 1
+.names  a_fsb_c_15__n.BLIF a_fsb_c_13__n.BLIF cs_un2_sndramcswr_3_n
+11 1
+.names  iobs_ioactr_i_n.BLIF iobs_PS_1_.BLIF iobs_n_63_n
+11 1
+.names  cs_un2_sndramcswr_1_n.BLIF cs_un2_sndramcswr_2_n.BLIF cs_un2_sndramcswr_4_n
+11 1
+.names  iobs_PS_0_.BLIF iobs_PS_1_.BLIF iobs_ale15_n
+11 1
+.names  cs_un2_sndramcswr_3_n.BLIF a_fsb_c_14__n.BLIF cs_un2_sndramcswr_5_n
+11 1
+.names  ALE1_i.BLIF nWE_FSB_i.BLIF iobs_n_64_n
+11 1
+.names  iobm_ES_3_.BLIF iobm_G_32.X1
+1 1
+.names  cs_un2_sndramcswr_4_n.BLIF cs_un2_sndramcswr_5_n.BLIF cs_un2_sndramcswr_n
+11 1
+.names  CLK_FSB_c.BLIF fsb_ASrf.C
+0 1
+.names  a_fsb_i_20__n.BLIF cs_noverlay1_i_n.BLIF cs_un4_romcs_1_n
+11 1
+.names  ALE0M_i.BLIF ALE0S_i.BLIF N_4_0
+11 1
+.names  iobm_n_30_n.BLIF iobm_G_32.X2
+1 1
+.names  cs_un4_romcs_1_n.BLIF cs_un4_romcs_2_n.BLIF cs_un4_romcs_n
+11 1
+.names  cs_nOverlay1.BLIF cs_un1_ramcs_0__un3_n
+0 1
+.names  a_fsb_c_22__n.BLIF a_fsb_i_20__n.BLIF cs_un3_romcs_1_n
+11 1
+.names  cs_un5_ramcs_n.BLIF cs_nOverlay1.BLIF cs_un1_ramcs_0__un1_n
+11 1
+.names  a_fsb_c_20__n.BLIF a_fsb_c_21__n.BLIF cs_vidramcswr_3_n
+11 1
+.names  cs_un11_ramcs_n.BLIF cs_un1_ramcs_0__un3_n.BLIF cs_un1_ramcs_0__un0_n
+11 1
+.names  iobm_ES_2_.BLIF iobm_G_30.X1
+1 1
+.names  RAMCS.BLIF nWE_FSB_i.BLIF cs_vidramcswr_4_n
+11 1
+.names  cs_un1_ramcs_0__un1_n.BLIF cs_un1_ramcs_0__un0_n.BLIF RAMCS
+1- 1
+-1 1
+.names  cs_vidramcswr_1_n.BLIF cs_vidramcswr_2_n.BLIF cs_vidramcswr_5_n
+11 1
+.names  a_fsb_c_22__n.BLIF a_fsb_i_22__n
+0 1
+.names  iobm_nvma5_1_n.BLIF iobm_G_30.X2
+1 1
+.names  cs_vidramcswr_3_n.BLIF cs_vidramcswr_4_n.BLIF cs_vidramcswr_6_n
+11 1
+.names  a_fsb_i_22__n.BLIF a_fsb_i_23__n.BLIF cs_un5_ramcs_n
+11 1
+.names  cs_vidramcswr_5_n.BLIF cs_vidramcswr_6_n.BLIF cs_vidramcswr_n
+11 1
+.names  iobs_ALE1.BLIF iobs_iol0_4_un3_n
+0 1
+.names  nWE_FSB_i.BLIF ROMCS.BLIF ram_un1_nromwe_1_n
+11 1
+.names  iobs_IOL1.BLIF iobs_ALE1.BLIF iobs_iol0_4_un1_n
+11 1
+.names  iobm_ES_0_.BLIF iobm_G_28.X1
+1 1
+.names  ram_un1_nromwe_1_n.BLIF nAS_FSB_i.BLIF ram_un1_nromwe_n
+11 1
+.names  nLDS_FSB_i.BLIF iobs_iol0_4_un3_n.BLIF iobs_iol0_4_un0_n
+11 1
+.names  nWE_FSB_c.BLIF ROMCS.BLIF ram_un1_nromoe_1_n
+11 1
+.names  iobs_iol0_4_un1_n.BLIF iobs_iol0_4_un0_n.BLIF iobs_IOL0.D
+1- 1
+-1 1
+.names  iobm_ES_1_.BLIF iobm_G_28.X2
+1 1
+.names  ram_un1_nromoe_1_n.BLIF nAS_FSB_i.BLIF ram_un1_nromoe_n
+11 1
+.names  CLK2X_IOB_c.BLIF CLK2X_IOB_i
+0 1
+.names  nWE_FSB_i.BLIF RAMCS.BLIF ram_un1_nramuwe_1_n
+11 1
+.names  iobm_IOS_2_.BLIF iobm_ios_i_2__n
+0 1
+.names  ram_un1_nramuwe_1_n.BLIF nUDS_FSB_i.BLIF ram_un1_nramuwe_n
+11 1
+.names  iobs_PS_0_.BLIF iobs_ps_i_0__n
+0 1
+.names  fsb_n_14_n.BLIF fsb_G_5.X1
+1 1
+.names  nWE_FSB_i.BLIF RAMCS.BLIF ram_un1_nramlwe_1_n
+11 1
+.names  iobs_PS_1_.BLIF iobs_ps_i_1__n
+0 1
+.names  ram_un1_nramlwe_1_n.BLIF nLDS_FSB_i.BLIF ram_un1_nramlwe_n
+11 1
+.names  iobm_un1_nlds_n.BLIF iobm_nLDSreg.D
+0 1
+.names  fsb_RefCnt_2_.BLIF fsb_G_5.X2
+1 1
+.names  nWE_FSB_c.BLIF RAMCS.BLIF ram_un1_nramoe_1_n
+11 1
+.names  iobm_un1_nuds_n.BLIF iobm_nUDSreg.D
+0 1
+.names  ram_un1_nramoe_1_n.BLIF nAS_FSB_i.BLIF ram_un1_nramoe_n
+11 1
+.names  gnd_n_n
+.names  iobs_n_58_n.BLIF iobs_n_58_i_n
+0 1
+.names  A_FSB_8_.BLIF a_fsb_8__n
+1 1
+.names  fsb_n_16_n.BLIF fsb_G_7.X1
+1 1
+.names  iobs_n_53_n.BLIF iobs_n_53_i_n
+0 1
+.names  iobs_n_64_n.BLIF iobs_n_64_i_n
+0 1
+.names  fsb_RefCnt_3_.BLIF fsb_G_7.X2
+1 1
+.names  Ready_IOBS_0.BLIF Ready_IOBS
+0 1
+.names  iobs_n_48_n.BLIF iobs_n_48_i_n
+0 1
+.names  iobs_n_51_n.BLIF iobs_n_51_i_n
+0 1
+.names  fsb_n_18_n.BLIF fsb_G_9.X1
+1 1
+.names  iobs_n_52_n.BLIF iobs_n_52_i_n
+0 1
+.names  cs_n_6_n.BLIF cs_vidramcswr_n.BLIF N_6_0_1
+11 1
+.names  fsb_RefCnt_4_.BLIF fsb_G_9.X2
+1 1
+.names  N_6_0_1.BLIF TimeoutA_i.BLIF N_6_0
+11 1
+.names  iobm_etack_i_n.BLIF nBERR_IOB_c.BLIF iobm_n_54_0_1_n
+11 1
+.names  iobm_n_54_0_1_n.BLIF nDTACK_IOB_c.BLIF iobm_n_54_0_n
+11 1
+.names  fsb_n_20_n.BLIF fsb_G_11.X1
+1 1
+.names  a_fsb_i_23__n.BLIF a_fsb_c_21__n.BLIF cs_un11_ramcs_1_n
+11 1
+.names  cs_un11_ramcs_1_n.BLIF a_fsb_c_22__n.BLIF cs_un11_ramcs_n
+11 1
+.names  fsb_RefCnt_5_.BLIF fsb_G_11.X2
+1 1
+.names  a_fsb_c_16__n.BLIF a_fsb_c_17__n.BLIF cs_vidramcswr_1_n
+11 1
+.names  a_fsb_c_18__n.BLIF a_fsb_c_19__n.BLIF cs_vidramcswr_2_n
+11 1
+.names  iobs_n_47_n.BLIF iobs_n_47_i_n
+0 1
+.names  fsb_RefCnt_0_.BLIF fsb_G_3.X1
+1 1
+.names  iobs_n_15_0_n.BLIF iobs_PS_1_.D
+0 1
+.names  nRES_c.BLIF cs_nOverlay0.AR
+0 1
+.names  iobm_ALE0.BLIF ALE0M_i
+0 1
+.names  cs_nOverlay0.BLIF cs_nOverlay1.D
+1 1
+.names  fsb_RefCnt_1_.BLIF fsb_G_3.X2
+1 1
+.names  iobs_ALE0.BLIF ALE0S_i
+0 1
+.names  iobm_n_38_n.BLIF iobm_n_38_i_n
+0 1
+.names  ASInactive.BLIF cs_nOverlay1.CE
+1 1
+.names  iobm_n_12_0_n.BLIF iobm_nDoutOEreg.D
+0 1
+.names  iobs_IOREQ.BLIF iobm_IOREQr.D
+1 1
+.names  iobm_n_34_n.BLIF iobm_n_34_i_n
+0 1
+.names  CLK_FSB_c.BLIF cs_nOverlay1.C
+1 1
+.names  fsb_G_3.BLIF fsb_RefCnt_1_.D
+1 1
+.names  iobm_n_35_n.BLIF iobm_n_35_i_n
+0 1
+.names  fsb_G_5.BLIF fsb_RefCnt_2_.D
+1 1
+.names  iobm_n_36_n.BLIF iobm_n_36_i_n
+0 1
+.names  fsb_G_7.BLIF fsb_RefCnt_3_.D
+1 1
+.names  iobm_ios_5_0_0__n.BLIF iobm_IOS_0_.D
+0 1
+.names  fsb_G_9.BLIF fsb_RefCnt_4_.D
+1 1
+.names  iobm_n_29_n.BLIF iobm_n_29_i_n
+0 1
+.names  CLK_FSB_c.BLIF cs_nOverlay0.C
+1 1
+.names  fsb_G_11.BLIF fsb_RefCnt_5_.D
+1 1
+.names  iobm_n_31_n.BLIF iobm_n_31_i_n
+0 1
+.names  iobm_n_48_n.BLIF iobm_n_48_i_n
+0 1
+.names  iobm_ios_5_0_1__n.BLIF iobm_IOS_1_.D
+0 1
+.names  iobs_n_57_n.BLIF iobs_n_57_i_n
+0 1
+.names  cs_un14_sndramcswr_n.BLIF cs_un14_sndramcswr_i_n
+0 1
+.names  CLK_FSB_c.BLIF iobs_PS_0_.C
+1 1
+.names  cs_n_6_0_n.BLIF cs_n_6_n
+0 1
+.names  cs_nOverlay0.BLIF cs_noverlay0_i_n
+0 1
+.names  cs_noverlay05_n.BLIF cs_noverlay05_i_n
+0 1
+.names  cs_n_2_0_n.BLIF cs_nOverlay0.D
+0 1
+.names  CLK_FSB_c.BLIF iobs_PS_1_.C
+1 1
+.names  iobs_n_37_0_n.BLIF iobs_n_37_n
+0 1
+.names  iobs_n_54_n.BLIF iobs_n_54_i_n
+0 1
+.names  iobs_n_63_n.BLIF iobs_n_63_i_n
+0 1
+.names  nUDS_FSB_i.BLIF iobs_IOU1.D
+1 1
+.names  iobs_n_30_0_n.BLIF iobs_n_30_n
+0 1
+.names  iobs_Once.BLIF iobs_once_i_n
+0 1
+.names  iobs_Load1.BLIF iobs_IOU1.CE
+1 1
+.names  iobs_n_29_0_n.BLIF iobs_n_29_n
+0 1
+.end

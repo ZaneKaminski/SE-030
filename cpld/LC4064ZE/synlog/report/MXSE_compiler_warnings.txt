@@ -1,0 +1,2 @@
+@W: CL247 :"C:\users\zanek\documents\github\se-030\cpld\cs.v":3:14:3:14|Input port bit 8 of A[23:8] is unused
+

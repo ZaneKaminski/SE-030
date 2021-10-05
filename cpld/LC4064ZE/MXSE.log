@@ -1,0 +1,16 @@
+Starting EDIF2BLIF....
+readEDIF ended normally.
+
+EDIF2BLIF: Warning: Remove floating instance: :
+	A_FSB[8]
+
+Inspect circuit MXSE
+    Number of input ports   : 13
+    Number of output ports  : 17
+    Number of bidir ports   : 0
+    Number of instances     : 439
+    Number of nets          : 467
+
+No design errors found in circuit MXSE
+
+WriteBLIF ended normally.

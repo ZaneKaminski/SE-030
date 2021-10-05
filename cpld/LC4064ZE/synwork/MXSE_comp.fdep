@@ -1,0 +1,139 @@
+#OPTIONS:"|-top|MXSE|-prodtype|synplify_pro|-nostructver|-I|c:\\users\\zanek\\documents\\github\\se-030\\cpld\\lc4064ze\\|-I|C:\\ispLEVER_Classic2_0\\synpbase\\lib|-v2001|-encrypt|-pro|-compiler_compatible|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work"
+#CUR:"C:\\ispLEVER_Classic2_0\\synpbase\\bin64\\c_ver.exe":1401245650
+#CUR:"C:\\ispLEVER_Classic2_0\\synpbase\\lib\\vlog\\umr_capim.v":1401245570
+#CUR:"C:\\ispLEVER_Classic2_0\\synpbase\\lib\\vlog\\scemi_objects.v":1401245322
+#CUR:"C:\\ispLEVER_Classic2_0\\synpbase\\lib\\vlog\\scemi_pipes.svh":1401245322
+#CUR:"C:\\ispLEVER_Classic2_0\\synpbase\\lib\\vlog\\hypermods.v":1401245322
+#CUR:"C:\\ispLEVER_Classic2_0\\ispcpld\\..\\cae_library\\synthesis\\verilog\\mach.v":1336523408
+#CUR:"C:\\users\\zanek\\documents\\github\\se-030\\cpld\\lc4064ze\\mxse_lc4064ze.h":1633421408
+#CUR:"C:\\users\\zanek\\documents\\github\\se-030\\cpld\\fsb.v":1633421491
+#CUR:"C:\\users\\zanek\\documents\\github\\se-030\\cpld\\iobm.v":1633328523
+#CUR:"C:\\users\\zanek\\documents\\github\\se-030\\cpld\\iobs.v":1633417222
+#CUR:"C:\\users\\zanek\\documents\\github\\se-030\\cpld\\ram.v":1633421693
+#CUR:"C:\\users\\zanek\\documents\\github\\se-030\\cpld\\cs.v":1633419985
+#CUR:"C:\\users\\zanek\\documents\\github\\se-030\\cpld\\mxse.v":1633421291
+#numinternalfiles:4
+#defaultlanguage:verilog
+0			"C:\ispLEVER_Classic2_0\ispcpld\..\cae_library\synthesis\verilog\mach.v" verilog
+1			"C:\users\zanek\documents\github\se-030\cpld\lc4064ze\mxse_lc4064ze.h" verilog
+2			"C:\users\zanek\documents\github\se-030\cpld\fsb.v" verilog
+3			"C:\users\zanek\documents\github\se-030\cpld\iobm.v" verilog
+4			"C:\users\zanek\documents\github\se-030\cpld\iobs.v" verilog
+5			"C:\users\zanek\documents\github\se-030\cpld\ram.v" verilog
+6			"C:\users\zanek\documents\github\se-030\cpld\cs.v" verilog
+7			"C:\users\zanek\documents\github\se-030\cpld\mxse.v" verilog
+#Dependency Lists(Uses List)
+0 -1
+1 -1
+2 -1
+3 -1
+4 -1
+5 -1
+6 -1
+7 6 5 4 3 2
+#Dependency Lists(Users Of)
+0 -1
+1 -1
+2 7
+3 7
+4 7
+5 7
+6 7
+7 -1
+#Design Unit to File Association
+module work MUX2 0
+module work MUX4 0
+module work AND2 0
+module work AND3 0
+module work AND4 0
+module work AND5 0
+module work AND6 0
+module work AND7 0
+module work AND8 0
+module work BI_DIR 0
+module work BUFF 0
+module work BUFTH 0
+module work BUFTI 0
+module work BUFTL 0
+module work CLKI 0
+module work DFF 0
+module work DFFC 0
+module work DFFCR 0
+module work DFFCRH 0
+module work DFFCRS 0
+module work DFFCRSH 0
+module work DFFCS 0
+module work DFFCSH 0
+module work DFFR 0
+module work DFFRH 0
+module work DFFRS 0
+module work DFFRSH 0
+module work DFFS 0
+module work DFFSH 0
+module work DLAT 0
+module work DLATR 0
+module work DLATRH 0
+module work DLATRS 0
+module work DLATRSH 0
+module work DLATS 0
+module work DLATSH 0
+module work VCC 0
+module work GND 0
+module work GSRBUF 0
+module work IBUF 0
+module work INV 0
+module work INVTH 0
+module work LVPECLIN 0
+module work LVPECLOUT 0
+module work LVPECLTRI 0
+module work INVTL 0
+module work NAN2 0
+module work NAN3 0
+module work NAN4 0
+module work NAN5 0
+module work NAN6 0
+module work NAN7 0
+module work NAN8 0
+module work NOR2 0
+module work NOR3 0
+module work NOR4 0
+module work NOR5 0
+module work NOR6 0
+module work NOR7 0
+module work NOR8 0
+module work OBUF 0
+module work OR2 0
+module work OR3 0
+module work OR4 0
+module work OR5 0
+module work OR6 0
+module work OR7 0
+module work OR8 0
+module work TFF 0
+module work TFFR 0
+module work TFFRH 0
+module work TFFRS 0
+module work TFFRSH 0
+module work TFFS 0
+module work TFFSH 0
+module work XOR2 0
+module work XORSOFT 0
+module work SPLL 0
+module work STDPLL 0
+module work STDPLLX 0
+module work LVDSIN 0
+module work LVDSOUT 0
+module work LVDSTRI 0
+module work LVDSIO 0
+module work BLVDSIN 0
+module work BLVDSOUT 0
+module work BLVDSTRI 0
+module work BLVDSIO 0
+module work PG 0
+module work OSCTIMER 0
+module work FSB 2
+module work IOBM 3
+module work IOBS 4
+module work RAM 5
+module work CS 6
+module work MXSE 7
