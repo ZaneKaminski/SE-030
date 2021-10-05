@@ -48,8 +48,10 @@ module FSB(
 		if (ASInactive) begin
 			TimeoutA <= 0;
 			TimeoutB <= 0;
-		end else if (ASActive && RefCnt[4:0]==0) TimeoutA <= 1;
-		else if (ASActive && RefCnt==0 && TimeoutArmed) TimeoutB <= 1;
+		end else if (ASActive) begin
+			if (RefCnt[4:0]==0) TimeoutA <= 1;
+			if (RefCnt==0 && TimeoutArmed) TimeoutB <= 1;
+		end
 	end
 
 endmodule

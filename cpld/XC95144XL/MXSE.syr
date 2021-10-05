@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: MXSE.prj
 
@@ -137,9 +137,10 @@ Performing bidirectional port resolution...
 
 Synthesizing Unit <CS>.
     Related source file is "../CS.v".
-    Found 1-bit register for signal <nOverlay>.
+    Found 1-bit register for signal <nOverlay0>.
+    Found 1-bit register for signal <nOverlay1>.
     Summary:
-	inferred   1 D-type flip-flop(s).
+	inferred   2 D-type flip-flop(s).
 Unit <CS> synthesized.
 
 
@@ -147,18 +148,19 @@ Synthesizing Unit <RAM>.
     Related source file is "../RAM.v".
     Found finite state machine <FSM_0> for signal <RS>.
     -----------------------------------------------------------------------
-    | States             | 10                                             |
-    | Transitions        | 23                                             |
-    | Inputs             | 7                                              |
-    | Outputs            | 11                                             |
+    | States             | 8                                              |
+    | Transitions        | 21                                             |
+    | Inputs             | 6                                              |
+    | Outputs            | 9                                              |
     | Clock              | CLK                       (rising_edge)        |
-    | Power Up State     | 0000                                           |
+    | Power Up State     | 000                                            |
     | Encoding           | automatic                                      |
     | Implementation     | automatic                                      |
     -----------------------------------------------------------------------
     Found 1-bit register for signal <nCAS>.
     Found 1-bit register for signal <Once>.
-    Found 1-bit register for signal <RAMEN>.
+    Found 1-bit register for signal <RAMDIS1>.
+    Found 1-bit register for signal <RAMDIS2>.
     Found 1-bit register for signal <RAMReady>.
     Found 1-bit register for signal <RASEL>.
     Found 1-bit register for signal <RefRAS>.
@@ -261,8 +263,8 @@ Macro Statistics
 # Counters                                             : 2
  5-bit up counter                                      : 1
  8-bit up counter                                      : 1
-# Registers                                            : 39
- 1-bit register                                        : 39
+# Registers                                            : 41
+ 1-bit register                                        : 41
 
 =========================================================================
 
@@ -295,21 +297,19 @@ Optimizing FSM <iobs/PS/FSM> on signal <PS[1:2]> with johnson encoding.
  01    | 10
 -------------------
 Analyzing FSM <FSM_0> for best encoding.
-Optimizing FSM <ram/RS/FSM> on signal <RS[1:10]> with one-hot encoding.
----------------------
+Optimizing FSM <ram/RS/FSM> on signal <RS[1:3]> with gray encoding.
+-------------------
  State | Encoding
----------------------
- 0000  | 0000000001
- 0101  | 0000000010
- 1000  | 0000000100
- 1011  | 0000001000
- 0110  | 0000010000
- 0111  | 0000100000
- 1100  | 0001000000
- 1101  | 0010000000
- 1110  | 0100000000
- 1111  | 1000000000
----------------------
+-------------------
+ 000   | 000
+ 010   | 001
+ 101   | 011
+ 001   | 010
+ 011   | 110
+ 100   | 111
+ 110   | 101
+ 111   | 100
+-------------------
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -319,8 +319,8 @@ Macro Statistics
 # Counters                                             : 2
  5-bit up counter                                      : 1
  8-bit up counter                                      : 1
-# Registers                                            : 27
- Flip-Flops                                            : 27
+# Registers                                            : 28
+ Flip-Flops                                            : 28
 
 =========================================================================
 
@@ -331,24 +331,19 @@ Macro Statistics
 Optimizing unit <MXSE> ...
 
 Optimizing unit <CS> ...
-  implementation constraint: INIT=r	 : nOverlay
+  implementation constraint: INIT=r	 : nOverlay1
+  implementation constraint: INIT=r	 : nOverlay0
 
 Optimizing unit <RAM> ...
   implementation constraint: INIT=r	 : RAMReady
   implementation constraint: INIT=r	 : RASEL
-  implementation constraint: INIT=r	 : RAMEN
+  implementation constraint: INIT=r	 : RAMDIS1
   implementation constraint: INIT=r	 : RefRAS
+  implementation constraint: INIT=r	 : RAMDIS2
   implementation constraint: INIT=r	 : Once
   implementation constraint: INIT=r	 : RS_FSM_FFd1
   implementation constraint: INIT=r	 : RS_FSM_FFd2
   implementation constraint: INIT=r	 : RS_FSM_FFd3
-  implementation constraint: INIT=r	 : RS_FSM_FFd4
-  implementation constraint: INIT=r	 : RS_FSM_FFd5
-  implementation constraint: INIT=r	 : RS_FSM_FFd6
-  implementation constraint: INIT=r	 : RS_FSM_FFd7
-  implementation constraint: INIT=r	 : RS_FSM_FFd8
-  implementation constraint: INIT=r	 : RS_FSM_FFd9
-  implementation constraint: INIT=s	 : RS_FSM_FFd10
 
 Optimizing unit <IOBS> ...
   implementation constraint: INIT=r	 : IOACTr
@@ -411,38 +406,35 @@ Design Statistics
 # IOs                              : 67
 
 Cell Usage :
-# BELS                             : 563
-#      AND2                        : 182
-#      AND3                        : 19
-#      AND4                        : 12
-#      AND5                        : 2
+# BELS                             : 539
+#      AND2                        : 165
+#      AND3                        : 25
+#      AND4                        : 8
+#      AND5                        : 1
 #      AND6                        : 3
-#      AND7                        : 1
-#      AND8                        : 1
-#      GND                         : 4
-#      INV                         : 234
-#      OR2                         : 75
-#      OR3                         : 13
+#      AND8                        : 2
+#      GND                         : 5
+#      INV                         : 222
+#      OR2                         : 89
+#      OR3                         : 4
 #      OR4                         : 2
-#      OR6                         : 1
-#      OR7                         : 1
 #      VCC                         : 1
 #      XOR2                        : 12
-# FlipFlops/Latches                : 71
-#      FD                          : 54
-#      FDCE                        : 17
+# FlipFlops/Latches                : 67
+#      FD                          : 47
+#      FDCE                        : 20
 # IO Buffers                       : 67
 #      IBUF                        : 35
 #      OBUF                        : 32
 =========================================================================
 
 
-Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 3.71 secs
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 3.76 secs
  
 --> 
 
-Total memory usage is 4513572 kilobytes
+Total memory usage is 4513568 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

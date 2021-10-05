@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2021-10-04T03:52:58</DateModified>
+  <DateModified>2021-10-05T03:35:25</DateModified>
   <ModuleName>MXSE</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>C:/Users/zanek/Documents/GitHub/SE-030/cpld/XC95144XL/iseconfig/MXSE.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/zanek/Documents/GitHub/SE-030/cpld/XC95144XL</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>C:/Users/zanek/Documents/GitHub/SE-030/cpld/XC95144XL\</ImplementationReportsDirectory>
   <DateInitialized>2021-10-04T03:52:58</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

@@ -9,135 +9,132 @@ module RAM(
 	output [11:0] RA, output nRAS, output reg nCAS,
 	output nLWE, output nUWE, output nOE, output nROMCS, output nROMWE);
 	
-	reg [3:0] RS = 0;
-	reg RAMReady = 0;
+	/* RAM control state */
+	reg [2:0] RS = 0;
 	reg Once = 0;
-	reg RASEL = 0;
-	reg RAMEN = 0;
+	reg RAMReady = 0;
+	reg RASEL = 0; // RASEL controls /CAS signal
+	
+	/* Refresh state */
+	reg RAMDIS1 = 0;
+	reg RAMDIS2 = 0;
+	wire RAMDIS = RAMDIS1 || RAMDIS2;
+	wire RAMEN = ~RAMDIS;
 	reg RefRAS = 0;
 
 	assign nROMCS = ~ROMCS;
 	assign nRAS =   ~((~nAS && RAMCS && RAMEN) || RefRAS);
-	assign nOE =    ~(~nAS &&  nWE && (~nLDS || ~nUDS) && (RAMCS || ROMCS));
+	assign nOE =    ~(~nAS &&  nWE);
 	assign nLWE =   ~(~nAS && ~nWE && ~nLDS && RAMEN);
 	assign nUWE =   ~(~nAS && ~nWE && ~nUDS && RAMEN);
-	assign nROMWE = ~(~nAS && ~nWE && (~nLDS || ~nUDS) && ROMCS);
+	assign nROMWE = ~(~nAS && ~nWE && ROMCS);
 
 	assign RA[11] = A[19];
 	assign RA[10] = A[21];
 	assign RA[9:0] = RASEL ? {A[20], A[09:01]} : {A[19], A[18:10]};
 
-
 	always @(posedge CLK) begin
-		if (RS==0 && ASActive && RAMCS) Once <= 1;
-		else if (ASInactive) Once <= 0;
+		if (ASInactive) Once <= 0;
+		else if (RS==0 && ASActive && RAMCS) Once <= 1;
+	end
+	always @(posedge CLK) begin
+		if (ASInactive) RAMDIS2 <= 0;
+		else if ((RS==0 && ASActive && RefUrgent && Once && RAMCS) || 
+		         (RS==7 && ASActive && RefUrgent)) RAMDIS2 <= 1;
 	end
 	always @(posedge CLK) begin
 		if (RS==0) begin
-			if (ASActive && RAMCS && ~Once) begin
+			if (ASInactive && RefUrgent) begin
+				// Refresh starting during bus idle
+				RS <= 2;
+				RAMReady <= 0;
+				RASEL <= 1;
+				RAMDIS1 <= 1;
+			end else if (ASActive && ~RAMCS && RefReq) begin
+				// Refresh starting during non-RAM cycle
+				RS <= 2;
+				RAMReady <= 0;
+				RASEL <= 1;
+				RAMDIS1 <= 1;
+			end else if (ASActive &&  RAMCS && ~Once) begin
+				// RAM access cycle
 				RS <= 5;
 				RAMReady <= 0;
 				RASEL <= 1;
-				RAMEN <= 1;
-			end else if (ASActive && ((RAMCS && RefUrgent) || (~RAMCS && RefReq))) begin
-				RS <= 8;
+				RAMDIS1 <= 0;
+			end else if (ASActive &&  RAMCS && RefUrgent) begin
+				// Refresh during RAM /AS cycle
+				RS <= 1;
 				RAMReady <= 0;
 				RASEL <= 0;
-				RAMEN <= 0;
-			end else if (ASActive && ROMCS && RefReq) begin
-				RS <= 11;
-				RAMReady <= 0;
-				RASEL <= 1;
-				RAMEN <= 0;
-			end else if (ASInactive && RAMCS && RefUrgent) begin
-				RS <= 11;
-				RAMReady <= 0;
-				RASEL <= 1;
-				RAMEN <= 0;
+				RAMDIS1 <= 1;
 			end else begin
+				// No RAM access/refresh requests pending
 				RS <= 0;
 				RAMReady <= 1;
 				RASEL <= 0;
-				RAMEN <= 1;
+				RAMDIS1 <= 0;
 			end
+			RefRAS <= 0;
+		end else if (RS==1) begin
+			RS <= 2;
+			RAMReady <= 0;
+			RAMDIS1 <= 1;
+			RASEL <= 1;
+			RefRAS <= 0;
+		end else if (RS==2) begin
+			RS <= 3;
+			RAMReady <= 0;
+			RAMDIS1 <= 1;
+			RASEL <= 1;
+			RefRAS <= 1;
+		end else if (RS==3) begin
+			RS <= 4;
+			RAMReady <= 0;
+			RAMDIS1 <= 1;
+			RASEL <= 0;
+			RefRAS <= 1;
+		end else if (RS==4) begin
+			RS <= 6;
+			RAMReady <= 0;
+			RAMDIS1 <= 1;
+			RASEL <= 0;
 			RefRAS <= 0;
 		end else if (RS==5) begin
 			RS <= 6;
 			RAMReady <= 0;
-			RAMEN <= 1;
+			RAMDIS1 <= 0;
 			RASEL <= 1;
 			RefRAS <= 0;
 		end else if (RS==6) begin
 			RS <= 7;
 			RAMReady <= 0;
-			RAMEN <= 1;
+			//RAMDIS1 <= 0;
 			RASEL <= 0;
 			RefRAS <= 0;
 		end else if (RS==7) begin
 			if (ASActive && RefUrgent) begin
-				RS <= 8;
+				RS <= 1;
 				RAMReady <= 0;
-				RAMEN <= 0;
+				RAMDIS1 <= 1;
 				RASEL <= 0;
 			end else if (ASInactive && RefUrgent) begin
-				RS <= 11;
+				RS <= 2;
 				RAMReady <= 0;
-				RAMEN <= 0;
+				RAMDIS1 <= 1;
 				RASEL <= 1;
 			end else begin
 				RS <= 0;
 				RAMReady <= 1;
-				RAMEN <= 1;
+				RAMDIS1 <= 0;
 				RASEL <= 0;
 			end
-			RefRAS <= 0;
-		end else if (RS==8) begin
-			RS <= 11;
-			RAMReady <= 0;
-			RAMEN <= 0;
-			RASEL <= 1;
-			RefRAS <= 0;
-		end else if (RS==11) begin
-			RS <= 12;
-			RAMReady <= 0;
-			RAMEN <= 0;
-			RASEL <= 1;
-			RefRAS <= 1;
-		end else if (RS==12) begin
-			RS <= 13;
-			RAMReady <= 0;
-			RAMEN <= 0;
-			RASEL <= 0;
-			RefRAS <= 1;
-		end else if (RS==13) begin
-			RS <= 14;
-			RAMReady <= 0;
-			RAMEN <= 0;
-			RASEL <= 0;
-			RefRAS <= 0;
-		end else if (RS==14) begin
-			RS <= 15;
-			RAMReady <= 0;
-			RAMEN <= 0;
-			RASEL <= 0;
-			RefRAS <= 0;
-		end else if (RS==15) begin
-			RS <= 0;
-			RAMReady <= 1;
-			RAMEN <= 1;
-			RASEL <= 0;
-			RefRAS <= 0;
-		end else begin
-			RS <= 0;
-			RAMReady <= 0;
-			RAMEN <= 1;
-			RASEL <= 0;
 			RefRAS <= 0;
 		end
 	end
 	always @(negedge CLK) begin nCAS <= ~RASEL; end
 
-	assign RefAck = RS[3]; // RS8-RS15
+	assign RefAck = RS==2 || RS==3;
 
 	assign Ready = RAMCS ? RAMReady : 1;
 

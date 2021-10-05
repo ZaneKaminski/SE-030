@@ -42,12 +42,12 @@ module MXSE(
 	
 	wire IOCS, IACS, ROMCS, RAMCS, SndRAMCSWR;
 	CS cs(
-		/* High-order address input */
-		A_FSB[23:08], CLK_FSB, nRES, nWE_FSB, ASActive,
+		/* MC68HC000 interface */
+		A_FSB[23:08], CLK_FSB, nRES, nWE_FSB,
+		/* FSB interface */
+		ASActive, ASInactive,
 		/* Device select outputs */
-		IOCS, IACS, ROMCS, RAMCS,
-		/* Sound RAM write select output */
-		SndRAMCSWR);
+		IOCS, IACS, ROMCS, RAMCS, SndRAMCSWR);
 
 	wire Ready_RAM;
 	RAM ram(
@@ -80,7 +80,7 @@ module MXSE(
 		ALE0S, IORW0, IOL0, IOU0,
 		/* FIFO secondary level control */
 		ALE1);
-
+		
 	IOBM iobm(
 		/* PDS interface */
 		CLK2X_IOB, CLK_IOB, E_IOB,
@@ -93,7 +93,7 @@ module MXSE(
 
 	wire TimeoutA, TimeoutB;
 	wire Ready = Ready_IOBS && Ready_RAM && (~SndRAMCSWR ? TimeoutA : 1);
-	assign nBERR_FSB = ~(~nAS_FSB && ((IOCS && ~nBERR_IOB) || (~IOCS && TimeoutB)));
+	assign nBERR_FSB = ~(~nAS_FSB && nDTACK_FSB && nVPA_FSB && ((IOCS && ~nBERR_IOB) || (~IOCS && TimeoutB)));
 	FSB fsb(
 		/* MC68HC000 interface */
 		CLK_FSB, nAS_FSB, nDTACK_FSB, nVPA_FSB, 
