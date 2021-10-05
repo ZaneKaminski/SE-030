@@ -1,21 +1,21 @@
 #--  Synopsys, Inc.
 #--  Version I-2014.03LC 
-#--  Project file C:\users\zanek\documents\github\se-030\cpld\lc4064ze\scratchproject.prs
+#--  Project file C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE\scratchproject.prs
 
 #project files
 add_file -verilog "C:/ispLEVER_Classic2_0/ispcpld/../cae_library/synthesis/verilog/mach.v"
-add_file -verilog "C:/users/zanek/documents/github/se-030/cpld/lc4064ze/mxse_lc4064ze.h"
-add_file -verilog "C:/users/zanek/documents/github/se-030/cpld/fsb.v"
-add_file -verilog "C:/users/zanek/documents/github/se-030/cpld/iobm.v"
-add_file -verilog "C:/users/zanek/documents/github/se-030/cpld/iobs.v"
-add_file -verilog "C:/users/zanek/documents/github/se-030/cpld/ram.v"
-add_file -verilog "C:/users/zanek/documents/github/se-030/cpld/cs.v"
-add_file -verilog "C:/users/zanek/documents/github/se-030/cpld/mxse.v"
+add_file -verilog "C:/Users/zanek/Documents/GitHub/SE-030/cpld/LC4064ZE/mxse_lc4064ze.h"
+add_file -verilog "C:/Users/zanek/Documents/GitHub/SE-030/cpld/fsb.v"
+add_file -verilog "C:/Users/zanek/Documents/GitHub/SE-030/cpld/iobm.v"
+add_file -verilog "C:/Users/zanek/Documents/GitHub/SE-030/cpld/iobs.v"
+add_file -verilog "C:/Users/zanek/Documents/GitHub/SE-030/cpld/ram.v"
+add_file -verilog "C:/Users/zanek/Documents/GitHub/SE-030/cpld/cs.v"
+add_file -verilog "C:/Users/zanek/Documents/GitHub/SE-030/cpld/mxse.v"
 
 
 
-#implementation: "lc4064ze"
-impl -add C:\users\zanek\documents\github\se-030\cpld\lc4064ze -type fpga
+#implementation: "LC4064ZE"
+impl -add C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE -type fpga
 
 #
 #implementation attributes
@@ -62,8 +62,8 @@ set_option -auto_infer_blackbox 0
 set_option -write_apr_constraint 1
 
 #set result format/file last
-project -result_file "C:/users/zanek/documents/github/se-030/cpld/lc4064ze/MXSE.edi"
+project -result_file "C:/Users/zanek/Documents/GitHub/SE-030/cpld/LC4064ZE/MXSE.edi"
 
 #set log file 
-set_option log_file "C:/users/zanek/documents/github/se-030/cpld/lc4064ze/mxse.srf" 
-impl -active "lc4064ze"
+set_option log_file "C:/Users/zanek/Documents/GitHub/SE-030/cpld/LC4064ZE/mxse.srf" 
+impl -active "LC4064ZE"

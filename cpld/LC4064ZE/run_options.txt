@@ -1,8 +1,6 @@
 #--  Synopsys, Inc.
 #--  Version I-2014.03LC 
-#--  Project file C:\users\zanek\documents\github\se-030\cpld\lc4064ze\run_options.txt
-#--  Written on Tue Oct 05 04:15:33 2021
-
+#--  Project file C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE\run_options.txt
 
 #project files
 add_file -verilog "C:/ispLEVER_Classic2_0/ispcpld/../cae_library/synthesis/verilog/mach.v"
@@ -16,8 +14,8 @@ add_file -verilog "../mxse.v"
 
 
 
-#implementation: "lc4064ze"
-impl -add lc4064ze -type fpga
+#implementation: "LC4064ZE"
+impl -add LC4064ZE -type fpga
 
 #
 #implementation attributes
@@ -67,5 +65,5 @@ set_option -write_apr_constraint 1
 project -result_file "./MXSE.edi"
 
 #set log file 
-set_option log_file "C:/users/zanek/documents/github/se-030/cpld/lc4064ze/mxse.srf" 
-impl -active "lc4064ze"
+set_option log_file "C:/Users/zanek/Documents/GitHub/SE-030/cpld/LC4064ZE/mxse.srf" 
+impl -active "LC4064ZE"

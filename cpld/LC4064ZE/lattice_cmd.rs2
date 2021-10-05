@@ -1,0 +1,1 @@
+-nodal -src mxse_lc4064ze.bl5 -type BLIF -presrc mxse_lc4064ze.bl3 -crf mxse_lc4064ze.crf -sif mxse_lc4064ze.sif -devfile "C:/ispLEVER_Classic2_0/ispcpld/dat/lc4k/m4e_64_64.dev" -lci mxse_lc4064ze.lct

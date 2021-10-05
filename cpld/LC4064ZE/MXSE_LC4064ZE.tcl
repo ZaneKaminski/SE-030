@@ -487,3 +487,368 @@ if [runCmd "\"$cpld_bin/timing\" -prj \"mxse_lc4064ze\" -tti \"mxse_lc4064ze.tt4
 
 ########## Tcl recorder end at 10/05/21 04:18:15 ###########
 
+
+########## Tcl recorder starts at 10/05/21 04:27:42 ##########
+
+# Commands to make the Process: 
+# Post-Fit Pinouts
+# - none -
+# Application to view the Process: 
+# Post-Fit Pinouts
+if [catch {open lattice_cmd.rs2 w} rspFile] {
+	puts stderr "Cannot create response file lattice_cmd.rs2: $rspFile"
+} else {
+	puts $rspFile "-src mxse_lc4064ze.tt4 -type PLA -devfile \"$install_dir/ispcpld/dat/lc4k/m4e_64_64.dev\" -postfit -lci mxse_lc4064ze.lco
+"
+	close $rspFile
+}
+if [runCmd "\"$cpld_bin/lciedit\" @lattice_cmd.rs2"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/05/21 04:27:42 ###########
+
+
+########## Tcl recorder starts at 10/05/21 04:29:11 ##########
+
+# Commands to make the Process: 
+# Post-Fit Pinouts
+# - none -
+# Application to view the Process: 
+# Post-Fit Pinouts
+if [catch {open lattice_cmd.rs2 w} rspFile] {
+	puts stderr "Cannot create response file lattice_cmd.rs2: $rspFile"
+} else {
+	puts $rspFile "-src mxse_lc4064ze.tt4 -type PLA -devfile \"$install_dir/ispcpld/dat/lc4k/m4e_64_64.dev\" -postfit -lci mxse_lc4064ze.lco
+"
+	close $rspFile
+}
+if [runCmd "\"$cpld_bin/lciedit\" @lattice_cmd.rs2"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/05/21 04:29:11 ###########
+
+
+########## Tcl recorder starts at 10/05/21 04:31:50 ##########
+
+# Commands to make the Process: 
+# Constraint Editor
+if [runCmd "\"$cpld_bin/edif2blf\" -edf MXSE.edi -out MXSE.bl0 -err automake.err -log MXSE.log -prj mxse_lc4064ze -lib \"$install_dir/ispcpld/dat/mach.edn\" -net_Vcc VCC -net_GND GND -nbx -dse -tlw -cvt YES -xor"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/mblifopt\" MXSE.bl0 -collapse none -reduce none -err automake.err  -keepwires"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/mblflink\" \"MXSE.bl1\" -o \"mxse_lc4064ze.bl2\" -omod \"mxse_lc4064ze\"  -err \"automake.err\""] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/impsrc\"  -prj mxse_lc4064ze -lci mxse_lc4064ze.lct -log mxse_lc4064ze.imp -err automake.err -tti mxse_lc4064ze.bl2 -dir $proj_dir"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/abelvci\" -vci mxse_lc4064ze.lct -blifopt mxse_lc4064ze.b2_"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/mblifopt\" mxse_lc4064ze.bl2 -sweep -mergefb -err automake.err -o mxse_lc4064ze.bl3 @mxse_lc4064ze.b2_ "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/abelvci\" -vci mxse_lc4064ze.lct -dev lc4k -diofft mxse_lc4064ze.d0"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/mdiofft\" mxse_lc4064ze.bl3 -family AMDMACH -idev van -o mxse_lc4064ze.bl4 -oxrf mxse_lc4064ze.xrf -err automake.err @mxse_lc4064ze.d0 "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/abelvci\" -vci mxse_lc4064ze.lct -dev lc4k -prefit mxse_lc4064ze.l0"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/prefit\" -blif -inp mxse_lc4064ze.bl4 -out mxse_lc4064ze.bl5 -err automake.err -log mxse_lc4064ze.log -mod MXSE @mxse_lc4064ze.l0  -sc"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/blifstat\" -i mxse_lc4064ze.bl5 -o mxse_lc4064ze.sif"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+# Application to view the Process: 
+# Constraint Editor
+if [catch {open lattice_cmd.rs2 w} rspFile] {
+	puts stderr "Cannot create response file lattice_cmd.rs2: $rspFile"
+} else {
+	puts $rspFile "-nodal -src mxse_lc4064ze.bl5 -type BLIF -presrc mxse_lc4064ze.bl3 -crf mxse_lc4064ze.crf -sif mxse_lc4064ze.sif -devfile \"$install_dir/ispcpld/dat/lc4k/m4e_64_64.dev\" -lci mxse_lc4064ze.lct
+"
+	close $rspFile
+}
+if [runCmd "\"$cpld_bin/lciedit\" @lattice_cmd.rs2"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/05/21 04:31:50 ###########
+
+
+########## Tcl recorder starts at 10/05/21 04:35:37 ##########
+
+# Commands to make the Process: 
+# Fit Design
+if [catch {open mxse_lc4064ze.rs1 w} rspFile] {
+	puts stderr "Cannot create response file mxse_lc4064ze.rs1: $rspFile"
+} else {
+	puts $rspFile "-i mxse_lc4064ze.bl5 -lci mxse_lc4064ze.lct -d m4e_64_64 -lco mxse_lc4064ze.lco -html_rpt -fti mxse_lc4064ze.fti -fmt PLA -tto mxse_lc4064ze.tt4 -nojed -eqn mxse_lc4064ze.eq3 -tmv NoInput.tmv
+-rpt_num 1
+"
+	close $rspFile
+}
+if [catch {open mxse_lc4064ze.rs2 w} rspFile] {
+	puts stderr "Cannot create response file mxse_lc4064ze.rs2: $rspFile"
+} else {
+	puts $rspFile "-i mxse_lc4064ze.bl5 -lci mxse_lc4064ze.lct -d m4e_64_64 -lco mxse_lc4064ze.lco -html_rpt -fti mxse_lc4064ze.fti -fmt PLA -tto mxse_lc4064ze.tt4 -eqn mxse_lc4064ze.eq3 -tmv NoInput.tmv
+-rpt_num 1
+"
+	close $rspFile
+}
+if [runCmd "\"$cpld_bin/lpf4k\" \"@mxse_lc4064ze.rs2\""] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+file delete mxse_lc4064ze.rs1
+file delete mxse_lc4064ze.rs2
+if [runCmd "\"$cpld_bin/tda\" -i mxse_lc4064ze.bl5 -o mxse_lc4064ze.tda -lci mxse_lc4064ze.lct -dev m4e_64_64 -family lc4k -mod MXSE -ovec NoInput.tmv -err tda.err "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/synsvf\" -exe \"$install_dir/ispvmsystem/ispufw\" -prj mxse_lc4064ze -if mxse_lc4064ze.jed -j2s -log mxse_lc4064ze.svl "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/05/21 04:35:37 ###########
+
+
+########## Tcl recorder starts at 10/05/21 04:36:09 ##########
+
+# Commands to make the Process: 
+# Constraint Editor
+if [runCmd "\"$cpld_bin/blifstat\" -i mxse_lc4064ze.bl5 -o mxse_lc4064ze.sif"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+# Application to view the Process: 
+# Constraint Editor
+if [catch {open lattice_cmd.rs2 w} rspFile] {
+	puts stderr "Cannot create response file lattice_cmd.rs2: $rspFile"
+} else {
+	puts $rspFile "-nodal -src mxse_lc4064ze.bl5 -type BLIF -presrc mxse_lc4064ze.bl3 -crf mxse_lc4064ze.crf -sif mxse_lc4064ze.sif -devfile \"$install_dir/ispcpld/dat/lc4k/m4e_64_64.dev\" -lci mxse_lc4064ze.lct
+"
+	close $rspFile
+}
+if [runCmd "\"$cpld_bin/lciedit\" @lattice_cmd.rs2"] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/05/21 04:36:09 ###########
+
+
+########## Tcl recorder starts at 10/05/21 04:39:22 ##########
+
+# Commands to make the Process: 
+# Fit Design
+if [catch {open mxse_lc4064ze.rs1 w} rspFile] {
+	puts stderr "Cannot create response file mxse_lc4064ze.rs1: $rspFile"
+} else {
+	puts $rspFile "-i mxse_lc4064ze.bl5 -lci mxse_lc4064ze.lct -d m4e_64_64 -lco mxse_lc4064ze.lco -html_rpt -fti mxse_lc4064ze.fti -fmt PLA -tto mxse_lc4064ze.tt4 -nojed -eqn mxse_lc4064ze.eq3 -tmv NoInput.tmv
+-rpt_num 1
+"
+	close $rspFile
+}
+if [catch {open mxse_lc4064ze.rs2 w} rspFile] {
+	puts stderr "Cannot create response file mxse_lc4064ze.rs2: $rspFile"
+} else {
+	puts $rspFile "-i mxse_lc4064ze.bl5 -lci mxse_lc4064ze.lct -d m4e_64_64 -lco mxse_lc4064ze.lco -html_rpt -fti mxse_lc4064ze.fti -fmt PLA -tto mxse_lc4064ze.tt4 -eqn mxse_lc4064ze.eq3 -tmv NoInput.tmv
+-rpt_num 1
+"
+	close $rspFile
+}
+if [runCmd "\"$cpld_bin/lpf4k\" \"@mxse_lc4064ze.rs2\""] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+file delete mxse_lc4064ze.rs1
+file delete mxse_lc4064ze.rs2
+if [runCmd "\"$cpld_bin/tda\" -i mxse_lc4064ze.bl5 -o mxse_lc4064ze.tda -lci mxse_lc4064ze.lct -dev m4e_64_64 -family lc4k -mod MXSE -ovec NoInput.tmv -err tda.err "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+if [runCmd "\"$cpld_bin/synsvf\" -exe \"$install_dir/ispvmsystem/ispufw\" -prj mxse_lc4064ze -if mxse_lc4064ze.jed -j2s -log mxse_lc4064ze.svl "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/05/21 04:39:22 ###########
+
+
+########## Tcl recorder starts at 10/05/21 04:39:29 ##########
+
+# Commands to make the Process: 
+# Timing Analysis
+# - none -
+# Application to view the Process: 
+# Timing Analysis
+if [runCmd "\"$cpld_bin/timing\" -prj \"mxse_lc4064ze\" -tti \"mxse_lc4064ze.tt4\" -gui -dir \"$proj_dir\""] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/05/21 04:39:29 ###########
+
+
+########## Tcl recorder starts at 10/05/21 04:39:33 ##########
+
+# Commands to make the Process: 
+# Fitter Report (HTML)
+if [runCmd "\"$cpld_bin/synsvf\" -exe \"$install_dir/ispvmsystem/ispufw\" -prj mxse_lc4064ze -if mxse_lc4064ze.jed -j2s -log mxse_lc4064ze.svl "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/05/21 04:39:33 ###########
+
+
+########## Tcl recorder starts at 10/05/21 04:39:49 ##########
+
+# Commands to make the Process: 
+# Fitter Report (Text)
+if [runCmd "\"$cpld_bin/synsvf\" -exe \"$install_dir/ispvmsystem/ispufw\" -prj mxse_lc4064ze -if mxse_lc4064ze.jed -j2s -log mxse_lc4064ze.svl "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/05/21 04:39:49 ###########
+
+
+########## Tcl recorder starts at 10/05/21 04:39:50 ##########
+
+# Commands to make the Process: 
+# Fitter Report (HTML)
+if [runCmd "\"$cpld_bin/synsvf\" -exe \"$install_dir/ispvmsystem/ispufw\" -prj mxse_lc4064ze -if mxse_lc4064ze.jed -j2s -log mxse_lc4064ze.svl "] {
+	return
+} else {
+	vwait done
+	if [checkResult $done] {
+		return
+	}
+}
+
+########## Tcl recorder end at 10/05/21 04:39:50 ###########
+

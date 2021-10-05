@@ -1,7 +1,7 @@
-C:\ispLEVER_Classic2_0\synpbase\bin64\syn_nfilter.exe  -link  -top  MXSE  -multisrs  C:\users\zanek\documents\github\se-030\cpld\lc4064ze\synwork\MXSE_comp.srs  -osyn  C:\users\zanek\documents\github\se-030\cpld\lc4064ze\synwork\MXSE_mult.srs  -log  C:\users\zanek\documents\github\se-030\cpld\lc4064ze\synlog\MXSE_multi_srs_gen.srr 
+C:\ispLEVER_Classic2_0\synpbase\bin64\syn_nfilter.exe  -link  -top  MXSE  -multisrs  C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE\synwork\MXSE_comp.srs  -osyn  C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE\synwork\MXSE_mult.srs  -log  C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE\synlog\MXSE_multi_srs_gen.srr 
 rc:0 success:1
-C:\users\zanek\documents\github\se-030\cpld\lc4064ze\synwork\MXSE_comp.srs|i|1633421733|15265
-C:\users\zanek\documents\github\se-030\cpld\lc4064ze\synwork\MXSE_mult.srs|o|1633421734|5330
-C:\users\zanek\documents\github\se-030\cpld\lc4064ze\synlog\MXSE_multi_srs_gen.srr|o|1633421734|479
+C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE\synwork\MXSE_comp.srs|i|1633422666|15258
+C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE\synwork\MXSE_mult.srs|o|1633422667|5330
+C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE\synlog\MXSE_multi_srs_gen.srr|o|1633422667|479
 C:\ispLEVER_Classic2_0\synpbase\bin\syn_nfilter.exe|i|1401245536|2741760
 C:\ispLEVER_Classic2_0\synpbase\bin64\syn_nfilter.exe|i|1401245732|6337536

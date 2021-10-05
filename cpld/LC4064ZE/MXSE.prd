@@ -1,0 +1,11 @@
+#--  Synopsys, Inc.
+#--  Version I-2014.03LC 
+#--  Project file C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE\MXSE.prd
+#
+### Watch Implementation type ###
+#
+watch_impl -all
+#
+### Watch Implementation properties ###
+#
+watch_prop -clear

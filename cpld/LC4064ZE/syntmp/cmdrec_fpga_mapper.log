@@ -1,9 +1,9 @@
-C:\ispLEVER_Classic2_0\synpbase\bin64\m_cpld.exe  -prodtype  synplify_pro  -encrypt  -pro  -rundir  C:\users\zanek\documents\github\se-030\cpld\lc4064ze  -part LC4064B  -package T44C  -grade -2.5   -ispmach4s -RWCheckOnRam 1 -areadelay 0 -minc -auto_constrain_io -summaryfile C:\users\zanek\documents\github\se-030\cpld\lc4064ze\synlog\report\MXSE_fpga_mapper.xml -top_level_module  MXSE  -multisrs  -ta_num_paths 3  -ta_num_points 0  -oedif  C:\users\zanek\documents\github\se-030\cpld\lc4064ze\MXSE.edi  -freq 200.000  C:\users\zanek\documents\github\se-030\cpld\lc4064ze\synwork\MXSE_mult.srs  -ologparam  C:\users\zanek\documents\github\se-030\cpld\lc4064ze\syntmp\MXSE.plg  -osyn  C:\users\zanek\documents\github\se-030\cpld\lc4064ze\MXSE.srm  -prjdir  c:\users\zanek\documents\github\se-030\cpld\lc4064ze\  -prjname  MXSE  -log  C:\users\zanek\documents\github\se-030\cpld\lc4064ze\synlog\MXSE_fpga_mapper.srr 
+C:\ispLEVER_Classic2_0\synpbase\bin64\m_cpld.exe  -prodtype  synplify_pro  -encrypt  -pro  -rundir  C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE  -part LC4064B  -package T44C  -grade -2.5   -ispmach4s -RWCheckOnRam 1 -areadelay 0 -minc -auto_constrain_io -summaryfile C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE\synlog\report\MXSE_fpga_mapper.xml -top_level_module  MXSE  -multisrs  -ta_num_paths 3  -ta_num_points 0  -oedif  C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE\MXSE.edi  -freq 200.000  C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE\synwork\MXSE_mult.srs  -ologparam  C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE\syntmp\MXSE.plg  -osyn  C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE\MXSE.srm  -prjdir  C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE\  -prjname  MXSE  -log  C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE\synlog\MXSE_fpga_mapper.srr 
 rc:0 success:1
-C:\users\zanek\documents\github\se-030\cpld\lc4064ze\MXSE.edi|o|1633421734|153494
-C:\users\zanek\documents\github\se-030\cpld\lc4064ze\synwork\MXSE_mult.srs|i|1633421734|5330
-C:\users\zanek\documents\github\se-030\cpld\lc4064ze\syntmp\MXSE.plg|o|1633421734|0
-C:\users\zanek\documents\github\se-030\cpld\lc4064ze\MXSE.srm|o|1633421734|51421
-C:\users\zanek\documents\github\se-030\cpld\lc4064ze\synlog\MXSE_fpga_mapper.srr|o|1633421734|1192
+C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE\MXSE.edi|o|1633422667|153493
+C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE\synwork\MXSE_mult.srs|i|1633422667|5330
+C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE\syntmp\MXSE.plg|o|1633422667|0
+C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE\MXSE.srm|o|1633422667|51422
+C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE\synlog\MXSE_fpga_mapper.srr|o|1633422667|1192
 C:\ispLEVER_Classic2_0\synpbase\bin\m_cpld.exe|i|1399387284|7067648
 C:\ispLEVER_Classic2_0\synpbase\bin64\m_cpld.exe|i|1399390122|8049664

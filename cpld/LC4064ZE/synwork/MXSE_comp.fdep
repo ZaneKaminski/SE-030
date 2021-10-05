@@ -1,27 +1,27 @@
-#OPTIONS:"|-top|MXSE|-prodtype|synplify_pro|-nostructver|-I|c:\\users\\zanek\\documents\\github\\se-030\\cpld\\lc4064ze\\|-I|C:\\ispLEVER_Classic2_0\\synpbase\\lib|-v2001|-encrypt|-pro|-compiler_compatible|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work"
+#OPTIONS:"|-top|MXSE|-prodtype|synplify_pro|-nostructver|-I|C:\\Users\\zanek\\Documents\\GitHub\\SE-030\\cpld\\LC4064ZE\\|-I|C:\\ispLEVER_Classic2_0\\synpbase\\lib|-v2001|-encrypt|-pro|-compiler_compatible|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work"
 #CUR:"C:\\ispLEVER_Classic2_0\\synpbase\\bin64\\c_ver.exe":1401245650
 #CUR:"C:\\ispLEVER_Classic2_0\\synpbase\\lib\\vlog\\umr_capim.v":1401245570
 #CUR:"C:\\ispLEVER_Classic2_0\\synpbase\\lib\\vlog\\scemi_objects.v":1401245322
 #CUR:"C:\\ispLEVER_Classic2_0\\synpbase\\lib\\vlog\\scemi_pipes.svh":1401245322
 #CUR:"C:\\ispLEVER_Classic2_0\\synpbase\\lib\\vlog\\hypermods.v":1401245322
 #CUR:"C:\\ispLEVER_Classic2_0\\ispcpld\\..\\cae_library\\synthesis\\verilog\\mach.v":1336523408
-#CUR:"C:\\users\\zanek\\documents\\github\\se-030\\cpld\\lc4064ze\\mxse_lc4064ze.h":1633421408
-#CUR:"C:\\users\\zanek\\documents\\github\\se-030\\cpld\\fsb.v":1633421491
-#CUR:"C:\\users\\zanek\\documents\\github\\se-030\\cpld\\iobm.v":1633328523
-#CUR:"C:\\users\\zanek\\documents\\github\\se-030\\cpld\\iobs.v":1633417222
-#CUR:"C:\\users\\zanek\\documents\\github\\se-030\\cpld\\ram.v":1633421693
-#CUR:"C:\\users\\zanek\\documents\\github\\se-030\\cpld\\cs.v":1633419985
-#CUR:"C:\\users\\zanek\\documents\\github\\se-030\\cpld\\mxse.v":1633421291
+#CUR:"C:\\Users\\zanek\\Documents\\GitHub\\SE-030\\cpld\\LC4064ZE\\mxse_lc4064ze.h":1633422228
+#CUR:"C:\\Users\\zanek\\Documents\\GitHub\\SE-030\\cpld\\fsb.v":1633422228
+#CUR:"C:\\Users\\zanek\\Documents\\GitHub\\SE-030\\cpld\\iobm.v":1633328523
+#CUR:"C:\\Users\\zanek\\Documents\\GitHub\\SE-030\\cpld\\iobs.v":1633417222
+#CUR:"C:\\Users\\zanek\\Documents\\GitHub\\SE-030\\cpld\\ram.v":1633422228
+#CUR:"C:\\Users\\zanek\\Documents\\GitHub\\SE-030\\cpld\\cs.v":1633422228
+#CUR:"C:\\Users\\zanek\\Documents\\GitHub\\SE-030\\cpld\\mxse.v":1633422228
 #numinternalfiles:4
 #defaultlanguage:verilog
 0			"C:\ispLEVER_Classic2_0\ispcpld\..\cae_library\synthesis\verilog\mach.v" verilog
-1			"C:\users\zanek\documents\github\se-030\cpld\lc4064ze\mxse_lc4064ze.h" verilog
-2			"C:\users\zanek\documents\github\se-030\cpld\fsb.v" verilog
-3			"C:\users\zanek\documents\github\se-030\cpld\iobm.v" verilog
-4			"C:\users\zanek\documents\github\se-030\cpld\iobs.v" verilog
-5			"C:\users\zanek\documents\github\se-030\cpld\ram.v" verilog
-6			"C:\users\zanek\documents\github\se-030\cpld\cs.v" verilog
-7			"C:\users\zanek\documents\github\se-030\cpld\mxse.v" verilog
+1			"C:\Users\zanek\Documents\GitHub\SE-030\cpld\LC4064ZE\mxse_lc4064ze.h" verilog
+2			"C:\Users\zanek\Documents\GitHub\SE-030\cpld\fsb.v" verilog
+3			"C:\Users\zanek\Documents\GitHub\SE-030\cpld\iobm.v" verilog
+4			"C:\Users\zanek\Documents\GitHub\SE-030\cpld\iobs.v" verilog
+5			"C:\Users\zanek\Documents\GitHub\SE-030\cpld\ram.v" verilog
+6			"C:\Users\zanek\Documents\GitHub\SE-030\cpld\cs.v" verilog
+7			"C:\Users\zanek\Documents\GitHub\SE-030\cpld\mxse.v" verilog
 #Dependency Lists(Uses List)
 0 -1
 1 -1

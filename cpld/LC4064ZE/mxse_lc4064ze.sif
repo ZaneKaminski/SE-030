@@ -1,0 +1,1585 @@
+// Node Statistic Information File
+// Tool:  ispLEVER Classic 2.0.00.17.20.15
+// Design 'mxse' created   Tue Oct 05 04:31:51 2021
+
+// Fmax Logic Level: 2.
+
+// Path: iobs_ALE1.Q
+//    -> iobs_IORW1_0
+//    -> iobs_IORW1.CE
+
+// Signal Name: nBERR_FSB
+// Type: Output
+BEGIN nBERR_FSB
+Fanin Number		5
+Pterm Number		2
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	nAS_FSB.BLIF        	0
+Fanin Input     	nBERR_IOB.BLIF      	0
+Fanin Output    	nDTACK_FSB.Q        	12
+Fanin Node      	fsb_TimeoutB.Q      	3
+Fanin Node      	IOCS_i.BLIF         	4
+END
+
+// Signal Name: nRAMOE
+// Type: Output
+BEGIN nRAMOE
+Fanin Number		6
+Pterm Number		2
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	A_FSB_23_.BLIF      	0
+Fanin Input     	nAS_FSB.BLIF        	0
+Fanin Input     	nWE_FSB.BLIF        	0
+Fanin Input     	A_FSB_22_.BLIF      	0
+Fanin Input     	A_FSB_21_.BLIF      	0
+Fanin Node      	cs_nOverlay1.Q      	1
+END
+
+// Signal Name: nRAMLWE
+// Type: Output
+BEGIN nRAMLWE
+Fanin Number		6
+Pterm Number		2
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	A_FSB_23_.BLIF      	0
+Fanin Input     	nLDS_FSB.BLIF       	0
+Fanin Input     	nWE_FSB.BLIF        	0
+Fanin Input     	A_FSB_22_.BLIF      	0
+Fanin Input     	A_FSB_21_.BLIF      	0
+Fanin Node      	cs_nOverlay1.Q      	1
+END
+
+// Signal Name: nRAMUWE
+// Type: Output
+BEGIN nRAMUWE
+Fanin Number		6
+Pterm Number		2
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	A_FSB_23_.BLIF      	0
+Fanin Input     	nUDS_FSB.BLIF       	0
+Fanin Input     	nWE_FSB.BLIF        	0
+Fanin Input     	A_FSB_22_.BLIF      	0
+Fanin Input     	A_FSB_21_.BLIF      	0
+Fanin Node      	cs_nOverlay1.Q      	1
+END
+
+// Signal Name: nROMOE
+// Type: Output
+BEGIN nROMOE
+Fanin Number		7
+Pterm Number		2
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	A_FSB_23_.BLIF      	0
+Fanin Input     	nAS_FSB.BLIF        	0
+Fanin Input     	nWE_FSB.BLIF        	0
+Fanin Input     	A_FSB_22_.BLIF      	0
+Fanin Input     	A_FSB_21_.BLIF      	0
+Fanin Input     	A_FSB_20_.BLIF      	0
+Fanin Node      	cs_nOverlay1.Q      	1
+END
+
+// Signal Name: nROMWE
+// Type: Output
+BEGIN nROMWE
+Fanin Number		7
+Pterm Number		2
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	A_FSB_23_.BLIF      	0
+Fanin Input     	nAS_FSB.BLIF        	0
+Fanin Input     	nWE_FSB.BLIF        	0
+Fanin Input     	A_FSB_22_.BLIF      	0
+Fanin Input     	A_FSB_21_.BLIF      	0
+Fanin Input     	A_FSB_20_.BLIF      	0
+Fanin Node      	cs_nOverlay1.Q      	1
+END
+
+// Signal Name: nADoutLE0
+// Type: Output
+BEGIN nADoutLE0
+Fanin Number		2
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Node      	iobs_ALE0.Q         	1
+Fanin Node      	iobm_ALE0.Q         	2
+END
+
+// Signal Name: nADoutLE1
+// Type: Output
+BEGIN nADoutLE1
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Node      	iobs_ALE1.Q         	10
+END
+
+// Signal Name: nAoutOE
+// Type: Output
+BEGIN nAoutOE
+Fanin Number		0
+Pterm Number		0
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+END
+
+// Signal Name: nDinOE
+// Type: Output
+BEGIN nDinOE
+Fanin Number		3
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	nAS_FSB.BLIF        	0
+Fanin Input     	nWE_FSB.BLIF        	0
+Fanin Node      	IOCS_i.BLIF         	4
+END
+
+// Signal Name: nDTACK_FSB.D
+// Type: Output_reg
+BEGIN nDTACK_FSB.D
+Fanin Number		23
+Pterm Number		12
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Input     	A_FSB_23_.BLIF      	0
+Fanin Input     	nAS_FSB.BLIF        	0
+Fanin Input     	nWE_FSB.BLIF        	0
+Fanin Input     	A_FSB_22_.BLIF      	0
+Fanin Input     	A_FSB_21_.BLIF      	0
+Fanin Input     	A_FSB_20_.BLIF      	0
+Fanin Input     	A_FSB_19_.BLIF      	0
+Fanin Input     	A_FSB_18_.BLIF      	0
+Fanin Input     	A_FSB_17_.BLIF      	0
+Fanin Input     	A_FSB_16_.BLIF      	0
+Fanin Input     	A_FSB_15_.BLIF      	0
+Fanin Input     	A_FSB_14_.BLIF      	0
+Fanin Input     	A_FSB_13_.BLIF      	0
+Fanin Input     	A_FSB_12_.BLIF      	0
+Fanin Input     	A_FSB_11_.BLIF      	0
+Fanin Input     	A_FSB_10_.BLIF      	0
+Fanin Input     	A_FSB_9_.BLIF       	0
+Fanin Output    	nDTACK_FSB.Q        	12
+Fanin Node      	iobs_ALE1.Q         	10
+Fanin Node      	fsb_TimeoutA.Q      	3
+Fanin Node      	fsb_ASrf.Q          	1
+Fanin Node      	iobs_IORDReady.Q    	3
+Fanin Node      	cs_nOverlay1.Q      	1
+END
+
+// Signal Name: nDTACK_FSB.C
+// Type: Output_reg
+BEGIN nDTACK_FSB.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: nVMA_IOB.T
+// Type: Output_reg
+BEGIN nVMA_IOB.T
+Fanin Number		8
+Pterm Number		2
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Input     	nVPA_IOB.BLIF       	0
+Fanin Node      	iobm_IOACT.Q        	5
+Fanin Output    	nVMA_IOB.Q          	2
+Fanin Node      	iobm_ES_2_.Q        	5
+Fanin Node      	iobm_ES_0_.Q        	4
+Fanin Node      	iobm_ES_1_.Q        	3
+Fanin Node      	iobm_ES_3_.Q        	5
+Fanin Node      	iobm_ES_4_.Q        	4
+END
+
+// Signal Name: nVMA_IOB.C
+// Type: Output_reg
+BEGIN nVMA_IOB.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK2X_IOB.BLIF      	0
+END
+
+// Signal Name: nAS_IOB.D
+// Type: Output_reg
+BEGIN nAS_IOB.D
+Fanin Number		3
+Pterm Number		2
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	iobm_IOS_0_.Q       	5
+Fanin Node      	iobm_IOS_1_.Q       	4
+Fanin Node      	iobm_IOS_2_.Q       	3
+END
+
+// Signal Name: nAS_IOB.C
+// Type: Output_reg
+BEGIN nAS_IOB.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK2X_IOB.BLIF      	0
+END
+
+// Signal Name: nLDS_IOB.D
+// Type: Output_reg
+BEGIN nLDS_IOB.D
+Fanin Number		5
+Pterm Number		4
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	iobs_IORW0.Q        	10
+Fanin Node      	iobs_IOL0.Q         	2
+Fanin Node      	iobm_IOS_0_.Q       	5
+Fanin Node      	iobm_IOS_1_.Q       	4
+Fanin Node      	iobm_IOS_2_.Q       	3
+END
+
+// Signal Name: nLDS_IOB.C
+// Type: Output_reg
+BEGIN nLDS_IOB.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK2X_IOB.BLIF      	0
+END
+
+// Signal Name: nUDS_IOB.D
+// Type: Output_reg
+BEGIN nUDS_IOB.D
+Fanin Number		5
+Pterm Number		4
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	iobs_IORW0.Q        	10
+Fanin Node      	iobs_IOU0.Q         	2
+Fanin Node      	iobm_IOS_0_.Q       	5
+Fanin Node      	iobm_IOS_1_.Q       	4
+Fanin Node      	iobm_IOS_2_.Q       	3
+END
+
+// Signal Name: nUDS_IOB.C
+// Type: Output_reg
+BEGIN nUDS_IOB.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK2X_IOB.BLIF      	0
+END
+
+// Signal Name: nDoutOE.D
+// Type: Output_reg
+BEGIN nDoutOE.D
+Fanin Number		4
+Pterm Number		3
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	iobs_IORW0.Q        	10
+Fanin Node      	iobm_IOS_0_.Q       	5
+Fanin Node      	iobm_IOS_1_.Q       	4
+Fanin Node      	iobm_IOS_2_.Q       	3
+END
+
+// Signal Name: nDoutOE.C
+// Type: Output_reg
+BEGIN nDoutOE.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK2X_IOB.BLIF      	0
+END
+
+// Signal Name: nDinLE.D
+// Type: Output_reg
+BEGIN nDinLE.D
+Fanin Number		2
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	iobm_IOS_1_.Q       	4
+Fanin Node      	iobm_IOS_2_.Q       	3
+END
+
+// Signal Name: nDinLE.C
+// Type: Output_reg
+BEGIN nDinLE.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK2X_IOB.BLIF      	0
+END
+
+// Signal Name: iobs_IOREQ.D
+// Type: Node_reg
+BEGIN iobs_IOREQ.D
+Fanin Number		16
+Pterm Number		7
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Input     	A_FSB_23_.BLIF      	0
+Fanin Input     	nAS_FSB.BLIF        	0
+Fanin Input     	nWE_FSB.BLIF        	0
+Fanin Input     	A_FSB_22_.BLIF      	0
+Fanin Input     	A_FSB_21_.BLIF      	0
+Fanin Input     	A_FSB_20_.BLIF      	0
+Fanin Input     	A_FSB_19_.BLIF      	0
+Fanin Input     	A_FSB_18_.BLIF      	0
+Fanin Input     	A_FSB_17_.BLIF      	0
+Fanin Input     	A_FSB_16_.BLIF      	0
+Fanin Node      	iobs_ALE1.Q         	10
+Fanin Node      	iobs_IOACTr.Q       	1
+Fanin Node      	iobs_PS_1_.Q        	7
+Fanin Node      	iobs_Once.Q         	10
+Fanin Node      	iobs_PS_0_.Q        	6
+Fanin Node      	cs_nOverlay1.Q      	1
+END
+
+// Signal Name: iobs_IOREQ.C
+// Type: Node_reg
+BEGIN iobs_IOREQ.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: iobm_IOACT.D
+// Type: Node_reg
+BEGIN iobm_IOACT.D
+Fanin Number		8
+Pterm Number		5
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Input     	CLK_IOB.BLIF        	0
+Fanin Input     	nDTACK_IOB.BLIF     	0
+Fanin Input     	nBERR_IOB.BLIF      	0
+Fanin Node      	iobm_IOREQr.Q       	1
+Fanin Node      	iobm_IOS_0_.Q       	5
+Fanin Node      	iobm_IOS_1_.Q       	4
+Fanin Node      	iobm_IOS_2_.Q       	3
+Fanin Node      	iobm_ETACK.Q        	1
+END
+
+// Signal Name: iobm_IOACT.C
+// Type: Node_reg
+BEGIN iobm_IOACT.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK2X_IOB.BLIF      	0
+END
+
+// Signal Name: iobs_ALE0.D
+// Type: Node_reg
+BEGIN iobs_ALE0.D
+Fanin Number		2
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	iobs_PS_1_.Q        	7
+Fanin Node      	iobs_PS_0_.Q        	6
+END
+
+// Signal Name: iobs_ALE0.C
+// Type: Node_reg
+BEGIN iobs_ALE0.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: iobs_IORW0.D
+// Type: Node_reg
+BEGIN iobs_IORW0.D
+Fanin Number		15
+Pterm Number		10
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Input     	A_FSB_23_.BLIF      	0
+Fanin Input     	nAS_FSB.BLIF        	0
+Fanin Input     	nWE_FSB.BLIF        	0
+Fanin Input     	A_FSB_22_.BLIF      	0
+Fanin Input     	A_FSB_21_.BLIF      	0
+Fanin Input     	A_FSB_20_.BLIF      	0
+Fanin Input     	A_FSB_19_.BLIF      	0
+Fanin Input     	A_FSB_18_.BLIF      	0
+Fanin Input     	A_FSB_17_.BLIF      	0
+Fanin Input     	A_FSB_16_.BLIF      	0
+Fanin Node      	iobs_IORW0.Q        	10
+Fanin Node      	iobs_ALE1.Q         	10
+Fanin Node      	iobs_Once.Q         	10
+Fanin Node      	iobs_IORW1.Q        	1
+Fanin Node      	cs_nOverlay1.Q      	1
+END
+
+// Signal Name: iobs_IORW0.C
+// Type: Node_reg
+BEGIN iobs_IORW0.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: iobs_IORW0.CE
+// Type: Node_reg
+BEGIN iobs_IORW0.CE
+Fanin Number		2
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	iobs_PS_1_.Q        	7
+Fanin Node      	iobs_PS_0_.Q        	6
+END
+
+// Signal Name: iobs_IOL0.D
+// Type: Node_reg
+BEGIN iobs_IOL0.D
+Fanin Number		3
+Pterm Number		2
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Input     	nLDS_FSB.BLIF       	0
+Fanin Node      	iobs_ALE1.Q         	10
+Fanin Node      	iobs_IOL1.Q         	1
+END
+
+// Signal Name: iobs_IOL0.C
+// Type: Node_reg
+BEGIN iobs_IOL0.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: iobs_IOL0.CE
+// Type: Node_reg
+BEGIN iobs_IOL0.CE
+Fanin Number		2
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	iobs_PS_1_.Q        	7
+Fanin Node      	iobs_PS_0_.Q        	6
+END
+
+// Signal Name: iobs_IOU0.D
+// Type: Node_reg
+BEGIN iobs_IOU0.D
+Fanin Number		3
+Pterm Number		2
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Input     	nUDS_FSB.BLIF       	0
+Fanin Node      	iobs_ALE1.Q         	10
+Fanin Node      	iobs_IOU1.Q         	1
+END
+
+// Signal Name: iobs_IOU0.C
+// Type: Node_reg
+BEGIN iobs_IOU0.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: iobs_IOU0.CE
+// Type: Node_reg
+BEGIN iobs_IOU0.CE
+Fanin Number		2
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	iobs_PS_1_.Q        	7
+Fanin Node      	iobs_PS_0_.Q        	6
+END
+
+// Signal Name: iobs_ALE1.D
+// Type: Node_reg
+BEGIN iobs_ALE1.D
+Fanin Number		15
+Pterm Number		10
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Input     	A_FSB_23_.BLIF      	0
+Fanin Input     	nAS_FSB.BLIF        	0
+Fanin Input     	nWE_FSB.BLIF        	0
+Fanin Input     	A_FSB_22_.BLIF      	0
+Fanin Input     	A_FSB_21_.BLIF      	0
+Fanin Input     	A_FSB_20_.BLIF      	0
+Fanin Input     	A_FSB_19_.BLIF      	0
+Fanin Input     	A_FSB_18_.BLIF      	0
+Fanin Input     	A_FSB_17_.BLIF      	0
+Fanin Input     	A_FSB_16_.BLIF      	0
+Fanin Node      	iobs_ALE1.Q         	10
+Fanin Node      	iobs_PS_1_.Q        	7
+Fanin Node      	iobs_Once.Q         	10
+Fanin Node      	iobs_PS_0_.Q        	6
+Fanin Node      	cs_nOverlay1.Q      	1
+END
+
+// Signal Name: iobs_ALE1.C
+// Type: Node_reg
+BEGIN iobs_ALE1.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: iobm_ALE0.D
+// Type: Node_reg
+BEGIN iobm_ALE0.D
+Fanin Number		4
+Pterm Number		2
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	iobm_IOREQr.Q       	1
+Fanin Node      	iobm_IOS_0_.Q       	5
+Fanin Node      	iobm_IOS_1_.Q       	4
+Fanin Node      	iobm_IOS_2_.Q       	3
+END
+
+// Signal Name: iobm_ALE0.C
+// Type: Node_reg
+BEGIN iobm_ALE0.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK2X_IOB.BLIF      	0
+END
+
+// Signal Name: fsb_TimeoutA.D
+// Type: Node_reg
+BEGIN fsb_TimeoutA.D
+Fanin Number		9
+Pterm Number		3
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Input     	nAS_FSB.BLIF        	0
+Fanin Node      	fsb_TimeoutA.Q      	3
+Fanin Node      	fsb_ASrf.Q          	1
+Fanin Node      	fsb_RefCnt_5_.Q     	1
+Fanin Node      	fsb_RefCnt_1_.Q     	2
+Fanin Node      	fsb_RefCnt_2_.Q     	3
+Fanin Node      	fsb_RefCnt_0_.Q     	1
+Fanin Node      	fsb_RefCnt_4_.Q     	1
+Fanin Node      	fsb_RefCnt_3_.Q     	4
+END
+
+// Signal Name: fsb_TimeoutA.C
+// Type: Node_reg
+BEGIN fsb_TimeoutA.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: fsb_TimeoutB.D
+// Type: Node_reg
+BEGIN fsb_TimeoutB.D
+Fanin Number		10
+Pterm Number		3
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Input     	nAS_FSB.BLIF        	0
+Fanin Node      	fsb_TimeoutA.Q      	3
+Fanin Node      	fsb_TimeoutB.Q      	3
+Fanin Node      	fsb_ASrf.Q          	1
+Fanin Node      	fsb_RefCnt_5_.Q     	1
+Fanin Node      	fsb_RefCnt_1_.Q     	2
+Fanin Node      	fsb_RefCnt_2_.Q     	3
+Fanin Node      	fsb_RefCnt_0_.Q     	1
+Fanin Node      	fsb_RefCnt_4_.Q     	1
+Fanin Node      	fsb_RefCnt_3_.Q     	4
+END
+
+// Signal Name: fsb_TimeoutB.C
+// Type: Node_reg
+BEGIN fsb_TimeoutB.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: fsb_ASrf.D
+// Type: Node_reg
+BEGIN fsb_ASrf.D
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	nAS_FSB.BLIF        	0
+END
+
+// Signal Name: fsb_ASrf.C
+// Type: Node_reg
+BEGIN fsb_ASrf.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: fsb_RefCnt_5_.T
+// Type: Node_reg
+BEGIN fsb_RefCnt_5_.T
+Fanin Number		5
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	fsb_RefCnt_1_.Q     	2
+Fanin Node      	fsb_RefCnt_2_.Q     	3
+Fanin Node      	fsb_RefCnt_0_.Q     	1
+Fanin Node      	fsb_RefCnt_4_.Q     	1
+Fanin Node      	fsb_RefCnt_3_.Q     	4
+END
+
+// Signal Name: fsb_RefCnt_5_.C
+// Type: Node_reg
+BEGIN fsb_RefCnt_5_.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: fsb_RefCnt_1_.D
+// Type: Node_reg
+BEGIN fsb_RefCnt_1_.D
+Fanin Number		2
+Pterm Number		2
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	fsb_RefCnt_1_.Q     	2
+Fanin Node      	fsb_RefCnt_0_.Q     	1
+END
+
+// Signal Name: fsb_RefCnt_1_.C
+// Type: Node_reg
+BEGIN fsb_RefCnt_1_.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: fsb_RefCnt_2_.D
+// Type: Node_reg
+BEGIN fsb_RefCnt_2_.D
+Fanin Number		3
+Pterm Number		3
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	fsb_RefCnt_1_.Q     	2
+Fanin Node      	fsb_RefCnt_2_.Q     	3
+Fanin Node      	fsb_RefCnt_0_.Q     	1
+END
+
+// Signal Name: fsb_RefCnt_2_.C
+// Type: Node_reg
+BEGIN fsb_RefCnt_2_.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: fsb_RefCnt_0_.D
+// Type: Node_reg
+BEGIN fsb_RefCnt_0_.D
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	fsb_RefCnt_0_.Q     	1
+END
+
+// Signal Name: fsb_RefCnt_0_.C
+// Type: Node_reg
+BEGIN fsb_RefCnt_0_.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: fsb_RefCnt_4_.D.X1
+// Type: Node_reg
+BEGIN fsb_RefCnt_4_.D.X1
+Fanin Number		4
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	fsb_RefCnt_1_.Q     	2
+Fanin Node      	fsb_RefCnt_2_.Q     	3
+Fanin Node      	fsb_RefCnt_0_.Q     	1
+Fanin Node      	fsb_RefCnt_3_.Q     	4
+END
+
+// Signal Name: fsb_RefCnt_4_.D.X2
+// Type: Node_reg
+BEGIN fsb_RefCnt_4_.D.X2
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	fsb_RefCnt_4_.Q     	1
+END
+
+// Signal Name: fsb_RefCnt_4_.C
+// Type: Node_reg
+BEGIN fsb_RefCnt_4_.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: fsb_RefCnt_3_.D
+// Type: Node_reg
+BEGIN fsb_RefCnt_3_.D
+Fanin Number		4
+Pterm Number		4
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	fsb_RefCnt_1_.Q     	2
+Fanin Node      	fsb_RefCnt_2_.Q     	3
+Fanin Node      	fsb_RefCnt_0_.Q     	1
+Fanin Node      	fsb_RefCnt_3_.Q     	4
+END
+
+// Signal Name: fsb_RefCnt_3_.C
+// Type: Node_reg
+BEGIN fsb_RefCnt_3_.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: iobm_IOREQr.D
+// Type: Node_reg
+BEGIN iobm_IOREQr.D
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	iobs_IOREQ.Q        	7
+END
+
+// Signal Name: iobm_IOREQr.C
+// Type: Node_reg
+BEGIN iobm_IOREQr.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK2X_IOB.BLIF      	0
+END
+
+// Signal Name: iobm_Er.D
+// Type: Node_reg
+BEGIN iobm_Er.D
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	E_IOB.BLIF          	0
+END
+
+// Signal Name: iobm_Er.C
+// Type: Node_reg
+BEGIN iobm_Er.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_IOB.BLIF        	0
+END
+
+// Signal Name: iobm_ES_2_.D
+// Type: Node_reg
+BEGIN iobm_ES_2_.D
+Fanin Number		7
+Pterm Number		5
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	iobm_Er.Q           	1
+Fanin Node      	iobm_ES_2_.Q        	5
+Fanin Node      	iobm_ES_0_.Q        	4
+Fanin Node      	iobm_ES_1_.Q        	3
+Fanin Node      	iobm_ES_3_.Q        	5
+Fanin Node      	iobm_ES_4_.Q        	4
+Fanin Node      	iobm_Er2.Q          	1
+END
+
+// Signal Name: iobm_ES_2_.C
+// Type: Node_reg
+BEGIN iobm_ES_2_.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK2X_IOB.BLIF      	0
+END
+
+// Signal Name: iobm_ES_0_.D
+// Type: Node_reg
+BEGIN iobm_ES_0_.D
+Fanin Number		7
+Pterm Number		4
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	iobm_Er.Q           	1
+Fanin Node      	iobm_ES_2_.Q        	5
+Fanin Node      	iobm_ES_0_.Q        	4
+Fanin Node      	iobm_ES_1_.Q        	3
+Fanin Node      	iobm_ES_3_.Q        	5
+Fanin Node      	iobm_ES_4_.Q        	4
+Fanin Node      	iobm_Er2.Q          	1
+END
+
+// Signal Name: iobm_ES_0_.C
+// Type: Node_reg
+BEGIN iobm_ES_0_.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK2X_IOB.BLIF      	0
+END
+
+// Signal Name: iobm_ES_1_.D
+// Type: Node_reg
+BEGIN iobm_ES_1_.D
+Fanin Number		4
+Pterm Number		3
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	iobm_Er.Q           	1
+Fanin Node      	iobm_ES_0_.Q        	4
+Fanin Node      	iobm_ES_1_.Q        	3
+Fanin Node      	iobm_Er2.Q          	1
+END
+
+// Signal Name: iobm_ES_1_.C
+// Type: Node_reg
+BEGIN iobm_ES_1_.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK2X_IOB.BLIF      	0
+END
+
+// Signal Name: iobm_ES_3_.D
+// Type: Node_reg
+BEGIN iobm_ES_3_.D
+Fanin Number		6
+Pterm Number		5
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	iobm_Er.Q           	1
+Fanin Node      	iobm_ES_2_.Q        	5
+Fanin Node      	iobm_ES_0_.Q        	4
+Fanin Node      	iobm_ES_1_.Q        	3
+Fanin Node      	iobm_ES_3_.Q        	5
+Fanin Node      	iobm_Er2.Q          	1
+END
+
+// Signal Name: iobm_ES_3_.C
+// Type: Node_reg
+BEGIN iobm_ES_3_.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK2X_IOB.BLIF      	0
+END
+
+// Signal Name: iobm_ES_4_.T
+// Type: Node_reg
+BEGIN iobm_ES_4_.T
+Fanin Number		7
+Pterm Number		4
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	iobm_Er.Q           	1
+Fanin Node      	iobm_ES_2_.Q        	5
+Fanin Node      	iobm_ES_0_.Q        	4
+Fanin Node      	iobm_ES_1_.Q        	3
+Fanin Node      	iobm_ES_3_.Q        	5
+Fanin Node      	iobm_ES_4_.Q        	4
+Fanin Node      	iobm_Er2.Q          	1
+END
+
+// Signal Name: iobm_ES_4_.C
+// Type: Node_reg
+BEGIN iobm_ES_4_.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK2X_IOB.BLIF      	0
+END
+
+// Signal Name: iobm_IOS_0_.D
+// Type: Node_reg
+BEGIN iobm_IOS_0_.D
+Fanin Number		8
+Pterm Number		5
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Input     	CLK_IOB.BLIF        	0
+Fanin Input     	nDTACK_IOB.BLIF     	0
+Fanin Input     	nBERR_IOB.BLIF      	0
+Fanin Node      	iobm_IOREQr.Q       	1
+Fanin Node      	iobm_IOS_0_.Q       	5
+Fanin Node      	iobm_IOS_1_.Q       	4
+Fanin Node      	iobm_IOS_2_.Q       	3
+Fanin Node      	iobm_ETACK.Q        	1
+END
+
+// Signal Name: iobm_IOS_0_.C
+// Type: Node_reg
+BEGIN iobm_IOS_0_.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK2X_IOB.BLIF      	0
+END
+
+// Signal Name: iobm_IOS_1_.D
+// Type: Node_reg
+BEGIN iobm_IOS_1_.D
+Fanin Number		7
+Pterm Number		4
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Input     	CLK_IOB.BLIF        	0
+Fanin Input     	nDTACK_IOB.BLIF     	0
+Fanin Input     	nBERR_IOB.BLIF      	0
+Fanin Node      	iobm_IOS_0_.Q       	5
+Fanin Node      	iobm_IOS_1_.Q       	4
+Fanin Node      	iobm_IOS_2_.Q       	3
+Fanin Node      	iobm_ETACK.Q        	1
+END
+
+// Signal Name: iobm_IOS_1_.C
+// Type: Node_reg
+BEGIN iobm_IOS_1_.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK2X_IOB.BLIF      	0
+END
+
+// Signal Name: iobm_IOS_2_.D
+// Type: Node_reg
+BEGIN iobm_IOS_2_.D
+Fanin Number		3
+Pterm Number		3
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	iobm_IOS_0_.Q       	5
+Fanin Node      	iobm_IOS_1_.Q       	4
+Fanin Node      	iobm_IOS_2_.Q       	3
+END
+
+// Signal Name: iobm_IOS_2_.C
+// Type: Node_reg
+BEGIN iobm_IOS_2_.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK2X_IOB.BLIF      	0
+END
+
+// Signal Name: iobm_Er2.D
+// Type: Node_reg
+BEGIN iobm_Er2.D
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	iobm_Er.Q           	1
+END
+
+// Signal Name: iobm_Er2.C
+// Type: Node_reg
+BEGIN iobm_Er2.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK2X_IOB.BLIF      	0
+END
+
+// Signal Name: iobm_ETACK.D
+// Type: Node_reg
+BEGIN iobm_ETACK.D
+Fanin Number		5
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Output    	nVMA_IOB.Q          	2
+Fanin Node      	iobm_ES_0_.Q        	4
+Fanin Node      	iobm_ES_1_.Q        	3
+Fanin Node      	iobm_ES_3_.Q        	5
+Fanin Node      	iobm_ES_4_.Q        	4
+END
+
+// Signal Name: iobm_ETACK.C
+// Type: Node_reg
+BEGIN iobm_ETACK.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK2X_IOB.BLIF      	0
+END
+
+// Signal Name: iobs_IOACTr.D
+// Type: Node_reg
+BEGIN iobs_IOACTr.D
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	iobm_IOACT.Q        	5
+END
+
+// Signal Name: iobs_IOACTr.C
+// Type: Node_reg
+BEGIN iobs_IOACTr.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: iobs_PS_1_.D
+// Type: Node_reg
+BEGIN iobs_PS_1_.D
+Fanin Number		16
+Pterm Number		7
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Input     	A_FSB_23_.BLIF      	0
+Fanin Input     	nAS_FSB.BLIF        	0
+Fanin Input     	nWE_FSB.BLIF        	0
+Fanin Input     	A_FSB_22_.BLIF      	0
+Fanin Input     	A_FSB_21_.BLIF      	0
+Fanin Input     	A_FSB_20_.BLIF      	0
+Fanin Input     	A_FSB_19_.BLIF      	0
+Fanin Input     	A_FSB_18_.BLIF      	0
+Fanin Input     	A_FSB_17_.BLIF      	0
+Fanin Input     	A_FSB_16_.BLIF      	0
+Fanin Node      	iobs_ALE1.Q         	10
+Fanin Node      	iobs_IOACTr.Q       	1
+Fanin Node      	iobs_PS_1_.Q        	7
+Fanin Node      	iobs_Once.Q         	10
+Fanin Node      	iobs_PS_0_.Q        	6
+Fanin Node      	cs_nOverlay1.Q      	1
+END
+
+// Signal Name: iobs_PS_1_.C
+// Type: Node_reg
+BEGIN iobs_PS_1_.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: iobs_Once.D
+// Type: Node_reg
+BEGIN iobs_Once.D
+Fanin Number		16
+Pterm Number		10
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Input     	A_FSB_23_.BLIF      	0
+Fanin Input     	nAS_FSB.BLIF        	0
+Fanin Input     	nWE_FSB.BLIF        	0
+Fanin Input     	A_FSB_22_.BLIF      	0
+Fanin Input     	A_FSB_21_.BLIF      	0
+Fanin Input     	A_FSB_20_.BLIF      	0
+Fanin Input     	A_FSB_19_.BLIF      	0
+Fanin Input     	A_FSB_18_.BLIF      	0
+Fanin Input     	A_FSB_17_.BLIF      	0
+Fanin Input     	A_FSB_16_.BLIF      	0
+Fanin Node      	iobs_ALE1.Q         	10
+Fanin Node      	fsb_ASrf.Q          	1
+Fanin Node      	iobs_PS_1_.Q        	7
+Fanin Node      	iobs_Once.Q         	10
+Fanin Node      	iobs_PS_0_.Q        	6
+Fanin Node      	cs_nOverlay1.Q      	1
+END
+
+// Signal Name: iobs_Once.C
+// Type: Node_reg
+BEGIN iobs_Once.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: iobs_PS_0_.D
+// Type: Node_reg
+BEGIN iobs_PS_0_.D
+Fanin Number		16
+Pterm Number		6
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Input     	A_FSB_23_.BLIF      	0
+Fanin Input     	nAS_FSB.BLIF        	0
+Fanin Input     	nWE_FSB.BLIF        	0
+Fanin Input     	A_FSB_22_.BLIF      	0
+Fanin Input     	A_FSB_21_.BLIF      	0
+Fanin Input     	A_FSB_20_.BLIF      	0
+Fanin Input     	A_FSB_19_.BLIF      	0
+Fanin Input     	A_FSB_18_.BLIF      	0
+Fanin Input     	A_FSB_17_.BLIF      	0
+Fanin Input     	A_FSB_16_.BLIF      	0
+Fanin Node      	iobs_ALE1.Q         	10
+Fanin Node      	iobs_IOACTr.Q       	1
+Fanin Node      	iobs_PS_1_.Q        	7
+Fanin Node      	iobs_Once.Q         	10
+Fanin Node      	iobs_PS_0_.Q        	6
+Fanin Node      	cs_nOverlay1.Q      	1
+END
+
+// Signal Name: iobs_PS_0_.C
+// Type: Node_reg
+BEGIN iobs_PS_0_.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: iobs_IOL1.D
+// Type: Node_reg
+BEGIN iobs_IOL1.D
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	nLDS_FSB.BLIF       	0
+END
+
+// Signal Name: iobs_IOL1.C
+// Type: Node_reg
+BEGIN iobs_IOL1.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: iobs_IOL1.CE
+// Type: Node_reg
+BEGIN iobs_IOL1.CE
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	iobs_Load1.Q        	8
+END
+
+// Signal Name: iobs_IOU1.D
+// Type: Node_reg
+BEGIN iobs_IOU1.D
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	nUDS_FSB.BLIF       	0
+END
+
+// Signal Name: iobs_IOU1.C
+// Type: Node_reg
+BEGIN iobs_IOU1.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: iobs_IOU1.CE
+// Type: Node_reg
+BEGIN iobs_IOU1.CE
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	iobs_Load1.Q        	8
+END
+
+// Signal Name: iobs_IORDReady.D
+// Type: Node_reg
+BEGIN iobs_IORDReady.D
+Fanin Number		6
+Pterm Number		3
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Input     	nAS_FSB.BLIF        	0
+Fanin Node      	fsb_ASrf.Q          	1
+Fanin Node      	iobs_IOACTr.Q       	1
+Fanin Node      	iobs_PS_1_.Q        	7
+Fanin Node      	iobs_Once.Q         	10
+Fanin Node      	iobs_IORDReady.Q    	3
+END
+
+// Signal Name: iobs_IORDReady.C
+// Type: Node_reg
+BEGIN iobs_IORDReady.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: iobs_Load1.D
+// Type: Node_reg
+BEGIN iobs_Load1.D
+Fanin Number		15
+Pterm Number		8
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Input     	A_FSB_23_.BLIF      	0
+Fanin Input     	nAS_FSB.BLIF        	0
+Fanin Input     	nWE_FSB.BLIF        	0
+Fanin Input     	A_FSB_22_.BLIF      	0
+Fanin Input     	A_FSB_21_.BLIF      	0
+Fanin Input     	A_FSB_20_.BLIF      	0
+Fanin Input     	A_FSB_19_.BLIF      	0
+Fanin Input     	A_FSB_18_.BLIF      	0
+Fanin Input     	A_FSB_17_.BLIF      	0
+Fanin Input     	A_FSB_16_.BLIF      	0
+Fanin Node      	iobs_ALE1.Q         	10
+Fanin Node      	iobs_PS_1_.Q        	7
+Fanin Node      	iobs_Once.Q         	10
+Fanin Node      	iobs_PS_0_.Q        	6
+Fanin Node      	cs_nOverlay1.Q      	1
+END
+
+// Signal Name: iobs_Load1.C
+// Type: Node_reg
+BEGIN iobs_Load1.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: iobs_IORW1.D
+// Type: Node_reg
+BEGIN iobs_IORW1.D
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	nWE_FSB.BLIF        	0
+END
+
+// Signal Name: iobs_IORW1.C
+// Type: Node_reg
+BEGIN iobs_IORW1.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: iobs_IORW1.CE
+// Type: Node_reg
+BEGIN iobs_IORW1.CE
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		2
+Fanin Node      	iobs_IORW1_0.BLIF   	8
+END
+
+// Signal Name: IOCS_i
+// Type: Node
+BEGIN IOCS_i
+Fanin Number		10
+Pterm Number		4
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	A_FSB_23_.BLIF      	0
+Fanin Input     	nWE_FSB.BLIF        	0
+Fanin Input     	A_FSB_22_.BLIF      	0
+Fanin Input     	A_FSB_21_.BLIF      	0
+Fanin Input     	A_FSB_20_.BLIF      	0
+Fanin Input     	A_FSB_19_.BLIF      	0
+Fanin Input     	A_FSB_18_.BLIF      	0
+Fanin Input     	A_FSB_17_.BLIF      	0
+Fanin Input     	A_FSB_16_.BLIF      	0
+Fanin Node      	cs_nOverlay1.Q      	1
+END
+
+// Signal Name: cs_nOverlay1.D
+// Type: Node_reg
+BEGIN cs_nOverlay1.D
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Node      	cs_nOverlay0.Q      	2
+END
+
+// Signal Name: cs_nOverlay1.C
+// Type: Node_reg
+BEGIN cs_nOverlay1.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: cs_nOverlay1.CE
+// Type: Node_reg
+BEGIN cs_nOverlay1.CE
+Fanin Number		2
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Input     	nAS_FSB.BLIF        	0
+Fanin Node      	fsb_ASrf.Q          	1
+END
+
+// Signal Name: cs_nOverlay0.D
+// Type: Node_reg
+BEGIN cs_nOverlay0.D
+Fanin Number		6
+Pterm Number		2
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		1
+Fanin Input     	A_FSB_23_.BLIF      	0
+Fanin Input     	nAS_FSB.BLIF        	0
+Fanin Input     	A_FSB_22_.BLIF      	0
+Fanin Input     	A_FSB_21_.BLIF      	0
+Fanin Input     	A_FSB_20_.BLIF      	0
+Fanin Node      	cs_nOverlay0.Q      	2
+END
+
+// Signal Name: cs_nOverlay0.C
+// Type: Node_reg
+BEGIN cs_nOverlay0.C
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	CLK_FSB.BLIF        	0
+END
+
+// Signal Name: cs_nOverlay0.AR
+// Type: Node_reg
+BEGIN cs_nOverlay0.AR
+Fanin Number		1
+Pterm Number		1
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	nRES.BLIF           	0
+END
+
+// Signal Name: iobs_IORW1_0
+// Type: Node
+BEGIN iobs_IORW1_0
+Fanin Number		15
+Pterm Number		8
+Fanin per Macrocell	N/A
+Cluster PT		N/A
+Logic Levels		N/A
+Fanin Input     	A_FSB_23_.BLIF      	0
+Fanin Input     	nAS_FSB.BLIF        	0
+Fanin Input     	nWE_FSB.BLIF        	0
+Fanin Input     	A_FSB_22_.BLIF      	0
+Fanin Input     	A_FSB_21_.BLIF      	0
+Fanin Input     	A_FSB_20_.BLIF      	0
+Fanin Input     	A_FSB_19_.BLIF      	0
+Fanin Input     	A_FSB_18_.BLIF      	0
+Fanin Input     	A_FSB_17_.BLIF      	0
+Fanin Input     	A_FSB_16_.BLIF      	0
+Fanin Node      	iobs_ALE1.Q         	10
+Fanin Node      	iobs_PS_1_.Q        	7
+Fanin Node      	iobs_Once.Q         	10
+Fanin Node      	iobs_PS_0_.Q        	6
+Fanin Node      	cs_nOverlay1.Q      	1
+END
+
+// Design 'mxse' used clock signal list:
+CLOCK	CLK_FSB
+CLOCK	CLK2X_IOB
+CLOCK	CLK_IOB
+

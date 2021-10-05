@@ -1,17 +1,17 @@
 Selecting top level module MXSE
-@N: CG364 :"C:\users\zanek\documents\github\se-030\cpld\cs.v":1:7:1:8|Synthesizing module CS
+@N: CG364 :"C:\Users\zanek\Documents\GitHub\SE-030\cpld\cs.v":1:7:1:8|Synthesizing module CS
 
-@N: CG364 :"C:\users\zanek\documents\github\se-030\cpld\ram.v":1:7:1:9|Synthesizing module RAM
+@N: CG364 :"C:\Users\zanek\Documents\GitHub\SE-030\cpld\ram.v":1:7:1:9|Synthesizing module RAM
 
-@N: CG364 :"C:\users\zanek\documents\github\se-030\cpld\iobs.v":1:7:1:10|Synthesizing module IOBS
+@N: CG364 :"C:\Users\zanek\Documents\GitHub\SE-030\cpld\iobs.v":1:7:1:10|Synthesizing module IOBS
 
-@N: CG364 :"C:\users\zanek\documents\github\se-030\cpld\iobm.v":1:7:1:10|Synthesizing module IOBM
+@N: CG364 :"C:\Users\zanek\Documents\GitHub\SE-030\cpld\iobm.v":1:7:1:10|Synthesizing module IOBM
 
-@N: CG364 :"C:\users\zanek\documents\github\se-030\cpld\fsb.v":1:7:1:9|Synthesizing module FSB
+@N: CG364 :"C:\Users\zanek\Documents\GitHub\SE-030\cpld\fsb.v":1:7:1:9|Synthesizing module FSB
 
-@N: CG364 :"C:\users\zanek\documents\github\se-030\cpld\mxse.v":1:7:1:10|Synthesizing module MXSE
+@N: CG364 :"C:\Users\zanek\Documents\GitHub\SE-030\cpld\mxse.v":1:7:1:10|Synthesizing module MXSE
 
-@N: CL201 :"C:\users\zanek\documents\github\se-030\cpld\iobm.v":37:1:37:6|Trying to extract state machine for register IOS
-@N: CL201 :"C:\users\zanek\documents\github\se-030\cpld\iobs.v":49:1:49:6|Trying to extract state machine for register PS
-@W: CL247 :"C:\users\zanek\documents\github\se-030\cpld\cs.v":3:14:3:14|Input port bit 8 of A[23:8] is unused
+@N: CL201 :"C:\Users\zanek\Documents\GitHub\SE-030\cpld\iobm.v":37:1:37:6|Trying to extract state machine for register IOS
+@N: CL201 :"C:\Users\zanek\Documents\GitHub\SE-030\cpld\iobs.v":49:1:49:6|Trying to extract state machine for register PS
+@W: CL247 :"C:\Users\zanek\Documents\GitHub\SE-030\cpld\cs.v":3:14:3:14|Input port bit 8 of A[23:8] is unused
 
