@@ -1,8 +1,10 @@
 module RAM(
 	/* MC68HC000 interface */
-	input CLK,input [21:1] A, input nWE, input nAS, input nLDS, input nUDS,
-	/* FSB interface */
-	input ASActive, input ASInactive, input RAMCS, input ROMCS, output Ready,
+	input CLK, input [21:1] A, input nWE, input nAS, input nLDS, input nUDS,
+	/* AS cycle detection */
+	input CACT, 
+	/* Select and ready signals */
+	input RAMCS, input ROMCS, output Ready,
 	/* Refresh Counter Interface */
 	input RefReq, input RefUrgent, output RefAck,
 	/* DRAM and NOR flash interface */
@@ -34,35 +36,35 @@ module RAM(
 	assign RA[9:0] = RASEL ? {A[20], A[09:01]} : {A[19], A[18:10]};
 
 	always @(posedge CLK) begin
-		if (ASInactive) Once <= 0;
-		else if (RS==0 && ASActive && RAMCS) Once <= 1;
+		if (~CACT) Once <= 0;
+		else if (RS==0 && CACT && RAMCS) Once <= 1;
 	end
 	always @(posedge CLK) begin
-		if (ASInactive) RAMDIS2 <= 0;
-		else if ((RS==0 && ASActive && RefUrgent && Once && RAMCS) || 
-		         (RS==7 && ASActive && RefUrgent)) RAMDIS2 <= 1;
+		if (~CACT) RAMDIS2 <= 0;
+		else if ((RS==0 && CACT && RefUrgent && Once && RAMCS) || 
+		         (RS==7 && CACT && RefUrgent)) RAMDIS2 <= 1;
 	end
 	always @(posedge CLK) begin
 		if (RS==0) begin
-			if (ASInactive && RefUrgent) begin
+			if (~CACT && RefUrgent) begin
 				// Refresh starting during bus idle
 				RS <= 2;
 				RAMReady <= 0;
 				RASEL <= 1;
 				RAMDIS1 <= 1;
-			end else if (ASActive && ~RAMCS && RefReq) begin
+			end else if (CACT && ~RAMCS && RefReq) begin
 				// Refresh starting during non-RAM cycle
 				RS <= 2;
 				RAMReady <= 0;
 				RASEL <= 1;
 				RAMDIS1 <= 1;
-			end else if (ASActive &&  RAMCS && ~Once) begin
+			end else if (~CACT &&  RAMCS && ~Once) begin
 				// RAM access cycle
 				RS <= 5;
 				RAMReady <= 0;
 				RASEL <= 1;
 				RAMDIS1 <= 0;
-			end else if (ASActive &&  RAMCS && RefUrgent) begin
+			end else if (CACT &&  RAMCS && RefUrgent) begin
 				// Refresh during RAM /AS cycle
 				RS <= 1;
 				RAMReady <= 0;
@@ -109,16 +111,18 @@ module RAM(
 		end else if (RS==6) begin
 			RS <= 7;
 			RAMReady <= 0;
-			//RAMDIS1 <= 0;
+			// Keep RAMDIS1 state from previous cycle.
+			// RAMDIS1 is 1 if we are coming from refresh (RS4)
+			// but 0 if we are coming from RAM access (RS5)
 			RASEL <= 0;
 			RefRAS <= 0;
 		end else if (RS==7) begin
-			if (ASActive && RefUrgent) begin
+			if (CACT && RefUrgent) begin
 				RS <= 1;
 				RAMReady <= 0;
 				RAMDIS1 <= 1;
 				RASEL <= 0;
-			end else if (ASInactive && RefUrgent) begin
+			end else if (~CACT && RefUrgent) begin
 				RS <= 2;
 				RAMReady <= 0;
 				RAMDIS1 <= 1;
@@ -134,7 +138,7 @@ module RAM(
 	end
 	always @(negedge CLK) begin nCAS <= ~RASEL; end
 
-	assign RefAck = RS==2 || RS==3;
+	assign RefAck = RefRAS;
 
 	assign Ready = RAMCS ? RAMReady : 1;
 

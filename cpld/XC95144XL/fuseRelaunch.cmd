@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "uni9000_ver" -lib "aim_ver" -lib "cpld_ver" -lib "xilinxcorelib_ver" -o "C:/Users/zanek/Documents/GitHub/SE-030/cpld/XC95144XL/FSB_isim_beh.exe" -prj "C:/Users/zanek/Documents/GitHub/SE-030/cpld/XC95144XL/FSB_beh.prj" "work.FSB" "work.glbl" 

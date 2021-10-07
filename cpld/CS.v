@@ -1,8 +1,8 @@
 module CS(
 	/* MC68HC000 interface */
 	input [23:08] A, input CLK, input nRES, input nWE, 
-	/* FSB interface */
-	input ASActive, input ASInactive,
+	/* AS cycle detection */
+	input CACT,
 	/* Device select outputs */
 	output IOCS, output IACS, output ROMCS, output RAMCS, output SndRAMCSWR);
 
@@ -13,10 +13,10 @@ module CS(
 	wire ODCS = A[23:20]==4'h4; // Disable overlay
 	always @(posedge CLK, negedge nRES) begin
 		if (~nRES) nOverlay0 <= 0;
-		else if (ASActive && ODCS) nOverlay0 <= 1;
+		else if (CACT && ODCS) nOverlay0 <= 1;
 	end
 	always @(posedge CLK) begin
-		if (ASInactive) nOverlay1 <= nOverlay0;
+		if (~CACT) nOverlay1 <= nOverlay0;
 	end
 
 	/* Select signals - FSB domain */

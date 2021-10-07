@@ -1,8 +1,10 @@
 module IOBS(
 	/* MC68HC000 interface */
-	input CLK, input nWE, input nLDS, input nUDS,
-	/* FSB interface */
-	input ASActive, input ASInactive, input IOCS, output Ready,
+	input CLK, input nWE, input nAS, input nLDS, input nUDS,
+	/* AS cycle detection */
+	input CACT,
+	/* Select and ready signals */
+	input IOCS, output Ready,
 	/* Read data OE control */
 	output nDinOE,
 	/* IOB Master Controller Interface */
@@ -17,7 +19,7 @@ module IOBS(
 	always @(posedge CLK) begin IOACTr <= IOACT; end
 
 	/* Read data OE control */
-	assign nDinOE = ASActive && IOCS && nWE;
+	assign nDinOE = ~nAS && IOCS && nWE;
 	
 	/* Posted read/write state */
 	reg [1:0] PS = 0;
@@ -29,7 +31,7 @@ module IOBS(
 	reg IOL1;
 	reg IOU1;
 	always @(posedge CLK) begin
-		if (PS!=0 && ASActive && IOCS && ~Once && ~ALE1) begin
+		if (PS!=0 && CACT && IOCS && ~Once && ~ALE1) begin
 			ALE1 <= 1;
 			IORW1 <= nWE;
 			Load1 <= 1;
@@ -52,7 +54,7 @@ module IOBS(
 				PS <= 3;
 				IOREQ <= 1;
 				IORW0 <= IORW1;
-			end else if (ASActive && IOCS && ~Once) begin
+			end else if (CACT && IOCS && ~Once) begin
 				PS <= 3;
 				IOREQ <= 1;
 				IORW0 <= nWE;
@@ -92,12 +94,12 @@ module IOBS(
 	/* Once and ready control */
 	reg IORDReady;
 	always @(posedge CLK) begin
-		if (ASInactive) Once <= 0;
-		else if (ASActive && IOCS && (PS==0 || ~ALE1)) Once <= 1;
+		if (~CACT) Once <= 0;
+		else if (CACT && IOCS && (PS==0 || ~ALE1)) Once <= 1;
 	end
 	always @(posedge CLK) begin
-		if (ASInactive) IORDReady <= 0;
-		else if (ASActive && Once && (PS==0 || PS==1) && ~IOACTr) IORDReady <= 1;
+		if (~CACT) IORDReady <= 0;
+		else if (CACT && Once && (PS==0 || PS==1) && ~IOACTr) IORDReady <= 1;
 	end
 	assign Ready = IOCS ? (nWE ? IORDReady : ~ALE1) : 1;
 

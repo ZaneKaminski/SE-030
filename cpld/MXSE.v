@@ -32,10 +32,11 @@ module MXSE(
 	output nAoutOE,
 	output nDoutOE,
 	output nDinOE,
-	output nDinLE);
+	output nDinLE,
+	output CACT);
 
-	/* AS active / inactive signals */
-	wire ASActive, ASInactive;
+	/* AS cycle detection */
+	wire AINACT, BACT;
 
 	/* Refresh request/ack signals */
 	wire RefReq, RefUrgent, RefAck;
@@ -44,8 +45,8 @@ module MXSE(
 	CS cs(
 		/* MC68HC000 interface */
 		A_FSB[23:08], CLK_FSB, nRES, nWE_FSB,
-		/* FSB interface */
-		ASActive, ASInactive,
+		/*  AS cycle detection */
+		CACT,
 		/* Device select outputs */
 		IOCS, IACS, ROMCS, RAMCS, SndRAMCSWR);
 
@@ -53,8 +54,10 @@ module MXSE(
 	RAM ram(
 		/* MC68HC000 interface */
 		CLK_FSB, A_FSB[21:1], nWE_FSB, nAS_FSB, nLDS_FSB, nUDS_FSB,
-		/* FSB interface */
-		ASActive, ASInactive, RAMCS, ROMCS, Ready_RAM,
+		/*  AS cycle detection */
+		CACT,
+		/* Select and ready signals */
+		RAMCS, ROMCS, Ready_RAM,
 		/* Refresh Counter Interface */
 		RefReq, RefUrgent, RefAck,
 		/* DRAM and NOR flash interface */
@@ -69,9 +72,11 @@ module MXSE(
 	wire IORW0, IOL0, IOU0;
 	IOBS iobs(
 		/* MC68HC000 interface */
-		CLK_FSB, nWE_FSB, nLDS_FSB, nUDS_FSB,
-		/* FSB interface */
-		ASActive, ASInactive, IOCS, Ready_IOBS,
+		CLK_FSB, nWE_FSB, nAS_FSB, nLDS_FSB, nUDS_FSB,
+		/* AS cycle detection */
+		CACT,
+		/* Select and ready signals */
+		IOCS, Ready_IOBS,
 		/* Read data OE control */
 		nDinOE,
 		/* IOB Master Controller Interface */
@@ -92,18 +97,22 @@ module MXSE(
 		IOACT, IOREQ, IOL0, IOU0, IORW0);
 
 	wire TimeoutA, TimeoutB;
+	CNT cnt(
+		/* FSB clock and AS detection */
+		CLK_FSB, CACT,
+		/* Refresh request */
+		RefReq, RefUrgent, RefAck,
+		/* Timeout signals */
+		TimeoutA, TimeoutB);
+	
 	wire Ready = Ready_IOBS && Ready_RAM && (~SndRAMCSWR ? TimeoutA : 1);
 	assign nBERR_FSB = ~(~nAS_FSB && nDTACK_FSB && nVPA_FSB && ((IOCS && ~nBERR_IOB) || (~IOCS && TimeoutB)));
 	FSB fsb(
 		/* MC68HC000 interface */
 		CLK_FSB, nAS_FSB, nDTACK_FSB, nVPA_FSB, 
-		/* AS detection */
-		ASActive, ASInactive,
+		/* AS cycle detection */
+		AINACT, BACT, CACT,
 		/* Ready and IA inputs */
-		Ready, IACS,
-		/* Refresh request */
-		RefReq, RefUrgent, RefAck,
-		/* Timeout signals */
-		TimeoutA, TimeoutB);
+		Ready, IACS);
 
 endmodule
