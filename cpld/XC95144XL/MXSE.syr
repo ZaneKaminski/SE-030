@@ -1,16 +1,16 @@
-Release 14.7 - xst P.20131013 (nt64)
+Release 14.7 - xst P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Reading design: MXSE.prj
 
@@ -156,8 +156,8 @@ Synthesizing Unit <RAM>.
     Found finite state machine <FSM_0> for signal <RS>.
     -----------------------------------------------------------------------
     | States             | 8                                              |
-    | Transitions        | 17                                             |
-    | Inputs             | 5                                              |
+    | Transitions        | 18                                             |
+    | Inputs             | 6                                              |
     | Outputs            | 9                                              |
     | Clock              | CLK                       (rising_edge)        |
     | Power Up State     | 000                                            |
@@ -165,6 +165,7 @@ Synthesizing Unit <RAM>.
     | Implementation     | automatic                                      |
     -----------------------------------------------------------------------
     Found 1-bit register for signal <nCAS>.
+    Found 1-bit register for signal <BACTr>.
     Found 1-bit register for signal <Once>.
     Found 1-bit register for signal <RAMDIS1>.
     Found 1-bit register for signal <RAMDIS2>.
@@ -173,7 +174,7 @@ Synthesizing Unit <RAM>.
     Found 1-bit register for signal <RefRAS>.
     Summary:
 	inferred   1 Finite State Machine(s).
-	inferred   5 D-type flip-flop(s).
+	inferred   6 D-type flip-flop(s).
 Unit <RAM> synthesized.
 
 
@@ -190,6 +191,7 @@ Synthesizing Unit <IOBS>.
     | Encoding           | automatic                                      |
     | Implementation     | automatic                                      |
     -----------------------------------------------------------------------
+    Found 1-bit register for signal <BERR>.
     Found 1-bit register for signal <IOREQ>.
     Found 1-bit register for signal <IORW0>.
     Found 1-bit register for signal <IOL0>.
@@ -198,7 +200,7 @@ Synthesizing Unit <IOBS>.
     Found 1-bit register for signal <ALE1>.
     Found 1-bit register for signal <IOACTr>.
     Found 1-bit register for signal <IOL1>.
-    Found 1-bit register for signal <IORDReady>.
+    Found 1-bit register for signal <IOReady>.
     Found 1-bit register for signal <IORW1>.
     Found 1-bit register for signal <IOU1>.
     Found 1-bit register for signal <Load1>.
@@ -214,14 +216,15 @@ Synthesizing Unit <IOBM>.
     Found finite state machine <FSM_2> for signal <IOS>.
     -----------------------------------------------------------------------
     | States             | 8                                              |
-    | Transitions        | 14                                             |
-    | Inputs             | 5                                              |
-    | Outputs            | 8                                              |
+    | Transitions        | 15                                             |
+    | Inputs             | 6                                              |
+    | Outputs            | 9                                              |
     | Clock              | C16M                      (rising_edge)        |
     | Power Up State     | 000                                            |
     | Encoding           | automatic                                      |
     | Implementation     | automatic                                      |
     -----------------------------------------------------------------------
+    Found 1-bit register for signal <IOBERR>.
     Found 1-bit register for signal <IOACT>.
     Found 1-bit register for signal <nAS>.
     Found 1-bit register for signal <nLDS>.
@@ -230,15 +233,23 @@ Synthesizing Unit <IOBM>.
     Found 1-bit register for signal <nDoutOE>.
     Found 1-bit register for signal <ALE0>.
     Found 1-bit register for signal <nVMA>.
+    Found 1-bit register for signal <BERRrf>.
+    Found 1-bit register for signal <BERRrr>.
+    Found 1-bit register for signal <DTACKrf>.
+    Found 1-bit register for signal <DTACKrr>.
     Found 1-bit register for signal <Er>.
     Found 1-bit register for signal <Er2>.
     Found 5-bit up counter for signal <ES>.
     Found 1-bit register for signal <ETACK>.
     Found 1-bit register for signal <IOREQr>.
+    Found 1-bit register for signal <RESrf>.
+    Found 1-bit register for signal <RESrr>.
+    Found 1-bit register for signal <VPArf>.
+    Found 1-bit register for signal <VPArr>.
     Summary:
 	inferred   1 Finite State Machine(s).
 	inferred   1 Counter(s).
-	inferred  11 D-type flip-flop(s).
+	inferred  20 D-type flip-flop(s).
 Unit <IOBM> synthesized.
 
 
@@ -246,7 +257,7 @@ Synthesizing Unit <CNT>.
     Related source file is "../CNT.v".
     Found 1-bit register for signal <TimeoutA>.
     Found 1-bit register for signal <TimeoutB>.
-    Found 9-bit up counter for signal <RefCnt>.
+    Found 8-bit up counter for signal <RefCnt>.
     Found 1-bit register for signal <RefDone>.
     Summary:
 	inferred   1 Counter(s).
@@ -255,10 +266,14 @@ Unit <CNT> synthesized.
 
 Synthesizing Unit <FSB>.
     Related source file is "../FSB.v".
-    Found 1-bit register for signal <nVPA>.
     Found 1-bit register for signal <nDTACK>.
-    Found 1-bit register for signal <BACT>.
     Found 1-bit register for signal <ASrf>.
+    Found 1-bit register for signal <BERR0r>.
+    Found 1-bit register for signal <BERR1r>.
+    Found 1-bit register for signal <Ready0r>.
+    Found 1-bit register for signal <Ready1r>.
+    Found 1-bit register for signal <Ready2r>.
+    Found 1-bit register for signal <VPA>.
     Summary:
 	inferred   1 D-type flip-flop(s).
 Unit <FSB> synthesized.
@@ -266,8 +281,6 @@ Unit <FSB> synthesized.
 
 Synthesizing Unit <MXSE>.
     Related source file is "../MXSE.v".
-WARNING:Xst:646 - Signal <BACT> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <AINACT> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 Unit <MXSE> synthesized.
 
 
@@ -277,9 +290,9 @@ HDL Synthesis Report
 Macro Statistics
 # Counters                                             : 2
  5-bit up counter                                      : 1
- 9-bit up counter                                      : 1
-# Registers                                            : 41
- 1-bit register                                        : 41
+ 8-bit up counter                                      : 1
+# Registers                                            : 56
+ 1-bit register                                        : 56
 
 =========================================================================
 
@@ -312,18 +325,18 @@ Optimizing FSM <iobs/PS/FSM> on signal <PS[1:2]> with johnson encoding.
  01    | 10
 -------------------
 Analyzing FSM <FSM_0> for best encoding.
-Optimizing FSM <ram/RS/FSM> on signal <RS[1:3]> with gray encoding.
+Optimizing FSM <ram/RS/FSM> on signal <RS[1:3]> with user encoding.
 -------------------
  State | Encoding
 -------------------
  000   | 000
- 010   | 001
- 101   | 011
- 001   | 010
- 011   | 110
- 100   | 111
- 110   | 101
- 111   | 100
+ 010   | 010
+ 101   | 101
+ 001   | 001
+ 011   | 011
+ 100   | 100
+ 111   | 111
+ 110   | 110
 -------------------
 
 =========================================================================
@@ -333,9 +346,9 @@ Macro Statistics
 # FSMs                                                 : 3
 # Counters                                             : 2
  5-bit up counter                                      : 1
- 9-bit up counter                                      : 1
-# Registers                                            : 28
- Flip-Flops                                            : 28
+ 8-bit up counter                                      : 1
+# Registers                                            : 38
+ Flip-Flops                                            : 38
 
 =========================================================================
 
@@ -370,7 +383,6 @@ Optimizing unit <FSB> ...
   implementation constraint: INIT=r	 : ASrf
 
 Optimizing unit <IOBM> ...
-  implementation constraint: INIT=s	 : IOS_FSM_FFd8
   implementation constraint: INIT=r	 : ETACK
   implementation constraint: INIT=r	 : IOREQr
   implementation constraint: INIT=r	 : IOS_FSM_FFd1
@@ -380,18 +392,18 @@ Optimizing unit <IOBM> ...
   implementation constraint: INIT=r	 : IOS_FSM_FFd5
   implementation constraint: INIT=r	 : IOS_FSM_FFd6
   implementation constraint: INIT=r	 : IOS_FSM_FFd7
+  implementation constraint: INIT=s	 : IOS_FSM_FFd8
 
 Optimizing unit <CNT> ...
-  implementation constraint: INIT=r	 : RefCnt_7
   implementation constraint: INIT=r	 : RefDone
-  implementation constraint: INIT=r	 : RefCnt_8
+  implementation constraint: INIT=r	 : RefCnt_7
   implementation constraint: INIT=r	 : RefCnt_6
-  implementation constraint: INIT=r	 : RefCnt_0
-  implementation constraint: INIT=r	 : RefCnt_1
-  implementation constraint: INIT=r	 : RefCnt_2
-  implementation constraint: INIT=r	 : RefCnt_3
-  implementation constraint: INIT=r	 : RefCnt_4
   implementation constraint: INIT=r	 : RefCnt_5
+  implementation constraint: INIT=r	 : RefCnt_4
+  implementation constraint: INIT=r	 : RefCnt_3
+  implementation constraint: INIT=r	 : RefCnt_2
+  implementation constraint: INIT=r	 : RefCnt_1
+  implementation constraint: INIT=r	 : RefCnt_0
 
 =========================================================================
 *                           Partition Report                            *
@@ -420,41 +432,40 @@ Clock Enable                       : YES
 wysiwyg                            : NO
 
 Design Statistics
-# IOs                              : 68
+# IOs                              : 67
 
 Cell Usage :
-# BELS                             : 547
-#      AND2                        : 160
-#      AND3                        : 24
-#      AND4                        : 11
+# BELS                             : 566
+#      AND2                        : 162
+#      AND3                        : 21
+#      AND4                        : 15
 #      AND5                        : 1
 #      AND6                        : 3
-#      AND7                        : 1
-#      AND8                        : 1
+#      AND8                        : 3
 #      GND                         : 6
-#      INV                         : 233
-#      OR2                         : 86
-#      OR3                         : 5
-#      OR4                         : 2
+#      INV                         : 238
+#      OR2                         : 91
+#      OR3                         : 8
+#      OR4                         : 5
 #      VCC                         : 1
-#      XOR2                        : 13
-# FlipFlops/Latches                : 68
-#      FD                          : 48
-#      FDCE                        : 20
-# IO Buffers                       : 68
+#      XOR2                        : 12
+# FlipFlops/Latches                : 82
+#      FD                          : 56
+#      FDCE                        : 26
+# IO Buffers                       : 67
 #      IBUF                        : 35
-#      OBUF                        : 33
+#      OBUF                        : 32
 =========================================================================
 
 
-Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 3.66 secs
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 2.37 secs
  
 --> 
 
-Total memory usage is 4513696 kilobytes
+Total memory usage is 231768 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    2 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

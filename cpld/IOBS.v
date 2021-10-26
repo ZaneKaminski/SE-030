@@ -2,13 +2,13 @@ module IOBS(
 	/* MC68HC000 interface */
 	input CLK, input nWE, input nAS, input nLDS, input nUDS,
 	/* AS cycle detection */
-	input CACT,
+	input BACT,
 	/* Select and ready signals */
-	input IOCS, output Ready,
+	input IOCS, input IOPWCS, output Ready, output reg BERR,
 	/* Read data OE control */
 	output nDinOE,
 	/* IOB Master Controller Interface */
-	output reg IOREQ, input IOACT,
+	output reg IOREQ, input IOACT, input IOBERR,
 	/* FIFO primary level control */
 	output reg ALE0, output reg IORW0, output reg IOL0, output reg IOU0,
 	/* FIFO secondary level control */
@@ -31,7 +31,7 @@ module IOBS(
 	reg IOL1;
 	reg IOU1;
 	always @(posedge CLK) begin
-		if (PS!=0 && CACT && IOCS && ~Once && ~ALE1) begin
+		if (PS!=0 && BACT && IOCS && ~Once && ~ALE1) begin
 			ALE1 <= 1;
 			IORW1 <= nWE;
 			Load1 <= 1;
@@ -54,7 +54,7 @@ module IOBS(
 				PS <= 3;
 				IOREQ <= 1;
 				IORW0 <= IORW1;
-			end else if (CACT && IOCS && ~Once) begin
+			end else if (BACT && IOCS && ~Once) begin
 				PS <= 3;
 				IOREQ <= 1;
 				IORW0 <= nWE;
@@ -91,16 +91,22 @@ module IOBS(
 		end
 	end
 
-	/* Once and ready control */
-	reg IORDReady;
+	/* Once, ready, BERR control */
+	reg IOReady;
+	wire IOPWReady = ~ALE1;
 	always @(posedge CLK) begin
-		if (~CACT) Once <= 0;
-		else if (CACT && IOCS && (PS==0 || ~ALE1)) Once <= 1;
+		if (~BACT) Once <= 0;
+		else if (IOCS && (PS==0 || (IOPWCS && IOPWReady))) Once <= 1;
 	end
 	always @(posedge CLK) begin
-		if (~CACT) IORDReady <= 0;
-		else if (CACT && Once && (PS==0 || PS==1) && ~IOACTr) IORDReady <= 1;
+		if (~BACT) begin
+			IOReady <= 0;
+			BERR <= 0;
+		end else if (Once && (PS==0 || PS==1) && ~IOACTr && IOPWReady) begin
+			IOReady <= ~IOBERR;
+			BERR <= IOBERR;
+		end
 	end
-	assign Ready = IOCS ? (nWE ? IORDReady : ~ALE1) : 1;
+	assign Ready = ~IOCS || IOReady || (IOPWCS && IOPWReady);
 
 endmodule

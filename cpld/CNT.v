@@ -7,18 +7,14 @@ module CNT(
 	output reg TimeoutA, output reg TimeoutB);
 	
 	/* Refresh counter */
-	reg [8:0] RefCnt = 0;
+	reg [7:0] RefCnt = 0;
 	reg RefDone = 0;
 	assign RefReq = ~RefDone;
-	assign RefUrgent = RefCnt[8] && ~RefDone;
+	assign RefUrgent = RefCnt[7] && RefCnt[6] && RefCnt[5] && ~RefDone;
 	always @(posedge FCLK) begin
-		if (RefCnt[8] && RefCnt[5]) begin
-			RefCnt <= 0;
-			RefDone <= 0;
-		end else begin
-			RefCnt <= RefCnt+1;
-			if (RefAck) RefDone <= 1;
-		end
+		RefCnt <= RefCnt+1;
+		if (RefCnt==0) RefDone <= 0;
+		else if (RefAck) RefDone <= 1;
 	end
 
 	/* Timeout signals */
@@ -26,9 +22,9 @@ module CNT(
 		if (~CACT) begin
 			TimeoutA <= 0;
 			TimeoutB <= 0;
-		end else if (CACT) begin
-			if (RefCnt[5:0]==0) TimeoutA <= 1;
-			if (RefCnt[5:0]==0 && TimeoutA) TimeoutB <= 1;
+		end else begin
+			if (RefCnt==0) TimeoutA <= 1;
+			if (RefCnt==0 && TimeoutA) TimeoutB <= 1;
 		end
 	end
 

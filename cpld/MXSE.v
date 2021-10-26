@@ -32,30 +32,29 @@ module MXSE(
 	output nAoutOE,
 	output nDoutOE,
 	output nDinOE,
-	output nDinLE,
-	output CACT);
+	output nDinLE);
 
 	/* AS cycle detection */
-	wire AINACT, BACT;
+	wire BACT;
 
 	/* Refresh request/ack signals */
 	wire RefReq, RefUrgent, RefAck;
 	
-	wire IOCS, IACS, ROMCS, RAMCS, SndRAMCSWR;
+	wire IOCS, SCSICS, IOPWCS, IACS, ROMCS, RAMCS, SndRAMCSWR;
 	CS cs(
 		/* MC68HC000 interface */
 		A_FSB[23:08], CLK_FSB, nRES, nWE_FSB,
 		/*  AS cycle detection */
-		CACT,
+		BACT,
 		/* Device select outputs */
-		IOCS, IACS, ROMCS, RAMCS, SndRAMCSWR);
+		IOCS, SCSICS, IOPWCS, IACS, ROMCS, RAMCS, SndRAMCSWR);
 
 	wire Ready_RAM;
 	RAM ram(
 		/* MC68HC000 interface */
 		CLK_FSB, A_FSB[21:1], nWE_FSB, nAS_FSB, nLDS_FSB, nUDS_FSB,
 		/*  AS cycle detection */
-		CACT,
+		BACT,
 		/* Select and ready signals */
 		RAMCS, ROMCS, Ready_RAM,
 		/* Refresh Counter Interface */
@@ -64,8 +63,8 @@ module MXSE(
 		RA[11:0], nRAS, nCAS,
 		nRAMLWE, nRAMUWE, nOE, nROMCS, nROMWE);
 
-	wire Ready_IOBS;
-	wire IOREQ, IOACT;
+	wire Ready_IOBS, BERR_IOBS;
+	wire IOREQ, IOACT, IOBERR;
 	wire ALE0S, ALE0M, ALE1;
 	assign nADoutLE0 = ~(ALE0S || ALE0M);
 	assign nADoutLE1 = ~ALE1;
@@ -73,14 +72,14 @@ module MXSE(
 	IOBS iobs(
 		/* MC68HC000 interface */
 		CLK_FSB, nWE_FSB, nAS_FSB, nLDS_FSB, nUDS_FSB,
-		/* AS cycle detection */
-		CACT,
+		/* AS cycle detection, FSB BERR */
+		BACT,
 		/* Select and ready signals */
-		IOCS, Ready_IOBS,
+		IOCS, IOPWCS, Ready_IOBS, BERR_IOBS,
 		/* Read data OE control */
 		nDinOE,
 		/* IOB Master Controller Interface */
-		IOREQ, IOACT,
+		IOREQ, IOACT, IOBERR,
 		/* FIFO primary level control */
 		ALE0S, IORW0, IOL0, IOU0,
 		/* FIFO secondary level control */
@@ -90,29 +89,31 @@ module MXSE(
 		/* PDS interface */
 		CLK2X_IOB, CLK_IOB, E_IOB,
 		nAS_IOB, nLDS_IOB, nUDS_IOB, nVMA_IOB,
-		nDTACK_IOB, nVPA_IOB, nBERR_IOB,
+		nDTACK_IOB, nVPA_IOB, nBERR_IOB, nRES,
 		/* PDS address and data latch control */
 		nAoutOE, nDoutOE, ALE0M, nDinLE,
 		/* IO bus slave port interface */
-		IOACT, IOREQ, IOL0, IOU0, IORW0);
+		IOACT, IOBERR, IOREQ, IOL0, IOU0, IORW0);
 
 	wire TimeoutA, TimeoutB;
 	CNT cnt(
 		/* FSB clock and AS detection */
-		CLK_FSB, CACT,
+		CLK_FSB, BACT,
 		/* Refresh request */
 		RefReq, RefUrgent, RefAck,
 		/* Timeout signals */
 		TimeoutA, TimeoutB);
 	
-	wire Ready = Ready_IOBS && Ready_RAM && (~SndRAMCSWR ? TimeoutA : 1);
-	assign nBERR_FSB = ~(~nAS_FSB && nDTACK_FSB && nVPA_FSB && ((IOCS && ~nBERR_IOB) || (~IOCS && TimeoutB)));
 	FSB fsb(
 		/* MC68HC000 interface */
-		CLK_FSB, nAS_FSB, nDTACK_FSB, nVPA_FSB, 
+		CLK_FSB, nAS_FSB, nDTACK_FSB, nVPA_FSB, nBERR_FSB,
 		/* AS cycle detection */
-		AINACT, BACT, CACT,
+		BACT,
 		/* Ready and IA inputs */
-		Ready, IACS);
+		Ready_RAM, Ready_IOBS, ~(SndRAMCSWR && ~TimeoutA),
+		/* BERR inputs */
+		(~SCSICS && TimeoutB), BERR_IOBS,
+		/* Interrupt acknowledge select */
+		IACS);
 
 endmodule

@@ -1,0 +1,134 @@
+<html>
+<head>
+	<title>Garrett's Workshop - Maccelerator-LC Timing</title>
+	<style type="text/css">
+		ul {
+			margin-top: 0;
+		}
+		h3 {
+			margin-bottom: 0;
+		}
+		h2, h4 {
+			margin-bottom: 3px;
+		}
+		h3 + h4 {
+			margin-top:6px;
+		}
+		p {
+			margin-top:0;
+		}
+		ul li {
+			padding-top: 3px;
+		}
+		ul li sup {
+			line-height: 0;
+		}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wavedrom/2.6.8/skins/default.js" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wavedrom/2.6.8/wavedrom.min.js" type="text/javascript"></script>
+</head>
+
+<body onload="WaveDrom.ProcessAll()">
+<h1>Garrett's Workshop Maccelerator-SE 20 MHz 68HC000 Accelerator Documentation</h1>
+
+<h3 id="t0">1. Three consecutive reads - row activate, row hit, row miss</h3>
+<script type="WaveDrom">{signal: [
+  {name: 'RS',    wave: '222222222222222222222222', data:['X',0,1,2,3,4,5,6,7,0,1,4,5,6,7,0,1,2,3,4,5,6,7,0]},
+  {name: 'FCLK',  wave: 'p.......................'},
+  {name: 'MCLK',  wave: '101010101010101010101010', phase: 0.12, period:1.0},
+  {name: 'A',     wave: 'x2......x2....x2......x2', phase: 0.12, period:1.0},
+  {name: '/AS',   wave: '.x0....x1x0..x1x0....x1.', phase: 0.12, period:1.0},
+  {name: 'RCLK',  wave: '010101010101010101010101010101010101010101010101', phase:0, period:0.5},
+  {name: 'RCMD',  wave: '222222222222222222222222', phase:0, data:[
+  	'NOP','NOP','NOP','ACT','RD','NOP','NOP','NOP','NOP','NOP','RD','NOP','NOP','NOP','NOP','NOP','PC','ACT','RD','NOP','NOP','NOP','NOP','NOP']},
+  {name: 'RCKE',  wave: '1....0...1.0...1...0...1', phase:0},
+  {name: 'RD',    wave: 'z...........x.2.z.......x.2.z...........x.2.z....', phase:0, period:0.5},
+  {name: '/RDOE', wave: '1....0...1.0...1.0...1..', phase:0},
+  {name: 'MCLK',  wave: '101010101010101010101010', phase: 0.12, period:1.0},
+  {name: 'STERM', wave: '1....0.1...0.1.....0.1..', phase:0},
+]}</script><br/><p>
+
+<h3 id="t0">2. Three consecutive writes - row activate, row hit, row miss</h3>
+<script type="WaveDrom">{signal: [
+  {name: 'RS',    wave: '22222222222222222222', data:['X',0,1,4,5,6,7,0,1,4,5,6,7,0,1,4,5,6,7,0]},
+  {name: 'FCLK',  wave: 'p...................'},
+  {name: 'MCLK',  wave: '10101010101010101010', phase: 0.12, period:1.0},
+  {name: 'A',     wave: 'x2....x2....x2....x2', phase: 0.12, period:1.0},
+  {name: '/AS',   wave: '.x0..x1x0..x1x0..x1.', phase: 0.12, period:1.0},
+  {name: 'RCLK',  wave: '0101010101010101010101010101010101010101', phase:0, period:0.5},
+  {name: 'RCMD',  wave: '22222222222222222222', phase:0, data:[
+  	'NOP','NOP','NOP','ACT','WR','NOP','NOP','NOP','NOP','NOP','WR','NOP','NOP','NOP','PC','ACT','WR','NOP','NOP','NOP']},
+  {name: 'RCKE',  wave: '1...................', phase:0},
+  {name: 'RD',    wave: 'z.....x.2.xz......x.2.xz......x.2.xz....', phase:0, period:0.5},
+  {name: '/RDOE', wave: '1..0.1...0.1...0.1..', phase:0},
+  {name: 'MCLK',  wave: '10101010101010101010', phase: 0.12, period:1.0},
+  {name: 'STERM', wave: '1..0.1...0.1...0.1..', phase:0},
+]}</script><br/><p>
+
+<h3 id="t0">3. MC68030 read row hit, then MC68030 changes its mind -- read, row activate, row hit, row miss</h3>
+<script type="WaveDrom">{signal: [
+  {name: 'RS',    wave: '22222222222222222222222222222', data:['X',0,1,0,1,2,3,4,5,6,7,0,1,0,1,4,5,6,7,0,1,0,1,2,3,4,5,6,7,0]},
+  {name: 'FCLK',  wave: 'p............................'},
+  {name: 'MCLK',  wave: '10101010101010101010101010101', phase: 0.12, period:1.0},
+  {name: 'A',     wave: 'x2x2......x2x2....x2x2......x', phase: 0.12, period:1.0},
+  {name: '/AS',   wave: '1..x0....x1..x0..x1..x0....x1', phase: 0.12, period:1.0},
+  {name: 'RCLK',  wave: '0101010101010101010101010101010101010101010101010101010101', phase:0, period:0.5},
+  {name: 'RCMD',  wave: '22222222222222222222222222222', phase:0, data:[
+  	'NOP','NOP','RD','NOP','NOP','ACT','RD','NOP','NOP','NOP','NOP','NOP','RD','NOP','RD','NOP','NOP','NOP','NOP','NOP','RD','NOP','PC','ACT','RD','NOP','NOP','NOP','NOP']},
+  {name: 'RCKE',  wave: '1......01......01........01..', phase:0},
+  {name: 'RD',    wave: 'z......x.z.....x.2.z.......x.z.x.2.z..z....x.z.....x.2.z..', phase:0, period:0.5},
+  {name: '/RDOE', wave: '1....0.....1...0...1...0.....', phase:0},
+  {name: 'MCLK',  wave: '10101010101010101010101010101', phase: 0.12, period:1.0},
+  {name: 'STERM', wave: '1......0.1.....0.1.......0.1.', phase:0},
+]}</script><br/><p>
+
+<h3 id="t0">4. MC68030 read row hit, then MC68030 changes its mind -- write, row miss</h3>
+<script type="WaveDrom">{signal: [
+  {name: 'RS',    wave: '222222222', data:['X',0,1,0,1,2,3,4,5]},
+  {name: 'FCLK',  wave: 'p........'},
+  {name: 'MCLK',  wave: '101010101', phase: 0.12, period:1.0},
+  {name: 'A',     wave: 'x2x2....x', phase: 0.12, period:1.0},
+  {name: '/AS',   wave: '1..x0..x1', phase: 0.12, period:1.0},
+  {name: 'RCLK',  wave: '010101010101010101', phase:0, period:0.5},
+  {name: 'RCMD',  wave: '222222222', phase:0, data:[
+  	'NOP','NOP','RD','NOP','PC','ACT','WR','NOP','NOP','NOP','NOP','NOP','RD','NOP','RD','NOP','NOP','NOP','NOP','NOP','RD','NOP','PC','ACT','RD','NOP','NOP','NOP','NOP']},
+  {name: 'RCKE',  wave: '1........', phase:0},
+  {name: 'RD',    wave: 'z......x.zx.2.x.z.', phase:0, period:0.5},
+  {name: '/RDOE', wave: '1....0.1.', phase:0},
+  {name: 'MCLK',  wave: '101010101', phase: 0.12, period:1.0},
+  {name: 'STERM', wave: '1....0.1.', phase:0},
+]}</script><br/><p>
+
+<h3 id="t0">5. MC68030 idle afte read</h3>
+<script type="WaveDrom">{signal: [
+  {name: 'RS',    wave: '22222222222', data:[5,6,7,0,1,0,1,0,1,0,1]},
+  {name: 'FCLK',  wave: 'p..........'},
+  {name: 'MCLK',  wave: '10101010101', phase: 0.12, period:1.0},
+  {name: 'A',     wave: '2..........', phase: 0.12, period:1.0},
+  {name: '/AS',   wave: '0x1........', phase: 0.12, period:1.0},
+  {name: 'RCLK',  wave: '0101010101010101010101', phase:0, period:0.5},
+  {name: 'RCMD',  wave: '22222222222', phase:0, data:[
+  	'NOP','NOP','NOP','NOP','RD','NOP','RD','NOP','RD','NOP','RD','NOP','NOP','NOP','RD','NOP','RD','NOP','NOP','NOP','NOP','NOP','RD','NOP','PC','ACT','RD','NOP','NOP','NOP','NOP']},
+  {name: 'RCKE',  wave: '1..........', phase:0},
+  {name: 'RD',    wave: '2.....xz...x.z.x.z.x.z', phase:0, period:0.5},
+  {name: '/RDOE', wave: '0..1........', phase:0},
+]}</script><br/><p>
+
+<h3 id="t0">6. MC68030 idle afte write</h3>
+<script type="WaveDrom">{signal: [
+  {name: 'RS',    wave: '22222222222', data:[5,6,7,0,1,0,1,0,1,0,1]},
+  {name: 'FCLK',  wave: 'p..........'},
+  {name: 'MCLK',  wave: '10101010101', phase: 0.12, period:1.0},
+  {name: 'A',     wave: '2..........', phase: 0.12, period:1.0},
+  {name: '/AS',   wave: '0x1........', phase: 0.12, period:1.0},
+  {name: 'RCLK',  wave: '0101010101010101010101', phase:0, period:0.5},
+  {name: 'RCMD',  wave: '22222222222', phase:0, data:[
+  	'WR','NOP','NOP','NOP','NOP','NOP','NOP','NOP','NOP','NOP','NOP','NOP','NOP','NOP','NOP','NOP','NOP','NOP','NOP','NOP','NOP','NOP','NOP','NOP','PC','ACT','NOP','NOP','NOP','NOP','NOP']},
+  {name: 'RCKE',  wave: '1..........', phase:0},
+  {name: 'RD',    wave: '2.xz..................', phase:0, period:0.5},
+  {name: '/RDOE', wave: '01.........', phase:0},
+]}</script><br/><p>
+
+</body>
+
+</html>

@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2021-10-07T05:05:00</DateModified>
+  <DateModified>2021-10-25T06:28:14</DateModified>
   <ModuleName>MXSE</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
+  <SummaryTimeStamp>2021-10-23T06:51:21</SummaryTimeStamp>
   <SavedFilePath>C:/Users/zanek/Documents/GitHub/SE-030/cpld/XC95144XL/iseconfig/MXSE.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/zanek/Documents/GitHub/SE-030/cpld/XC95144XL</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>C:/Users/zanek/Documents/GitHub/SE-030/cpld/XC95144XL\</ImplementationReportsDirectory>
   <DateInitialized>2021-10-07T05:05:00</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>
   <viewgroup label="Design Overview" >
-   <view inputState="Unknown" program="implementation" ShowPartitionData="false" type="FPGASummary" file="MXSE_summary.html" label="Summary" >
+   <view inputState="Unknown" program="implementation" ExpandErrors="true" ShowPartitionData="false" ExpandConstraints="true" type="FPGASummary" file="MXSE_summary.html" label="Summary" ExpandClockNets="true" ExpandWarnings="true" >
     <toc-item title="Design Overview" target="Design Overview" />
     <toc-item title="Design Utilization Summary" target="Design Utilization Summary" />
     <toc-item title="Performance Summary" target="Performance Summary" />

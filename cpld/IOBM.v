@@ -2,15 +2,34 @@ module IOBM(
 	/* PDS interface */
 	input C16M, input C8M, input E,
 	output reg nAS, output reg nLDS, output reg nUDS, output reg nVMA,
-	input nDTACK, input nVPA, input nBERR,
+	input nDTACK, input nVPA, input nBERR, input nRES,
 	/* PDS address and data latch control */
 	output nAoutOE, output reg nDoutOE, output reg ALE0, output reg nDinLE,
 	/* IO bus slave port interface */
-	output reg IOACT, input IOREQ, input IOLDS, input IOUDS, input IOWE);
+	output reg IOACT, output reg IOBERR, input IOREQ, input IOLDS, input IOUDS, input IOWE);
 
 	/* I/O bus slave port input synchronization */
 	reg IOREQr = 0;
 	always @(negedge C16M) begin IOREQr <= IOREQ; end
+	
+	/* DTACK, BERR, RESET synchronization */
+	reg DTACKrr, DTACKrf, VPArr, VPArf, BERRrr, BERRrf, RESrr, RESrf;
+	always @(posedge C16M) begin
+		DTACKrr <= ~nDTACK;
+		VPArr <= ~nVPA;
+		BERRrr <= ~nBERR;
+		RESrr <= ~nRES;
+	end
+	always @(negedge C16M) begin
+		DTACKrf <= ~nDTACK;
+		VPArf <= ~nVPA;
+		BERRrf <= ~nBERR;
+		RESrf <= ~nRES;
+	end
+	wire DTACK = DTACKrr && DTACKrf;
+	wire BERR = BERRrr && BERRrf;
+	wire VPA = VPArr && VPArf;
+	wire RES = RESrr && RESrf;
 
 	/* E clock state */
 	reg [4:0] ES;
@@ -28,7 +47,7 @@ module IOBM(
 	reg ETACK = 0;
 	always @(posedge C16M) begin ETACK <= ES==16 && ~nVMA; end
 	always @(posedge C16M) begin
-		if (ES==7 && IOACT && ~nVPA) nVMA <= 0;
+		if (ES==7 && IOACT && VPA) nVMA <= 0;
 		else if (ES==0) nVMA <= 1;
 	end
 
@@ -66,9 +85,10 @@ module IOBM(
 			IOACT <= 1;
 			ALE0 <= 1;
 		end else if (IOS==5) begin
-			if (C8M && (~nDTACK || ETACK || ~nBERR)) begin
+			if (C8M && (DTACK || ETACK || BERR || RES)) begin
 				IOS <= 6;
 				IOACT <= 0;
+				IOBERR <= ~nBERR;
 			end else begin
 				IOS <= 5;
 				IOACT <= 1;
