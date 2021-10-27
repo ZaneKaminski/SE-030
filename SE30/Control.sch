@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 7 10
+Sheet 8 10
 Title ""
 Date ""
 Rev ""
@@ -15,13 +15,13 @@ Comment4 ""
 $EndDescr
 Text HLabel 10400 2900 2    50   Output ~ 0
 Mac~AS~
-Text HLabel 10400 2300 2    50   Output ~ 0
+Text HLabel 10400 2500 2    50   Output ~ 0
 Mac~VMA~
 Text HLabel 10400 2600 2    50   Input ~ 0
 Mac~DTACK~
-Text HLabel 10400 2500 2    50   Input ~ 0
-Mac~VPA~
 Text HLabel 10400 2400 2    50   Input ~ 0
+Mac~VPA~
+Text HLabel 10400 2300 2    50   Input ~ 0
 Mac~BERR~
 Text HLabel 8400 3600 0    50   Input ~ 0
 MacE
@@ -67,11 +67,11 @@ Text HLabel 10400 4800 2    50   Output ~ 0
 U~WE~
 Text HLabel 8400 5000 0    50   Output ~ 0
 Acc~VPA~
-Text HLabel 8400 4100 0    50   Input ~ 0
+Text HLabel 8400 4200 0    50   Input ~ 0
 Acc~AS~
 Text HLabel 8400 4000 0    50   Input ~ 0
 Acc~LDS~
-Text HLabel 8400 4200 0    50   Input ~ 0
+Text HLabel 8400 4100 0    50   Input ~ 0
 Acc~UDS~
 Text HLabel 8400 4900 0    50   Output ~ 0
 Acc~BERR~
@@ -528,20 +528,6 @@ Text HLabel 10750 1400 2    50   Output ~ 0
 RA[11..0]
 Entry Wire Line
 	10700 1400 10600 1500
-Text HLabel 10400 4900 2    50   Input ~ 0
-SW0
-Text HLabel 10400 4200 2    50   Input ~ 0
-SW1
-Text HLabel 10400 4100 2    50   Output ~ 0
-CKEN
-Text HLabel 10400 5600 2    50   Input ~ 0
-TDI
-Text HLabel 10400 5700 2    50   Input ~ 0
-TMS
-Text HLabel 10400 5800 2    50   Input ~ 0
-TCK
-Text HLabel 10400 5900 2    50   Output ~ 0
-TDO
 Wire Bus Line
 	10700 1400 10700 1800
 Wire Bus Line

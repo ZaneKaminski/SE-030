@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 7 7
+Sheet 5 10
 Title ""
 Date ""
 Rev ""
@@ -19,7 +19,7 @@ U 1 1 6187DB31
 P 2300 3600
 F 0 "U14" H 2300 5650 50  0000 C CNN
 F 1 "MC68HC000FN20" H 2300 5550 50  0000 C CNN
-F 2 "Package_LCC:PLCC-68_SMD-Socket" H 1550 5850 50  0001 C CNN
+F 2 "stdpads:PLCC-68" H 1550 5850 50  0001 C CNN
 F 3 "http://www.nxp.com/files/32bit/doc/ref_manual/MC68000UM.pdf" H 2300 3600 50  0001 C CNN
 	1    2300 3600
 	1    0    0    -1  
@@ -393,64 +393,22 @@ F 3 "~" H 1300 7300 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1300 7400 1700 7400
-Connection ~ 2500 7400
-Wire Wire Line
-	2100 7200 2500 7200
-$Comp
-L Device:C_Small C?
-U 1 1 613F0B66
-P 2500 7300
-AR Path="/613F0B66" Ref="C?"  Part="1" 
-AR Path="/60D70CB4/613F0B66" Ref="C?"  Part="1" 
-AR Path="/5F72F108/613F0B66" Ref="C4"  Part="1" 
-F 0 "C4" H 2550 7350 50  0000 L CNN
-F 1 "10u" H 2550 7250 50  0000 L CNN
-F 2 "stdpads:C_0805" H 2500 7300 50  0001 C CNN
-F 3 "~" H 2500 7300 50  0001 C CNN
-	1    2500 7300
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C_Small C?
-U 1 1 613F0B6D
-P 2100 7300
-AR Path="/613F0B6D" Ref="C?"  Part="1" 
-AR Path="/60D70CB4/613F0B6D" Ref="C?"  Part="1" 
-AR Path="/5F72F108/613F0B6D" Ref="C3"  Part="1" 
-F 0 "C3" H 2150 7350 50  0000 L CNN
-F 1 "10u" H 2150 7250 50  0000 L CNN
-F 2 "stdpads:C_0805" H 2100 7300 50  0001 C CNN
-F 3 "~" H 2100 7300 50  0001 C CNN
-	1    2100 7300
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 613F0B73
-P 2500 7400
-AR Path="/5F723900/613F0B73" Ref="#PWR?"  Part="1" 
-AR Path="/60D70CB4/613F0B73" Ref="#PWR?"  Part="1" 
-AR Path="/613F0B73" Ref="#PWR?"  Part="1" 
-AR Path="/5F72F108/613F0B73" Ref="#PWR0105"  Part="1" 
-F 0 "#PWR0105" H 2500 7150 50  0001 C CNN
-F 1 "GND" H 2500 7250 50  0000 C CNN
-F 2 "" H 2500 7400 50  0001 C CNN
-F 3 "" H 2500 7400 50  0001 C CNN
-	1    2500 7400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2100 7400 2500 7400
-Wire Wire Line
-	1700 7400 2100 7400
-Connection ~ 1700 7400
-Connection ~ 2100 7400
-Wire Wire Line
-	2100 7200 1700 7200
-Connection ~ 2100 7200
-Connection ~ 1700 7200
 Wire Wire Line
 	1300 4800 1300 5000
+NoConn ~ 1300 3100
+NoConn ~ 1300 3200
+$Comp
+L power:GND #PWR0126
+U 1 1 61B1134E
+P 1700 7400
+F 0 "#PWR0126" H 1700 7150 50  0001 C CNN
+F 1 "GND" H 1700 7250 50  0000 C CNN
+F 2 "" H 1700 7400 50  0001 C CNN
+F 3 "" H 1700 7400 50  0001 C CNN
+	1    1700 7400
+	1    0    0    -1  
+$EndComp
+Connection ~ 1700 7400
 Wire Bus Line
 	3600 3900 3600 5400
 Wire Bus Line

@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 6 7
+Sheet 4 10
 Title ""
 Date ""
 Rev ""
@@ -42,11 +42,6 @@ $EndComp
 NoConn ~ 1500 2300
 NoConn ~ 1500 2400
 NoConn ~ 1500 2500
-NoConn ~ 1500 5300
-NoConn ~ 1500 5400
-NoConn ~ 2750 5250
-NoConn ~ 2750 5350
-NoConn ~ 2750 5450
 NoConn ~ 2750 4950
 NoConn ~ 2750 4850
 NoConn ~ 2750 4750
@@ -84,31 +79,28 @@ Wire Wire Line
 $Comp
 L power:GND #PWR0146
 U 1 1 5F6E485F
-P 4150 5200
-F 0 "#PWR0146" H 4150 4950 50  0001 C CNN
-F 1 "GND" H 4150 5050 50  0000 C CNN
-F 2 "" H 4150 5200 50  0001 C CNN
-F 3 "" H 4150 5200 50  0001 C CNN
-	1    4150 5200
+P 4500 5200
+F 0 "#PWR0146" H 4500 4950 50  0001 C CNN
+F 1 "GND" H 4500 5050 50  0000 C CNN
+F 2 "" H 4500 5200 50  0001 C CNN
+F 3 "" H 4500 5200 50  0001 C CNN
+	1    4500 5200
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4150 5200 4050 5200
 NoConn ~ 4050 5300
-NoConn ~ 4050 5400
 $Comp
 L power:GND #PWR0147
 U 1 1 5F6E565A
-P 1600 5200
-F 0 "#PWR0147" H 1600 4950 50  0001 C CNN
-F 1 "GND" H 1600 5050 50  0000 C CNN
-F 2 "" H 1600 5200 50  0001 C CNN
-F 3 "" H 1600 5200 50  0001 C CNN
-	1    1600 5200
+P 1900 5200
+F 0 "#PWR0147" H 1900 4950 50  0001 C CNN
+F 1 "GND" H 1900 5050 50  0000 C CNN
+F 2 "" H 1900 5200 50  0001 C CNN
+F 3 "" H 1900 5200 50  0001 C CNN
+	1    1900 5200
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1600 5200 1500 5200
+	1900 5200 1500 5200
 $Comp
 L power:+5V #PWR0148
 U 1 1 5F6E63E7
@@ -123,16 +115,16 @@ $EndComp
 $Comp
 L power:GND #PWR0149
 U 1 1 5F6E6FCB
-P 2850 5150
-F 0 "#PWR0149" H 2850 4900 50  0001 C CNN
-F 1 "GND" H 2850 5000 50  0000 C CNN
-F 2 "" H 2850 5150 50  0001 C CNN
-F 3 "" H 2850 5150 50  0001 C CNN
-	1    2850 5150
+P 3150 5150
+F 0 "#PWR0149" H 3150 4900 50  0001 C CNN
+F 1 "GND" H 3150 5000 50  0000 C CNN
+F 2 "" H 3150 5150 50  0001 C CNN
+F 3 "" H 3150 5150 50  0001 C CNN
+	1    3150 5150
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2850 5150 2750 5150
+	3150 5150 2750 5150
 NoConn ~ 2750 3450
 Text HLabel 4050 2300 2    50   Output ~ 0
 ~VPA~
@@ -228,42 +220,6 @@ Wire Wire Line
 	4050 3700 4250 3700
 Wire Wire Line
 	4050 3600 4250 3600
-Wire Wire Line
-	4050 3500 4450 3500
-Entry Wire Line
-	4250 5100 4350 5200
-Entry Wire Line
-	4250 5000 4350 5100
-Entry Wire Line
-	4250 4900 4350 5000
-Entry Wire Line
-	4250 4800 4350 4900
-Entry Wire Line
-	4250 4700 4350 4800
-Entry Wire Line
-	4250 4600 4350 4700
-Entry Wire Line
-	4250 4500 4350 4600
-Entry Wire Line
-	4250 4400 4350 4500
-Entry Wire Line
-	4250 4300 4350 4400
-Entry Wire Line
-	4250 4200 4350 4300
-Entry Wire Line
-	4250 4100 4350 4200
-Entry Wire Line
-	4250 4000 4350 4100
-Entry Wire Line
-	4250 3900 4350 4000
-Entry Wire Line
-	4250 3800 4350 3900
-Entry Wire Line
-	4250 3700 4350 3800
-Entry Wire Line
-	4250 3600 4350 3700
-Text HLabel 4350 3700 2    50   BiDi ~ 0
-D[15..0]
 Wire Wire Line
 	1500 4100 1700 4100
 Wire Wire Line
@@ -432,20 +388,6 @@ F 3 "~" H 2100 6300 50  0001 C CNN
 	1    2100 6300
 	1    0    0    -1  
 $EndComp
-Connection ~ 3300 6400
-$Comp
-L Device:C_Small C?
-U 1 1 616DE7C5
-P 3300 6300
-AR Path="/616DE7C5" Ref="C?"  Part="1" 
-AR Path="/5F6DA71D/616DE7C5" Ref="C23"  Part="1" 
-F 0 "C23" H 3350 6350 50  0000 L CNN
-F 1 "10u" H 3350 6250 50  0000 L CNN
-F 2 "stdpads:C_0805" H 3300 6300 50  0001 C CNN
-F 3 "~" H 3300 6300 50  0001 C CNN
-	1    3300 6300
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1700 6400 2100 6400
 Wire Wire Line
@@ -466,8 +408,6 @@ F 3 "~" H 1700 6300 50  0001 C CNN
 	1    1700 6300
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2900 6400 3300 6400
 Connection ~ 2900 6400
 $Comp
 L Device:C_Small C?
@@ -493,26 +433,6 @@ F 1 "10u" H 1350 6250 50  0000 L CNN
 F 2 "stdpads:C_0805" H 1300 6300 50  0001 C CNN
 F 3 "~" H 1300 6300 50  0001 C CNN
 	1    1300 6300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2500 6400 2900 6400
-Wire Wire Line
-	2100 6400 2500 6400
-Connection ~ 2500 6400
-Wire Wire Line
-	2100 6200 2500 6200
-$Comp
-L Device:C_Small C?
-U 1 1 616DE7F4
-P 2500 6300
-AR Path="/616DE7F4" Ref="C?"  Part="1" 
-AR Path="/5F6DA71D/616DE7F4" Ref="C21"  Part="1" 
-F 0 "C21" H 2550 6350 50  0000 L CNN
-F 1 "10u" H 2550 6250 50  0000 L CNN
-F 2 "stdpads:C_0805" H 2500 6300 50  0001 C CNN
-F 3 "~" H 2500 6300 50  0001 C CNN
-	1    2500 6300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -562,26 +482,9 @@ F 3 "" H 4100 6400 50  0001 C CNN
 	1    4100 6400
 	-1   0    0    -1  
 $EndComp
-Connection ~ 4100 6400
-$Comp
-L Device:C_Small C?
-U 1 1 616F27A7
-P 4100 6300
-AR Path="/616F27A7" Ref="C?"  Part="1" 
-AR Path="/5F6DA71D/616F27A7" Ref="C25"  Part="1" 
-F 0 "C25" H 4150 6350 50  0000 L CNN
-F 1 "10u" H 4150 6250 50  0000 L CNN
-F 2 "stdpads:C_0805" H 4100 6300 50  0001 C CNN
-F 3 "~" H 4100 6300 50  0001 C CNN
-	1    4100 6300
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3700 6400 4100 6400
 Connection ~ 3700 6400
-Wire Wire Line
-	3700 6200 4100 6200
-Connection ~ 3700 6200
 $Comp
 L Device:C_Small C?
 U 1 1 616F27B1
@@ -595,8 +498,6 @@ F 3 "~" H 3700 6300 50  0001 C CNN
 	1    3700 6300
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3300 6400 3700 6400
 $Comp
 L power:-5V #PWR0154
 U 1 1 616FD697
@@ -608,9 +509,6 @@ F 3 "" H 2100 6200 50  0001 C CNN
 	1    2100 6200
 	1    0    0    -1  
 $EndComp
-Connection ~ 2100 6200
-Wire Wire Line
-	2900 6200 3300 6200
 $Comp
 L power:+12V #PWR0155
 U 1 1 616F0982
@@ -622,7 +520,6 @@ F 3 "" H 2900 6200 50  0001 C CNN
 	1    2900 6200
 	1    0    0    -1  
 $EndComp
-Connection ~ 2900 6200
 $Comp
 L power:GND #PWR0156
 U 1 1 61704865
@@ -680,6 +577,110 @@ Wire Wire Line
 	2750 3050 2750 2950
 Connection ~ 2750 3950
 Connection ~ 2750 2350
+Wire Wire Line
+	4050 3500 4450 3500
+Text HLabel 4350 3700 2    50   BiDi ~ 0
+D[15..0]
+Entry Wire Line
+	4250 3600 4350 3700
+Entry Wire Line
+	4250 3700 4350 3800
+Entry Wire Line
+	4250 3800 4350 3900
+Entry Wire Line
+	4250 3900 4350 4000
+Entry Wire Line
+	4250 4000 4350 4100
+Entry Wire Line
+	4250 4100 4350 4200
+Entry Wire Line
+	4250 4200 4350 4300
+Entry Wire Line
+	4250 4300 4350 4400
+Entry Wire Line
+	4250 4400 4350 4500
+Entry Wire Line
+	4250 4500 4350 4600
+Entry Wire Line
+	4250 4600 4350 4700
+Entry Wire Line
+	4250 4700 4350 4800
+Entry Wire Line
+	4250 4800 4350 4900
+Entry Wire Line
+	4250 4900 4350 5000
+Entry Wire Line
+	4250 5000 4350 5100
+Entry Wire Line
+	4250 5100 4350 5200
+Wire Wire Line
+	4050 5200 4300 5200
+Wire Wire Line
+	4300 5200 4300 5250
+Wire Wire Line
+	4300 5250 4400 5250
+Wire Wire Line
+	4400 5250 4400 5200
+Wire Wire Line
+	4400 5200 4500 5200
+$Comp
+L power:-5V #PWR0109
+U 1 1 6176540D
+P 2750 5450
+F 0 "#PWR0109" H 2750 5550 50  0001 C CNN
+F 1 "-5V" H 2750 5600 50  0000 C CNN
+F 2 "" H 2750 5450 50  0001 C CNN
+F 3 "" H 2750 5450 50  0001 C CNN
+	1    2750 5450
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+12V #PWR0110
+U 1 1 6176B64B
+P 1600 5400
+F 0 "#PWR0110" H 1600 5250 50  0001 C CNN
+F 1 "+12V" H 1600 5550 50  0000 C CNN
+F 2 "" H 1600 5400 50  0001 C CNN
+F 3 "" H 1600 5400 50  0001 C CNN
+	1    1600 5400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1500 5400 1500 5300
+Connection ~ 1500 5400
+Wire Wire Line
+	1600 5400 1500 5400
+$Comp
+L power:+12V #PWR0111
+U 1 1 61774C31
+P 2850 5350
+F 0 "#PWR0111" H 2850 5200 50  0001 C CNN
+F 1 "+12V" H 2850 5500 50  0000 C CNN
+F 2 "" H 2850 5350 50  0001 C CNN
+F 3 "" H 2850 5350 50  0001 C CNN
+	1    2850 5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2850 5350 2750 5350
+Wire Wire Line
+	2750 5250 2750 5350
+Connection ~ 2750 5350
+$Comp
+L power:-12V #PWR0112
+U 1 1 6177FFC5
+P 4050 5400
+F 0 "#PWR0112" H 4050 5500 50  0001 C CNN
+F 1 "-12V" H 4050 5550 50  0000 C CNN
+F 2 "" H 4050 5400 50  0001 C CNN
+F 3 "" H 4050 5400 50  0001 C CNN
+	1    4050 5400
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2100 6400 2900 6400
+Wire Wire Line
+	2900 6400 3700 6400
 Wire Bus Line
 	4350 3700 4350 5200
 Wire Bus Line
