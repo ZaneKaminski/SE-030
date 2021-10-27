@@ -1,0 +1,156 @@
+<html><head><link type='text/css' href='style.css' rel='stylesheet'></head><body class='pgBgnd'>
+<h3 align='center'>Equations</h3>
+<table width='90%' align='center' border='1' cellpadding='0' cellspacing='0'>
+<tr><td>
+</td></tr><tr><td>
+********** Mapped Logic **********
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+FDCPE_NC0: FDCPE port map (NC(0),NOT A(2),CLK,'0','0',NC_CE(0));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_CE(0) <= (CMD(0) AND NOT CMD(1));
+</td></tr><tr><td>
+FDCPE_NC1: FDCPE port map (NC(1),NC_D(1),CLK,'0','0',NC_CE(1));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_D(1) <= A(2)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	 XOR 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_D(1) <= A(3);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_CE(1) <= (CMD(0) AND NOT CMD(1));
+</td></tr><tr><td>
+FDCPE_NC2: FDCPE port map (NC(2),NC_D(2),CLK,'0','0',NC_CE(2));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_D(2) <= A(4)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	 XOR 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_D(2) <= (A(2) AND A(3));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_CE(2) <= (CMD(0) AND NOT CMD(1));
+</td></tr><tr><td>
+FDCPE_NC3: FDCPE port map (NC(3),NC_D(3),CLK,'0','0',NC_CE(3));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_D(3) <= A(5)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	 XOR 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_D(3) <= (A(2) AND A(3) AND A(4));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_CE(3) <= (CMD(0) AND NOT CMD(1));
+</td></tr><tr><td>
+FDCPE_NC4: FDCPE port map (NC(4),NC_D(4),CLK,'0','0',NC_CE(4));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_D(4) <= A(6)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	 XOR 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_D(4) <= (A(2) AND A(3) AND A(4) AND A(5));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_CE(4) <= (CMD(0) AND NOT CMD(1));
+</td></tr><tr><td>
+FDCPE_NC5: FDCPE port map (NC(5),NC_D(5),CLK,'0','0',NC_CE(5));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_D(5) <= A(7)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	 XOR 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_D(5) <= (A(2) AND A(3) AND A(4) AND A(5) AND A(6));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_CE(5) <= (CMD(0) AND NOT CMD(1));
+</td></tr><tr><td>
+FDCPE_NC6: FDCPE port map (NC(6),NC_D(6),CLK,'0','0',NC_CE(6));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_D(6) <= A(8)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	 XOR 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_D(6) <= (A(2) AND A(3) AND A(4) AND A(5) AND A(6) AND A(7));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_CE(6) <= (CMD(0) AND NOT CMD(1));
+</td></tr><tr><td>
+FDCPE_NC7: FDCPE port map (NC(7),NC_D(7),CLK,'0','0',NC_CE(7));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_D(7) <= A(9)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	 XOR 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_D(7) <= (A(2) AND A(3) AND A(4) AND A(5) AND A(6) AND A(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	A(8));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_CE(7) <= (CMD(0) AND NOT CMD(1));
+</td></tr><tr><td>
+FDCPE_NC8: FDCPE port map (NC(8),NC_D(8),CLK,'0','0',NC_CE(8));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_D(8) <= A(10)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	 XOR 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_D(8) <= (A(2) AND A(3) AND A(4) AND A(5) AND A(6) AND A(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	A(8) AND A(9));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_CE(8) <= (CMD(0) AND NOT CMD(1));
+</td></tr><tr><td>
+FDCPE_NR0: FDCPE port map (NR(0),A(11),CLK,'0','0',NR_CE(0));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NR_CE(0) <= (CMD(0) AND NOT CMD(1));
+</td></tr><tr><td>
+FDCPE_NR1: FDCPE port map (NR(1),A(12),CLK,'0','0',NR_CE(1));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NR_CE(1) <= (CMD(0) AND NOT CMD(1));
+</td></tr><tr><td>
+FDCPE_NR2: FDCPE port map (NR(2),A(13),CLK,'0','0',NR_CE(2));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NR_CE(2) <= (CMD(0) AND NOT CMD(1));
+</td></tr><tr><td>
+FDCPE_NR3: FDCPE port map (NR(3),A(14),CLK,'0','0',NR_CE(3));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NR_CE(3) <= (CMD(0) AND NOT CMD(1));
+</td></tr><tr><td>
+FDCPE_NR4: FDCPE port map (NR(4),A(15),CLK,'0','0',NR_CE(4));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NR_CE(4) <= (CMD(0) AND NOT CMD(1));
+</td></tr><tr><td>
+FDCPE_NR5: FDCPE port map (NR(5),A(16),CLK,'0','0',NR_CE(5));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NR_CE(5) <= (CMD(0) AND NOT CMD(1));
+</td></tr><tr><td>
+FDCPE_NR6: FDCPE port map (NR(6),A(17),CLK,'0','0',NR_CE(6));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NR_CE(6) <= (CMD(0) AND NOT CMD(1));
+</td></tr><tr><td>
+FDCPE_NR7: FDCPE port map (NR(7),A(18),CLK,'0','0',NR_CE(7));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NR_CE(7) <= (CMD(0) AND NOT CMD(1));
+</td></tr><tr><td>
+FDCPE_NR8: FDCPE port map (NR(8),A(19),CLK,'0','0',NR_CE(8));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NR_CE(8) <= (CMD(0) AND NOT CMD(1));
+</td></tr><tr><td>
+FDCPE_NR9: FDCPE port map (NR(9),A(20),CLK,'0','0',NR_CE(9));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NR_CE(9) <= (CMD(0) AND NOT CMD(1));
+</td></tr><tr><td>
+FDCPE_NR10: FDCPE port map (NR(10),A(21),CLK,'0','0',NR_CE(10));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NR_CE(10) <= (CMD(0) AND NOT CMD(1));
+</td></tr><tr><td>
+FDCPE_NR11: FDCPE port map (NR(11),A(22),CLK,'0','0',NR_CE(11));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NR_CE(11) <= (CMD(0) AND NOT CMD(1));
+</td></tr><tr><td>
+FDCPE_NR12: FDCPE port map (NR(12),A(23),CLK,'0','0',NR_CE(12));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NR_CE(12) <= (CMD(0) AND NOT CMD(1));
+</td></tr><tr><td>
+</td></tr><tr><td>
+nFPUCS <= NOT (((FC(1) AND FC(0) AND A(17) AND A(13) AND NOT A(14) AND NOT A(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT A(16) AND NOT A(18) AND NOT A(19) AND FC(2) AND NOT nAS)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC(1) AND FC(0) AND A(17) AND A(13) AND NOT A(14) AND NOT A(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT A(16) AND NOT A(18) AND NOT A(19) AND FC(2) AND NOT CLKdat)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+nSTERM <= ((EXP9_.EXP)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (A(7) AND NOT NC(5) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT A(7) AND NC(5) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT A(11) AND NR(0) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (A(22) AND NOT NR(11) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT A(22) AND NR(11) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (EXP12_.EXP)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (A(5) AND NOT NC(3) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT A(5) AND NC(3) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (A(11) AND NOT NR(0) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (A(21) AND NOT NR(10) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT A(21) AND NR(10) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC(0) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT FC(2) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (A(31) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (A(30) AND A(29) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (A(30) AND A(28) AND NOT STERM));
+</td></tr><tr><td>
+Register Legend:
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FTCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LDCP  (Q,D,G,CLR,PRE); 
+</td></tr><tr><td>
+</td></tr>
+</table>
+<form><span class="pgRef"><table width="90%" align="center"><tr>
+<td align="left"><input type="button" onclick="javascript:parent.leftnav.showTop()" onmouseover="window.status='goto top of page'; return true;" onmouseout="window.status=''" value="back to top"></td>
+<td align="right"><input type="button" onclick="window.print()" onmouseover="window.status='print page'; return true;" onmouseout="window.status=''" value="print page"></td>
+</tr></table></span></form>
+</body></html>

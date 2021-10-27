@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Garrett's Workshop - Maccelerator-LC Timing</title>
+	<title>Garrett's Workshop - Warp-LC Timing</title>
 	<style type="text/css">
 		ul {
 			margin-top: 0;
@@ -29,23 +29,40 @@
 </head>
 
 <body onload="WaveDrom.ProcessAll()">
-<h1>Garrett's Workshop Maccelerator-SE 20 MHz 68HC000 Accelerator Documentation</h1>
+<h1>Garrett's Workshop Warp-LC 33 MHz 68030 Accelerator Documentation</h1>
 
-<h3 id="t0">1. Three consecutive reads - row activate, row hit, row miss</h3>
+<h3 id="t0">1. Three consecutive reads - row activate, row hit, row miss, next hit</h3>
 <script type="WaveDrom">{signal: [
-  {name: 'RS',    wave: '222222222222222222222222', data:['X',0,1,2,3,4,5,6,7,0,1,4,5,6,7,0,1,2,3,4,5,6,7,0]},
-  {name: 'FCLK',  wave: 'p.......................'},
-  {name: 'MCLK',  wave: '101010101010101010101010', phase: 0.12, period:1.0},
-  {name: 'A',     wave: 'x2......x2....x2......x2', phase: 0.12, period:1.0},
-  {name: '/AS',   wave: '.x0....x1x0..x1x0....x1.', phase: 0.12, period:1.0},
-  {name: 'RCLK',  wave: '010101010101010101010101010101010101010101010101', phase:0, period:0.5},
-  {name: 'RCMD',  wave: '222222222222222222222222', phase:0, data:[
-  	'NOP','NOP','NOP','ACT','RD','NOP','NOP','NOP','NOP','NOP','RD','NOP','NOP','NOP','NOP','NOP','PC','ACT','RD','NOP','NOP','NOP','NOP','NOP']},
-  {name: 'RCKE',  wave: '1....0...1.0...1...0...1', phase:0},
-  {name: 'RD',    wave: 'z...........x.2.z.......x.2.z...........x.2.z....', phase:0, period:0.5},
-  {name: '/RDOE', wave: '1....0...1.0...1.0...1..', phase:0},
-  {name: 'MCLK',  wave: '101010101010101010101010', phase: 0.12, period:1.0},
-  {name: 'STERM', wave: '1....0.1...0.1.....0.1..', phase:0},
+  {name: 'RS',    wave: '22222222222222222222222', data:['X',0,1,2,3,4,5,6,7,0,1,4,5,6,7,0,1,2,3,4,5,6,7,0]},
+  {name: 'FCLK',  wave: 'p......................'},
+  {name: 'MCLK',  wave: '10101010101010101010101', phase: 0.12, period:1.0},
+  {name: 'A',     wave: 'x2......x2....x2......x', phase: 0.12, period:1.0},
+  {name: '/AS',   wave: '.x0....x1x0..x1x0....x1', phase: 0.12, period:1.0},
+  {name: 'RCLK',  wave: '0101010101010101010101010101010101010101010101', phase:0, period:0.5},
+  {name: 'RCMD',  wave: '22222222222222222222222', phase:0, data:[
+    'NOP','NOP','NOP','ACT','RD','RD','NOP','NOP','NOP','NOP','RD','RD','NOP','NOP','NOP','NOP','PC','ACT','RD','RD','NOP','NOP','NOP','NOP']},
+  {name: 'RCKE',  wave: '1....0101..0101....0101', phase:0},
+  {name: 'RD',    wave: 'z..........x.2.x.2.z...x.2.x.2.z.......x.2.x.2', phase:0, period:0.5},
+  {name: '/RDOE', wave: '1....0..1..0..1..0....1', phase:0},
+  {name: 'MCLK',  wave: '10101010101010101010101', phase: 0.12, period:1.0},
+  {name: 'STERM', wave: '1.........x0..x1......x0..x1..........x0..x1..', phase:0, period:0.5},
+]}</script><br/><p>
+
+<h3 id="t0">1. Three consecutive reads - non-prefeteched read, two next hits, next hit after idle, row hit</h3>
+<script type="WaveDrom">{signal: [
+  {name: 'RS',    wave: '22222222222222222222222222222222222', data:[7,0,1,2,3,4,5,6,7,0]},
+  {name: 'FCLK',  wave: 'p..................................'},
+  {name: 'MCLK',  wave: '10101010101010101010101010101010101', phase: 0.12, period:1.0},
+  {name: 'A',     wave: '2...x2..x2..x2x2..x2....x2..x2x2..x', phase: 0.12, period:1.0},
+  {name: '/AS',   wave: '0..x1x0x1x0x1..x0x1x0..x1x0x1..x0x1', phase: 0.12, period:1.0},
+  {name: 'RCLK',  wave: '0101010101010101010101010101010101010101010101010101010101010101010101', phase:0, period:0.5},
+  {name: 'RCMD',  wave: '22222222222222222222222222222222222', phase:0, data:[
+    'RD','NOP','NOP','NOP','RD','NOP','NOP','NOP','RD','NOP','NOP','NOP','RD','NOP','RD','NOP','NOP','NOP','RD','NOP','RD','NOP']},
+  {name: 'RCKE',  wave: '101......01..0101', phase:0},
+  {name: 'RD',    wave: 'z..........x.2.z...x.2.z...x.2.x.2.z...x.2.x.2.', phase:0, period:0.5},
+  {name: '/RDOE', wave: '0...1x0.1', phase:0},
+  {name: 'MCLK',  wave: '101010101', phase: 0.12, period:1.0},
+  {name: 'STERM', wave: '1.x0..x1..x0..x1..', phase:0, period:0.5},
 ]}</script><br/><p>
 
 <h3 id="t0">2. Three consecutive writes - row activate, row hit, row miss</h3>

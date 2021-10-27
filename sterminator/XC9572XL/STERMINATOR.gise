@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<generated_project xmlns="http://www.xilinx.com/XMLSchema" xmlns:xil_pn="http://www.xilinx.com/XMLSchema">
+
+  <!--                                                          -->
+
+  <!--             For tool use only. Do not edit.              -->
+
+  <!--                                                          -->
+
+  <!-- ProjectNavigator created generated project file.         -->
+
+  <!-- For use in tracking generated file and other information -->
+
+  <!-- allowing preservation of process status.                 -->
+
+  <!--                                                          -->
+
+  <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved. -->
+
+  <version xmlns="http://www.xilinx.com/XMLSchema">11.1</version>
+
+  <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="STERMINATOR.xise"/>
+
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="STERMINATOR.bld"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="STERMINATOR.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_GYD" xil_pn:name="STERMINATOR.gyd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_JEDEC" xil_pn:name="STERMINATOR.jed"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="STERMINATOR.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MFD" xil_pn:name="STERMINATOR.mfd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGA" xil_pn:name="STERMINATOR.nga"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="STERMINATOR.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="STERMINATOR.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="STERMINATOR.ngr"/>
+    <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="STERMINATOR.pad"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PNX" xil_pn:name="STERMINATOR.pnx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="STERMINATOR.prj"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="STERMINATOR.rpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="STERMINATOR.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="STERMINATOR.syr"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="STERMINATOR.tim"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="STERMINATOR.tspec"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_VM6" xil_pn:name="STERMINATOR.vm6"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="STERMINATOR.xml"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="STERMINATOR.xst"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="STERMINATOR_build.xml"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="STERMINATOR_envsettings.html"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="STERMINATOR_html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="STERMINATOR_ngdbuild.xrpt"/>
+    <file xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="STERMINATOR_pad.csv"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="STERMINATOR_summary.html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="STERMINATOR_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
+
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1635245672" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1635245672">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1635245672" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-5445405998419299105" xil_pn:start_ts="1635245672">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1635248003" xil_pn:in_ck="-928331514634735609" xil_pn:name="TRANEXT_xstsynthesize_xc9500xl" xil_pn:prop_ck="1389972802409718622" xil_pn:start_ts="1635248000">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="STERMINATOR.lso"/>
+      <outfile xil_pn:name="STERMINATOR.ngc"/>
+      <outfile xil_pn:name="STERMINATOR.ngr"/>
+      <outfile xil_pn:name="STERMINATOR.prj"/>
+      <outfile xil_pn:name="STERMINATOR.stx"/>
+      <outfile xil_pn:name="STERMINATOR.syr"/>
+      <outfile xil_pn:name="STERMINATOR.xst"/>
+      <outfile xil_pn:name="STERMINATOR_xst.xrpt"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1635245676" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-5856082998463696326" xil_pn:start_ts="1635245676">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1635248006" xil_pn:in_ck="-7782956398540830978" xil_pn:name="TRAN_ngdbuild" xil_pn:prop_ck="-2081320714713457669" xil_pn:start_ts="1635248003">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="STERMINATOR.bld"/>
+      <outfile xil_pn:name="STERMINATOR.ngd"/>
+      <outfile xil_pn:name="STERMINATOR_ngdbuild.xrpt"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1635248014" xil_pn:in_ck="-7782956398540830977" xil_pn:name="TRANEXT_vm6File_xc9500xl" xil_pn:prop_ck="-6293618782099042228" xil_pn:start_ts="1635248006">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="STERMINATOR.gyd"/>
+      <outfile xil_pn:name="STERMINATOR.mfd"/>
+      <outfile xil_pn:name="STERMINATOR.nga"/>
+      <outfile xil_pn:name="STERMINATOR.pad"/>
+      <outfile xil_pn:name="STERMINATOR.pnx"/>
+      <outfile xil_pn:name="STERMINATOR.rpt"/>
+      <outfile xil_pn:name="STERMINATOR.tim"/>
+      <outfile xil_pn:name="STERMINATOR.tspec"/>
+      <outfile xil_pn:name="STERMINATOR.vm6"/>
+      <outfile xil_pn:name="STERMINATOR.xml"/>
+      <outfile xil_pn:name="STERMINATOR_build.xml"/>
+      <outfile xil_pn:name="STERMINATOR_html"/>
+      <outfile xil_pn:name="STERMINATOR_pad.csv"/>
+    </transform>
+    <transform xil_pn:end_ts="1635248015" xil_pn:in_ck="-7782956398540822113" xil_pn:name="TRANEXT_crtProg_xc9500" xil_pn:prop_ck="-6294026017969277533" xil_pn:start_ts="1635248014">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="STERMINATOR.jed"/>
+    </transform>
+    <transform xil_pn:end_ts="1635247582" xil_pn:in_ck="-7782956398540822113" xil_pn:name="TRAN_timRpt" xil_pn:prop_ck="111903974446" xil_pn:start_ts="1635247581">
+      <status xil_pn:value="AbortedRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
+    </transform>
+  </transforms>
+
+</generated_project>
