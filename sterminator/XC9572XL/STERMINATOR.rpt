@@ -1,26 +1,26 @@
  
 cpldfit:  version P.20131013                        Xilinx Inc.
                                   Fitter Report
-Design Name: STERMINATOR                         Date: 10-26-2021,  7:33AM
-Device Used: XC9572XL-10-VQ64
+Design Name: STERMINATOR                         Date: 10-26-2021,  9:01PM
+Device Used: XC9572XL-5-VQ64
 Fitting Status: Successful
 
 *************************  Mapped Resource Summary  **************************
 
 Macrocells     Product Terms    Function Block   Registers      Pins           
 Used/Tot       Used/Tot         Inps Used/Tot    Used/Tot       Used/Tot       
-24 /72  ( 33%) 103 /360  ( 29%) 85 /216 ( 39%)   22 /72  ( 31%) 37 /52  ( 71%)
+28 /72  ( 39%) 114 /360  ( 32%) 92 /216 ( 43%)   25 /72  ( 35%) 39 /52  ( 75%)
 
 ** Function Block Resources **
 
 Function    Mcells      FB Inps     Pterms      IO          
 Block       Used/Tot    Used/Tot    Used/Tot    Used/Tot    
-FB1          12/18       15/54       32/90       7/13
-FB2           9/18       15/54       18/90      12/13
-FB3           1/18       51/54       49/90       7/14
-FB4           2/18        4/54        4/90      11/12
+FB1           1/18       54/54*      52/90       6/13
+FB2           9/18       14/54       18/90      13/13*
+FB3          18/18*      24/54       44/90       8/14
+FB4           0/18        0/54        0/90      12/12*
              -----       -----       -----      -----    
-             24/72       85/216     103/360     37/52 
+             28/72       92/216     114/360     39/52 
 
 * - Resource is exhausted
 
@@ -34,18 +34,18 @@ Global set/reset net(s) unused.
 
 Signal Type    Required     Mapped  |  Pin Type            Used    Total 
 ------------------------------------|------------------------------------
-Input         :   34          34    |  I/O              :    34      46
-Output        :    2           2    |  GCK/IO           :     1       3
-Bidirectional :    0           0    |  GTS/IO           :     1       2
+Input         :   36          36    |  I/O              :    34      46
+Output        :    2           2    |  GCK/IO           :     2       3
+Bidirectional :    0           0    |  GTS/IO           :     2       2
 GCK           :    1           1    |  GSR/IO           :     1       1
 GTS           :    0           0    |
 GSR           :    0           0    |
                  ----        ----
-        Total     37          37
+        Total     39          39
 
 ** Power Data **
 
-There are 24 macrocells in high performance mode (MCHP).
+There are 28 macrocells in high performance mode (MCHP).
 There are 0 macrocells in low power mode (MCLP).
 End of Mapped Resource Summary
 **************************  Errors and Warnings  ***************************
@@ -58,75 +58,81 @@ WARNING:Cpld - Unable to retrieve the path to the iSE Project Repository. Will
 
 Signal              Total Total Loc     Pin  Pin     Pin     Pwr  Slew Reg Init
 Name                Pts   Inps          No.  Type    Use     Mode Rate State
-nFPUCS              2     12    FB2_2   60   I/O     O       STD  FAST 
-nSTERM              49    51    FB3_8   25   I/O     O       STD  FAST 
+nSTERM              2     4     FB2_2   60   I/O     O       STD  FAST 
+nFPUCS              2     12    FB3_2   22   I/O     O       STD  FAST 
 
-** 22 Buried Nodes **
+** 26 Buried Nodes **
 
 Signal              Total Total Loc     Pwr  Reg Init
 Name                Pts   Inps          Mode State
-NR<12>              2     3     FB1_7   STD  RESET
-NR<11>              2     3     FB1_8   STD  RESET
-NR<10>              2     3     FB1_9   STD  RESET
-NR<0>               2     3     FB1_10  STD  RESET
-NC<8>               3     11    FB1_11  STD  RESET
-NC<7>               3     10    FB1_12  STD  RESET
-NC<6>               3     9     FB1_13  STD  RESET
-NC<5>               3     8     FB1_14  STD  RESET
-NC<4>               3     7     FB1_15  STD  RESET
-NC<3>               3     6     FB1_16  STD  RESET
-NC<2>               3     5     FB1_17  STD  RESET
-NC<1>               3     4     FB1_18  STD  RESET
-NR<8>               2     3     FB2_11  STD  RESET
-NR<7>               2     3     FB2_12  STD  RESET
-NR<6>               2     3     FB2_13  STD  RESET
-NR<5>               2     3     FB2_14  STD  RESET
-NR<4>               2     3     FB2_15  STD  RESET
-NR<3>               2     3     FB2_16  STD  RESET
-NR<2>               2     3     FB2_17  STD  RESET
-NC<0>               2     3     FB2_18  STD  RESET
-NR<9>               2     3     FB4_17  STD  RESET
-NR<1>               2     3     FB4_18  STD  RESET
+$OpTx$BIN_STEP$409  52    54    FB1_13  STD  
+NR<9>               2     3     FB2_11  STD  RESET
+NR<1>               2     3     FB2_12  STD  RESET
+NR<12>              2     3     FB2_13  STD  RESET
+NR<11>              2     3     FB2_14  STD  RESET
+NR<10>              2     3     FB2_15  STD  RESET
+NR<0>               2     3     FB2_16  STD  RESET
+NB<1>               2     3     FB2_17  STD  RESET
+NB<0>               2     3     FB2_18  STD  RESET
+NR<8>               2     3     FB3_1   STD  RESET
+NR<7>               2     3     FB3_3   STD  RESET
+NR<6>               2     3     FB3_4   STD  RESET
+NR<5>               2     3     FB3_5   STD  RESET
+NR<4>               2     3     FB3_6   STD  RESET
+NR<3>               2     3     FB3_7   STD  RESET
+NR<2>               2     3     FB3_8   STD  RESET
+NC<0>               2     3     FB3_9   STD  RESET
+NA                  2     3     FB3_10  STD  RESET
+NC<8>               3     11    FB3_11  STD  RESET
+NC<7>               3     10    FB3_12  STD  RESET
+NC<6>               3     9     FB3_13  STD  RESET
+NC<5>               3     8     FB3_14  STD  RESET
+NC<4>               3     7     FB3_15  STD  RESET
+NC<3>               3     6     FB3_16  STD  RESET
+NC<2>               3     5     FB3_17  STD  RESET
+NC<1>               3     4     FB3_18  STD  RESET
 
-** 35 Inputs **
+** 37 Inputs **
 
 Signal              Loc     Pin  Pin     Pin     
 Name                        No.  Type    Use     
-A<21>               FB1_2   8    I/O     I
-FC<1>               FB1_3   12   I/O     I
-nAS                 FB1_4   13   I/O     I
-A<5>                FB1_5   9    I/O     I
-A<31>               FB1_6   10   I/O     I
-CLKdat              FB1_8   11   I/O     I
+A<8>                FB1_5   9    I/O     I
+A<25>               FB1_6   10   I/O     I
+A<9>                FB1_8   11   I/O     I
 CLK                 FB1_9   15~  GCK/I/O GCK
-A<6>                FB2_3   58   I/O     I
-A<9>                FB2_4   59   I/O     I
-A<4>                FB2_5   61   I/O     I
-A<12>               FB2_6   62   I/O     I
-A<13>               FB2_8   63   I/O     I
-A<22>               FB2_9   64   GSR/I/O I
-A<29>               FB2_10  1    I/O     I
-A<30>               FB2_12  4    I/O     I
-STERM               FB2_14  5    GTS/I/O I
-CMD<1>              FB2_15  6    I/O     I
-A<3>                FB2_17  7    I/O     I
-A<10>               FB3_4   32   I/O     I
-A<19>               FB3_5   24   I/O     I
-A<28>               FB3_10  39   I/O     I
-FC<2>               FB3_11  33   I/O     I
-FC<0>               FB3_12  40   I/O     I
-A<8>                FB3_16  42   I/O     I
-A<20>               FB4_2   43   I/O     I
-A<23>               FB4_3   46   I/O     I
-A<16>               FB4_4   47   I/O     I
-A<17>               FB4_5   44   I/O     I
-A<7>                FB4_6   49   I/O     I
-CMD<0>              FB4_8   45   I/O     I
-A<18>               FB4_10  51   I/O     I
-A<14>               FB4_11  48   I/O     I
-A<15>               FB4_14  50   I/O     I
-A<11>               FB4_15  56   I/O     I
-A<2>                FB4_17  57   I/O     I
+CMD<1>              FB1_11  16   GCK/I/O I
+A<4>                FB1_17  20   I/O     I
+A<17>               FB2_3   58   I/O     I
+STERM               FB2_4   59   I/O     I
+A<29>               FB2_5   61   I/O     I
+A<30>               FB2_6   62   I/O     I
+A<5>                FB2_8   63   I/O     I
+A<12>               FB2_9   64   GSR/I/O I
+A<31>               FB2_10  1    I/O     I
+A<11>               FB2_11  2    GTS/I/O I
+A<15>               FB2_12  4    I/O     I
+CLKdat              FB2_14  5    GTS/I/O I
+nAS                 FB2_15  6    I/O     I
+A<7>                FB2_17  7    I/O     I
+FC<0>               FB3_3   31   I/O     I
+A<16>               FB3_6   34   I/O     I
+CMD<0>              FB3_10  39   I/O     I
+A<2>                FB3_12  40   I/O     I
+A<22>               FB3_14  35   I/O     I
+A<20>               FB3_15  36   I/O     I
+A<19>               FB3_16  42   I/O     I
+A<3>                FB4_2   43   I/O     I
+A<28>               FB4_3   46   I/O     I
+A<6>                FB4_4   47   I/O     I
+A<13>               FB4_5   44   I/O     I
+A<18>               FB4_6   49   I/O     I
+FC<1>               FB4_8   45   I/O     I
+A<14>               FB4_10  51   I/O     I
+A<23>               FB4_11  48   I/O     I
+A<24>               FB4_12  52   I/O     I
+A<21>               FB4_14  50   I/O     I
+FC<2>               FB4_15  56   I/O     I
+A<10>               FB4_17  57   I/O     I
 
 Legend:
 Pin No. - ~ - User Assigned
@@ -144,59 +150,61 @@ Pin Type/Use - I  - Input             GCK - Global Clock
 X            - Signal used as input to the macrocell logic.
 Pin No.      - ~  - User Assigned
 *********************************** FB1  ***********************************
-Number of function block inputs used/remaining:               15/39
-Number of signals used by logic mapping into function block:  15
+Number of function block inputs used/remaining:               54/0
+Number of signals used by logic mapping into function block:  54
 Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
 Name                Pt      Pt    Pt  Pt               #    Type    Use
 (unused)              0       0     0   5     FB1_1         (b)     
-(unused)              0       0     0   5     FB1_2   8     I/O     I
-(unused)              0       0     0   5     FB1_3   12    I/O     I
-(unused)              0       0     0   5     FB1_4   13    I/O     I
+(unused)              0       0     0   5     FB1_2   8     I/O     
+(unused)              0       0     0   5     FB1_3   12    I/O     
+(unused)              0       0     0   5     FB1_4   13    I/O     
 (unused)              0       0     0   5     FB1_5   9     I/O     I
 (unused)              0       0     0   5     FB1_6   10    I/O     I
-NR<12>                2       0     0   3     FB1_7         (b)     (b)
-NR<11>                2       0     0   3     FB1_8   11    I/O     I
-NR<10>                2       0     0   3     FB1_9   15    GCK/I/O GCK
-NR<0>                 2       0     0   3     FB1_10  18    I/O     (b)
-NC<8>                 3       0     0   2     FB1_11  16    GCK/I/O (b)
-NC<7>                 3       0     0   2     FB1_12  23    I/O     (b)
-NC<6>                 3       0     0   2     FB1_13        (b)     (b)
-NC<5>                 3       0     0   2     FB1_14  17    GCK/I/O (b)
-NC<4>                 3       0     0   2     FB1_15  19    I/O     (b)
-NC<3>                 3       0     0   2     FB1_16        (b)     (b)
-NC<2>                 3       0     0   2     FB1_17  20    I/O     (b)
-NC<1>                 3       0     0   2     FB1_18        (b)     (b)
+(unused)              0       0     0   5     FB1_7         (b)     
+(unused)              0       0   \/2   3     FB1_8   11    I/O     I
+(unused)              0       0   \/5   0     FB1_9   15    GCK/I/O GCK
+(unused)              0       0   \/5   0     FB1_10  18    I/O     (b)
+(unused)              0       0   \/5   0     FB1_11  16    GCK/I/O I
+(unused)              0       0   \/5   0     FB1_12  23    I/O     (b)
+$OpTx$BIN_STEP$409   52      47<-   0   0     FB1_13        (b)     (b)
+(unused)              0       0   /\5   0     FB1_14  17    GCK/I/O (b)
+(unused)              0       0   /\5   0     FB1_15  19    I/O     (b)
+(unused)              0       0   /\5   0     FB1_16        (b)     (b)
+(unused)              0       0   /\5   0     FB1_17  20    I/O     I
+(unused)              0       0   /\5   0     FB1_18        (b)     (b)
 
 Signals Used by Logic in Function Block
-  1: A<10>              6: A<2>              11: A<7> 
-  2: A<11>              7: A<3>              12: A<8> 
-  3: A<21>              8: A<4>              13: A<9> 
-  4: A<22>              9: A<5>              14: CMD<0> 
-  5: A<23>             10: A<6>              15: CMD<1> 
+  1: A<10>             19: A<2>              37: NC<5> 
+  2: A<11>             20: A<30>             38: NC<6> 
+  3: A<12>             21: A<31>             39: NC<7> 
+  4: A<13>             22: A<3>              40: NC<8> 
+  5: A<14>             23: A<4>              41: NR<0> 
+  6: A<15>             24: A<5>              42: NR<10> 
+  7: A<16>             25: A<6>              43: NR<11> 
+  8: A<17>             26: A<7>              44: NR<12> 
+  9: A<18>             27: A<8>              45: NR<1> 
+ 10: A<19>             28: A<9>              46: NR<2> 
+ 11: A<20>             29: FC<2>             47: NR<3> 
+ 12: A<21>             30: NB<0>             48: NR<4> 
+ 13: A<22>             31: NB<1>             49: NR<5> 
+ 14: A<23>             32: NC<0>             50: NR<6> 
+ 15: A<24>             33: NC<1>             51: NR<7> 
+ 16: A<25>             34: NC<2>             52: NR<8> 
+ 17: A<28>             35: NC<3>             53: NR<9> 
+ 18: A<29>             36: NC<4>             54: STERM 
 
-Signal                        1         2         3         4 FB
-Name                0----+----0----+----0----+----0----+----0 Inputs
-NR<12>               ....X........XX......................... 3
-NR<11>               ...X.........XX......................... 3
-NR<10>               ..X..........XX......................... 3
-NR<0>                .X...........XX......................... 3
-NC<8>                X....XXXXXXXXXX......................... 11
-NC<7>                .....XXXXXXXXXX......................... 10
-NC<6>                .....XXXXXXX.XX......................... 9
-NC<5>                .....XXXXXX..XX......................... 8
-NC<4>                .....XXXXX...XX......................... 7
-NC<3>                .....XXXX....XX......................... 6
-NC<2>                .....XXX.....XX......................... 5
-NC<1>                .....XX......XX......................... 4
-                    0----+----1----+----2----+----3----+----4
-                              0         0         0         0
+Signal                        1         2         3         4         5         6 FB
+Name                0----+----0----+----0----+----0----+----0----+----0----+----0 Inputs
+$OpTx$BIN_STEP$409   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX...... 54
+                    0----+----1----+----2----+----3----+----4----+----5----+----6
+                              0         0         0         0         0         0
 *********************************** FB2  ***********************************
-Number of function block inputs used/remaining:               15/39
-Number of signals used by logic mapping into function block:  15
+Number of function block inputs used/remaining:               14/40
+Number of signals used by logic mapping into function block:  14
 Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
 Name                Pt      Pt    Pt  Pt               #    Type    Use
 (unused)              0       0     0   5     FB2_1         (b)     
-nFPUCS                2       0     0   3     FB2_2   60    I/O     O
+nSTERM                2       0     0   3     FB2_2   60    I/O     O
 (unused)              0       0     0   5     FB2_3   58    I/O     I
 (unused)              0       0     0   5     FB2_4   59    I/O     I
 (unused)              0       0     0   5     FB2_5   61    I/O     I
@@ -205,86 +213,94 @@ nFPUCS                2       0     0   3     FB2_2   60    I/O     O
 (unused)              0       0     0   5     FB2_8   63    I/O     I
 (unused)              0       0     0   5     FB2_9   64    GSR/I/O I
 (unused)              0       0     0   5     FB2_10  1     I/O     I
-NR<8>                 2       0     0   3     FB2_11  2     GTS/I/O (b)
-NR<7>                 2       0     0   3     FB2_12  4     I/O     I
-NR<6>                 2       0     0   3     FB2_13        (b)     (b)
-NR<5>                 2       0     0   3     FB2_14  5     GTS/I/O I
-NR<4>                 2       0     0   3     FB2_15  6     I/O     I
-NR<3>                 2       0     0   3     FB2_16        (b)     (b)
-NR<2>                 2       0     0   3     FB2_17  7     I/O     I
-NC<0>                 2       0     0   3     FB2_18        (b)     (b)
+NR<9>                 2       0     0   3     FB2_11  2     GTS/I/O I
+NR<1>                 2       0     0   3     FB2_12  4     I/O     I
+NR<12>                2       0     0   3     FB2_13        (b)     (b)
+NR<11>                2       0     0   3     FB2_14  5     GTS/I/O I
+NR<10>                2       0     0   3     FB2_15  6     I/O     I
+NR<0>                 2       0     0   3     FB2_16        (b)     (b)
+NB<1>                 2       0     0   3     FB2_17  7     I/O     I
+NB<0>                 2       0     0   3     FB2_18        (b)     (b)
 
 Signals Used by Logic in Function Block
-  1: A<13>              6: A<18>             11: CMD<1> 
-  2: A<14>              7: A<19>             12: FC<0> 
-  3: A<15>              8: A<2>              13: FC<1> 
-  4: A<16>              9: CLKdat            14: FC<2> 
-  5: A<17>             10: CMD<0>            15: nAS 
+  1: $OpTx$BIN_STEP$409   6: A<22>             11: CMD<1> 
+  2: A<11>                7: A<23>             12: FC<0> 
+  3: A<12>                8: A<24>             13: NA 
+  4: A<20>                9: A<25>             14: STERM 
+  5: A<21>               10: CMD<0>           
 
 Signal                        1         2         3         4 FB
 Name                0----+----0----+----0----+----0----+----0 Inputs
-nFPUCS               XXXXXXX.X..XXXX......................... 12
-NR<8>                ......X..XX............................. 3
-NR<7>                .....X...XX............................. 3
-NR<6>                ....X....XX............................. 3
-NR<5>                ...X.....XX............................. 3
-NR<4>                ..X......XX............................. 3
-NR<3>                .X.......XX............................. 3
-NR<2>                X........XX............................. 3
-NC<0>                .......X.XX............................. 3
+nSTERM               X..........XXX.......................... 4
+NR<9>                ...X.....XX............................. 3
+NR<1>                ..X......XX............................. 3
+NR<12>               ......X..XX............................. 3
+NR<11>               .....X...XX............................. 3
+NR<10>               ....X....XX............................. 3
+NR<0>                .X.......XX............................. 3
+NB<1>                ........XXX............................. 3
+NB<0>                .......X.XX............................. 3
                     0----+----1----+----2----+----3----+----4
                               0         0         0         0
 *********************************** FB3  ***********************************
-Number of function block inputs used/remaining:               51/3
-Number of signals used by logic mapping into function block:  51
+Number of function block inputs used/remaining:               24/30
+Number of signals used by logic mapping into function block:  24
 Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
 Name                Pt      Pt    Pt  Pt               #    Type    Use
-(unused)              0       0     0   5     FB3_1         (b)     
-(unused)              0       0     0   5     FB3_2   22    I/O     
-(unused)              0       0   \/2   3     FB3_3   31    I/O     (b)
-(unused)              0       0   \/5   0     FB3_4   32    I/O     I
-(unused)              0       0   \/5   0     FB3_5   24    I/O     I
-(unused)              0       0   \/5   0     FB3_6   34    I/O     (b)
-(unused)              0       0   \/5   0     FB3_7         (b)     (b)
-nSTERM               49      44<-   0   0     FB3_8   25    I/O     O
-(unused)              0       0   /\5   0     FB3_9   27    I/O     (b)
-(unused)              0       0   /\5   0     FB3_10  39    I/O     I
-(unused)              0       0   /\5   0     FB3_11  33    I/O     I
-(unused)              0       0   /\5   0     FB3_12  40    I/O     I
-(unused)              0       0   /\2   3     FB3_13        (b)     (b)
-(unused)              0       0     0   5     FB3_14  35    I/O     
-(unused)              0       0     0   5     FB3_15  36    I/O     
-(unused)              0       0     0   5     FB3_16  42    I/O     I
-(unused)              0       0     0   5     FB3_17  38    I/O     
-(unused)              0       0     0   5     FB3_18        (b)     
+NR<8>                 2       0     0   3     FB3_1         (b)     (b)
+nFPUCS                2       0     0   3     FB3_2   22    I/O     O
+NR<7>                 2       0     0   3     FB3_3   31    I/O     I
+NR<6>                 2       0     0   3     FB3_4   32    I/O     (b)
+NR<5>                 2       0     0   3     FB3_5   24    I/O     (b)
+NR<4>                 2       0     0   3     FB3_6   34    I/O     I
+NR<3>                 2       0     0   3     FB3_7         (b)     (b)
+NR<2>                 2       0     0   3     FB3_8   25    I/O     (b)
+NC<0>                 2       0     0   3     FB3_9   27    I/O     (b)
+NA                    2       0     0   3     FB3_10  39    I/O     I
+NC<8>                 3       0     0   2     FB3_11  33    I/O     (b)
+NC<7>                 3       0     0   2     FB3_12  40    I/O     I
+NC<6>                 3       0     0   2     FB3_13        (b)     (b)
+NC<5>                 3       0     0   2     FB3_14  35    I/O     I
+NC<4>                 3       0     0   2     FB3_15  36    I/O     I
+NC<3>                 3       0     0   2     FB3_16  42    I/O     I
+NC<2>                 3       0     0   2     FB3_17  38    I/O     (b)
+NC<1>                 3       0     0   2     FB3_18        (b)     (b)
 
 Signals Used by Logic in Function Block
-  1: A<10>             18: A<30>             35: NC<6> 
-  2: A<11>             19: A<31>             36: NC<7> 
-  3: A<12>             20: A<3>              37: NC<8> 
-  4: A<13>             21: A<4>              38: NR<0> 
-  5: A<14>             22: A<5>              39: NR<10> 
-  6: A<15>             23: A<6>              40: NR<11> 
-  7: A<16>             24: A<7>              41: NR<12> 
-  8: A<17>             25: A<8>              42: NR<1> 
-  9: A<18>             26: A<9>              43: NR<2> 
- 10: A<19>             27: FC<0>             44: NR<3> 
- 11: A<20>             28: FC<2>             45: NR<4> 
- 12: A<21>             29: NC<0>             46: NR<5> 
- 13: A<22>             30: NC<1>             47: NR<6> 
- 14: A<23>             31: NC<2>             48: NR<7> 
- 15: A<28>             32: NC<3>             49: NR<8> 
- 16: A<29>             33: NC<4>             50: NR<9> 
- 17: A<2>              34: NC<5>             51: STERM 
+  1: A<10>              9: A<2>              17: CLKdat 
+  2: A<13>             10: A<3>              18: CMD<0> 
+  3: A<14>             11: A<4>              19: CMD<1> 
+  4: A<15>             12: A<5>              20: FC<0> 
+  5: A<16>             13: A<6>              21: FC<1> 
+  6: A<17>             14: A<7>              22: FC<2> 
+  7: A<18>             15: A<8>              23: NA 
+  8: A<19>             16: A<9>              24: nAS 
 
-Signal                        1         2         3         4         5         6 FB
-Name                0----+----0----+----0----+----0----+----0----+----0----+----0 Inputs
-nSTERM               XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX......... 51
-                    0----+----1----+----2----+----3----+----4----+----5----+----6
-                              0         0         0         0         0         0
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+NR<8>                .......X.........XX..................... 3
+nFPUCS               .XXXXXXX........X..XXX.X................ 12
+NR<7>                ......X..........XX..................... 3
+NR<6>                .....X...........XX..................... 3
+NR<5>                ....X............XX..................... 3
+NR<4>                ...X.............XX..................... 3
+NR<3>                ..X..............XX..................... 3
+NR<2>                .X...............XX..................... 3
+NC<0>                ........X........XX..................... 3
+NA                   .................XX...X................. 3
+NC<8>                X.......XXXXXXXX.XX..................... 11
+NC<7>                ........XXXXXXXX.XX..................... 10
+NC<6>                ........XXXXXXX..XX..................... 9
+NC<5>                ........XXXXXX...XX..................... 8
+NC<4>                ........XXXXX....XX..................... 7
+NC<3>                ........XXXX.....XX..................... 6
+NC<2>                ........XXX......XX..................... 5
+NC<1>                ........XX.......XX..................... 4
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
 *********************************** FB4  ***********************************
-Number of function block inputs used/remaining:               4/50
-Number of signals used by logic mapping into function block:  4
+Number of function block inputs used/remaining:               0/54
+Number of signals used by logic mapping into function block:  0
 Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
 Name                Pt      Pt    Pt  Pt               #    Type    Use
 (unused)              0       0     0   5     FB4_1         (b)     
@@ -298,29 +314,35 @@ Name                Pt      Pt    Pt  Pt               #    Type    Use
 (unused)              0       0     0   5     FB4_9         (b)     
 (unused)              0       0     0   5     FB4_10  51    I/O     I
 (unused)              0       0     0   5     FB4_11  48    I/O     I
-(unused)              0       0     0   5     FB4_12  52    I/O     
+(unused)              0       0     0   5     FB4_12  52    I/O     I
 (unused)              0       0     0   5     FB4_13        (b)     
 (unused)              0       0     0   5     FB4_14  50    I/O     I
 (unused)              0       0     0   5     FB4_15  56    I/O     I
 (unused)              0       0     0   5     FB4_16        (b)     
-NR<9>                 2       0     0   3     FB4_17  57    I/O     I
-NR<1>                 2       0     0   3     FB4_18        (b)     (b)
-
-Signals Used by Logic in Function Block
-  1: A<12>              3: CMD<0>             4: CMD<1> 
-  2: A<20>            
-
-Signal                        1         2         3         4 FB
-Name                0----+----0----+----0----+----0----+----0 Inputs
-NR<9>                .XXX.................................... 3
-NR<1>                X.XX.................................... 3
-                    0----+----1----+----2----+----3----+----4
-                              0         0         0         0
+(unused)              0       0     0   5     FB4_17  57    I/O     I
+(unused)              0       0     0   5     FB4_18        (b)     
 *******************************  Equations  ********************************
 
 ********** Mapped Logic **********
 
 
+$OpTx$BIN_STEP$409 <= ((EXP9_.EXP)
+	OR (A(5) AND NOT NC(3) AND NOT STERM)
+	OR (NOT A(5) AND NC(3) AND NOT STERM)
+	OR (A(9) AND NOT NC(7) AND NOT STERM)
+	OR (NOT A(9) AND NC(7) AND NOT STERM)
+	OR (A(19) AND NOT NR(8) AND NOT STERM)
+	OR (EXP12_.EXP)
+	OR (NOT A(24) AND NB(0) AND NOT STERM)
+	OR (A(4) AND NOT NC(2) AND NOT STERM)
+	OR (NOT A(4) AND NC(2) AND NOT STERM)
+	OR (A(8) AND NOT NC(6) AND NOT STERM)
+	OR (NOT A(8) AND NC(6) AND NOT STERM)
+	OR (NOT FC(2) AND NOT STERM)
+	OR (A(31) AND NOT STERM)
+	OR (A(15) AND NOT NR(4) AND NOT STERM)
+	OR (NOT A(15) AND NR(4) AND NOT STERM)
+	OR (NOT A(19) AND NR(8) AND NOT STERM));
 
 
 
@@ -339,6 +361,18 @@ NR<1>                X.XX.................................... 3
 
 
 
+
+
+
+FDCPE_NA: FDCPE port map (NA,NA_D,CLK,'0','0');
+NA_D <= ((CMD(0) AND NOT CMD(1))
+	OR (NOT CMD(1) AND NA));
+
+FDCPE_NB0: FDCPE port map (NB(0),A(24),CLK,'0','0',NB_CE(0));
+NB_CE(0) <= (CMD(0) AND NOT CMD(1));
+
+FDCPE_NB1: FDCPE port map (NB(1),A(25),CLK,'0','0',NB_CE(1));
+NB_CE(1) <= (CMD(0) AND NOT CMD(1));
 
 FDCPE_NC0: FDCPE port map (NC(0),NOT A(2),CLK,'0','0',NC_CE(0));
 NC_CE(0) <= (CMD(0) AND NOT CMD(1));
@@ -439,23 +473,8 @@ nFPUCS <= NOT (((FC(1) AND FC(0) AND A(17) AND A(13) AND NOT A(14) AND NOT A(15)
 	NOT A(16) AND NOT A(18) AND NOT A(19) AND FC(2) AND NOT CLKdat)));
 
 
-nSTERM <= ((EXP9_.EXP)
-	OR (A(7) AND NOT NC(5) AND NOT STERM)
-	OR (NOT A(7) AND NC(5) AND NOT STERM)
-	OR (NOT A(11) AND NR(0) AND NOT STERM)
-	OR (A(22) AND NOT NR(11) AND NOT STERM)
-	OR (NOT A(22) AND NR(11) AND NOT STERM)
-	OR (EXP12_.EXP)
-	OR (A(5) AND NOT NC(3) AND NOT STERM)
-	OR (NOT A(5) AND NC(3) AND NOT STERM)
-	OR (A(11) AND NOT NR(0) AND NOT STERM)
-	OR (A(21) AND NOT NR(10) AND NOT STERM)
-	OR (NOT A(21) AND NR(10) AND NOT STERM)
-	OR (FC(0) AND NOT STERM)
-	OR (NOT FC(2) AND NOT STERM)
-	OR (A(31) AND NOT STERM)
-	OR (A(30) AND A(29) AND NOT STERM)
-	OR (A(30) AND A(28) AND NOT STERM));
+nSTERM <= NOT (((STERM AND NOT $OpTx$BIN_STEP$409)
+	OR (NOT FC(0) AND NA AND NOT $OpTx$BIN_STEP$409)));
 
 Register Legend:
  FDCPE (Q,D,C,CLR,PRE,CE); 
@@ -464,7 +483,7 @@ Register Legend:
 
 ******************************  Device Pin Out *****************************
 
-Device : XC9572XL-10-VQ64
+Device : XC9572XL-5-VQ64
 
 
    -----------------------------------------------  
@@ -476,7 +495,7 @@ Device : XC9572XL-10-VQ64
  | 53                                           28 | 
  | 54                                           27 | 
  | 55                                           26 | 
- | 56              XC9572XL-10-VQ64             25 | 
+ | 56               XC9572XL-5-VQ64             25 | 
  | 57                                           24 | 
  | 58                                           23 | 
  | 59                                           22 | 
@@ -491,38 +510,38 @@ Device : XC9572XL-10-VQ64
 
 Pin Signal                         Pin Signal                        
 No. Name                           No. Name                          
-  1 A<29>                            33 FC<2>                         
-  2 KPR                              34 KPR                           
-  3 VCC                              35 KPR                           
-  4 A<30>                            36 KPR                           
-  5 STERM                            37 VCC                           
-  6 CMD<1>                           38 KPR                           
-  7 A<3>                             39 A<28>                         
-  8 A<21>                            40 FC<0>                         
-  9 A<5>                             41 GND                           
- 10 A<31>                            42 A<8>                          
- 11 CLKdat                           43 A<20>                         
- 12 FC<1>                            44 A<17>                         
- 13 nAS                              45 CMD<0>                        
- 14 GND                              46 A<23>                         
- 15 CLK                              47 A<16>                         
- 16 KPR                              48 A<14>                         
- 17 KPR                              49 A<7>                          
- 18 KPR                              50 A<15>                         
- 19 KPR                              51 A<18>                         
- 20 KPR                              52 KPR                           
+  1 A<31>                            33 KPR                           
+  2 A<11>                            34 A<16>                         
+  3 VCC                              35 A<22>                         
+  4 A<15>                            36 A<20>                         
+  5 CLKdat                           37 VCC                           
+  6 nAS                              38 KPR                           
+  7 A<7>                             39 CMD<0>                        
+  8 KPR                              40 A<2>                          
+  9 A<8>                             41 GND                           
+ 10 A<25>                            42 A<19>                         
+ 11 A<9>                             43 A<3>                          
+ 12 KPR                              44 A<13>                         
+ 13 KPR                              45 FC<1>                         
+ 14 GND                              46 A<28>                         
+ 15 CLK                              47 A<6>                          
+ 16 CMD<1>                           48 A<23>                         
+ 17 KPR                              49 A<18>                         
+ 18 KPR                              50 A<21>                         
+ 19 KPR                              51 A<14>                         
+ 20 A<4>                             52 A<24>                         
  21 GND                              53 TDO                           
- 22 KPR                              54 GND                           
+ 22 nFPUCS                           54 GND                           
  23 KPR                              55 VCC                           
- 24 A<19>                            56 A<11>                         
- 25 nSTERM                           57 A<2>                          
- 26 VCC                              58 A<6>                          
- 27 KPR                              59 A<9>                          
- 28 TDI                              60 nFPUCS                        
- 29 TMS                              61 A<4>                          
- 30 TCK                              62 A<12>                         
- 31 KPR                              63 A<13>                         
- 32 A<10>                            64 A<22>                         
+ 24 KPR                              56 FC<2>                         
+ 25 KPR                              57 A<10>                         
+ 26 VCC                              58 A<17>                         
+ 27 KPR                              59 STERM                         
+ 28 TDI                              60 nSTERM                        
+ 29 TMS                              61 A<29>                         
+ 30 TCK                              62 A<30>                         
+ 31 FC<0>                            63 A<5>                          
+ 32 KPR                              64 A<12>                         
 
 
 Legend :  NC  = Not Connected, unbonded pin
@@ -540,7 +559,7 @@ Legend :  NC  = Not Connected, unbonded pin
 
 Following is a list of all global compiler options used by the fitter run.
 
-Device(s) Specified                         : xc9572xl-10-VQ64
+Device(s) Specified                         : xc9572xl-5-VQ64
 Optimization Method                         : SPEED
 Multi-Level Logic Optimization              : ON
 Ignore Timing Specifications                : OFF

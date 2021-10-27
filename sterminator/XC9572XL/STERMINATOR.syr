@@ -104,16 +104,18 @@ Synthesizing Unit <STERMINATOR>.
     Related source file is "../STERMINATOR.v".
 WARNING:Xst:647 - Input <A<27:26>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <nWE> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:646 - Signal <NB> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <NA> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <NA>.
+    Found 2-bit register for signal <NB>.
     Found 9-bit register for signal <NC>.
     Found 9-bit adder for signal <NC$add0000> created at line 51.
     Found 13-bit register for signal <NR>.
-    Found 13-bit comparator equal for signal <NSEL$cmp_eq0000> created at line 59.
-    Found 9-bit comparator equal for signal <NSEL$cmp_eq0001> created at line 59.
+    Found 2-bit comparator equal for signal <NSEL$cmp_eq0000> created at line 59.
+    Found 13-bit comparator equal for signal <NSEL$cmp_eq0001> created at line 59.
+    Found 9-bit comparator equal for signal <NSEL$cmp_eq0002> created at line 59.
     Summary:
+	inferred   1 D-type flip-flop(s).
 	inferred   1 Adder/Subtractor(s).
-	inferred   2 Comparator(s).
+	inferred   3 Comparator(s).
 Unit <STERMINATOR> synthesized.
 
 
@@ -123,11 +125,14 @@ HDL Synthesis Report
 Macro Statistics
 # Adders/Subtractors                                   : 1
  9-bit adder                                           : 1
-# Registers                                            : 2
+# Registers                                            : 4
+ 1-bit register                                        : 1
  13-bit register                                       : 1
+ 2-bit register                                        : 1
  9-bit register                                        : 1
-# Comparators                                          : 2
+# Comparators                                          : 3
  13-bit comparator equal                               : 1
+ 2-bit comparator equal                                : 1
  9-bit comparator equal                                : 1
 
 =========================================================================
@@ -143,8 +148,11 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # Adders/Subtractors                                   : 1
  9-bit adder                                           : 1
-# Comparators                                          : 2
+# Registers                                            : 1
+ Flip-Flops                                            : 1
+# Comparators                                          : 3
  13-bit comparator equal                               : 1
+ 2-bit comparator equal                                : 1
  9-bit comparator equal                                : 1
 
 =========================================================================
@@ -185,31 +193,33 @@ Design Statistics
 # IOs                              : 42
 
 Cell Usage :
-# BELS                             : 95
+# BELS                             : 102
 #      AND2                        : 14
 #      AND3                        : 5
 #      AND4                        : 2
+#      AND5                        : 1
 #      AND8                        : 2
 #      GND                         : 1
-#      INV                         : 38
-#      OR2                         : 3
-#      XOR2                        : 30
-# FlipFlops/Latches                : 22
-#      FDCE                        : 22
-# IO Buffers                       : 37
-#      IBUF                        : 35
+#      INV                         : 41
+#      OR2                         : 4
+#      XOR2                        : 32
+# FlipFlops/Latches                : 25
+#      FD                          : 1
+#      FDCE                        : 24
+# IO Buffers                       : 39
+#      IBUF                        : 37
 #      OBUF                        : 2
 =========================================================================
 
 
 Total REAL time to Xst completion: 2.00 secs
-Total CPU time to Xst completion: 2.02 secs
+Total CPU time to Xst completion: 2.08 secs
  
 --> 
 
-Total memory usage is 226584 kilobytes
+Total memory usage is 225560 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    4 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

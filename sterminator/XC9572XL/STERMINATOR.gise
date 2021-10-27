@@ -67,7 +67,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1635248003" xil_pn:in_ck="-928331514634735609" xil_pn:name="TRANEXT_xstsynthesize_xc9500xl" xil_pn:prop_ck="1389972802409718622" xil_pn:start_ts="1635248000">
+    <transform xil_pn:end_ts="1635296505" xil_pn:in_ck="-928331514634735609" xil_pn:name="TRANEXT_xstsynthesize_xc9500xl" xil_pn:prop_ck="-3919841149502868206" xil_pn:start_ts="1635296502">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -87,7 +87,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1635248006" xil_pn:in_ck="-7782956398540830978" xil_pn:name="TRAN_ngdbuild" xil_pn:prop_ck="-2081320714713457669" xil_pn:start_ts="1635248003">
+    <transform xil_pn:end_ts="1635296508" xil_pn:in_ck="-7782956398540830978" xil_pn:name="TRAN_ngdbuild" xil_pn:prop_ck="-3408397811283534289" xil_pn:start_ts="1635296505">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="STERMINATOR.bld"/>
@@ -96,10 +96,12 @@
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1635248014" xil_pn:in_ck="-7782956398540830977" xil_pn:name="TRANEXT_vm6File_xc9500xl" xil_pn:prop_ck="-6293618782099042228" xil_pn:start_ts="1635248006">
+    <transform xil_pn:end_ts="1635296516" xil_pn:in_ck="-7782956398540830977" xil_pn:name="TRANEXT_vm6File_xc9500xl" xil_pn:prop_ck="-3829131459437891296" xil_pn:start_ts="1635296508">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="STERMINATOR.gyd"/>
       <outfile xil_pn:name="STERMINATOR.mfd"/>
       <outfile xil_pn:name="STERMINATOR.nga"/>
@@ -114,16 +116,14 @@
       <outfile xil_pn:name="STERMINATOR_html"/>
       <outfile xil_pn:name="STERMINATOR_pad.csv"/>
     </transform>
-    <transform xil_pn:end_ts="1635248015" xil_pn:in_ck="-7782956398540822113" xil_pn:name="TRANEXT_crtProg_xc9500" xil_pn:prop_ck="-6294026017969277533" xil_pn:start_ts="1635248014">
+    <transform xil_pn:end_ts="1635296518" xil_pn:in_ck="-7782956398540822113" xil_pn:name="TRANEXT_crtProg_xc9500" xil_pn:prop_ck="-6294026017969277533" xil_pn:start_ts="1635296516">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="STERMINATOR.jed"/>
     </transform>
-    <transform xil_pn:end_ts="1635247582" xil_pn:in_ck="-7782956398540822113" xil_pn:name="TRAN_timRpt" xil_pn:prop_ck="111903974446" xil_pn:start_ts="1635247581">
-      <status xil_pn:value="AbortedRun"/>
+    <transform xil_pn:end_ts="1635296522" xil_pn:in_ck="-7782956398540822113" xil_pn:name="TRAN_timRpt" xil_pn:prop_ck="111903974446" xil_pn:start_ts="1635296520">
+      <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="InputChanged"/>
     </transform>
   </transforms>
 

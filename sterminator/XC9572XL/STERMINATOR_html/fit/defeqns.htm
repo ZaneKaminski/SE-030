@@ -6,6 +6,23 @@
 ********** Mapped Logic **********
 </td></tr><tr><td>
 </td></tr><tr><td>
+$OpTx$BIN_STEP$409 <= ((EXP9_.EXP)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (A(5) AND NOT NC(3) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT A(5) AND NC(3) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (A(9) AND NOT NC(7) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT A(9) AND NC(7) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (A(19) AND NOT NR(8) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (EXP12_.EXP)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT A(24) AND NB(0) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (A(4) AND NOT NC(2) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT A(4) AND NC(2) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (A(8) AND NOT NC(6) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT A(8) AND NC(6) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT FC(2) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (A(31) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (A(15) AND NOT NR(4) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT A(15) AND NR(4) AND NOT STERM)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT A(19) AND NR(8) AND NOT STERM));
 </td></tr><tr><td>
 </td></tr><tr><td>
 </td></tr><tr><td>
@@ -24,6 +41,18 @@
 </td></tr><tr><td>
 </td></tr><tr><td>
 </td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+FDCPE_NA: FDCPE port map (NA,NA_D,CLK,'0','0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NA_D <= ((CMD(0) AND NOT CMD(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT CMD(1) AND NA));
+</td></tr><tr><td>
+FDCPE_NB0: FDCPE port map (NB(0),A(24),CLK,'0','0',NB_CE(0));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NB_CE(0) <= (CMD(0) AND NOT CMD(1));
+</td></tr><tr><td>
+FDCPE_NB1: FDCPE port map (NB(1),A(25),CLK,'0','0',NB_CE(1));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NB_CE(1) <= (CMD(0) AND NOT CMD(1));
 </td></tr><tr><td>
 FDCPE_NC0: FDCPE port map (NC(0),NOT A(2),CLK,'0','0',NC_CE(0));
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NC_CE(0) <= (CMD(0) AND NOT CMD(1));
@@ -124,23 +153,8 @@ nFPUCS <= NOT (((FC(1) AND FC(0) AND A(17) AND A(13) AND NOT A(14) AND NOT A(15)
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT A(16) AND NOT A(18) AND NOT A(19) AND FC(2) AND NOT CLKdat)));
 </td></tr><tr><td>
 </td></tr><tr><td>
-nSTERM <= ((EXP9_.EXP)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (A(7) AND NOT NC(5) AND NOT STERM)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT A(7) AND NC(5) AND NOT STERM)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT A(11) AND NR(0) AND NOT STERM)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (A(22) AND NOT NR(11) AND NOT STERM)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT A(22) AND NR(11) AND NOT STERM)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (EXP12_.EXP)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (A(5) AND NOT NC(3) AND NOT STERM)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT A(5) AND NC(3) AND NOT STERM)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (A(11) AND NOT NR(0) AND NOT STERM)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (A(21) AND NOT NR(10) AND NOT STERM)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT A(21) AND NR(10) AND NOT STERM)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (FC(0) AND NOT STERM)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT FC(2) AND NOT STERM)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (A(31) AND NOT STERM)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (A(30) AND A(29) AND NOT STERM)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (A(30) AND A(28) AND NOT STERM));
+nSTERM <= NOT (((STERM AND NOT $OpTx$BIN_STEP$409)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT FC(0) AND NA AND NOT $OpTx$BIN_STEP$409)));
 </td></tr><tr><td>
 Register Legend:
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FDCPE (Q,D,C,CLR,PRE,CE); 

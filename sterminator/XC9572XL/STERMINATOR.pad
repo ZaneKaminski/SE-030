@@ -1,7 +1,7 @@
 Release 8.1i - Fit P.20131013
 Copyright(c) 1995-2003 Xilinx Inc. All rights reserved
 
-10-26-2021  7:33AM
+10-26-2021  9:01PM
 
 NOTE: This file is designed to be imported into a spreadsheet program
 such as Microsoft Excel for viewing, printing and sorting. The pipe '|'
@@ -11,77 +11,77 @@ This file is also designed to support parsing.
 Input file:  STERMINATOR.ngd
 output file: STERMINATOR.pad
 Part type:   xc9572xl
-Speed grade: -10
+Speed grade: -5
 Package:     vq64
 
 Pinout by Pin Number:
 
 -----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 Pin Number|Signal Name|Pin Usage|Pin Name|Direction|IO Standard|IO Bank Number|{blank}|Slew Rate|Termination|{blank}|Voltage|Constraint|
-P1|A<29>|I|I/O|INPUT|||||||||
-P2|TIE||I/O/GTS2||||||||||
+P1|A<31>|I|I/O|INPUT|||||||||
+P2|A<11>|I|I/O/GTS2|INPUT|||||||||
 P3|VCC||VCCINT||||||||||
-P4|A<30>|I|I/O|INPUT|||||||||
-P5|STERM|I|I/O/GTS1|INPUT|||||||||
-P6|CMD<1>|I|I/O|INPUT|||||||||
-P7|A<3>|I|I/O|INPUT|||||||||
-P8|A<21>|I|I/O|INPUT|||||||||
-P9|A<5>|I|I/O|INPUT|||||||||
-P10|A<31>|I|I/O|INPUT|||||||||
-P11|CLKdat|I|I/O|INPUT|||||||||
-P12|FC<1>|I|I/O|INPUT|||||||||
-P13|nAS|I|I/O|INPUT|||||||||
+P4|A<15>|I|I/O|INPUT|||||||||
+P5|CLKdat|I|I/O/GTS1|INPUT|||||||||
+P6|nAS|I|I/O|INPUT|||||||||
+P7|A<7>|I|I/O|INPUT|||||||||
+P8|TIE||I/O||||||||||
+P9|A<8>|I|I/O|INPUT|||||||||
+P10|A<25>|I|I/O|INPUT|||||||||
+P11|A<9>|I|I/O|INPUT|||||||||
+P12|TIE||I/O||||||||||
+P13|TIE||I/O||||||||||
 P14|GND||GND||||||||||
 P15|CLK|GCK|I/O/GCK1||||||||||
-P16|TIE||I/O/GCK2||||||||||
+P16|CMD<1>|I|I/O/GCK2|INPUT|||||||||
 P17|TIE||I/O/GCK3||||||||||
 P18|TIE||I/O||||||||||
 P19|TIE||I/O||||||||||
-P20|TIE||I/O||||||||||
+P20|A<4>|I|I/O|INPUT|||||||||
 P21|GND||GND||||||||||
-P22|TIE||I/O||||||||||
+P22|nFPUCS|O|I/O|OUTPUT|||||||||
 P23|TIE||I/O||||||||||
-P24|A<19>|I|I/O|INPUT|||||||||
-P25|nSTERM|O|I/O|OUTPUT|||||||||
+P24|TIE||I/O||||||||||
+P25|TIE||I/O||||||||||
 P26|VCC||VCCIO||||||||||
 P27|TIE||I/O||||||||||
 P28|TDI||TDI||||||||||
 P29|TMS||TMS||||||||||
 P30|TCK||TCK||||||||||
-P31|TIE||I/O||||||||||
-P32|A<10>|I|I/O|INPUT|||||||||
-P33|FC<2>|I|I/O|INPUT|||||||||
-P34|TIE||I/O||||||||||
-P35|TIE||I/O||||||||||
-P36|TIE||I/O||||||||||
+P31|FC<0>|I|I/O|INPUT|||||||||
+P32|TIE||I/O||||||||||
+P33|TIE||I/O||||||||||
+P34|A<16>|I|I/O|INPUT|||||||||
+P35|A<22>|I|I/O|INPUT|||||||||
+P36|A<20>|I|I/O|INPUT|||||||||
 P37|VCC||VCCINT||||||||||
 P38|TIE||I/O||||||||||
-P39|A<28>|I|I/O|INPUT|||||||||
-P40|FC<0>|I|I/O|INPUT|||||||||
+P39|CMD<0>|I|I/O|INPUT|||||||||
+P40|A<2>|I|I/O|INPUT|||||||||
 P41|GND||GND||||||||||
-P42|A<8>|I|I/O|INPUT|||||||||
-P43|A<20>|I|I/O|INPUT|||||||||
-P44|A<17>|I|I/O|INPUT|||||||||
-P45|CMD<0>|I|I/O|INPUT|||||||||
-P46|A<23>|I|I/O|INPUT|||||||||
-P47|A<16>|I|I/O|INPUT|||||||||
-P48|A<14>|I|I/O|INPUT|||||||||
-P49|A<7>|I|I/O|INPUT|||||||||
-P50|A<15>|I|I/O|INPUT|||||||||
-P51|A<18>|I|I/O|INPUT|||||||||
-P52|TIE||I/O||||||||||
+P42|A<19>|I|I/O|INPUT|||||||||
+P43|A<3>|I|I/O|INPUT|||||||||
+P44|A<13>|I|I/O|INPUT|||||||||
+P45|FC<1>|I|I/O|INPUT|||||||||
+P46|A<28>|I|I/O|INPUT|||||||||
+P47|A<6>|I|I/O|INPUT|||||||||
+P48|A<23>|I|I/O|INPUT|||||||||
+P49|A<18>|I|I/O|INPUT|||||||||
+P50|A<21>|I|I/O|INPUT|||||||||
+P51|A<14>|I|I/O|INPUT|||||||||
+P52|A<24>|I|I/O|INPUT|||||||||
 P53|TDO||TDO||||||||||
 P54|GND||GND||||||||||
 P55|VCC||VCCIO||||||||||
-P56|A<11>|I|I/O|INPUT|||||||||
-P57|A<2>|I|I/O|INPUT|||||||||
-P58|A<6>|I|I/O|INPUT|||||||||
-P59|A<9>|I|I/O|INPUT|||||||||
-P60|nFPUCS|O|I/O|OUTPUT|||||||||
-P61|A<4>|I|I/O|INPUT|||||||||
-P62|A<12>|I|I/O|INPUT|||||||||
-P63|A<13>|I|I/O|INPUT|||||||||
-P64|A<22>|I|I/O/GSR|INPUT|||||||||
+P56|FC<2>|I|I/O|INPUT|||||||||
+P57|A<10>|I|I/O|INPUT|||||||||
+P58|A<17>|I|I/O|INPUT|||||||||
+P59|STERM|I|I/O|INPUT|||||||||
+P60|nSTERM|O|I/O|OUTPUT|||||||||
+P61|A<29>|I|I/O|INPUT|||||||||
+P62|A<30>|I|I/O|INPUT|||||||||
+P63|A<5>|I|I/O|INPUT|||||||||
+P64|A<12>|I|I/O/GSR|INPUT|||||||||
 
 To preserve the pinout above for future design iterations in
 Project Navigator simply execute the (Lock Pins) process

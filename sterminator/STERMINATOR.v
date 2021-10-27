@@ -56,7 +56,7 @@ module STERMINATOR(
 		end
 	end
 	
-	wire NSEL = RAMROMCS && AR==NR && AC==NC;
+	wire NSEL = RAMROMCS && NA && AB==NB && AR==NR && AC==NC;
 	
 	assign nSTERM = ~(STERM || NSEL);
 	
